@@ -1,0 +1,1 @@
+Pinturas de dominio público. Cada archivo debe tener su entrada en ../manifiesto.json.

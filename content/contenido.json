@@ -1,0 +1,2810 @@
+{
+ "version": 3,
+ "generado": "2026-10-02",
+ "traducciones": {
+  "es": "Reina-Valera 1909 (dominio público)",
+  "en": "King James Version (dominio público)"
+ },
+ "emociones": [
+  {
+   "id": "happy",
+   "es": "Feliz",
+   "en": "Happy",
+   "items": [
+    {
+     "ref": [
+      "Salmo 118:24",
+      "Psalm 118:24"
+     ],
+     "v": [
+      "Este es el día que hizo Jehová; nos gozaremos y alegraremos en él.",
+      "This is the day which the LORD hath made; we will rejoice and be glad in it."
+     ],
+     "p": [
+      "Señor, gracias por este día y por la alegría que me das. Ayúdame a compartirla con quienes me rodean.",
+      "Lord, thank you for this day and for the joy you give me. Help me share it with those around me."
+     ],
+     "c": {
+      "ini": "F",
+      "es": [
+       "San Felipe Neri",
+       "El santo de la alegría. Llenaba Roma de risas y de oración."
+      ],
+      "en": [
+       "St. Philip Neri",
+       "The saint of joy. He filled Rome with laughter and prayer."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Filipenses 4:4",
+      "Philippians 4:4"
+     ],
+     "v": [
+      "Gozaos en el Señor siempre: otra vez digo: Que os gocéis.",
+      "Rejoice in the Lord alway: and again I say, Rejoice."
+     ],
+     "p": [
+      "Señor, que mi alegría no dependa de que todo salga bien, sino de saber que estás conmigo.",
+      "Lord, may my joy not depend on everything going well, but on knowing you are with me."
+     ],
+     "c": {
+      "ini": "T",
+      "es": [
+       "Santa Teresa de los Andes",
+       "Primera santa chilena. Escribió: \"Dios es alegría infinita\"."
+      ],
+      "en": [
+       "St. Teresa of the Andes",
+       "Chile's first saint. She wrote: \"God is infinite joy.\""
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Salmo 126:3",
+      "Psalm 126:3"
+     ],
+     "v": [
+      "Grandes cosas ha hecho Jehová con nosotros; estaremos alegres.",
+      "The LORD hath done great things for us; whereof we are glad."
+     ],
+     "p": [
+      "Gracias, Dios mío, por las cosas grandes y pequeñas de hoy. Que nunca me acostumbre a tus regalos.",
+      "Thank you, my God, for today's great and small things. May I never take your gifts for granted."
+     ],
+     "c": {
+      "ini": "A",
+      "es": [
+       "San Alberto Hurtado",
+       "Incluso enfermo repetía: \"Contento, Señor, contento\"."
+      ],
+      "en": [
+       "St. Alberto Hurtado",
+       "Even when ill he kept saying: \"Content, Lord, content.\""
+      ]
+     },
+     "revision": "borrador"
+    }
+   ]
+  },
+  {
+   "id": "tired",
+   "es": "Cansada",
+   "en": "Tired",
+   "items": [
+    {
+     "ref": [
+      "Mateo 11:28",
+      "Matthew 11:28"
+     ],
+     "v": [
+      "Venid á mí todos los que estáis trabajados y cargados, que yo os haré descansar.",
+      "Come unto me, all ye that labour and are heavy laden, and I will give you rest."
+     ],
+     "p": [
+      "Jesús, estoy agotada. Pongo en tus manos todo lo que cargo y te pido descanso para el cuerpo y el alma.",
+      "Jesus, I am worn out. I place in your hands all that I carry and ask for rest for body and soul."
+     ],
+     "c": {
+      "ini": "J",
+      "es": [
+       "San José",
+       "Trabajó en silencio para cuidar a los suyos. Patrono de los trabajadores."
+      ],
+      "en": [
+       "St. Joseph",
+       "He worked quietly to care for his family. Patron of workers."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Isaías 40:31",
+      "Isaiah 40:31"
+     ],
+     "v": [
+      "Mas los que esperan á Jehová tendrán nuevas fuerzas; levantarán las alas como águilas, correrán, y no se cansarán, caminarán, y no se fatigarán.",
+      "But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint."
+     ],
+     "p": [
+      "Señor, no tengo más fuerzas propias. Dame las tuyas para terminar este día con paz.",
+      "Lord, I have no strength of my own left. Give me yours so I can finish this day in peace."
+     ],
+     "c": {
+      "ini": "T",
+      "es": [
+       "Santa Teresa de Calcuta",
+       "Sirvió a los más pobres sin descanso, y sacaba fuerzas de una hora diaria de oración."
+      ],
+      "en": [
+       "St. Teresa of Calcutta",
+       "She served the poorest without rest, and drew strength from an hour of prayer each day."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Salmo 4:8",
+      "Psalm 4:8"
+     ],
+     "v": [
+      "En paz me acostaré, y asimismo dormiré; porque solo tú, Jehová, me harás estar confiado.",
+      "I will both lay me down in peace, and sleep: for thou, LORD, only makest me dwell in safety."
+     ],
+     "p": [
+      "Padre, dejo en tus manos lo que no alcancé a hacer hoy. Cuida mi descanso.",
+      "Father, I leave in your hands what I could not finish today. Watch over my rest."
+     ],
+     "c": {
+      "ini": "A",
+      "es": [
+       "San Alberto Hurtado",
+       "Recorría Santiago de noche buscando a quienes no tenían dónde dormir."
+      ],
+      "en": [
+       "St. Alberto Hurtado",
+       "He drove around Santiago at night looking for people with nowhere to sleep."
+      ]
+     },
+     "revision": "borrador"
+    }
+   ]
+  },
+  {
+   "id": "healing",
+   "es": "Sanación",
+   "en": "Healing",
+   "items": [
+    {
+     "ref": [
+      "Salmo 147:3",
+      "Psalm 147:3"
+     ],
+     "v": [
+      "Él sana á los quebrantados de corazón, y ata sus heridas.",
+      "He healeth the broken in heart, and bindeth up their wounds."
+     ],
+     "p": [
+      "Señor, tú conoces mis heridas. Sáname por dentro y por fuera, y dame paciencia mientras me curas.",
+      "Lord, you know my wounds. Heal me inside and out, and give me patience while you mend me."
+     ],
+     "c": {
+      "ini": "R",
+      "es": [
+       "San Rafael Arcángel",
+       "Su nombre significa \"Dios sana\". Hoy es su fiesta."
+      ],
+      "en": [
+       "St. Raphael the Archangel",
+       "His name means \"God heals\". Today is his feast."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Jeremías 17:14",
+      "Jeremiah 17:14"
+     ],
+     "v": [
+      "Sáname, oh Jehová, y seré sano; sálvame, y seré salvo: porque tú eres mi alabanza.",
+      "Heal me, O LORD, and I shall be healed; save me, and I shall be saved: for thou art my praise."
+     ],
+     "p": [
+      "Señor, pongo en tus manos mi cuerpo y mi historia. Sana lo que yo no puedo sanar.",
+      "Lord, I put my body and my story in your hands. Heal what I cannot heal."
+     ],
+     "c": {
+      "ini": "J",
+      "es": [
+       "San Juan Pablo II",
+       "Vivió su enfermedad a la vista de todos, sin perder la fe ni la ternura."
+      ],
+      "en": [
+       "St. John Paul II",
+       "He lived his illness in front of everyone, without losing faith or tenderness."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Mateo 9:22",
+      "Matthew 9:22"
+     ],
+     "v": [
+      "Confía, hija, tu fe te ha salvado.",
+      "Daughter, be of good comfort; thy faith hath made thee whole."
+     ],
+     "p": [
+      "Jesús, como aquella mujer que tocó tu manto, me acerco a ti con lo que me duele.",
+      "Jesus, like the woman who touched your cloak, I come to you with what hurts."
+     ],
+     "c": {
+      "ini": "B",
+      "es": [
+       "Santa Bernardita",
+       "A ella se le apareció la Virgen en Lourdes, hoy lugar de oración por los enfermos."
+      ],
+      "en": [
+       "St. Bernadette",
+       "Our Lady appeared to her at Lourdes, today a place of prayer for the sick."
+      ]
+     },
+     "revision": "borrador"
+    }
+   ]
+  },
+  {
+   "id": "depression",
+   "es": "Depresión",
+   "en": "Depression",
+   "care": 1,
+   "items": [
+    {
+     "ref": [
+      "Salmo 34:18",
+      "Psalm 34:18"
+     ],
+     "v": [
+      "Cercano está Jehová á los quebrantados de corazón; y salvará á los contritos de espíritu.",
+      "The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit."
+     ],
+     "p": [
+      "Dios mío, hoy todo pesa. No me dejes sola. Envíame a alguien que me escuche y dame una pequeña luz para el próximo paso.",
+      "My God, everything feels heavy today. Do not leave me alone. Send me someone who will listen and give me a small light for the next step."
+     ],
+     "c": {
+      "ini": "D",
+      "es": [
+       "Santa Dimpna",
+       "Patrona de quienes sufren de angustia y enfermedades de la mente."
+      ],
+      "en": [
+       "St. Dymphna",
+       "Patron of those who suffer from anxiety and mental illness."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Salmo 42:11",
+      "Psalm 42:11"
+     ],
+     "v": [
+      "¿Por qué te abates, oh alma mía, y por qué te conturbas en mí? Espera á Dios; porque aun le tengo de alabar.",
+      "Why art thou cast down, O my soul? and why art thou disquieted within me? hope thou in God: for I shall yet praise him."
+     ],
+     "p": [
+      "Señor, hoy no siento nada, pero vengo igual. Quédate conmigo en esta oscuridad.",
+      "Lord, today I feel nothing, but I come anyway. Stay with me in this darkness."
+     ],
+     "c": {
+      "ini": "T",
+      "es": [
+       "Santa Teresa de Calcuta",
+       "Vivió muchos años de oscuridad interior y siguió amando y sirviendo."
+      ],
+      "en": [
+       "St. Teresa of Calcutta",
+       "She lived many years of inner darkness and kept loving and serving."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Isaías 41:10",
+      "Isaiah 41:10"
+     ],
+     "v": [
+      "No temas, que yo soy contigo; no desmayes, que yo soy tu Dios que te esfuerzo: siempre te ayudaré.",
+      "Fear thou not; for I am with thee: be not dismayed; for I am thy God: I will strengthen thee; yea, I will help thee."
+     ],
+     "p": [
+      "Dios mío, sostenme hoy. Dame el valor de pedir ayuda a quienes me quieren.",
+      "My God, hold me up today. Give me the courage to ask for help from those who love me."
+     ],
+     "c": {
+      "ini": "T",
+      "nov": "ter",
+      "es": [
+       "Santa Teresita",
+       "En sus últimos meses vivió la noche de la fe, y aun así se abandonó en Dios."
+      ],
+      "en": [
+       "St. Thérèse",
+       "In her last months she lived through a night of faith, and still trusted God."
+      ]
+     },
+     "revision": "borrador"
+    }
+   ]
+  },
+  {
+   "id": "sad",
+   "es": "Triste",
+   "en": "Sad",
+   "care": 1,
+   "items": [
+    {
+     "ref": [
+      "Salmo 30:5",
+      "Psalm 30:5"
+     ],
+     "v": [
+      "Por la tarde durará el lloro, y á la mañana vendrá la alegría.",
+      "Weeping may endure for a night, but joy cometh in the morning."
+     ],
+     "p": [
+      "Señor, mi corazón está triste. Acompáñame en este llanto y hazme esperar la mañana que tú preparas.",
+      "Lord, my heart is sad. Stay with me in these tears and help me wait for the morning you are preparing."
+     ],
+     "c": {
+      "ini": "M",
+      "nov": "mon",
+      "es": [
+       "Santa Mónica",
+       "Lloró y rezó años por su hijo, y Dios la escuchó."
+      ],
+      "en": [
+       "St. Monica",
+       "She wept and prayed for years for her son, and God heard her."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Mateo 5:4",
+      "Matthew 5:4"
+     ],
+     "v": [
+      "Bienaventurados los que lloran: porque ellos recibirán consolación.",
+      "Blessed are they that mourn: for they shall be comforted."
+     ],
+     "p": [
+      "Jesús, tú también lloraste. Recibe mis lágrimas y consuélame a tu manera.",
+      "Jesus, you also wept. Receive my tears and comfort me in your way."
+     ],
+     "c": {
+      "ini": "M",
+      "es": [
+       "Nuestra Señora de los Dolores",
+       "María estuvo al pie de la cruz. Sabe lo que es sufrir por alguien que se ama."
+      ],
+      "en": [
+       "Our Lady of Sorrows",
+       "Mary stood at the foot of the cross. She knows what it is to suffer for someone you love."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Apocalipsis 21:4",
+      "Revelation 21:4"
+     ],
+     "v": [
+      "Y limpiará Dios toda lágrima de los ojos de ellos; y la muerte no será más; y no habrá más llanto, ni clamor, ni dolor.",
+      "And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain."
+     ],
+     "p": [
+      "Señor, dame esperanza en el día en que secarás toda lágrima. Mientras tanto, acompáñame.",
+      "Lord, give me hope in the day you will wipe away every tear. Until then, walk with me."
+     ],
+     "c": {
+      "ini": "P",
+      "lrn": "pedro",
+      "es": [
+       "San Pedro",
+       "Lloró amargamente después de negar a Jesús, y fue perdonado."
+      ],
+      "en": [
+       "St. Peter",
+       "He wept bitterly after denying Jesus, and he was forgiven."
+      ]
+     },
+     "revision": "borrador"
+    }
+   ]
+  },
+  {
+   "id": "confused",
+   "es": "Confundida",
+   "en": "Confused",
+   "items": [
+    {
+     "ref": [
+      "Proverbios 3:5",
+      "Proverbs 3:5"
+     ],
+     "v": [
+      "Fíate de Jehová de todo tu corazón, y no estribes en tu prudencia.",
+      "Trust in the LORD with all thine heart; and lean not unto thine own understanding."
+     ],
+     "p": [
+      "Espíritu Santo, no veo el camino con claridad. Dame luz para decidir y paz para esperar tu respuesta.",
+      "Holy Spirit, I cannot see the way clearly. Give me light to decide and peace to wait for your answer."
+     ],
+     "c": {
+      "ini": "A",
+      "es": [
+       "San Agustín",
+       "Buscó la verdad por todos lados antes de encontrarla en Dios."
+      ],
+      "en": [
+       "St. Augustine",
+       "He searched for truth everywhere before he found it in God."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Salmo 119:105",
+      "Psalm 119:105"
+     ],
+     "v": [
+      "Lámpara es á mis pies tu palabra, y lumbrera á mi camino.",
+      "Thy word is a lamp unto my feet, and a light unto my path."
+     ],
+     "p": [
+      "Señor, no te pido ver todo el camino. Solo el próximo paso.",
+      "Lord, I do not ask to see the whole road. Only the next step."
+     ],
+     "c": {
+      "ini": "I",
+      "es": [
+       "San Ignacio de Loyola",
+       "Enseñó a discernir: escuchar lo que da paz y lo que la quita."
+      ],
+      "en": [
+       "St. Ignatius of Loyola",
+       "He taught discernment: noticing what brings peace and what takes it away."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Santiago 1:5",
+      "James 1:5"
+     ],
+     "v": [
+      "Y si alguno de vosotros tiene falta de sabiduría, demándela á Dios, el cual da á todos abundantemente, y no zahiere; y le será dada.",
+      "If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him."
+     ],
+     "p": [
+      "Dios de la sabiduría, ordena mis pensamientos y dame claridad para elegir bien.",
+      "God of wisdom, put my thoughts in order and give me clarity to choose well."
+     ],
+     "c": {
+      "ini": "T",
+      "es": [
+       "Santo Tomás de Aquino",
+       "El más sabio de su tiempo, y aun así rezaba antes de estudiar."
+      ],
+      "en": [
+       "St. Thomas Aquinas",
+       "The wisest man of his time, and still he prayed before studying."
+      ]
+     },
+     "revision": "borrador"
+    }
+   ]
+  },
+  {
+   "id": "anger",
+   "es": "Enojo",
+   "en": "Anger",
+   "items": [
+    {
+     "ref": [
+      "Efesios 4:26",
+      "Ephesians 4:26"
+     ],
+     "v": [
+      "Airaos, y no pequéis; no se ponga el sol sobre vuestro enojo.",
+      "Be ye angry, and sin not: let not the sun go down upon your wrath."
+     ],
+     "p": [
+      "Jesús, manso y humilde de corazón, calma mi enojo. Ayúdame a hablar con verdad y sin herir.",
+      "Jesus, meek and humble of heart, calm my anger. Help me speak the truth without wounding."
+     ],
+     "c": {
+      "ini": "J",
+      "es": [
+       "San Jerónimo",
+       "Tenía mal genio y lo luchó toda su vida. Mañana es su fiesta."
+      ],
+      "en": [
+       "St. Jerome",
+       "He had a temper and fought it all his life. His feast is tomorrow."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Santiago 1:19",
+      "James 1:19"
+     ],
+     "v": [
+      "Todo hombre sea pronto para oir, tardío para hablar, tardío para airarse.",
+      "Let every man be swift to hear, slow to speak, slow to wrath."
+     ],
+     "p": [
+      "Señor, antes de responder, dame un segundo de silencio contigo.",
+      "Lord, before I answer, give me one second of silence with you."
+     ],
+     "c": {
+      "ini": "F",
+      "es": [
+       "San Francisco de Sales",
+       "Tenía un carácter fuerte y lo trabajó tanto que lo llamaron el santo de la dulzura."
+      ],
+      "en": [
+       "St. Francis de Sales",
+       "He had a strong temper and worked on it so much he became known as the gentle saint."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Proverbios 15:1",
+      "Proverbs 15:1"
+     ],
+     "v": [
+      "La blanda respuesta quita la ira: mas la palabra áspera hace subir el furor.",
+      "A soft answer turneth away wrath: but grievous words stir up anger."
+     ],
+     "p": [
+      "Jesús, pon en mi boca palabras que construyan y no que hieran.",
+      "Jesus, put words in my mouth that build up and do not wound."
+     ],
+     "c": {
+      "ini": "P",
+      "lrn": "pedro",
+      "es": [
+       "San Pedro",
+       "Sacó la espada en el huerto y Jesús lo detuvo. Aprendió otro camino."
+      ],
+      "en": [
+       "St. Peter",
+       "He drew his sword in the garden and Jesus stopped him. He learned another way."
+      ]
+     },
+     "revision": "borrador"
+    }
+   ]
+  },
+  {
+   "id": "joy",
+   "es": "Alegría",
+   "en": "Joy",
+   "items": [
+    {
+     "ref": [
+      "Nehemías 8:10",
+      "Nehemiah 8:10"
+     ],
+     "v": [
+      "El gozo de Jehová es vuestra fuerza.",
+      "The joy of the LORD is your strength."
+     ],
+     "p": [
+      "Señor, que tu alegría sea mi fuerza hoy. Que se note en lo que hago y en cómo trato a los demás.",
+      "Lord, let your joy be my strength today. May it show in what I do and how I treat others."
+     ],
+     "c": {
+      "ini": "F",
+      "es": [
+       "San Francisco de Asís",
+       "Pobre y alegre. Alababa a Dios por el sol, el agua y cada criatura."
+      ],
+      "en": [
+       "St. Francis of Assisi",
+       "Poor and joyful. He praised God for the sun, water and every creature."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Juan 15:11",
+      "John 15:11"
+     ],
+     "v": [
+      "Estas cosas os he hablado, para que mi gozo esté en vosotros, y vuestro gozo sea cumplido.",
+      "These things have I spoken unto you, that my joy might remain in you, and that your joy might be full."
+     ],
+     "p": [
+      "Señor, que mi alegría sea contagiosa y lleve a otros hacia ti.",
+      "Lord, may my joy be contagious and bring others to you."
+     ],
+     "c": {
+      "ini": "J",
+      "es": [
+       "San Juan Bosco",
+       "Educó a miles de jóvenes con juego, música y alegría."
+      ],
+      "en": [
+       "St. John Bosco",
+       "He raised thousands of young people with games, music and joy."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Lucas 1:46-47",
+      "Luke 1:46-47"
+     ],
+     "v": [
+      "Engrandece mi alma al Señor; y mi espíritu se alegró en Dios mi Salvador.",
+      "My soul doth magnify the Lord, and my spirit hath rejoiced in God my Saviour."
+     ],
+     "p": [
+      "Como María, quiero cantar lo que Dios ha hecho en mi vida.",
+      "Like Mary, I want to sing of what God has done in my life."
+     ],
+     "c": {
+      "ini": "M",
+      "es": [
+       "La Virgen María",
+       "Su alegría quedó escrita en el Magníficat."
+      ],
+      "en": [
+       "The Virgin Mary",
+       "Her joy is written in the Magnificat."
+      ]
+     },
+     "revision": "borrador"
+    }
+   ]
+  },
+  {
+   "id": "lonely",
+   "es": "Soledad",
+   "en": "Lonely",
+   "care": 1,
+   "items": [
+    {
+     "ref": [
+      "Deuteronomio 31:8",
+      "Deuteronomy 31:8"
+     ],
+     "v": [
+      "Jehová va delante de ti; él será contigo, no te dejará, ni te desamparará: no temas.",
+      "The LORD, he it is that doth go before thee; he will be with thee, he will not fail thee, neither forsake thee: fear not."
+     ],
+     "p": [
+      "Señor, me siento sola. Hazme sentir tu compañía y ábreme la puerta a personas que me quieran bien.",
+      "Lord, I feel alone. Let me feel your company and open the door to people who wish me well."
+     ],
+     "c": {
+      "ini": "J",
+      "es": [
+       "San Juan de la Cruz",
+       "Encerrado y solo en una celda, escribió sus poemas más bellos sobre Dios."
+      ],
+      "en": [
+       "St. John of the Cross",
+       "Locked alone in a cell, he wrote his most beautiful poems about God."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Mateo 28:20",
+      "Matthew 28:20"
+     ],
+     "v": [
+      "Y he aquí, yo estoy con vosotros todos los días, hasta el fin del mundo.",
+      "And, lo, I am with you alway, even unto the end of the world."
+     ],
+     "p": [
+      "Jesús, tú prometiste estar conmigo todos los días. Hoy te creo esa promesa.",
+      "Jesus, you promised to be with me every day. Today I hold you to that promise."
+     ],
+     "c": {
+      "ini": "D",
+      "es": [
+       "San Damián de Molokai",
+       "Fue a vivir con los enfermos de lepra que todos habían abandonado."
+      ],
+      "en": [
+       "St. Damien of Molokai",
+       "He went to live with the leprosy patients everyone had abandoned."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Salmo 68:6",
+      "Psalm 68:6"
+     ],
+     "v": [
+      "El Dios que hace habitar en familia los solos.",
+      "God setteth the solitary in families."
+     ],
+     "p": [
+      "Señor, regálame una comunidad donde pueda ser yo misma, y hazme compañía para otros.",
+      "Lord, give me a community where I can be myself, and make me company for others."
+     ],
+     "c": {
+      "ini": "A",
+      "lrn": "hurtado",
+      "es": [
+       "San Alberto Hurtado",
+       "Fundó el Hogar de Cristo para que nadie estuviera solo en la calle."
+      ],
+      "en": [
+       "St. Alberto Hurtado",
+       "He founded Hogar de Cristo so that no one would be alone on the street."
+      ]
+     },
+     "revision": "borrador"
+    }
+   ]
+  },
+  {
+   "id": "love",
+   "es": "Amor",
+   "en": "Love",
+   "items": [
+    {
+     "ref": [
+      "1 Juan 4:19",
+      "1 John 4:19"
+     ],
+     "v": [
+      "Nosotros le amamos á él, porque él nos amó primero.",
+      "We love him, because he first loved us."
+     ],
+     "p": [
+      "Dios de amor, enséñame a amar como tú amas: sin condiciones y con obras concretas.",
+      "God of love, teach me to love as you love: without conditions and with concrete deeds."
+     ],
+     "c": {
+      "ini": "T",
+      "nov": "ter",
+      "es": [
+       "Santa Teresita",
+       "\"Mi vocación es el amor.\" Su novena está en curso."
+      ],
+      "en": [
+       "St. Thérèse",
+       "\"My vocation is love.\" Her novena is in progress."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "1 Corintios 13:13",
+      "1 Corinthians 13:13"
+     ],
+     "v": [
+      "Y ahora permanecen la fe, la esperanza, y la caridad, estas tres: empero la mayor de ellas es la caridad.",
+      "And now abideth faith, hope, charity, these three; but the greatest of these is charity."
+     ],
+     "p": [
+      "Señor, que al final del día me preguntes solo cuánto amé, y que pueda responderte.",
+      "Lord, at the end of the day may you ask only how much I loved, and may I be able to answer."
+     ],
+     "c": {
+      "ini": "P",
+      "lrn": "pablo",
+      "es": [
+       "San Pablo",
+       "Escribió el himno al amor más citado de la historia."
+      ],
+      "en": [
+       "St. Paul",
+       "He wrote the most quoted hymn to love in history."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Juan 15:13",
+      "John 15:13"
+     ],
+     "v": [
+      "Nadie tiene mayor amor que este, que ponga alguno su vida por sus amigos.",
+      "Greater love hath no man than this, that a man lay down his life for his friends."
+     ],
+     "p": [
+      "Jesús, enséñame a dar mi tiempo y mi vida por los que me rodean.",
+      "Jesus, teach me to give my time and my life for those around me."
+     ],
+     "c": {
+      "ini": "M",
+      "es": [
+       "San Maximiliano Kolbe",
+       "En Auschwitz ofreció su vida a cambio de la de un padre de familia."
+      ],
+      "en": [
+       "St. Maximilian Kolbe",
+       "At Auschwitz he offered his life in exchange for a father's."
+      ]
+     },
+     "revision": "borrador"
+    }
+   ]
+  },
+  {
+   "id": "forgiveness",
+   "es": "Perdón",
+   "en": "Forgiveness",
+   "items": [
+    {
+     "ref": [
+      "Colosenses 3:13",
+      "Colossians 3:13"
+     ],
+     "v": [
+      "De la manera que Cristo os perdonó, así también hacedlo vosotros.",
+      "Even as Christ forgave you, so also do ye."
+     ],
+     "p": [
+      "Señor, perdóname y dame un corazón capaz de perdonar. Sana lo que está roto entre nosotros.",
+      "Lord, forgive me and give me a heart able to forgive. Heal what is broken between us."
+     ],
+     "c": {
+      "ini": "J",
+      "es": [
+       "San Juan Pablo II",
+       "Visitó en la cárcel al hombre que le disparó, y lo perdonó."
+      ],
+      "en": [
+       "St. John Paul II",
+       "He visited the man who shot him in prison, and forgave him."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Lucas 23:34",
+      "Luke 23:34"
+     ],
+     "v": [
+      "Y Jesús decía: Padre, perdónalos, porque no saben lo que hacen.",
+      "Then said Jesus, Father, forgive them; for they know not what they do."
+     ],
+     "p": [
+      "Jesús, desde la cruz perdonaste. Dame un poco de ese corazón para perdonar hoy.",
+      "Jesus, you forgave from the cross. Give me a little of that heart to forgive today."
+     ],
+     "c": {
+      "ini": "E",
+      "es": [
+       "San Esteban",
+       "El primer mártir murió perdonando a quienes lo apedreaban."
+      ],
+      "en": [
+       "St. Stephen",
+       "The first martyr died forgiving those who stoned him."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Salmo 103:12",
+      "Psalm 103:12"
+     ],
+     "v": [
+      "Cuanto está lejos el oriente del occidente, hizo alejar de nosotros nuestras rebeliones.",
+      "As far as the east is from the west, so far hath he removed our transgressions from us."
+     ],
+     "p": [
+      "Padre, gracias porque tu perdón es más grande que mis errores. Ayúdame a perdonarme también.",
+      "Father, thank you that your forgiveness is bigger than my mistakes. Help me forgive myself too."
+     ],
+     "c": {
+      "ini": "A",
+      "es": [
+       "San Agustín",
+       "Vivió años lejos de Dios y escribió: \"Tarde te amé\"."
+      ],
+      "en": [
+       "St. Augustine",
+       "He lived for years far from God and wrote: \"Late have I loved you.\""
+      ]
+     },
+     "revision": "borrador"
+    }
+   ]
+  },
+  {
+   "id": "gratitude",
+   "es": "Gratitud",
+   "en": "Gratitude",
+   "items": [
+    {
+     "ref": [
+      "1 Tesalonicenses 5:18",
+      "1 Thessalonians 5:18"
+     ],
+     "v": [
+      "Dad gracias en todo; porque esta es la voluntad de Dios para con vosotros en Cristo Jesús.",
+      "In every thing give thanks: for this is the will of God in Christ Jesus concerning you."
+     ],
+     "p": [
+      "Gracias, Señor, por lo que tengo, por quienes me acompañan y por lo que aún no veo.",
+      "Thank you, Lord, for what I have, for those who walk with me and for what I do not yet see."
+     ],
+     "c": {
+      "ini": "I",
+      "es": [
+       "San Ignacio de Loyola",
+       "Enseñó a terminar cada día dando gracias por lo vivido."
+      ],
+      "en": [
+       "St. Ignatius of Loyola",
+       "He taught us to end each day giving thanks for what we lived."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Salmo 136:1",
+      "Psalm 136:1"
+     ],
+     "v": [
+      "Alabad á Jehová, porque es bueno; porque para siempre es su misericordia.",
+      "O give thanks unto the LORD; for he is good: for his mercy endureth for ever."
+     ],
+     "p": [
+      "Señor, hoy quiero nombrar tres regalos tuyos y darte gracias por cada uno.",
+      "Lord, today I want to name three of your gifts and thank you for each one."
+     ],
+     "c": {
+      "ini": "F",
+      "es": [
+       "San Francisco de Asís",
+       "Daba gracias por el sol, el agua y hasta por la hermana muerte."
+      ],
+      "en": [
+       "St. Francis of Assisi",
+       "He gave thanks for the sun, for water and even for sister death."
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Lucas 17:15",
+      "Luke 17:15"
+     ],
+     "v": [
+      "Y uno de ellos, como se vió que estaba limpio, volvió, glorificando á Dios á gran voz.",
+      "And one of them, when he saw that he was healed, turned back, and with a loud voice glorified God."
+     ],
+     "p": [
+      "Jesús, quiero ser como el leproso que volvió a darte gracias. No dejes que lo olvide.",
+      "Jesus, I want to be like the leper who came back to thank you. Do not let me forget."
+     ],
+     "c": {
+      "ini": "I",
+      "es": [
+       "San Ignacio de Loyola",
+       "Enseñaba a pedir \"conocimiento interno de tanto bien recibido\"."
+      ],
+      "en": [
+       "St. Ignatius of Loyola",
+       "He taught people to ask for \"an inner knowledge of all the good received.\""
+      ]
+     },
+     "revision": "borrador"
+    }
+   ]
+  }
+ ],
+ "lecturas": [
+  {
+   "id": "pablo",
+   "ini": "P",
+   "lit": "red",
+   "mins": 6,
+   "pass": 4,
+   "traits": [
+    "light",
+    "book",
+    "sword"
+   ],
+   "es": {
+    "name": "San Pablo",
+    "sub": "Apóstol de los gentiles",
+    "ring": "SAN PABLO · APÓSTOL",
+    "secs": [
+     {
+      "h": "Saulo de Tarso",
+      "ps": [
+       "Nació en Tarso, en la actual Turquía, en una familia judía. Tenía además la ciudadanía romana, algo poco común en su tiempo.",
+       "Se formó en Jerusalén con el maestro Gamaliel y fue un fariseo muy estricto. Para ganarse la vida fabricaba tiendas de campaña.",
+       "Al principio persiguió a los cristianos con fuerza. Estuvo presente cuando apedrearon a Esteban, el primer mártir."
+      ]
+     },
+     {
+      "h": "El camino a Damasco",
+      "trait": "light",
+      "ps": [
+       "Iba a Damasco a arrestar a más cristianos cuando una luz del cielo lo rodeó y cayó al suelo. Escuchó una voz que le decía:"
+      ],
+      "q": [
+       "Saulo, Saulo, ¿por qué me persigues?",
+       "Hechos 9:4"
+      ],
+      "ps2": [
+       "Era Jesús. Saulo quedó ciego tres días, hasta que un cristiano llamado Ananías le impuso las manos. Recuperó la vista y fue bautizado."
+      ]
+     },
+     {
+      "h": "Apóstol de los gentiles",
+      "ps": [
+       "Desde entonces dedicó su vida a anunciar a Jesús, sobre todo a quienes no eran judíos: los gentiles.",
+       "Hizo largos viajes misioneros por Asia Menor y Grecia, y fundó comunidades en ciudades como Corinto, Éfeso y Filipos. Sufrió cárceles, azotes y hasta un naufragio frente a la isla de Malta."
+      ]
+     },
+     {
+      "h": "Las cartas",
+      "trait": "book",
+      "ps": [
+       "A las comunidades que fundaba les escribía cartas para animarlas y corregirlas. El Nuevo Testamento recoge trece cartas que llevan su nombre, como Romanos, Corintios y Gálatas.",
+       "Una de las más conocidas habla del amor:"
+      ],
+      "q": [
+       "La caridad es sufrida, es benigna; la caridad no tiene envidia.",
+       "1 Corintios 13:4"
+      ]
+     },
+     {
+      "h": "Hasta el final",
+      "trait": "sword",
+      "ps": [
+       "Pablo fue llevado preso a Roma. Según la tradición, murió mártir allí durante la persecución del emperador Nerón. Como era ciudadano romano no lo crucificaron: lo decapitaron con una espada.",
+       "Por eso se le pinta con una espada y un libro: la espada de su martirio y el libro de sus cartas."
+      ],
+      "q": [
+       "He peleado la buena batalla, he acabado la carrera, he guardado la fe.",
+       "2 Timoteo 4:7"
+      ],
+      "ps2": [
+       "La Iglesia lo celebra el 29 de junio junto a San Pedro, y recuerda su conversión cada 25 de enero."
+      ]
+     }
+    ],
+    "quiz": [
+     {
+      "q": "¿Cómo se llamaba Pablo antes de su conversión?",
+      "o": [
+       "Saulo",
+       "Simón",
+       "Esteban",
+       "Bernabé"
+      ],
+      "a": 0,
+      "e": "Saulo era su nombre hebreo. Pablo es el nombre romano con que lo conocemos (Hechos 13:9)."
+     },
+     {
+      "q": "¿Hacia qué ciudad iba cuando se le apareció Jesús?",
+      "o": [
+       "Jerusalén",
+       "Damasco",
+       "Roma",
+       "Antioquía"
+      ],
+      "a": 1,
+      "e": "Iba a Damasco a arrestar cristianos (Hechos 9)."
+     },
+     {
+      "q": "¿Cuál era su oficio?",
+      "o": [
+       "Pescador",
+       "Carpintero",
+       "Fabricante de tiendas",
+       "Recaudador de impuestos"
+      ],
+      "a": 2,
+      "e": "Fabricaba tiendas de campaña (Hechos 18:3)."
+     },
+     {
+      "q": "¿Cuántas cartas del Nuevo Testamento llevan su nombre?",
+      "o": [
+       "4",
+       "7",
+       "13",
+       "21"
+      ],
+      "a": 2,
+      "e": "Son trece, desde Romanos hasta Filemón."
+     },
+     {
+      "q": "¿Por qué se le representa con una espada?",
+      "o": [
+       "Fue soldado romano",
+       "Murió decapitado en Roma",
+       "Defendió a Pedro con ella",
+       "Venció a un dragón"
+      ],
+      "a": 1,
+      "e": "Como ciudadano romano, fue decapitado con espada."
+     }
+    ]
+   },
+   "en": {
+    "name": "St. Paul",
+    "sub": "Apostle to the Gentiles",
+    "ring": "ST. PAUL · APOSTLE",
+    "secs": [
+     {
+      "h": "Saul of Tarsus",
+      "ps": [
+       "He was born in Tarsus, in today's Turkey, into a Jewish family. He was also a Roman citizen, which was rare at the time.",
+       "He trained in Jerusalem under the teacher Gamaliel and became a very strict Pharisee. He earned his living making tents.",
+       "At first he fiercely persecuted Christians. He was there when Stephen, the first martyr, was stoned."
+      ]
+     },
+     {
+      "h": "The road to Damascus",
+      "trait": "light",
+      "ps": [
+       "He was on his way to Damascus to arrest more Christians when a light from heaven surrounded him and he fell to the ground. He heard a voice saying:"
+      ],
+      "q": [
+       "Saul, Saul, why persecutest thou me?",
+       "Acts 9:4"
+      ],
+      "ps2": [
+       "It was Jesus. Saul was blind for three days, until a Christian named Ananias laid hands on him. He regained his sight and was baptized."
+      ]
+     },
+     {
+      "h": "Apostle to the Gentiles",
+      "ps": [
+       "From then on he gave his life to proclaiming Jesus, above all to those who were not Jewish: the Gentiles.",
+       "He made long missionary journeys through Asia Minor and Greece and founded communities in cities like Corinth, Ephesus and Philippi. He suffered prison, beatings and even a shipwreck off the island of Malta."
+      ]
+     },
+     {
+      "h": "The letters",
+      "trait": "book",
+      "ps": [
+       "He wrote letters to the communities he founded, to encourage and correct them. The New Testament contains thirteen letters bearing his name, such as Romans, Corinthians and Galatians.",
+       "One of the best known speaks about love:"
+      ],
+      "q": [
+       "Charity suffereth long, and is kind; charity envieth not.",
+       "1 Corinthians 13:4"
+      ]
+     },
+     {
+      "h": "To the end",
+      "trait": "sword",
+      "ps": [
+       "Paul was taken to Rome as a prisoner. According to tradition he died a martyr there during the persecution of Emperor Nero. As a Roman citizen he was not crucified: he was beheaded with a sword.",
+       "That is why he is painted with a sword and a book: the sword of his martyrdom and the book of his letters."
+      ],
+      "q": [
+       "I have fought a good fight, I have finished my course, I have kept the faith.",
+       "2 Timothy 4:7"
+      ],
+      "ps2": [
+       "The Church celebrates him on June 29 together with St. Peter, and remembers his conversion every January 25."
+      ]
+     }
+    ],
+    "quiz": [
+     {
+      "q": "What was Paul's name before his conversion?",
+      "o": [
+       "Saul",
+       "Simon",
+       "Stephen",
+       "Barnabas"
+      ],
+      "a": 0,
+      "e": "Saul was his Hebrew name. Paul is the Roman name we know him by (Acts 13:9)."
+     },
+     {
+      "q": "Which city was he travelling to when Jesus appeared to him?",
+      "o": [
+       "Jerusalem",
+       "Damascus",
+       "Rome",
+       "Antioch"
+      ],
+      "a": 1,
+      "e": "He was going to Damascus to arrest Christians (Acts 9)."
+     },
+     {
+      "q": "What was his trade?",
+      "o": [
+       "Fisherman",
+       "Carpenter",
+       "Tentmaker",
+       "Tax collector"
+      ],
+      "a": 2,
+      "e": "He made tents (Acts 18:3)."
+     },
+     {
+      "q": "How many New Testament letters bear his name?",
+      "o": [
+       "4",
+       "7",
+       "13",
+       "21"
+      ],
+      "a": 2,
+      "e": "Thirteen, from Romans to Philemon."
+     },
+     {
+      "q": "Why is he shown with a sword?",
+      "o": [
+       "He was a Roman soldier",
+       "He was beheaded in Rome",
+       "He defended Peter with it",
+       "He slew a dragon"
+      ],
+      "a": 1,
+      "e": "As a Roman citizen, he was beheaded by the sword."
+     }
+    ]
+   },
+   "fuentes": [
+    "Hechos 7–9, 13–28 (Reina-Valera 1909)",
+    "2 Timoteo 4:6-8",
+    "https://www.newadvent.org/cathen/11567b.htm"
+   ],
+   "revision": "borrador"
+  },
+  {
+   "id": "pedro",
+   "ini": "P",
+   "lit": "red",
+   "mins": 6,
+   "pass": 4,
+   "traits": [
+    "keys",
+    "boat",
+    "rooster"
+   ],
+   "es": {
+    "name": "San Pedro",
+    "sub": "Príncipe de los apóstoles",
+    "ring": "SAN PEDRO · APÓSTOL",
+    "secs": [
+     {
+      "h": "El pescador de Galilea",
+      "trait": "boat",
+      "ps": [
+       "Se llamaba Simón y era pescador en el mar de Galilea, igual que su hermano Andrés. Vivía en Cafarnaúm, un pueblo a orillas del lago.",
+       "Un día Jesús pasó junto a su barca y les dijo:"
+      ],
+      "q": [
+       "Venid en pos de mí, y os haré pescadores de hombres.",
+       "Mateo 4:19"
+      ],
+      "ps2": [
+       "Dejaron las redes y lo siguieron."
+      ]
+     },
+     {
+      "h": "Tú eres Pedro",
+      "trait": "keys",
+      "ps": [
+       "Jesús preguntó a sus discípulos quién decían que era Él. Simón respondió: \"Tú eres el Cristo, el Hijo del Dios viviente\".",
+       "Entonces Jesús le cambió el nombre. Pedro significa piedra:"
+      ],
+      "q": [
+       "Tú eres Pedro, y sobre esta piedra edificaré mi iglesia.",
+       "Mateo 16:18"
+      ],
+      "ps2": [
+       "Y le prometió las llaves del reino de los cielos. Por eso se le pinta con dos llaves."
+      ]
+     },
+     {
+      "h": "Caminar sobre el agua",
+      "ps": [
+       "Una noche de tormenta, Jesús se acercó a la barca caminando sobre el lago. Pedro le pidió ir hacia Él y bajó al agua.",
+       "Mientras miraba a Jesús, caminaba. Cuando miró el viento, tuvo miedo y empezó a hundirse. Gritó \"¡Señor, sálvame!\" y Jesús le tomó la mano."
+      ]
+     },
+     {
+      "h": "Antes de que cante el gallo",
+      "trait": "rooster",
+      "ps": [
+       "En la última cena, Pedro prometió que nunca abandonaría a Jesús. Jesús le respondió que esa misma noche lo negaría tres veces antes de que cantara el gallo.",
+       "Así pasó. Cuando el gallo cantó, Pedro recordó sus palabras, salió y lloró amargamente."
+      ]
+     },
+     {
+      "h": "Apacienta mis ovejas",
+      "ps": [
+       "Después de resucitar, Jesús le preguntó tres veces: \"¿Me amas?\". Tres veces, una por cada negación. Pedro respondió que sí, y Jesús le confió a su Iglesia:"
+      ],
+      "q": [
+       "Apacienta mis ovejas.",
+       "Juan 21:17"
+      ],
+      "ps2": [
+       "Pedro guió a los primeros cristianos y es considerado el primer Papa. Según la tradición murió crucificado en Roma, cabeza abajo, porque no se sentía digno de morir igual que Jesús. La Basílica de San Pedro se levanta sobre su tumba. Se celebra el 29 de junio."
+      ]
+     }
+    ],
+    "quiz": [
+     {
+      "q": "¿Cuál era el oficio de Pedro?",
+      "o": [
+       "Pescador",
+       "Carpintero",
+       "Fabricante de tiendas",
+       "Pastor"
+      ],
+      "a": 0,
+      "e": "Era pescador en el mar de Galilea (Mateo 4:18)."
+     },
+     {
+      "q": "¿Qué significa el nombre Pedro?",
+      "o": [
+       "Pescador",
+       "Piedra",
+       "Llave",
+       "Fiel"
+      ],
+      "a": 1,
+      "e": "Pedro viene de piedra. En arameo, Cefas (Juan 1:42)."
+     },
+     {
+      "q": "¿Qué le prometió Jesús?",
+      "o": [
+       "Una espada",
+       "Un trono en Jerusalén",
+       "Las llaves del reino de los cielos",
+       "Una barca nueva"
+      ],
+      "a": 2,
+      "e": "\"Y a ti daré las llaves del reino de los cielos\" (Mateo 16:19)."
+     },
+     {
+      "q": "¿Cuántas veces negó a Jesús?",
+      "o": [
+       "Una",
+       "Dos",
+       "Tres",
+       "Siete"
+      ],
+      "a": 2,
+      "e": "Tres veces, antes de que cantara el gallo (Lucas 22:61)."
+     },
+     {
+      "q": "Según la tradición, ¿cómo fue crucificado?",
+      "o": [
+       "Cabeza abajo",
+       "En una cruz en forma de X",
+       "Igual que Jesús",
+       "No fue crucificado"
+      ],
+      "a": 0,
+      "e": "Pidió morir cabeza abajo. La cruz en forma de X es la de su hermano Andrés."
+     }
+    ]
+   },
+   "en": {
+    "name": "St. Peter",
+    "sub": "Prince of the Apostles",
+    "ring": "ST. PETER · APOSTLE",
+    "secs": [
+     {
+      "h": "The fisherman of Galilee",
+      "trait": "boat",
+      "ps": [
+       "His name was Simon and he was a fisherman on the Sea of Galilee, like his brother Andrew. He lived in Capernaum, a town on the shore of the lake.",
+       "One day Jesus walked by his boat and said to them:"
+      ],
+      "q": [
+       "Follow me, and I will make you fishers of men.",
+       "Matthew 4:19"
+      ],
+      "ps2": [
+       "They left their nets and followed him."
+      ]
+     },
+     {
+      "h": "You are Peter",
+      "trait": "keys",
+      "ps": [
+       "Jesus asked his disciples who they said he was. Simon answered: \"Thou art the Christ, the Son of the living God.\"",
+       "Then Jesus changed his name. Peter means rock:"
+      ],
+      "q": [
+       "Thou art Peter, and upon this rock I will build my church.",
+       "Matthew 16:18"
+      ],
+      "ps2": [
+       "And he promised him the keys of the kingdom of heaven. That is why he is painted holding two keys."
+      ]
+     },
+     {
+      "h": "Walking on water",
+      "ps": [
+       "One stormy night Jesus came toward the boat walking on the lake. Peter asked to come to him and stepped into the water.",
+       "While he looked at Jesus, he walked. When he looked at the wind, he was afraid and began to sink. He cried \"Lord, save me!\" and Jesus took his hand."
+      ]
+     },
+     {
+      "h": "Before the rooster crows",
+      "trait": "rooster",
+      "ps": [
+       "At the Last Supper Peter promised he would never abandon Jesus. Jesus answered that that very night he would deny him three times before the rooster crowed.",
+       "And so it happened. When the rooster crowed, Peter remembered his words, went out and wept bitterly."
+      ]
+     },
+     {
+      "h": "Feed my sheep",
+      "ps": [
+       "After rising from the dead, Jesus asked him three times: \"Do you love me?\" Three times, one for each denial. Peter said yes, and Jesus entrusted his Church to him:"
+      ],
+      "q": [
+       "Feed my sheep.",
+       "John 21:17"
+      ],
+      "ps2": [
+       "Peter led the first Christians and is considered the first Pope. According to tradition he was crucified in Rome upside down, because he did not feel worthy to die like Jesus. St. Peter's Basilica stands over his tomb. His feast is June 29."
+      ]
+     }
+    ],
+    "quiz": [
+     {
+      "q": "What was Peter's trade?",
+      "o": [
+       "Fisherman",
+       "Carpenter",
+       "Tentmaker",
+       "Shepherd"
+      ],
+      "a": 0,
+      "e": "He was a fisherman on the Sea of Galilee (Matthew 4:18)."
+     },
+     {
+      "q": "What does the name Peter mean?",
+      "o": [
+       "Fisherman",
+       "Rock",
+       "Key",
+       "Faithful"
+      ],
+      "a": 1,
+      "e": "Peter comes from rock. In Aramaic, Cephas (John 1:42)."
+     },
+     {
+      "q": "What did Jesus promise him?",
+      "o": [
+       "A sword",
+       "A throne in Jerusalem",
+       "The keys of the kingdom of heaven",
+       "A new boat"
+      ],
+      "a": 2,
+      "e": "\"I will give unto thee the keys of the kingdom of heaven\" (Matthew 16:19)."
+     },
+     {
+      "q": "How many times did he deny Jesus?",
+      "o": [
+       "Once",
+       "Twice",
+       "Three times",
+       "Seven times"
+      ],
+      "a": 2,
+      "e": "Three times, before the rooster crowed (Luke 22:61)."
+     },
+     {
+      "q": "According to tradition, how was he crucified?",
+      "o": [
+       "Upside down",
+       "On an X-shaped cross",
+       "Just like Jesus",
+       "He was not crucified"
+      ],
+      "a": 0,
+      "e": "He asked to die upside down. The X-shaped cross belongs to his brother Andrew."
+     }
+    ]
+   },
+   "fuentes": [
+    "Mateo 4, 14, 16; Lucas 22; Juan 21 (Reina-Valera 1909)",
+    "https://www.newadvent.org/cathen/11744a.htm"
+   ],
+   "revision": "borrador"
+  },
+  {
+   "id": "teresa",
+   "ini": "T",
+   "lit": "white",
+   "mins": 5,
+   "pass": 4,
+   "traits": [
+    "mount",
+    "pen",
+    "cross"
+   ],
+   "es": {
+    "name": "Santa Teresa de los Andes",
+    "sub": "Primera santa de Chile",
+    "ring": "SANTA TERESA DE LOS ANDES",
+    "secs": [
+     {
+      "h": "Juanita",
+      "ps": [
+       "Juana Fernández Solar nació en Santiago el 13 de julio de 1900. En su casa le decían Juanita.",
+       "Era una joven alegre y llena de energía: le encantaba andar a caballo, nadar y estar con sus hermanos y amigas. Desde chica sintió un amor muy grande por Jesús."
+      ]
+     },
+     {
+      "h": "Un diario y muchas cartas",
+      "trait": "pen",
+      "ps": [
+       "Siendo adolescente empezó a escribir un diario y muchas cartas. En ellas contaba, con palabras sencillas, su amistad con Jesús y sus ganas de entregarle la vida.",
+       "Una frase suya resume lo que vivía:"
+      ],
+      "q": [
+       "Dios es alegría infinita.",
+       "Santa Teresa de los Andes"
+      ]
+     },
+     {
+      "h": "Al Carmelo de Los Andes",
+      "trait": "mount",
+      "ps": [
+       "El 7 de mayo de 1919 entró al convento de las Carmelitas Descalzas en la ciudad de Los Andes, a los pies de la cordillera. Allí recibió el nombre de Teresa de Jesús.",
+       "Vivía en silencio y oración, pero sus cartas seguían animando a su familia y amigas."
+      ]
+     },
+     {
+      "h": "Diecinueve años",
+      "trait": "cross",
+      "ps": [
+       "A los pocos meses enfermó gravemente, probablemente de tifus. Alcanzó a hacer sus votos religiosos días antes de morir.",
+       "Murió el 12 de abril de 1920. Tenía 19 años."
+      ]
+     },
+     {
+      "h": "La primera santa chilena",
+      "ps": [
+       "El papa Juan Pablo II la beatificó en Santiago en 1987 y la canonizó en Roma el 21 de marzo de 1993. Fue la primera santa de Chile y la primera carmelita descalza santa nacida fuera de Europa.",
+       "Hoy su santuario en Auco, cerca de Los Andes, recibe miles de peregrinos cada año, muchos de ellos jóvenes que llegan a pie. En Chile se celebra el 13 de julio."
+      ]
+     }
+    ],
+    "quiz": [
+     {
+      "q": "¿Cuál era su nombre antes de entrar al convento?",
+      "o": [
+       "Laura Vicuña",
+       "Juana Fernández Solar",
+       "Rosa Flores",
+       "Teresa Sánchez de Cepeda"
+      ],
+      "a": 1,
+      "e": "Juana Fernández Solar. En su casa le decían Juanita."
+     },
+     {
+      "q": "¿En qué ciudad estaba el Carmelo al que entró?",
+      "o": [
+       "Valparaíso",
+       "La Serena",
+       "Los Andes",
+       "Concepción"
+      ],
+      "a": 2,
+      "e": "En Los Andes, a los pies de la cordillera. De ahí su nombre."
+     },
+     {
+      "q": "¿A qué edad murió?",
+      "o": [
+       "15",
+       "19",
+       "24",
+       "33"
+      ],
+      "a": 1,
+      "e": "Murió el 12 de abril de 1920, con 19 años."
+     },
+     {
+      "q": "¿Qué la hace especial para Chile?",
+      "o": [
+       "Fue la primera santa chilena",
+       "Fundó el Hogar de Cristo",
+       "Escribió el himno nacional",
+       "Fue la primera enfermera"
+      ],
+      "a": 0,
+      "e": "Fue canonizada en 1993: la primera santa de Chile. El Hogar de Cristo lo fundó San Alberto Hurtado."
+     },
+     {
+      "q": "¿Qué escribía?",
+      "o": [
+       "Novelas",
+       "Un diario y cartas",
+       "Canciones",
+       "Poemas para el diario"
+      ],
+      "a": 1,
+      "e": "Su diario y sus cartas se leen hoy en todo el mundo."
+     }
+    ]
+   },
+   "en": {
+    "name": "St. Teresa of the Andes",
+    "sub": "Chile's first saint",
+    "ring": "ST. TERESA OF THE ANDES",
+    "secs": [
+     {
+      "h": "Juanita",
+      "ps": [
+       "Juana Fernández Solar was born in Santiago, Chile, on July 13, 1900. At home they called her Juanita.",
+       "She was a cheerful girl full of energy: she loved riding horses, swimming and being with her brothers, sisters and friends. From a young age she felt a great love for Jesus."
+      ]
+     },
+     {
+      "h": "A diary and many letters",
+      "trait": "pen",
+      "ps": [
+       "As a teenager she began to write a diary and many letters. In them she told, in simple words, about her friendship with Jesus and her wish to give him her life.",
+       "One of her sentences sums up what she lived:"
+      ],
+      "q": [
+       "God is infinite joy.",
+       "St. Teresa of the Andes"
+      ]
+     },
+     {
+      "h": "To the Carmel of Los Andes",
+      "trait": "mount",
+      "ps": [
+       "On May 7, 1919 she entered the convent of the Discalced Carmelites in the town of Los Andes, at the foot of the mountains. There she received the name Teresa of Jesus.",
+       "She lived in silence and prayer, but her letters kept encouraging her family and friends."
+      ]
+     },
+     {
+      "h": "Nineteen years",
+      "trait": "cross",
+      "ps": [
+       "A few months later she fell seriously ill, probably with typhus. She was able to make her religious vows days before she died.",
+       "She died on April 12, 1920. She was 19."
+      ]
+     },
+     {
+      "h": "Chile's first saint",
+      "ps": [
+       "Pope John Paul II beatified her in Santiago in 1987 and canonized her in Rome on March 21, 1993. She was Chile's first saint and the first Discalced Carmelite saint born outside Europe.",
+       "Today her shrine at Auco, near Los Andes, welcomes thousands of pilgrims every year, many of them young people who arrive on foot. Chile celebrates her on July 13."
+      ]
+     }
+    ],
+    "quiz": [
+     {
+      "q": "What was her name before she entered the convent?",
+      "o": [
+       "Laura Vicuña",
+       "Juana Fernández Solar",
+       "Rosa Flores",
+       "Teresa Sánchez de Cepeda"
+      ],
+      "a": 1,
+      "e": "Juana Fernández Solar. At home they called her Juanita."
+     },
+     {
+      "q": "In which town was the Carmel she entered?",
+      "o": [
+       "Valparaíso",
+       "La Serena",
+       "Los Andes",
+       "Concepción"
+      ],
+      "a": 2,
+      "e": "In Los Andes, at the foot of the mountains. Hence her name."
+     },
+     {
+      "q": "How old was she when she died?",
+      "o": [
+       "15",
+       "19",
+       "24",
+       "33"
+      ],
+      "a": 1,
+      "e": "She died on April 12, 1920, at 19."
+     },
+     {
+      "q": "What makes her special for Chile?",
+      "o": [
+       "She was Chile's first saint",
+       "She founded Hogar de Cristo",
+       "She wrote the national anthem",
+       "She was the first nurse"
+      ],
+      "a": 0,
+      "e": "Canonized in 1993, she was Chile's first saint. Hogar de Cristo was founded by St. Alberto Hurtado."
+     },
+     {
+      "q": "What did she write?",
+      "o": [
+       "Novels",
+       "A diary and letters",
+       "Songs",
+       "Newspaper poems"
+      ],
+      "a": 1,
+      "e": "Her diary and letters are read all over the world today."
+     }
+    ]
+   },
+   "fuentes": [
+    "https://en.wikipedia.org/wiki/Teresa_of_the_Andes",
+    "https://www.ewtn.com/es/catolicismo/santos/teresa-de-los-andes-15091"
+   ],
+   "revision": "borrador"
+  },
+  {
+   "id": "hurtado",
+   "ini": "A",
+   "lit": "white",
+   "mins": 6,
+   "pass": 4,
+   "traits": [
+    "home",
+    "truck",
+    "heart"
+   ],
+   "es": {
+    "name": "San Alberto Hurtado",
+    "sub": "Apóstol de los pobres",
+    "ring": "SAN ALBERTO HURTADO",
+    "secs": [
+     {
+      "h": "Un niño de Viña del Mar",
+      "ps": [
+       "Alberto Hurtado nació en Viña del Mar el 22 de enero de 1901. Cuando tenía cuatro años murió su papá, y su familia quedó con muy pocos recursos.",
+       "Gracias a una beca estudió en el Colegio San Ignacio, de los jesuitas, en Santiago. Ahí empezó a visitar a los pobres de los barrios más humildes."
+      ]
+     },
+     {
+      "h": "Abogado y jesuita",
+      "ps": [
+       "Estudió Derecho en la Universidad Católica y escribió su tesis sobre el trabajo de los obreros. En 1923 entró a la Compañía de Jesús.",
+       "Estudió en Argentina, España y Bélgica, y fue ordenado sacerdote en Lovaina en 1933. Volvió a Chile a enseñar y a acompañar a los jóvenes."
+      ]
+     },
+     {
+      "h": "El Hogar de Cristo",
+      "trait": "home",
+      "ps": [
+       "Una noche de 1944 encontró en la calle a un hombre enfermo, temblando de frío. Pocos días después, en un retiro, contó esa historia y pidió ayuda. Así nació el Hogar de Cristo, para dar techo, comida y cariño a quienes vivían en la calle.",
+       "Él lo explicaba así:"
+      ],
+      "q": [
+       "Cada pobre, cada vago, cada mendigo es Cristo que carga su cruz.",
+       "San Alberto Hurtado"
+      ]
+     },
+     {
+      "h": "La camioneta verde",
+      "trait": "truck",
+      "ps": [
+       "Compró una camioneta verde y salía de noche a recorrer Santiago buscando niños y personas que dormían bajo los puentes, para llevarlos al Hogar.",
+       "Además fundó la Acción Sindical Chilena para defender a los trabajadores, y la revista Mensaje."
+      ]
+     },
+     {
+      "h": "Contento, Señor, contento",
+      "trait": "heart",
+      "ps": [
+       "En 1952 se enfermó de cáncer. Sufrió mucho, pero repetía una frase que se hizo famosa: \"Contento, Señor, contento\".",
+       "Murió el 18 de agosto de 1952, a los 51 años. El papa Benedicto XVI lo canonizó el 23 de octubre de 2005. En su honor, agosto es en Chile el Mes de la Solidaridad."
+      ]
+     }
+    ],
+    "quiz": [
+     {
+      "q": "¿Qué obra fundó en 1944?",
+      "o": [
+       "La Teletón",
+       "El Hogar de Cristo",
+       "La Cruz Roja",
+       "Un techo para Chile"
+      ],
+      "a": 1,
+      "e": "El Hogar de Cristo, para acoger a quienes vivían en la calle."
+     },
+     {
+      "q": "¿Qué estudió antes de ser sacerdote?",
+      "o": [
+       "Medicina",
+       "Ingeniería",
+       "Derecho",
+       "Arquitectura"
+      ],
+      "a": 2,
+      "e": "Derecho, en la Universidad Católica. Su tesis fue sobre el trabajo de los obreros."
+     },
+     {
+      "q": "¿En qué recorría Santiago de noche?",
+      "o": [
+       "Una camioneta verde",
+       "Una bicicleta",
+       "Un caballo",
+       "Un tranvía"
+      ],
+      "a": 0,
+      "e": "En su famosa camioneta verde, buscando a quienes dormían en la calle."
+     },
+     {
+      "q": "¿Qué repetía durante su enfermedad?",
+      "o": [
+       "Hágase tu voluntad",
+       "Todo por Jesús",
+       "Contento, Señor, contento",
+       "Paz y bien"
+      ],
+      "a": 2,
+      "e": "\"Contento, Señor, contento.\""
+     },
+     {
+      "q": "¿Qué mes se dedica en Chile a la solidaridad en su honor?",
+      "o": [
+       "Marzo",
+       "Mayo",
+       "Agosto",
+       "Diciembre"
+      ],
+      "a": 2,
+      "e": "Agosto, el mes en que murió."
+     }
+    ]
+   },
+   "en": {
+    "name": "St. Alberto Hurtado",
+    "sub": "Apostle of the poor",
+    "ring": "ST. ALBERTO HURTADO",
+    "secs": [
+     {
+      "h": "A boy from Viña del Mar",
+      "ps": [
+       "Alberto Hurtado was born in Viña del Mar, Chile, on January 22, 1901. When he was four his father died, and his family was left with very little.",
+       "Thanks to a scholarship he studied at the Jesuit San Ignacio school in Santiago. There he began visiting the poor in the humblest neighbourhoods."
+      ]
+     },
+     {
+      "h": "Lawyer and Jesuit",
+      "ps": [
+       "He studied law at the Catholic University and wrote his thesis on workers' labour. In 1923 he joined the Society of Jesus.",
+       "He studied in Argentina, Spain and Belgium, and was ordained a priest in Louvain in 1933. He returned to Chile to teach and accompany young people."
+      ]
+     },
+     {
+      "h": "Hogar de Cristo",
+      "trait": "home",
+      "ps": [
+       "One night in 1944 he found a sick man on the street, shivering with cold. A few days later, at a retreat, he told that story and asked for help. That is how Hogar de Cristo was born, to give shelter, food and affection to those living on the street.",
+       "He explained it like this:"
+      ],
+      "q": [
+       "Every poor man, every vagrant, every beggar is Christ carrying his cross.",
+       "St. Alberto Hurtado"
+      ]
+     },
+     {
+      "h": "The green truck",
+      "trait": "truck",
+      "ps": [
+       "He bought a green pickup truck and went out at night across Santiago looking for children and people sleeping under bridges, to bring them to the Hogar.",
+       "He also founded the Chilean Trade Union Action to defend workers, and the magazine Mensaje."
+      ]
+     },
+     {
+      "h": "Content, Lord, content",
+      "trait": "heart",
+      "ps": [
+       "In 1952 he fell ill with cancer. He suffered a great deal, but kept repeating a phrase that became famous: \"Content, Lord, content.\"",
+       "He died on August 18, 1952, at 51. Pope Benedict XVI canonized him on October 23, 2005. In his honour, August is Solidarity Month in Chile."
+      ]
+     }
+    ],
+    "quiz": [
+     {
+      "q": "What did he found in 1944?",
+      "o": [
+       "The Telethon",
+       "Hogar de Cristo",
+       "The Red Cross",
+       "A roof for Chile"
+      ],
+      "a": 1,
+      "e": "Hogar de Cristo, to take in people living on the street."
+     },
+     {
+      "q": "What did he study before becoming a priest?",
+      "o": [
+       "Medicine",
+       "Engineering",
+       "Law",
+       "Architecture"
+      ],
+      "a": 2,
+      "e": "Law, at the Catholic University. His thesis was about workers' labour."
+     },
+     {
+      "q": "What did he drive around Santiago at night?",
+      "o": [
+       "A green truck",
+       "A bicycle",
+       "A horse",
+       "A tram"
+      ],
+      "a": 0,
+      "e": "His famous green pickup truck, looking for people sleeping on the street."
+     },
+     {
+      "q": "What did he repeat during his illness?",
+      "o": [
+       "Thy will be done",
+       "All for Jesus",
+       "Content, Lord, content",
+       "Peace and good"
+      ],
+      "a": 2,
+      "e": "\"Content, Lord, content.\""
+     },
+     {
+      "q": "Which month is dedicated to solidarity in Chile in his honour?",
+      "o": [
+       "March",
+       "May",
+       "August",
+       "December"
+      ],
+      "a": 2,
+      "e": "August, the month he died."
+     }
+    ]
+   },
+   "fuentes": [
+    "https://en.wikipedia.org/wiki/Alberto_Hurtado",
+    "https://www.icarito.cl/2009/12/243-7143-9-hurtado-cruchaga-alberto.shtml/"
+   ],
+   "revision": "borrador"
+  }
+ ],
+ "proximamente": [
+  {
+   "id": "andres",
+   "ini": "A",
+   "es": {
+    "name": "San Andrés",
+    "sub": "El primer llamado"
+   },
+   "en": {
+    "name": "St. Andrew",
+    "sub": "The first called"
+   }
+  },
+  {
+   "id": "esteban",
+   "ini": "E",
+   "es": {
+    "name": "San Esteban",
+    "sub": "El primer mártir"
+   },
+   "en": {
+    "name": "St. Stephen",
+    "sub": "The first martyr"
+   }
+  },
+  {
+   "id": "laura",
+   "ini": "L",
+   "es": {
+    "name": "Beata Laura Vicuña",
+    "sub": "Nacida en Santiago, 1891"
+   },
+   "en": {
+    "name": "Bl. Laura Vicuña",
+    "sub": "Born in Santiago, 1891"
+   }
+  },
+  {
+   "id": "maria",
+   "ini": "M",
+   "es": {
+    "name": "La Virgen María",
+    "sub": "Madre de Dios"
+   },
+   "en": {
+    "name": "The Virgin Mary",
+    "sub": "Mother of God"
+   }
+  },
+  {
+   "id": "carmen",
+   "ini": "C",
+   "es": {
+    "name": "Virgen del Carmen",
+    "sub": "Patrona de Chile"
+   },
+   "en": {
+    "name": "Our Lady of Mount Carmel",
+    "sub": "Patroness of Chile"
+   }
+  },
+  {
+   "id": "guadalupe",
+   "ini": "G",
+   "es": {
+    "name": "Virgen de Guadalupe",
+    "sub": "Patrona de América"
+   },
+   "en": {
+    "name": "Our Lady of Guadalupe",
+    "sub": "Patroness of the Americas"
+   }
+  },
+  {
+   "id": "agustin",
+   "ini": "A",
+   "es": {
+    "name": "San Agustín",
+    "sub": "Doctor de la gracia"
+   },
+   "en": {
+    "name": "St. Augustine",
+    "sub": "Doctor of Grace"
+   }
+  },
+  {
+   "id": "teresaavila",
+   "ini": "T",
+   "es": {
+    "name": "Santa Teresa de Ávila",
+    "sub": "Doctora de la Iglesia"
+   },
+   "en": {
+    "name": "St. Teresa of Ávila",
+    "sub": "Doctor of the Church"
+   }
+  },
+  {
+   "id": "tomas",
+   "ini": "T",
+   "es": {
+    "name": "Santo Tomás de Aquino",
+    "sub": "El doctor angélico"
+   },
+   "en": {
+    "name": "St. Thomas Aquinas",
+    "sub": "The Angelic Doctor"
+   }
+  }
+ ],
+ "colecciones": [
+  {
+   "id": "apo",
+   "es": "Apóstoles y primeros cristianos",
+   "en": "Apostles and first Christians",
+   "items": [
+    "pablo",
+    "pedro",
+    "andres",
+    "esteban"
+   ]
+  },
+  {
+   "id": "chile",
+   "es": "Santos de Chile",
+   "en": "Saints of Chile",
+   "items": [
+    "teresa",
+    "hurtado",
+    "laura"
+   ],
+   "pais": "CL"
+  },
+  {
+   "id": "maria",
+   "es": "La Virgen María",
+   "en": "The Virgin Mary",
+   "items": [
+    "maria",
+    "carmen",
+    "guadalupe"
+   ]
+  },
+  {
+   "id": "doc",
+   "es": "Doctores de la Iglesia",
+   "en": "Doctors of the Church",
+   "items": [
+    "agustin",
+    "teresaavila",
+    "tomas"
+   ]
+  }
+ ],
+ "rasgos": {
+  "light": {
+   "es": [
+    "La luz de Damasco",
+    "Una luz del cielo lo derribó y le cambió la vida."
+   ],
+   "en": [
+    "The light of Damascus",
+    "A light from heaven threw him down and changed his life."
+   ]
+  },
+  "book": {
+   "es": [
+    "Las cartas",
+    "Sus trece cartas siguen leyéndose en cada misa."
+   ],
+   "en": [
+    "The letters",
+    "His thirteen letters are still read at every Mass."
+   ]
+  },
+  "keys": {
+   "es": [
+    "Las llaves",
+    "Jesús le prometió las llaves del reino de los cielos."
+   ],
+   "en": [
+    "The keys",
+    "Jesus promised him the keys of the kingdom of heaven."
+   ]
+  },
+  "boat": {
+   "es": [
+    "La barca",
+    "Era pescador en el mar de Galilea."
+   ],
+   "en": [
+    "The boat",
+    "He was a fisherman on the Sea of Galilee."
+   ]
+  },
+  "rooster": {
+   "es": [
+    "El gallo",
+    "Lo negó tres veces antes de que cantara el gallo."
+   ],
+   "en": [
+    "The rooster",
+    "He denied Jesus three times before the rooster crowed."
+   ]
+  },
+  "mount": {
+   "es": [
+    "La cordillera",
+    "Su Carmelo estaba en Los Andes, a los pies de la montaña."
+   ],
+   "en": [
+    "The mountains",
+    "Her Carmel was in Los Andes, at the foot of the mountains."
+   ]
+  },
+  "pen": {
+   "es": [
+    "La pluma",
+    "Su diario y sus cartas se leen en todo el mundo."
+   ],
+   "en": [
+    "The pen",
+    "Her diary and letters are read all over the world."
+   ]
+  },
+  "cross": {
+   "es": [
+    "La cruz",
+    "Murió a los 19 años, unida a Jesús."
+   ],
+   "en": [
+    "The cross",
+    "She died at 19, united to Jesus."
+   ]
+  },
+  "home": {
+   "es": [
+    "El Hogar",
+    "Fundó el Hogar de Cristo en 1944."
+   ],
+   "en": [
+    "The home",
+    "He founded Hogar de Cristo in 1944."
+   ]
+  },
+  "truck": {
+   "es": [
+    "La camioneta verde",
+    "Recorría Santiago de noche buscando a los pobres."
+   ],
+   "en": [
+    "The green truck",
+    "He drove around Santiago at night looking for the poor."
+   ]
+  },
+  "heart": {
+   "es": [
+    "Contento, Señor",
+    "Repetía \"Contento, Señor, contento\" incluso enfermo."
+   ],
+   "en": [
+    "Content, Lord",
+    "He kept saying \"Content, Lord, content\" even when ill."
+   ]
+  },
+  "sword": {
+   "es": [
+    "La espada",
+    "Murió mártir en Roma, decapitado con espada."
+   ],
+   "en": [
+    "The sword",
+    "He died a martyr in Rome, beheaded by the sword."
+   ]
+  }
+ },
+ "santos_del_dia": {
+  "09-28": {
+   "ini": "W",
+   "es": [
+    "San Wenceslao",
+    "Duque de Bohemia, mártir",
+    "Gobernó con justicia y ayudaba a los pobres en persona. Fue asesinado por su hermano camino a misa."
+   ],
+   "en": [
+    "St. Wenceslaus",
+    "Duke of Bohemia, martyr",
+    "He ruled with justice and helped the poor in person. He was killed by his brother on his way to Mass."
+   ]
+  },
+  "09-29": {
+   "ini": "A",
+   "es": [
+    "Santos Miguel, Gabriel y Rafael",
+    "Arcángeles",
+    "Miguel defiende, Gabriel anuncia y Rafael sana. Hoy la Iglesia celebra a los tres mensajeros de Dios."
+   ],
+   "en": [
+    "Sts. Michael, Gabriel & Raphael",
+    "Archangels",
+    "Michael defends, Gabriel announces and Raphael heals. Today the Church celebrates all three of God's messengers."
+   ]
+  },
+  "09-30": {
+   "ini": "J",
+   "es": [
+    "San Jerónimo",
+    "Doctor de la Iglesia",
+    "Tradujo la Biblia al latín. Tenía mal genio y lo sabía, y lo llevó a la oración toda su vida."
+   ],
+   "en": [
+    "St. Jerome",
+    "Doctor of the Church",
+    "He translated the Bible into Latin. He had a temper, knew it, and brought it to prayer all his life."
+   ]
+  },
+  "10-01": {
+   "ini": "T",
+   "es": [
+    "Santa Teresita del Niño Jesús",
+    "Doctora de la Iglesia",
+    "Enseñó el \"caminito\": hacer lo pequeño con mucho amor. Murió a los 24 años."
+   ],
+   "en": [
+    "St. Thérèse of Lisieux",
+    "Doctor of the Church",
+    "She taught the \"little way\": doing small things with great love. She died at 24."
+   ]
+  },
+  "10-02": {
+   "ini": "Á",
+   "es": [
+    "Santos Ángeles Custodios",
+    "Memoria",
+    "Cada persona tiene un ángel que la cuida y la guía hacia Dios."
+   ],
+   "en": [
+    "Holy Guardian Angels",
+    "Memorial",
+    "Every person has an angel who guards them and guides them to God."
+   ]
+  },
+  "10-04": {
+   "ini": "F",
+   "es": [
+    "San Francisco de Asís",
+    "Fundador de los franciscanos",
+    "Dejó todo para vivir pobre y alegre. Llamaba hermanos al sol, al agua y a la muerte."
+   ],
+   "en": [
+    "St. Francis of Assisi",
+    "Founder of the Franciscans",
+    "He gave up everything to live poor and joyful. He called the sun, water and death his brothers."
+   ]
+  }
+ },
+ "historias_santos": {
+  "09-28": {
+   "es": {
+    "f": [
+     "c. 907–935",
+     "Patrono de la República Checa"
+    ],
+    "st": [
+     "Wenceslao creció en Bohemia en una familia dividida entre cristianos y paganos. Su abuela, Santa Ludmila, le enseñó la fe.",
+     "Como duque gobernó con justicia: ayudaba a los pobres en persona, cuidaba a los presos y a los huérfanos. Su hermano Boleslao, que quería el poder, lo asesinó cuando iba a misa.",
+     "Su bondad inspiró el villancico inglés \"Good King Wenceslas\"."
+    ],
+    "q": "Cuida al pobre con tus propias manos.",
+    "qr": "Tradición sobre San Wenceslao",
+    "pr": "San Wenceslao, ayúdame a servir a los demás aunque nadie me vea. Amén."
+   },
+   "en": {
+    "f": [
+     "c. 907–935",
+     "Patron of the Czech Republic"
+    ],
+    "st": [
+     "Wenceslaus grew up in Bohemia in a family split between Christians and pagans. His grandmother, St. Ludmila, taught him the faith.",
+     "As duke he ruled with justice: he helped the poor in person and cared for prisoners and orphans. His brother Boleslaus, who wanted power, killed him on his way to Mass.",
+     "His kindness inspired the English carol \"Good King Wenceslas\"."
+    ],
+    "q": "Care for the poor with your own hands.",
+    "qr": "Tradition about St. Wenceslaus",
+    "pr": "St. Wenceslaus, help me serve others even when no one sees. Amen."
+   }
+  },
+  "09-29": {
+   "es": {
+    "f": [
+     "Fiesta: 29 de septiembre",
+     "Miguel: protector · Gabriel: comunicaciones · Rafael: enfermos y viajeros"
+    ],
+    "st": [
+     "Los arcángeles son mensajeros de Dios que la Biblia llama por su nombre.",
+     "Miguel (\"¿Quién como Dios?\") defiende al pueblo de Dios en el libro de Daniel y vence al dragón en el Apocalipsis. Gabriel (\"Fuerza de Dios\") anuncia a Zacarías el nacimiento de Juan y a María que será la madre de Jesús.",
+     "Rafael (\"Dios sana\") acompaña al joven Tobías en su viaje y cura la ceguera de su padre Tobit."
+    ],
+    "q": "Yo soy Rafael, uno de los siete ángeles santos que están delante de la gloria del Señor.",
+    "qr": "Tobías 12:15",
+    "pr": "San Miguel Arcángel, defiéndenos en la batalla. San Gabriel, ayúdanos a escuchar a Dios. San Rafael, acompáñanos y sánanos. Amén."
+   },
+   "en": {
+    "f": [
+     "Feast: September 29",
+     "Michael: protector · Gabriel: communications · Raphael: the sick and travellers"
+    ],
+    "st": [
+     "The archangels are God's messengers whom the Bible calls by name.",
+     "Michael (\"Who is like God?\") defends God's people in the book of Daniel and defeats the dragon in Revelation. Gabriel (\"Strength of God\") tells Zechariah that John will be born and tells Mary she will be the mother of Jesus.",
+     "Raphael (\"God heals\") walks with young Tobias on his journey and cures the blindness of his father Tobit."
+    ],
+    "q": "I am Raphael, one of the seven holy angels, which present the prayers of the saints.",
+    "qr": "Tobit 12:15",
+    "pr": "St. Michael the Archangel, defend us in battle. St. Gabriel, help us listen to God. St. Raphael, walk with us and heal us. Amen."
+   }
+  },
+  "09-30": {
+   "es": {
+    "f": [
+     "c. 347–420",
+     "Patrono de traductores y bibliotecarios"
+    ],
+    "st": [
+     "Jerónimo estudió en Roma y fue un sabio brillante, pero también de carácter fuerte y lengua afilada.",
+     "Por encargo del papa Dámaso tradujo la Biblia al latín. Esa traducción, la Vulgata, se leyó en la Iglesia por más de mil años.",
+     "Pasó sus últimos años en Belén, cerca del lugar donde nació Jesús, rezando y estudiando."
+    ],
+    "q": "Ignorar las Escrituras es ignorar a Cristo.",
+    "qr": "San Jerónimo",
+    "pr": "San Jerónimo, dame amor por la Palabra de Dios y paciencia con mi propio carácter. Amén."
+   },
+   "en": {
+    "f": [
+     "c. 347–420",
+     "Patron of translators and librarians"
+    ],
+    "st": [
+     "Jerome studied in Rome and was a brilliant scholar, but also strong-willed and sharp-tongued.",
+     "Pope Damasus asked him to translate the Bible into Latin. That translation, the Vulgate, was read in the Church for over a thousand years.",
+     "He spent his last years in Bethlehem, near where Jesus was born, praying and studying."
+    ],
+    "q": "Ignorance of Scripture is ignorance of Christ.",
+    "qr": "St. Jerome",
+    "pr": "St. Jerome, give me love for God's Word and patience with my own temper. Amen."
+   }
+  },
+  "10-01": {
+   "es": {
+    "f": [
+     "1873–1897",
+     "Patrona de las misiones"
+    ],
+    "st": [
+     "Teresa Martin entró al Carmelo de Lisieux con solo 15 años. Nunca salió del convento ni hizo grandes obras.",
+     "Descubrió un \"caminito\" hacia Dios: hacer las cosas pequeñas de cada día con mucho amor y confiar como una niña en su Padre.",
+     "Murió de tuberculosis a los 24 años. Su autobiografía, Historia de un alma, recorrió el mundo, y en 1997 fue declarada Doctora de la Iglesia."
+    ],
+    "q": "Quiero pasar mi cielo haciendo el bien en la tierra.",
+    "qr": "Santa Teresita",
+    "pr": "Santa Teresita, enséñame a amar en lo pequeño y a confiar en Dios como tú. Amén."
+   },
+   "en": {
+    "f": [
+     "1873–1897",
+     "Patron of missions"
+    ],
+    "st": [
+     "Thérèse Martin entered the Carmel of Lisieux at only 15. She never left the convent or did great deeds.",
+     "She found a \"little way\" to God: doing each day's small things with great love and trusting her Father like a child.",
+     "She died of tuberculosis at 24. Her autobiography, Story of a Soul, went around the world, and in 1997 she was named a Doctor of the Church."
+    ],
+    "q": "I want to spend my heaven doing good on earth.",
+    "qr": "St. Thérèse",
+    "pr": "St. Thérèse, teach me to love in small things and to trust God as you did. Amen."
+   }
+  },
+  "10-02": {
+   "es": {
+    "f": [
+     "Memoria: 2 de octubre",
+     "Todos tenemos uno"
+    ],
+    "st": [
+     "La Iglesia enseña que cada persona tiene un ángel que la protege y la guía hacia Dios desde el comienzo de su vida.",
+     "Jesús habló de ellos al cuidar a los pequeños: sus ángeles ven siempre el rostro del Padre."
+    ],
+    "q": "Sus ángeles en los cielos ven siempre la faz de mi Padre que está en los cielos.",
+    "qr": "Mateo 18:10",
+    "pr": "Ángel de la guarda, dulce compañía, no me desampares ni de noche ni de día. Amén."
+   },
+   "en": {
+    "f": [
+     "Memorial: October 2",
+     "Everyone has one"
+    ],
+    "st": [
+     "The Church teaches that every person has an angel who protects them and guides them to God from the start of their life.",
+     "Jesus spoke of them while caring for the little ones: their angels always see the face of the Father."
+    ],
+    "q": "In heaven their angels do always behold the face of my Father which is in heaven.",
+    "qr": "Matthew 18:10",
+    "pr": "Angel of God, my guardian dear, to whom God's love commits me here, ever this day be at my side. Amen."
+   }
+  },
+  "10-04": {
+   "es": {
+    "f": [
+     "1181/82–1226",
+     "Patrono de Italia y de la ecología"
+    ],
+    "st": [
+     "Francisco era hijo de un comerciante rico de Asís y soñaba con ser caballero.",
+     "Un día escuchó a Cristo decirle \"repara mi Iglesia\". Dejó todo, vivió pobre y alegre, y fundó a los frailes menores.",
+     "Escribió el Cántico de las criaturas, donde llama hermano al sol y hermana al agua. Dos años antes de morir recibió los estigmas."
+    ],
+    "q": "Alabado seas, mi Señor, con todas tus criaturas.",
+    "qr": "Cántico de las criaturas",
+    "pr": "Señor, hazme un instrumento de tu paz. Amén."
+   },
+   "en": {
+    "f": [
+     "1181/82–1226",
+     "Patron of Italy and of ecology"
+    ],
+    "st": [
+     "Francis was the son of a rich merchant in Assisi and dreamed of becoming a knight.",
+     "One day he heard Christ say \"rebuild my Church\". He gave everything up, lived poor and joyful, and founded the Friars Minor.",
+     "He wrote the Canticle of the Creatures, calling the sun his brother and water his sister. Two years before he died he received the stigmata."
+    ],
+    "q": "Praised be you, my Lord, with all your creatures.",
+    "qr": "Canticle of the Creatures",
+    "pr": "Lord, make me an instrument of your peace. Amen."
+   }
+  }
+ },
+ "novenas": [
+  {
+   "id": "ter",
+   "es": "Santa Teresita del Niño Jesús",
+   "en": "St. Thérèse of Lisieux",
+   "ini": "T",
+   "m": 10,
+   "d": 1
+  },
+  {
+   "id": "bru",
+   "es": "San Bruno",
+   "en": "St. Bruno",
+   "ini": "B",
+   "m": 10,
+   "d": 6
+  },
+  {
+   "id": "cc",
+   "es": "Corpus Christi",
+   "en": "Corpus Christi",
+   "ini": "C",
+   "fixed": [
+    2027,
+    5,
+    27
+   ]
+  },
+  {
+   "id": "dom",
+   "es": "Santo Domingo",
+   "en": "St. Dominic",
+   "ini": "D",
+   "m": 8,
+   "d": 8
+  },
+  {
+   "id": "mon",
+   "es": "Santa Mónica",
+   "en": "St. Monica",
+   "ini": "M",
+   "m": 8,
+   "d": 27
+  },
+  {
+   "id": "mat",
+   "es": "San Mateo",
+   "en": "St. Matthew",
+   "ini": "M",
+   "m": 9,
+   "d": 21
+  }
+ ],
+ "revision_santos_del_dia": "borrador",
+ "ayuda": {
+  "respaldo": {
+   "nombre": {
+    "es": "Encuentra una línea de ayuda en tu país",
+    "en": "Find a helpline in your country"
+   },
+   "url": "https://findahelpline.com",
+   "nota": {
+    "es": "Si estás en peligro inmediato, llama al número de emergencias de tu país.",
+    "en": "If you are in immediate danger, call your local emergency number."
+   },
+   "fuente": "https://findahelpline.com/about"
+  },
+  "paises": [
+   {
+    "pais": "CL",
+    "nombre": {
+     "es": "Chile",
+     "en": "Chile"
+    },
+    "lineas": [
+     {
+      "nombre": {
+       "es": "Línea de Prevención del Suicidio",
+       "en": "Suicide Prevention Line"
+      },
+      "numero": "*4141",
+      "marcar": "*4141",
+      "detalle": {
+       "es": "24 horas, gratis",
+       "en": "24/7, free"
+      },
+      "fuente": "https://www.minsal.cl/ministerio-de-salud-anuncio-fono-4141-de-prevencion-del-suicidio/"
+     },
+     {
+      "nombre": {
+       "es": "Salud Responde",
+       "en": "Salud Responde (health line)"
+      },
+      "numero": "600 360 7777",
+      "marcar": "6003607777",
+      "detalle": {
+       "es": "Orientación en salud",
+       "en": "Health advice"
+      },
+      "fuente": "https://www.terapify.com/blog/lineas-de-apoyo-prevencion-del-suicidio"
+     }
+    ],
+    "verificado": "2026-10-02",
+    "revision": "borrador",
+    "notas": "Salud Responde: buscar fuente oficial en minsal.cl"
+   },
+   {
+    "pais": "US",
+    "nombre": {
+     "es": "Estados Unidos",
+     "en": "United States"
+    },
+    "lineas": [
+     {
+      "nombre": {
+       "es": "988 Línea de Prevención del Suicidio y Crisis",
+       "en": "988 Suicide & Crisis Lifeline"
+      },
+      "numero": "988",
+      "marcar": "988",
+      "detalle": {
+       "es": "Llamar o enviar texto, 24/7. En español: marcar 2, o texto AYUDA al 988",
+       "en": "Call or text, 24/7. Spanish: press 2, or text AYUDA to 988"
+      },
+      "fuente": "https://988lifeline.org/get-help/"
+     }
+    ],
+    "verificado": "2026-10-02",
+    "revision": "borrador"
+   },
+   {
+    "pais": "MX",
+    "nombre": {
+     "es": "México",
+     "en": "Mexico"
+    },
+    "lineas": [
+     {
+      "nombre": {
+       "es": "Línea de la Vida",
+       "en": "Línea de la Vida"
+      },
+      "numero": "800 911 2000",
+      "marcar": "8009112000",
+      "detalle": {
+       "es": "Gratis",
+       "en": "Free"
+      },
+      "fuente": "https://www.conasama.salud.gob.mx/cnps/Img/suicidio.pdf"
+     }
+    ],
+    "verificado": "2026-10-02",
+    "revision": "borrador",
+    "notas": "Confirmar horario (24 h según fuente secundaria)"
+   },
+   {
+    "pais": "ES",
+    "nombre": {
+     "es": "España",
+     "en": "Spain"
+    },
+    "emergencia": "112",
+    "lineas": [
+     {
+      "nombre": {
+       "es": "Línea 024 de atención a la conducta suicida",
+       "en": "024 Suicide Prevention Line"
+      },
+      "numero": "024",
+      "marcar": "024",
+      "detalle": {
+       "es": "24 horas, 365 días, gratis y confidencial",
+       "en": "24/7, free and confidential"
+      },
+      "fuente": "https://www.sanidad.gob.es/linea024/home.htm"
+     }
+    ],
+    "verificado": "2026-10-02",
+    "revision": "borrador"
+   },
+   {
+    "pais": "GB",
+    "nombre": {
+     "es": "Reino Unido",
+     "en": "United Kingdom"
+    },
+    "lineas": [
+     {
+      "nombre": {
+       "es": "Samaritans",
+       "en": "Samaritans"
+      },
+      "numero": "116 123",
+      "marcar": "116123",
+      "detalle": {
+       "es": "24 horas, gratis",
+       "en": "24/7, free"
+      },
+      "fuente": "https://www.samaritans.org/how-we-can-help/contact-samaritan/"
+     }
+    ],
+    "verificado": "2026-10-02",
+    "revision": "borrador"
+   },
+   {
+    "pais": "IE",
+    "nombre": {
+     "es": "Irlanda",
+     "en": "Ireland"
+    },
+    "lineas": [
+     {
+      "nombre": {
+       "es": "Samaritans",
+       "en": "Samaritans"
+      },
+      "numero": "116 123",
+      "marcar": "116123",
+      "detalle": {
+       "es": "24 horas, gratis",
+       "en": "24/7, free"
+      },
+      "fuente": "https://www.samaritans.org/how-we-can-help/contact-samaritan/"
+     }
+    ],
+    "verificado": "2026-10-02",
+    "revision": "borrador"
+   },
+   {
+    "pais": "AR",
+    "nombre": {
+     "es": "Argentina",
+     "en": "Argentina"
+    },
+    "lineas": [
+     {
+      "nombre": {
+       "es": "Centro de Asistencia al Suicida",
+       "en": "Suicide Assistance Center"
+      },
+      "numero": "135 / (011) 5275-1135",
+      "marcar": "135",
+      "detalle": {
+       "es": "135 en el AMBA; (011) 5275-1135 desde el resto del país",
+       "en": "135 in Greater Buenos Aires; (011) 5275-1135 elsewhere"
+      },
+      "fuente": "https://www.terapify.com/blog/lineas-de-apoyo-prevencion-del-suicidio"
+     }
+    ],
+    "verificado": "2026-10-02",
+    "revision": "borrador",
+    "notas": "Fuente secundaria: confirmar con asistenciaalsuicida.com o el Ministerio de Salud"
+   }
+  ]
+ }
+}
