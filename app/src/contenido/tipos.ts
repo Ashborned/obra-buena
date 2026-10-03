@@ -127,8 +127,14 @@ type NovenaBase = { id: string; es: string; en: string; ini: string; revision: R
 /** Fiesta anual (mes y día) o fiesta móvil ya calculada para un año (`fixed: [año, mes, día]`). */
 export type Novena = NovenaBase & ({ m: number; d: number } | { fixed: number[] });
 
+export type RangoCelebracion = 'solemnidad' | 'fiesta' | 'memoria' | 'memoria_libre';
+
 export type SantoDelDia = {
   ini: string;
+  /** Color litúrgico de la celebración. */
+  lit: ColorLiturgicoMedalla;
+  /** Rango en el Calendario Romano General; sin rango, manda el tiempo litúrgico. */
+  rango?: RangoCelebracion;
   /** [nombre, subtítulo, resumen]. */
   es: string[];
   en: string[];
@@ -146,6 +152,15 @@ export type HistoriaIdioma = {
 };
 
 export type HistoriaSanto = { es: HistoriaIdioma; en: HistoriaIdioma };
+
+/** Evangelio de ejemplo mientras no haya fuente automática. Nunca se aprueba. */
+export type EvangelioEjemplo = {
+  ref: Par;
+  /** [RV1909, KJV]. */
+  t: Par;
+  nota?: string;
+  revision: Revision;
+};
 
 export type LineaAyuda = {
   nombre: Bilingue;
@@ -192,6 +207,8 @@ export type Contenido = {
   santos_del_dia: Record<string, SantoDelDia>;
   /** Clave MM-DD. */
   historias_santos: Record<string, HistoriaSanto>;
+  /** Ausente en producción (está en borrador a propósito). */
+  evangelio_ejemplo?: EvangelioEjemplo;
   novenas: Novena[];
   /** Revisión de `santos_del_dia` e `historias_santos` en bloque. */
   revision_santos_del_dia: Revision;

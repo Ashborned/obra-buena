@@ -106,6 +106,29 @@ for (const n of d.novenas || []) {
   if (n.fixed) warn(w, 'fiesta móvil con fecha fija: falta cálculo automático');
 }
 
+// Santos del día e historias
+const RANGOS = ['solemnidad', 'fiesta', 'memoria', 'memoria_libre'];
+for (const [k, s] of Object.entries(d.santos_del_dia || {})) {
+  const w = `santo ${k}`;
+  const [mm, dd] = k.split('-').map(Number);
+  if (!/^\d{2}-\d{2}$/.test(k) || !(mm >= 1 && mm <= 12 && dd >= 1 && dd <= new Date(2000, mm, 0).getDate())) err(w, 'clave debe ser MM-DD real');
+  if (!str(s.ini)) err(w, 'falta ini');
+  if (!LIT.includes(s.lit)) err(w, `lit debe ser ${LIT.join(' | ')}`);
+  if (s.rango !== undefined && !RANGOS.includes(s.rango)) err(w, `rango debe ser ${RANGOS.join(' | ')}`);
+  if (s.rango === undefined) warn(w, 'sin rango: el color del día usará el del tiempo litúrgico');
+  for (const L of ['es', 'en']) if (!Array.isArray(s[L]) || s[L].length !== 3 || !s[L].every(str)) err(w, `${L} debe ser [nombre, subtítulo, resumen]`);
+}
+if (!REV.includes(d.revision_santos_del_dia)) err('santos del día', 'revision_santos_del_dia inválida');
+for (const k of Object.keys(d.historias_santos || {})) if (!(d.santos_del_dia || {})[k]) err(`historia ${k}`, 'no tiene santo del día');
+
+// Evangelio de ejemplo (hasta que haya fuente automática)
+const ev = d.evangelio_ejemplo;
+if (ev) {
+  if (!pair(ev.ref) || !pair(ev.t)) err('evangelio_ejemplo', 'ref y t deben ser [es, en]');
+  if (ev.revision === 'aprobado') err('evangelio_ejemplo', 'es un ejemplo: no puede estar aprobado');
+  if (!REV.includes(ev.revision)) err('evangelio_ejemplo', 'revision inválida');
+}
+
 // Ayuda (líneas de crisis)
 const ay = d.ayuda;
 if (!ay || !ay.respaldo || !str(ay.respaldo.url)) err('ayuda', 'falta el respaldo (Find A Helpline)');

@@ -6,6 +6,8 @@
  *   - `rasgos` se conservan solo si los usa una lectura aprobada.
  *   - `colecciones` se quedan solo con sus ítems visibles; una colección vacía desaparece.
  *   - `santos_del_dia` e `historias_santos` dependen de `revision_santos_del_dia`.
+ *   - `evangelio_ejemplo` solo si está aprobado (nunca lo está: es un ejemplo).
+ *     Contrato: si aparece en un build de producción, el validador falló.
  *   - `ayuda.respaldo` (Find A Helpline) se muestra siempre: es la red de seguridad.
  *     Los países sin aprobar se quitan, así su número nunca aparece como verificado.
  *   - Una emoción sin entradas aprobadas se conserva con `items: []` (las 12 emociones son
@@ -62,6 +64,7 @@ export function filtrarPorRevision(c: Contenido, modo: ModoContenido): Contenido
     novenas,
     santos_del_dia: santosAprobados ? c.santos_del_dia : {},
     historias_santos: santosAprobados ? c.historias_santos : {},
+    evangelio_ejemplo: c.evangelio_ejemplo && aprobado(c.evangelio_ejemplo) ? c.evangelio_ejemplo : undefined,
     ayuda: { respaldo: c.ayuda.respaldo, paises: c.ayuda.paises.filter(aprobado) },
   };
 }

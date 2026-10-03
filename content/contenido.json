@@ -2304,6 +2304,8 @@
  "santos_del_dia": {
   "09-28": {
    "ini": "W",
+   "lit": "red",
+   "rango": "memoria_libre",
    "es": [
     "San Wenceslao",
     "Duque de Bohemia, mártir",
@@ -2317,6 +2319,8 @@
   },
   "09-29": {
    "ini": "A",
+   "lit": "white",
+   "rango": "fiesta",
    "es": [
     "Santos Miguel, Gabriel y Rafael",
     "Arcángeles",
@@ -2330,6 +2334,8 @@
   },
   "09-30": {
    "ini": "J",
+   "lit": "white",
+   "rango": "memoria",
    "es": [
     "San Jerónimo",
     "Doctor de la Iglesia",
@@ -2343,6 +2349,8 @@
   },
   "10-01": {
    "ini": "T",
+   "lit": "white",
+   "rango": "memoria",
    "es": [
     "Santa Teresita del Niño Jesús",
     "Doctora de la Iglesia",
@@ -2356,6 +2364,8 @@
   },
   "10-02": {
    "ini": "Á",
+   "lit": "white",
+   "rango": "memoria",
    "es": [
     "Santos Ángeles Custodios",
     "Memoria",
@@ -2369,6 +2379,8 @@
   },
   "10-04": {
    "ini": "F",
+   "lit": "white",
+   "rango": "memoria",
    "es": [
     "San Francisco de Asís",
     "Fundador de los franciscanos",
@@ -2560,6 +2572,18 @@
     "pr": "Lord, make me an instrument of your peace. Amen."
    }
   }
+ },
+ "evangelio_ejemplo": {
+  "ref": [
+   "Juan 1:51",
+   "John 1:51"
+  ],
+  "t": [
+   "De aquí adelante veréis el cielo abierto, y los ángeles de Dios que suben y descienden sobre el Hijo del hombre.",
+   "Hereafter ye shall see heaven open, and the angels of God ascending and descending upon the Son of man."
+  ],
+  "nota": "Ejemplo hasta que exista la fuente automática del evangelio (decisiones, pendiente 4). No se publica.",
+  "revision": "borrador"
  },
  "novenas": [
   {

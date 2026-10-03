@@ -76,9 +76,20 @@ Una fiesta del 29 de febrero se celebra el 28 en años no bisiestos.
 
 ## `santos_del_dia{}` e `historias_santos{}`
 
-Clave `MM-DD`. `santos_del_dia`: `{ "ini": "A", "es": [nombre, subtítulo, resumen], "en": [...] }`.
+Clave `MM-DD`. `santos_del_dia`: `{ "ini": "A", "lit": "white", "rango": "memoria", "es": [nombre, subtítulo, resumen], "en": [...] }`.
+- `lit` (obligatorio): color litúrgico de la celebración: `green | white | red | purple`.
+- `rango` (opcional): `solemnidad | fiesta | memoria | memoria_libre`, según el Calendario Romano General.
+  Decide si el color del santo es el color del día o si manda el tiempo litúrgico (domingos, Cuaresma, Semana Santa…;
+  ver `app/src/lib/liturgia.ts`). Sin `rango`, manda el tiempo litúrgico.
+- Si un día no tiene santo cargado, la app muestra un respaldo sin santo (nunca se inventa uno) y el color del tiempo litúrgico.
 `historias_santos`: `{ "es": { "f": [datos], "st": [párrafos], "q": "cita", "qr": "fuente de la cita", "pr": "oración" }, "en": {...} }`.
 Temporal: solo hay unos pocos días de ejemplo. Se reemplazará por la fuente automática (decisión pendiente n.º 4).
+
+## `evangelio_ejemplo`
+
+`{ "ref": [es, en], "t": [RV1909, KJV], "nota": "...", "revision": "borrador" }`.
+Texto de ejemplo para la tarjeta del evangelio mientras no haya fuente automática (decisión pendiente n.º 4).
+Nunca se aprueba: en producción la tarjeta no aparece.
 
 ## `ayuda` (líneas de crisis por país)
 
