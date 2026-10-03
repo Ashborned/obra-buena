@@ -1,0 +1,32 @@
+{
+  "pestanas": {
+    "hoy": "Hoy",
+    "emociones": "Emociones",
+    "novenas": "Novenas",
+    "aprender": "Aprender"
+  },
+  "pantallas": {
+    "configuracion": "Configuración"
+  },
+  "acciones": {
+    "abrirConfiguracion": "Abrir configuración",
+    "cerrar": "Cerrar"
+  },
+  "navegacion": {
+    "menu": "Menú"
+  },
+  "configuracion": {
+    "paleta": "Paleta",
+    "paletas": {
+      "rosaMistica": "Rosa mística",
+      "vitral": "Vitral"
+    }
+  },
+  "novenas": {
+    "diaDe": "Día {{n}} de 9",
+    "empiezaEn_zero": "Empieza hoy",
+    "empiezaEn_one": "Empieza mañana",
+    "empiezaEn_other": "En {{count}} días",
+    "esSuFiesta": "Hoy es su fiesta"
+  }
+}

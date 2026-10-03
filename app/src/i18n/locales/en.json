@@ -1,0 +1,32 @@
+{
+  "pestanas": {
+    "hoy": "Today",
+    "emociones": "Feelings",
+    "novenas": "Novenas",
+    "aprender": "Learn"
+  },
+  "pantallas": {
+    "configuracion": "Settings"
+  },
+  "acciones": {
+    "abrirConfiguracion": "Open settings",
+    "cerrar": "Close"
+  },
+  "navegacion": {
+    "menu": "Menu"
+  },
+  "configuracion": {
+    "paleta": "Palette",
+    "paletas": {
+      "rosaMistica": "Mystic rose",
+      "vitral": "Stained glass"
+    }
+  },
+  "novenas": {
+    "diaDe": "Day {{n}} of 9",
+    "empiezaEn_zero": "Starts today",
+    "empiezaEn_one": "Starts tomorrow",
+    "empiezaEn_other": "In {{count}} days",
+    "esSuFiesta": "Today is the feast"
+  }
+}
