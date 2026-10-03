@@ -8,6 +8,7 @@
     "@expo-google-fonts/literata": "^0.4.3",
     "@expo-google-fonts/unifrakturmaguntia": "^0.4.1",
     "@expo/ui": "~57.0.21",
+    "@shopify/react-native-skia": "2.6.2",
     "expo": "~57.0.26",
     "expo-constants": "~57.0.20",
     "expo-device": "~57.0.2",
@@ -37,6 +38,7 @@
     "react-native-worklets": "0.10.1"
   },
   "devDependencies": {
+    "@testing-library/react-native": "^14.0.1",
     "@types/jest": "29.5.14",
     "@types/react": "~19.2.2",
     "eslint": "^9.0.0",

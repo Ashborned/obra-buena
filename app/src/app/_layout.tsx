@@ -63,6 +63,11 @@ function Navegacion() {
               animation: reducirMovimiento ? 'fade' : 'default',
             }}
           />
+          {/* Historia del santo: fuera de las pestañas, a pantalla completa (contrato en lib/hoy.ts). */}
+          <Stack.Screen
+            name="santo/[clave]"
+            options={{ animation: reducirMovimiento ? 'fade' : 'default' }}
+          />
         </Stack.Protected>
         <Stack.Protected guard={!completa}>
           <Stack.Screen name="bienvenida" options={{ animation: 'fade' }} />

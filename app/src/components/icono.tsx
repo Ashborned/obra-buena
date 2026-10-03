@@ -22,6 +22,9 @@ const nombres = {
   aprender: { ios: 'medal', android: 'military_tech', web: 'military_tech' },
   configuracion: { ios: 'gearshape', android: 'settings', web: 'settings' },
   cerrar: { ios: 'xmark', android: 'close', web: 'close' },
+  candado: { ios: 'lock', android: 'lock', web: 'lock' },
+  flecha: { ios: 'arrow.right', android: 'arrow_forward', web: 'arrow_forward' },
+  volver: { ios: 'chevron.left', android: 'chevron_left', web: 'chevron_left' },
 } as const satisfies Record<string, SymbolViewProps['name']>;
 
 export type NombreIcono = keyof typeof nombres;

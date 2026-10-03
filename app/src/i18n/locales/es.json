@@ -19,7 +19,8 @@
   "acciones": {
     "abrirConfiguracion": "Abrir configuración",
     "cerrar": "Cerrar",
-    "cambiar": "Cambiar"
+    "cambiar": "Cambiar",
+    "volver": "Volver"
   },
   "navegacion": {
     "menu": "Menú"
@@ -68,5 +69,50 @@
     "otroDetalle": "Te mostraremos {{sitio}}, un directorio mundial de líneas de ayuda, y el aviso de llamar al número de emergencias de donde estés.",
     "buscar": "Buscar país",
     "sinResultados": "Ningún país coincide con la búsqueda."
+  },
+  "hoy": {
+    "horas": {
+      "day": "Laudes",
+      "dusk": "Vísperas",
+      "night": "Completas"
+    },
+    "horaFecha": "{{hora}} · {{fecha}}",
+    "horaFechaAccesible": "{{hora}}, {{fecha}}",
+    "santoDelDia": "Santo del día",
+    "sinSanto": "Hoy no tenemos cargado el santo del día",
+    "conocerHistoria": "Conocer su historia",
+    "conocerHistoriaPista": "Abre la historia de {{nombre}}",
+    "novenaDeHoy": "Tu novena de hoy",
+    "termina": "Termina {{fecha}}",
+    "velasAccesible_one": "{{count}} de 9 velas encendidas",
+    "velasAccesible_other": "{{count}} de 9 velas encendidas",
+    "abrirNovenasPista": "Abre Novenas",
+    "evangelio": "Evangelio del día",
+    "ejemplo": "Ejemplo",
+    "evangelioMostrar": "Muestra el evangelio completo",
+    "evangelioOcultar": "Muestra solo el comienzo",
+    "comoTeSientes": "¿Cómo te sientes hoy?",
+    "comoTeSientesPista": "Abre Emociones",
+    "privacidad": "Sin cuenta. Lo que marcas se queda en tu teléfono."
+  },
+  "liturgia": {
+    "colores": {
+      "green": "Verde litúrgico",
+      "white": "Blanco litúrgico",
+      "red": "Rojo litúrgico",
+      "purple": "Morado litúrgico",
+      "rose": "Rosado litúrgico"
+    }
+  },
+  "santo": {
+    "datos": "Datos",
+    "suHistoria": "Su historia",
+    "enSusPalabras": "En sus palabras",
+    "oracion": "Oración",
+    "rezarNovena": "Rezar su novena",
+    "rezarNovenaPista": "Abre Novenas",
+    "sinHistoria": "Todavía no tenemos cargada su historia.",
+    "noEncontrado": "No encontramos este santo.",
+    "noEncontradoDetalle": "Puede que su historia aún no esté en la app."
   }
 }

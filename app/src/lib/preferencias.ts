@@ -20,6 +20,7 @@ const CLAVES = {
   idioma: 'preferencias.idioma',
   pais: 'preferencias.pais',
   bienvenida: 'preferencias.bienvenida',
+  aperturaVitral: 'preferencias.aperturaVitral',
 } as const;
 
 const PREFERENCIAS_HORA: readonly PreferenciaHora[] = ['auto', 'day', 'dusk', 'night'];
@@ -103,4 +104,21 @@ export function leerBienvenidaCompleta(): boolean {
 
 export function guardarBienvenidaCompleta(): void {
   guardar(CLAVES.bienvenida, '1');
+}
+
+/**
+ * Día (`AAAA-MM-DD`) en que se vio por última vez la apertura del vitral de Hoy (guía de movimiento,
+ * nivel 1: una vez por día), o `null` si nunca.
+ */
+export function leerUltimaAperturaVitral(): string | null {
+  try {
+    const valor = Storage.getItemSync(CLAVES.aperturaVitral);
+    return valor !== null && /^\d{4}-\d{2}-\d{2}$/.test(valor) ? valor : null;
+  } catch {
+    return null;
+  }
+}
+
+export function guardarUltimaAperturaVitral(dia: string): void {
+  guardar(CLAVES.aperturaVitral, dia);
 }

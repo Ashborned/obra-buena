@@ -19,7 +19,8 @@
   "acciones": {
     "abrirConfiguracion": "Open settings",
     "cerrar": "Close",
-    "cambiar": "Change"
+    "cambiar": "Change",
+    "volver": "Back"
   },
   "navegacion": {
     "menu": "Menu"
@@ -68,5 +69,50 @@
     "otroDetalle": "We’ll show you {{sitio}}, a worldwide directory of helplines, and a reminder to call the local emergency number wherever you are.",
     "buscar": "Search country",
     "sinResultados": "No country matches your search."
+  },
+  "hoy": {
+    "horas": {
+      "day": "Lauds",
+      "dusk": "Vespers",
+      "night": "Compline"
+    },
+    "horaFecha": "{{hora}} · {{fecha}}",
+    "horaFechaAccesible": "{{hora}}, {{fecha}}",
+    "santoDelDia": "Saint of the day",
+    "sinSanto": "We don’t have today’s saint loaded yet",
+    "conocerHistoria": "Read the story",
+    "conocerHistoriaPista": "Opens the story of {{nombre}}",
+    "novenaDeHoy": "Your novena today",
+    "termina": "Ends {{fecha}}",
+    "velasAccesible_one": "{{count}} of 9 candles lit",
+    "velasAccesible_other": "{{count}} of 9 candles lit",
+    "abrirNovenasPista": "Opens Novenas",
+    "evangelio": "Gospel of the day",
+    "ejemplo": "Sample",
+    "evangelioMostrar": "Shows the whole gospel",
+    "evangelioOcultar": "Shows only the beginning",
+    "comoTeSientes": "How are you feeling today?",
+    "comoTeSientesPista": "Opens Feelings",
+    "privacidad": "No account. What you mark stays on your phone."
+  },
+  "liturgia": {
+    "colores": {
+      "green": "Liturgical green",
+      "white": "Liturgical white",
+      "red": "Liturgical red",
+      "purple": "Liturgical purple",
+      "rose": "Liturgical rose"
+    }
+  },
+  "santo": {
+    "datos": "Facts",
+    "suHistoria": "The story",
+    "enSusPalabras": "In their words",
+    "oracion": "Prayer",
+    "rezarNovena": "Pray the novena",
+    "rezarNovenaPista": "Opens Novenas",
+    "sinHistoria": "We don’t have this story loaded yet.",
+    "noEncontrado": "We couldn’t find this saint.",
+    "noEncontradoDetalle": "Their story may not be in the app yet."
   }
 }
