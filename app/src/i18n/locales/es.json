@@ -1,4 +1,10 @@
 {
+  "idioma": {
+    "nombre": "Español"
+  },
+  "app": {
+    "nombre": "Obra Buena"
+  },
   "pestanas": {
     "hoy": "Hoy",
     "emociones": "Emociones",
@@ -6,11 +12,14 @@
     "aprender": "Aprender"
   },
   "pantallas": {
-    "configuracion": "Configuración"
+    "configuracion": "Configuración",
+    "idioma": "Idioma",
+    "pais": "País"
   },
   "acciones": {
     "abrirConfiguracion": "Abrir configuración",
-    "cerrar": "Cerrar"
+    "cerrar": "Cerrar",
+    "cambiar": "Cambiar"
   },
   "navegacion": {
     "menu": "Menú"
@@ -20,7 +29,11 @@
     "paletas": {
       "rosaMistica": "Rosa mística",
       "vitral": "Vitral"
-    }
+    },
+    "idioma": "Idioma",
+    "pais": "País",
+    "paisActual": "País: {{pais}}",
+    "cambiarPais": "Cambiar país"
   },
   "novenas": {
     "diaDe": "Día {{n}} de 9",
@@ -28,5 +41,32 @@
     "empiezaEn_one": "Empieza mañana",
     "empiezaEn_other": "En {{count}} días",
     "esSuFiesta": "Hoy es su fiesta"
+  },
+  "bienvenida": {
+    "titulo": "Te damos la bienvenida",
+    "texto": "Confirma tu idioma y tu país. Con tu país podemos mostrarte ayuda real donde vives, si algún día la necesitas. No usamos tu ubicación y nada sale de tu teléfono.",
+    "detectado": "Según tu teléfono",
+    "elegido": "Tu elección",
+    "resumen": "{{idioma}} · {{pais}}",
+    "resumenAccesible": "Idioma: {{idioma}}. País: {{pais}}.",
+    "confirmar": "Confirmar",
+    "confirmarPista": "Guarda el idioma y el país y abre la app",
+    "elegirPais": "Elegir país",
+    "cambiarIdioma": "Cambiar idioma",
+    "cambiarPais": "Cambiar país",
+    "prefieroNoDecirlo": "Prefiero no decirlo"
+  },
+  "pais": {
+    "sinElegir": "Sin elegir",
+    "explicacion": "Lo usamos solo para mostrarte líneas de ayuda de tu país. Queda guardado en tu teléfono.",
+    "seccionActual": "Elegido",
+    "seccionTelefono": "Según tu teléfono",
+    "seccionAyuda": "Con líneas de ayuda",
+    "seccionTodos": "Todos los países",
+    "seccionOtro": "Otro",
+    "otro": "Otro país o prefiero no decirlo",
+    "otroDetalle": "Te mostraremos {{sitio}}, un directorio mundial de líneas de ayuda, y el aviso de llamar al número de emergencias de donde estés.",
+    "buscar": "Buscar país",
+    "sinResultados": "Ningún país coincide con la búsqueda."
   }
 }

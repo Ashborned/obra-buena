@@ -79,6 +79,9 @@ export type TemaResuelto = {
     pestanaActivaFondo: string;
     pestanaActiva: string;
     pestanaInactiva: string;
+    /** Botón dorado (`.btn.gold`): fondo sólido de respaldo y degradado vertical encima. */
+    botonLuz: Hex;
+    botonLuzDegradado: string;
   };
   /** Estilo de la barra de estado del sistema sobre el fondo. */
   barraEstado: 'dark' | 'light';
@@ -181,6 +184,9 @@ export function resolverTema(paletaId: PaletaId, hora: HoraOracion): TemaResuelt
       pestanaActivaFondo,
       pestanaActiva,
       pestanaInactiva: textoSuave,
+      botonLuz: p.glow,
+      // Maqueta: linear-gradient(180deg, color-mix(g2 70%, #fff), g).
+      botonLuzDegradado: `linear-gradient(180deg, ${mezclarOklab(p.glowSoft, k.blanco, 0.7)}, ${p.glow})`,
     },
     barraEstado: noche ? 'light' : 'dark',
     esOscuro: noche,

@@ -95,9 +95,13 @@ queda `revision: "pendiente"` → una persona aprueba → `"aprobado"`.
 
 ```
 node scripts/validar-contenido.mjs      # validar contenido (debe pasar antes de cada commit)
-cd app && npx expo start                # correr la app
+cd app && npx expo start                # correr la app (lo hace Felipe, ver abajo)
 cd app && npx expo install <paquete>    # agregar dependencias
 ```
+
+**Servidor de Expo: lo mantiene Felipe** abierto en su terminal con `EXPO_UNSTABLE_MCP_SERVER=1`.
+Ningún agente inicia, detiene ni reinicia servidores de Expo/Metro (`expo start`, `expo run`, etc.).
+Si hace falta reiniciar con `-c` (paquete instalado o quitado, cambio en `metro.config.js` o `app.json`, caché rara), se le pide a Felipe.
 
 ## Reglas de trabajo
 

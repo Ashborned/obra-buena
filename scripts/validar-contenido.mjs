@@ -85,7 +85,10 @@ for (const l of d.lecturas || []) {
   }
 }
 const soon = d.proximamente || [];
-for (const s of soon) { if (ids.has(s.id)) err(`próximamente ${s.id}`, 'ya existe como lectura'); }
+for (const s of soon) {
+  if (ids.has(s.id)) err(`próximamente ${s.id}`, 'ya existe como lectura');
+  if (!REV.includes(s.revision)) err(`próximamente ${s.id}`, 'revision inválida');
+}
 
 // Colecciones
 for (const c of d.colecciones || []) {
@@ -97,7 +100,9 @@ for (const c of d.colecciones || []) {
 for (const n of d.novenas || []) {
   const w = `novena ${n.id}`;
   if (!str(n.es) || !str(n.en)) err(w, 'falta nombre es/en');
-  if (!n.fixed && !(n.m >= 1 && n.m <= 12 && n.d >= 1 && n.d <= 31)) err(w, 'falta fecha (m, d) o fixed');
+  // Fecha real (29 feb se acepta: en años no bisiestos se celebra el 28, ver docs/decisiones.md).
+  if (!n.fixed && !(n.m >= 1 && n.m <= 12 && n.d >= 1 && n.d <= new Date(2000, n.m, 0).getDate())) err(w, 'falta fecha (m, d) válida o fixed');
+  if (!REV.includes(n.revision)) err(w, 'revision inválida');
   if (n.fixed) warn(w, 'fiesta móvil con fecha fija: falta cálculo automático');
 }
 

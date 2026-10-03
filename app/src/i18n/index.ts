@@ -16,6 +16,7 @@
 import 'intl-pluralrules';
 
 import { getLocales } from 'expo-localization';
+import { useSyncExternalStore } from 'react';
 import { createInstance, type ParseKeys } from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
@@ -91,6 +92,20 @@ export function getIdioma(): Idioma {
 export async function cambiarIdioma(idioma: Idioma): Promise<void> {
   guardarIdioma(idioma);
   await i18n.changeLanguage(idioma);
+}
+
+function suscribirIdioma(avisar: () => void): () => void {
+  i18n.on('languageChanged', avisar);
+  return () => i18n.off('languageChanged', avisar);
+}
+
+/**
+ * Idioma actual como valor reactivo. Usar esto en los componentes en vez de llamar a `getIdioma()`
+ * durante el render: el React Compiler memoriza esa llamada (no tiene dependencias) y el valor
+ * quedaba viejo tras cambiar de idioma (visto en el emulador).
+ */
+export function useIdioma(): Idioma {
+  return useSyncExternalStore(suscribirIdioma, getIdioma, getIdioma);
 }
 
 export { useTranslation } from 'react-i18next';

@@ -1,7 +1,6 @@
 /**
- * Configuración (modal sobre las pestañas): paleta, idioma y país. Cada cambio se aplica al
- * instante y queda guardado en el teléfono.
- * Faltan hora de oración (`setPreferenciaHora` ya existe y se guarda), tamaño de letra y notificaciones.
+ * Selector de idioma en pantalla propia (se abre desde la bienvenida). En Configuración el mismo
+ * selector va dentro de la lista. Elegir aplica el idioma al instante, lo guarda y vuelve.
  */
 import { router } from 'expo-router';
 import { ScrollView, StyleSheet } from 'react-native';
@@ -10,31 +9,23 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { BotonRedondo } from '@/components/boton-redondo';
 import { Encabezado } from '@/components/encabezado';
 import { Fondo } from '@/components/fondo';
-import { SeccionPais } from '@/components/seccion-pais';
 import { SelectorIdioma } from '@/components/selector-idioma';
-import { SelectorPaleta } from '@/components/selector-paleta';
 import { useTranslation } from '@/i18n';
 import { espaciado } from '@/theme';
 
-export default function PantallaConfiguracion() {
+export default function PantallaIdioma() {
   const { t } = useTranslation();
   return (
     <Fondo>
       <SafeAreaView edges={['top', 'left', 'right', 'bottom']} style={styles.relleno}>
         <ScrollView contentContainerStyle={styles.contenido}>
           <Encabezado
-            titulo={t('pantallas.configuracion')}
+            titulo={t('pantallas.idioma')}
             accion={
-              <BotonRedondo
-                icono="cerrar"
-                etiqueta={t('acciones.cerrar')}
-                onPress={() => router.back()}
-              />
+              <BotonRedondo icono="cerrar" etiqueta={t('acciones.cerrar')} onPress={() => router.back()} />
             }
           />
-          <SelectorPaleta />
-          <SelectorIdioma />
-          <SeccionPais />
+          <SelectorIdioma conTitulo={false} alElegir={() => router.back()} />
         </ScrollView>
       </SafeAreaView>
     </Fondo>

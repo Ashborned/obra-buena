@@ -1,4 +1,10 @@
 {
+  "idioma": {
+    "nombre": "English"
+  },
+  "app": {
+    "nombre": "Obra Buena"
+  },
   "pestanas": {
     "hoy": "Today",
     "emociones": "Feelings",
@@ -6,11 +12,14 @@
     "aprender": "Learn"
   },
   "pantallas": {
-    "configuracion": "Settings"
+    "configuracion": "Settings",
+    "idioma": "Language",
+    "pais": "Country"
   },
   "acciones": {
     "abrirConfiguracion": "Open settings",
-    "cerrar": "Close"
+    "cerrar": "Close",
+    "cambiar": "Change"
   },
   "navegacion": {
     "menu": "Menu"
@@ -20,7 +29,11 @@
     "paletas": {
       "rosaMistica": "Mystic rose",
       "vitral": "Stained glass"
-    }
+    },
+    "idioma": "Language",
+    "pais": "Country",
+    "paisActual": "Country: {{pais}}",
+    "cambiarPais": "Change country"
   },
   "novenas": {
     "diaDe": "Day {{n}} of 9",
@@ -28,5 +41,32 @@
     "empiezaEn_one": "Starts tomorrow",
     "empiezaEn_other": "In {{count}} days",
     "esSuFiesta": "Today is the feast"
+  },
+  "bienvenida": {
+    "titulo": "Welcome",
+    "texto": "Confirm your language and country. Your country lets us show you real help where you live, should you ever need it. We don’t use your location, and nothing leaves your phone.",
+    "detectado": "From your phone",
+    "elegido": "Your choice",
+    "resumen": "{{idioma}} · {{pais}}",
+    "resumenAccesible": "Language: {{idioma}}. Country: {{pais}}.",
+    "confirmar": "Confirm",
+    "confirmarPista": "Saves the language and country and opens the app",
+    "elegirPais": "Choose country",
+    "cambiarIdioma": "Change language",
+    "cambiarPais": "Change country",
+    "prefieroNoDecirlo": "I’d rather not say"
+  },
+  "pais": {
+    "sinElegir": "Not chosen",
+    "explicacion": "We only use it to show you helplines in your country. It stays on your phone.",
+    "seccionActual": "Selected",
+    "seccionTelefono": "From your phone",
+    "seccionAyuda": "With helplines",
+    "seccionTodos": "All countries",
+    "seccionOtro": "Other",
+    "otro": "Another country, or I’d rather not say",
+    "otroDetalle": "We’ll show you {{sitio}}, a worldwide directory of helplines, and a reminder to call the local emergency number wherever you are.",
+    "buscar": "Search country",
+    "sinResultados": "No country matches your search."
   }
 }

@@ -1,5 +1,5 @@
 /**
- * Preferencias guardadas en el teléfono (paleta, hora de oración, idioma) con `expo-sqlite/kv-store`
+ * Preferencias guardadas en el teléfono (paleta, hora de oración, idioma, país, bienvenida) con `expo-sqlite/kv-store`
  * (docs/decisiones.md, 2026-10-03: almacenamiento local con expo-sqlite).
  *
  * - La lectura es síncrona para que el tema arranque ya con la paleta guardada (sin parpadeo).
@@ -18,6 +18,8 @@ const CLAVES = {
   paleta: 'preferencias.paleta',
   hora: 'preferencias.hora',
   idioma: 'preferencias.idioma',
+  pais: 'preferencias.pais',
+  bienvenida: 'preferencias.bienvenida',
 } as const;
 
 const PREFERENCIAS_HORA: readonly PreferenciaHora[] = ['auto', 'day', 'dusk', 'night'];
@@ -74,4 +76,31 @@ export function leerIdioma<T extends string>(validos: readonly T[]): T | null {
 
 export function guardarIdioma(idioma: string): void {
   guardar(CLAVES.idioma, idioma);
+}
+
+/** País elegido (ISO alfa-2), o `null` si nunca se eligió (entonces manda la región del teléfono). */
+export function leerPais(): string | null {
+  try {
+    const valor = Storage.getItemSync(CLAVES.pais);
+    return valor !== null && /^[A-Z]{2}$/.test(valor) ? valor : null;
+  } catch {
+    return null;
+  }
+}
+
+export function guardarPais(pais: string): void {
+  guardar(CLAVES.pais, pais);
+}
+
+/** La persona ya confirmó idioma y país en la bienvenida. */
+export function leerBienvenidaCompleta(): boolean {
+  try {
+    return Storage.getItemSync(CLAVES.bienvenida) === '1';
+  } catch {
+    return false;
+  }
+}
+
+export function guardarBienvenidaCompleta(): void {
+  guardar(CLAVES.bienvenida, '1');
 }

@@ -66,11 +66,12 @@ Cada `item` es un `id` de `lecturas` o de `proximamente`.
 
 ## `proximamente[]`
 
-`{ "id": "laura", "ini": "L", "es": {"name": "...", "sub": "..."}, "en": {...} }`
+`{ "id": "laura", "ini": "L", "es": {"name": "...", "sub": "..."}, "en": {...}, "revision": "borrador" }`
 
 ## `novenas[]`
 
-`{ "id": "ter", "es": "...", "en": "...", "ini": "T", "m": 10, "d": 1 }`: fiesta fija (mes y día). La novena son los 9 días anteriores.
+`{ "id": "ter", "es": "...", "en": "...", "ini": "T", "m": 10, "d": 1, "revision": "borrador" }`: fiesta fija (mes y día). La novena son los 9 días anteriores.
+Una fiesta del 29 de febrero se celebra el 28 en años no bisiestos.
 `{ ..., "fixed": [2027, 5, 27] }`: fiesta móvil para un año concreto (pendiente: cálculo automático a partir de la Pascua).
 
 ## `santos_del_dia{}` e `historias_santos{}`

@@ -81,4 +81,6 @@ export const duraciones = {
   cambioPestana: 200,
   /** Cielo al cruzar de una hora de oración a otra. */
   cambioCielo: 600,
+  /** Contenido de calma (bienvenida, selectores): fundido de entrada (nivel 3). */
+  fundidoCalma: 400,
 } as const;
