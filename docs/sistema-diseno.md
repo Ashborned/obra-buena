@@ -31,6 +31,21 @@ Colores del vitral generativo:
 
 De noche el acento (`accent`) pasa de `primary` a `glow`.
 
+## Texto sobre el cielo (contraste AA, aprobado 2026-10-03)
+
+La legibilidad manda: todo texto cumple AA (4.5:1) contra el punto más intenso del cielo.
+Se parte del valor de la maqueta y se oscurece hacia `ink` solo lo necesario
+(`asegurarContraste` en `app/src/theme/resolver.ts`). `primary` y `glow` siguen exactos para gráficos y superficies;
+el texto pequeño en color de acento usa `acentoTexto`.
+
+| Token | Rosa mística · Laudes | Rosa mística · Vísperas | Vitral · Laudes | Vitral · Vísperas | Completas (ambas) |
+|---|---|---|---|---|---|
+| `textoSuave` | `#6A6670` | `#504C57` | `#5E5F6B` | `#3E3F4C` | `#F4F2FB` al 66 % |
+| `acentoTexto` | `#7652BF` | `#574285` | `#1B2A8C` | `#1B2A8C` | = `glow` |
+
+La maqueta usa ink 60 % + blanco para el texto suave (4.39 y 4.21 en Rosa mística) y `primary` puro para la pestaña activa (4.26 y 4.07): **estos valores reemplazan a los de la maqueta**.
+La pestaña activa también se ajusta a AA sobre su fondo (acento al 13 % sobre la barra).
+
 ## Colores litúrgicos (cinta del misal)
 
 verde `#2F7D4F` · blanco `#F6EFDC` · rojo `#B3263A` · morado `#5B2A86` · rosado (Gaudete/Laetare) `#E39AB5`
