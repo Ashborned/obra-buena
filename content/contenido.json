@@ -438,7 +438,7 @@
        "https://www.vatican.va/content/benedict-xvi/en/homilies/2010/documents/hf_ben-xvi_hom_20101017_canonizations.html"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     }
    ]
   },
@@ -471,6 +471,7 @@
        "His name means \"God heals\". His feast is September 29."
       ],
       "fuentes": [
+       "https://www.vaticannews.va/en/saints/09/29.html",
        "https://www.newadvent.org/cathen/12640b.htm",
        "https://www.franciscanmedia.org/saint-of-the-day/saints-michael-gabriel-and-raphael/"
       ]
@@ -494,11 +495,11 @@
       "ini": "J",
       "es": [
        "San Juan Pablo II",
-       "Vivió su enfermedad a la vista de todos, sin perder la fe ni la ternura."
+       "Vivió su enfermedad a la vista de todos, sin esconderse y sin perder la fe."
       ],
       "en": [
        "St. John Paul II",
-       "He lived his illness in front of everyone, without losing faith or tenderness."
+       "He lived his illness in plain view, without hiding and without losing his faith."
       ],
       "fuentes": [
        "https://www.vatican.va/content/benedict-xvi/en/homilies/2011/documents/hf_ben-xvi_hom_20110501_beatificazione-gpii.html",
@@ -584,18 +585,17 @@
       "ini": "P",
       "es": [
        "San Pío de Pietrelcina",
-       "Junto a su convento fundó un hospital, la Casa Alivio del Sufrimiento, abierto en 1956."
+       "En San Giovanni Rotondo, donde vivió, fundó un hospital, la Casa Alivio del Sufrimiento, abierto en 1956."
       ],
       "en": [
        "St. Pio of Pietrelcina",
-       "Next to his friary he founded a hospital, the House for the Relief of Suffering, opened in 1956."
+       "In San Giovanni Rotondo, where he lived, he founded a hospital, the House for the Relief of Suffering, opened in 1956."
       ],
       "fuentes": [
-       "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20020616_padre-pio_en.html",
-       "https://www.padrepioesangiovannirotondo.it/piosgr/luoghi-di-padre-pio/casa-sollievo-della-sofferenza/"
+       "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20020616_padre-pio_en.html"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -784,7 +784,7 @@
        "https://faith.nd.edu/saint/st-john-of-god/"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -874,7 +874,7 @@
        "https://en.wikipedia.org/wiki/Louise_de_Marillac"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     }
    ]
   },
@@ -1082,11 +1082,11 @@
       "ini": "J",
       "es": [
        "San Juan Diego",
-       "Según la tradición, angustiado por su tío enfermo, escuchó a la Virgen decirle: \"¿No estoy yo aquí, que soy tu madre?\""
+       "Según la tradición, angustiado por su tío enfermo, escuchó a la Virgen decirle: \"¿No estoy yo aquí, que soy tu Madre?\""
       ],
       "en": [
        "St. Juan Diego",
-       "According to tradition, when he was distressed over his sick uncle, Our Lady told him: \"Am I not here, I who am your mother?\""
+       "According to tradition, when he was distressed over his sick uncle, Our Lady told him: \"Am I not here, who is your Mother?\""
       ],
       "fuentes": [
        "https://www.sancta.org/nican.html",
@@ -1094,7 +1094,7 @@
        "https://www.miamiarch.org/CatholicDiocese.php?op=Article_archdiocese-of-miami-wenski-homily-guadalupe-no-estoy-yo-aqui-que-soy-tu-madre"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     }
    ]
   },
@@ -1181,11 +1181,11 @@
       "ini": "T",
       "es": [
        "Santo Tomás de Aquino",
-       "El más sabio de su tiempo, y aun así rezaba antes de estudiar."
+       "Uno de los grandes sabios de la Iglesia, y aun así nunca estudiaba sin rezar antes."
       ],
       "en": [
        "St. Thomas Aquinas",
-       "The wisest man of his time, and still he prayed before studying."
+       "One of the Church's greatest minds, and still he never studied without praying first."
       ],
       "fuentes": [
        "https://www.newadvent.org/cathen/14663b.htm",
@@ -1336,11 +1336,11 @@
       "ini": "J",
       "es": [
        "San Jerónimo",
-       "Tenía mal genio y lo luchó toda su vida. Su fiesta es el 30 de septiembre."
+       "Tenía mal genio, pero era rápido para arrepentirse. Su fiesta es el 30 de septiembre."
       ],
       "en": [
        "St. Jerome",
-       "He had a temper and fought it all his life. His feast is September 30."
+       "He had a bad temper, but was quick to repent. His feast is September 30."
       ],
       "fuentes": [
        "https://www.franciscanmedia.org/saint-of-the-day/saint-jerome/",
@@ -1585,11 +1585,11 @@
       "ini": "J",
       "es": [
        "San Juan Bosco",
-       "Educó a miles de jóvenes con juego, música y alegría."
+       "Educó a los jóvenes pobres de Turín con juego, música y alegría."
       ],
       "en": [
        "St. John Bosco",
-       "He raised thousands of young people with games, music and joy."
+       "He raised the poor young people of Turin with games, music and joy."
       ],
       "fuentes": [
        "https://www.franciscanmedia.org/saint-of-the-day/saint-john-bosco/",
@@ -1718,7 +1718,7 @@
        "https://en.wikipedia.org/wiki/Elizabeth_of_the_Trinity"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -1877,7 +1877,7 @@
        "https://www.cccb.ca/indigenous-peoples/prayer-and-spirituality/saint-kateri-tekakwitha/"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -1907,7 +1907,7 @@
        "https://www.ncregister.com/features/simonson-st-benedict-joseph-labre"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -2026,11 +2026,11 @@
       "lrn": "pablo",
       "es": [
        "San Pablo",
-       "Escribió el himno al amor más citado de la historia."
+       "Escribió el himno a la caridad de 1 Corintios 13."
       ],
       "en": [
        "St. Paul",
-       "He wrote the most quoted hymn to love in history."
+       "He wrote the hymn to charity in 1 Corinthians 13."
       ],
       "fuentes": [
        "https://www.vatican.va/content/benedict-xvi/en/encyclicals/documents/hf_ben-xvi_enc_20051225_deus-caritas-est.html",
@@ -2345,7 +2345,7 @@
        "https://aleteia.org/2018/04/08/meet-bl-isidore-bakanja-a-merciful-catechist-who-forgave-his-racist-attackers/"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -2375,7 +2375,7 @@
        "https://www.vaticannews.va/en/saints/10/05/st--faustina-kowalska.html"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
