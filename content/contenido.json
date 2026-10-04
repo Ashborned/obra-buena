@@ -33,6 +33,10 @@
       "en": [
        "St. Philip Neri",
        "The saint of joy. He filled Rome with laughter and prayer."
+      ],
+      "fuentes": [
+       "https://www.franciscanmedia.org/saint-of-the-day/saint-philip-neri/",
+       "https://www.catholic.org/saints/saint.php?saint_id=97"
       ]
      },
      "revision": "aprobado"
@@ -59,6 +63,11 @@
       "en": [
        "St. Teresa of the Andes",
        "Chile's first saint. She wrote: \"God is infinite joy.\""
+      ],
+      "fuentes": [
+       "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19930321_teresa-de-jesus_sp.html",
+       "https://santateresadelosandes.org/index.php/2021/04/08/la-felicidad-en-teresa-de-los-andes/",
+       "https://www.ewtn.com/es/catolicismo/santos/teresa-de-los-andes-15091"
       ]
      },
      "revision": "aprobado"
@@ -85,6 +94,10 @@
       "en": [
        "St. Alberto Hurtado",
        "Even when ill he kept saying: \"Content, Lord, content.\""
+      ],
+      "fuentes": [
+       "https://www.vaticannews.va/es/iglesia/news/2020-08/aniversario-san-alberto-hurtado-que-haria-cristo-en-mi-lugar.html",
+       "https://www.memoriachilena.gob.cl/602/w3-article-765.html"
       ]
      },
      "revision": "aprobado"
@@ -117,7 +130,7 @@
        "https://www.usccb.org/blessed-pier-giorgio-frassati"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -148,7 +161,7 @@
        "https://en.wikipedia.org/wiki/Carlo_Acutis"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -178,7 +191,7 @@
        "https://en.wikipedia.org/wiki/Thomas_More"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -208,7 +221,7 @@
        "https://salesians.org/calendar/st-dominic-savio?date=2022-05-06"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     }
    ]
   },
@@ -239,6 +252,10 @@
       "en": [
        "St. Joseph",
        "He worked quietly to care for his family. Patron of workers."
+      ],
+      "fuentes": [
+       "https://www.vatican.va/content/francesco/en/apost_letters/documents/papa-francesco-lettera-ap_20201208_patris-corde.html",
+       "https://www.franciscanmedia.org/saint-of-the-day/saint-joseph-the-worker/"
       ]
      },
      "revision": "aprobado"
@@ -265,6 +282,11 @@
       "en": [
        "St. Teresa of Calcutta",
        "She served the poorest without rest, and drew strength from an hour of prayer each day."
+      ],
+      "fuentes": [
+       "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20031019_madre-teresa_en.html",
+       "https://aleteia.org/2021/09/05/why-mother-teresa-insisted-on-a-daily-eucharistic-holy-hour/",
+       "https://www.motherteresa.org/mc-family"
       ]
      },
      "revision": "aprobado"
@@ -291,6 +313,10 @@
       "en": [
        "St. Alberto Hurtado",
        "He drove around Santiago at night looking for people with nowhere to sleep."
+      ],
+      "fuentes": [
+       "https://www.memoriachilena.gob.cl/602/w3-article-765.html",
+       "https://es.aleteia.org/2018/08/18/camioneta-verde-del-padre-hurtado-las-cuatro-ruedas-de-la-solidaridad/"
       ]
      },
      "revision": "aprobado"
@@ -323,7 +349,7 @@
        "https://cabrinishrinenyc.org/thoughts-on-heroic-faith-and-virtue/"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -335,24 +361,24 @@
       "He giveth power to the faint; and to them that have no might he increaseth strength."
      ],
      "p": [
-      "Señor, tú das fuerza a quien está cansado. Aquí estoy, con lo poco que me queda; multiplica tú lo que yo no alcanzo.",
+      "Señor, tú das fuerza a quien ya no tiene fuerzas. Aquí estoy, con lo poco que me queda; multiplica tú lo que yo no alcanzo.",
       "Lord, you give power to the faint. Here I am with the little I have left; multiply what I cannot reach."
      ],
      "c": {
       "ini": "J",
       "es": [
        "San Juan María Vianney",
-       "El cura de Ars pasó sus últimos años confesando muchas horas al día, a veces más de dieciséis."
+       "El cura de Ars pasó sus últimos años confesando entre dieciséis y dieciocho horas al día."
       ],
       "en": [
        "St. John Vianney",
-       "In his last years the Curé of Ars heard confessions for many hours a day, sometimes more than sixteen."
+       "In his last years the Curé of Ars heard confessions sixteen to eighteen hours a day."
       ],
       "fuentes": [
        "https://www.newadvent.org/cathen/08326c.htm"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -382,7 +408,7 @@
        "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080409.html"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -401,15 +427,15 @@
       "ini": "M",
       "es": [
        "Santa María MacKillop",
-       "Primera santa de Australia. Recorrió el país abriendo escuelas para los hijos de familias pobres del campo."
+       "Primera santa de Australia. Fundó escuelas para los hijos de familias pobres, también en zonas rurales."
       ],
       "en": [
        "St. Mary MacKillop",
-       "Australia's first saint. She travelled the country opening schools for the children of poor rural families."
+       "Australia's first saint. She founded schools for the children of poor families, including in rural areas."
       ],
       "fuentes": [
-       "https://www.sosj.org.au/founded-to-respond/mary-mackillop/",
-       "https://www.britannica.com/biography/Saint-Mary-MacKillop"
+       "https://www.franciscanmedia.org/saint-of-the-day/saint-mary-mackillop/",
+       "https://www.vatican.va/content/benedict-xvi/en/homilies/2010/documents/hf_ben-xvi_hom_20101017_canonizations.html"
       ]
      },
      "revision": "borrador"
@@ -438,11 +464,15 @@
       "ini": "R",
       "es": [
        "San Rafael Arcángel",
-       "Su nombre significa \"Dios sana\". Hoy es su fiesta."
+       "Su nombre significa \"Dios sana\". Su fiesta es el 29 de septiembre."
       ],
       "en": [
        "St. Raphael the Archangel",
-       "His name means \"God heals\". Today is his feast."
+       "His name means \"God heals\". His feast is September 29."
+      ],
+      "fuentes": [
+       "https://www.newadvent.org/cathen/12640b.htm",
+       "https://www.franciscanmedia.org/saint-of-the-day/saints-michael-gabriel-and-raphael/"
       ]
      },
      "revision": "aprobado"
@@ -469,6 +499,10 @@
       "en": [
        "St. John Paul II",
        "He lived his illness in front of everyone, without losing faith or tenderness."
+      ],
+      "fuentes": [
+       "https://www.vatican.va/content/benedict-xvi/en/homilies/2011/documents/hf_ben-xvi_hom_20110501_beatificazione-gpii.html",
+       "https://www.franciscanmedia.org/st-anthony-messenger/notes-from-a-friar-pope-john-paul-ii-and-suffering/"
       ]
      },
      "revision": "aprobado"
@@ -495,6 +529,10 @@
       "en": [
        "St. Bernadette",
        "Our Lady appeared to her at Lourdes, today a place of prayer for the sick."
+      ],
+      "fuentes": [
+       "https://www.franciscanmedia.org/saint-of-the-day/saint-bernadette-soubirous/",
+       "https://www.newadvent.org/cathen/09389b.htm"
       ]
      },
      "revision": "aprobado"
@@ -527,7 +565,7 @@
        "https://www.swissinfo.ch/spa/san-jos%C3%A9-gregorio-hern%C3%A1ndez,-el-%22m%C3%A9dico-de-los-pobres%22-de-venezuela-elevado-a-los-altares/90190596"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -553,7 +591,8 @@
        "Next to his friary he founded a hospital, the House for the Relief of Suffering, opened in 1956."
       ],
       "fuentes": [
-       "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20020616_padre-pio_en.html"
+       "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20020616_padre-pio_en.html",
+       "https://www.padrepioesangiovannirotondo.it/piosgr/luoghi-di-padre-pio/casa-sollievo-della-sofferenza/"
       ]
      },
      "revision": "borrador"
@@ -586,7 +625,7 @@
        "https://en.wikipedia.org/wiki/Alphonsa_of_the_Immaculate_Conception"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -616,7 +655,7 @@
        "https://saint-joseph.org/en/spirituality/"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     }
    ]
   },
@@ -648,6 +687,10 @@
       "en": [
        "St. Dymphna",
        "Patron of those who suffer from anxiety and mental illness."
+      ],
+      "fuentes": [
+       "https://www.catholic.com/tract/saint-dymphna-patron-saint-of-mental-illness",
+       "https://www.catholic.org/news/saints/story.php?id=55429"
       ]
      },
      "revision": "aprobado"
@@ -674,6 +717,10 @@
       "en": [
        "St. Teresa of Calcutta",
        "She lived many years of inner darkness and kept loving and serving."
+      ],
+      "fuentes": [
+       "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20031019_madre-teresa_en.html",
+       "https://www.osservatoreromano.va/en/news/2025-09/dcmen-008/mother-teresa-and-the-dark-night-of-the-soul.html"
       ]
      },
      "revision": "aprobado"
@@ -701,6 +748,10 @@
       "en": [
        "St. Thérèse",
        "In her last months she lived through a night of faith, and still trusted God."
+      ],
+      "fuentes": [
+       "https://www.vatican.va/content/benedict-xvi/en/audiences/2011/documents/hf_ben-xvi_aud_20110406.html",
+       "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1997/documents/hf_jp-ii_apl_19101997_divini-amoris.html"
       ]
      },
      "revision": "aprobado"
@@ -722,11 +773,11 @@
       "ini": "J",
       "es": [
        "San Juan de Dios",
-       "Lo trataron como loco y lo internaron. Después dedicó su vida a cuidar a los enfermos y pobres de Granada."
+       "Pasó por una crisis tan honda que lo internaron. Después dedicó su vida a cuidar a los enfermos y pobres de Granada."
       ],
       "en": [
        "St. John of God",
-       "People treated him as a madman and had him committed. Afterward he gave his life to caring for the sick and poor of Granada."
+       "He went through a crisis so deep that he was hospitalized. Afterward he gave his life to caring for the sick and poor of Granada."
       ],
       "fuentes": [
        "https://www.newadvent.org/cathen/08472c.htm",
@@ -763,7 +814,7 @@
        "https://carmelites.ie/saints/ss-louis-and-zelie-martin/"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -792,7 +843,7 @@
        "https://www.newadvent.org/cathen/01334a.htm"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -819,7 +870,8 @@
       ],
       "fuentes": [
        "https://filles-de-la-charite.org/en/family/saint-louise-de-marillac/",
-       "https://www.vaticanstate.va/en/state-and-government/general-informations/saint-of-the-day/3828-march-15-saint-louise-de-marillac.html"
+       "https://wiki.famvin.org/en/Louise_de_Marillac,_a_Spiritual_Woman",
+       "https://en.wikipedia.org/wiki/Louise_de_Marillac"
       ]
      },
      "revision": "borrador"
@@ -855,6 +907,10 @@
       "en": [
        "St. Monica",
        "She wept and prayed for years for her son, and God heard her."
+      ],
+      "fuentes": [
+       "https://www.newadvent.org/cathen/10482a.htm",
+       "https://www.franciscanmedia.org/saint-of-the-day/saint-monica/"
       ]
      },
      "revision": "aprobado"
@@ -881,6 +937,10 @@
       "en": [
        "Our Lady of Sorrows",
        "Mary stood at the foot of the cross. She knows what it is to suffer for someone you love."
+      ],
+      "fuentes": [
+       "https://www.vatican.va/content/john-paul-ii/en/audiences/1997/documents/hf_jp-ii_aud_02041997.html",
+       "https://www.franciscanmedia.org/saint-of-the-day/our-lady-of-sorrows/"
       ]
      },
      "revision": "aprobado"
@@ -908,6 +968,10 @@
       "en": [
        "St. Peter",
        "He wept bitterly after denying Jesus, and he was forgiven."
+      ],
+      "fuentes": [
+       "https://www.newadvent.org/cathen/11744a.htm",
+       "https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20060524.html"
       ]
      },
      "revision": "aprobado"
@@ -939,7 +1003,7 @@
        "https://www.newadvent.org/cathen/13739a.htm"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -969,7 +1033,7 @@
        "https://en.wikipedia.org/wiki/Louis_Martin_and_Marie-Az%C3%A9lie_Gu%C3%A9rin"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -999,7 +1063,7 @@
        "https://en.wikipedia.org/wiki/Jane_Frances_de_Chantal"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -1025,6 +1089,7 @@
        "According to tradition, when he was distressed over his sick uncle, Our Lady told him: \"Am I not here, I who am your mother?\""
       ],
       "fuentes": [
+       "https://www.sancta.org/nican.html",
        "https://www.sancta.org/noestoy_s.html",
        "https://www.miamiarch.org/CatholicDiocese.php?op=Article_archdiocese-of-miami-wenski-homily-guadalupe-no-estoy-yo-aqui-que-soy-tu-madre"
       ]
@@ -1060,6 +1125,10 @@
       "en": [
        "St. Augustine",
        "He searched for truth everywhere before he found it in God."
+      ],
+      "fuentes": [
+       "https://www.newadvent.org/cathen/02084a.htm",
+       "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080109.html"
       ]
      },
      "revision": "aprobado"
@@ -1086,6 +1155,11 @@
       "en": [
        "St. Ignatius of Loyola",
        "He taught discernment: noticing what brings peace and what takes it away."
+      ],
+      "fuentes": [
+       "https://www.vatican.va/content/francesco/en/audiences/2022/documents/20221123-udienza-generale.html",
+       "https://www.vatican.va/content/francesco/en/audiences/2022/documents/20221026-udienza-generale.html",
+       "https://www.vatican.va/content/francesco/en/audiences/2022/documents/20221019-udienza-generale.html"
       ]
      },
      "revision": "aprobado"
@@ -1112,6 +1186,10 @@
       "en": [
        "St. Thomas Aquinas",
        "The wisest man of his time, and still he prayed before studying."
+      ],
+      "fuentes": [
+       "https://www.newadvent.org/cathen/14663b.htm",
+       "https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100602.html"
       ]
      },
      "revision": "aprobado"
@@ -1144,7 +1222,7 @@
        "https://teresavila.com/poema/9-nada-te-turbe/"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -1173,7 +1251,7 @@
        "https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20060927.html"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -1203,7 +1281,7 @@
        "https://en.wikipedia.org/wiki/Lead,_Kindly_Light"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -1232,7 +1310,7 @@
        "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19981011_edith_stein_en.html"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     }
    ]
   },
@@ -1258,11 +1336,16 @@
       "ini": "J",
       "es": [
        "San Jerónimo",
-       "Tenía mal genio y lo luchó toda su vida. Mañana es su fiesta."
+       "Tenía mal genio y lo luchó toda su vida. Su fiesta es el 30 de septiembre."
       ],
       "en": [
        "St. Jerome",
-       "He had a temper and fought it all his life. His feast is tomorrow."
+       "He had a temper and fought it all his life. His feast is September 30."
+      ],
+      "fuentes": [
+       "https://www.franciscanmedia.org/saint-of-the-day/saint-jerome/",
+       "https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20071107.html",
+       "https://www.newadvent.org/cathen/08341a.htm"
       ]
      },
      "revision": "aprobado"
@@ -1289,6 +1372,10 @@
       "en": [
        "St. Francis de Sales",
        "He had a strong temper and worked on it so much he became known as the gentle saint."
+      ],
+      "fuentes": [
+       "https://www.franciscanmedia.org/saint-of-the-day/saint-francis-de-sales/",
+       "https://www.donbosco.press/en/our-saints/st-francis-de-sales-gentleness-7-8/"
       ]
      },
      "revision": "aprobado"
@@ -1316,6 +1403,10 @@
       "en": [
        "St. Peter",
        "He drew his sword in the garden and Jesus stopped him. He learned another way."
+      ],
+      "fuentes": [
+       "https://www.newadvent.org/cathen/11744a.htm",
+       "https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20060517.html"
       ]
      },
      "revision": "aprobado"
@@ -1348,7 +1439,7 @@
        "https://en.wikipedia.org/wiki/Moses_the_Black"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -1378,7 +1469,7 @@
        "https://www.franciscanmedia.org/saint-of-the-day/saint-camillus-de-lellis/"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -1408,7 +1499,7 @@
        "https://www.vatican.va/content/francesco/es/homilies/2018/documents/papa-francesco_20181014_omelia-canonizzazione.html"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -1438,7 +1529,7 @@
        "https://en.wikipedia.org/wiki/John_Gualbert"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     }
    ]
   },
@@ -1469,6 +1560,10 @@
       "en": [
        "St. Francis of Assisi",
        "Poor and joyful. He praised God for the sun, water and every creature."
+      ],
+      "fuentes": [
+       "https://www.vatican.va/content/francesco/en/encyclicals/documents/papa-francesco_20150524_enciclica-laudato-si.html",
+       "https://www.franciscanmedia.org/saint-of-the-day/saint-francis-of-assisi/"
       ]
      },
      "revision": "aprobado"
@@ -1495,6 +1590,11 @@
       "en": [
        "St. John Bosco",
        "He raised thousands of young people with games, music and joy."
+      ],
+      "fuentes": [
+       "https://www.franciscanmedia.org/saint-of-the-day/saint-john-bosco/",
+       "https://www.donbosco.press/en/don-bosco/the-leisure-of-don-bosco/",
+       "https://www.donbosco.press/en/don-bosco/don-bosco-and-music/"
       ]
      },
      "revision": "aprobado"
@@ -1521,6 +1621,10 @@
       "en": [
        "The Virgin Mary",
        "Her joy is written in the Magnificat."
+      ],
+      "fuentes": [
+       "https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20060215.html",
+       "https://www.newadvent.org/cathen/09534a.htm"
       ]
      },
      "revision": "aprobado"
@@ -1553,7 +1657,7 @@
        "https://es.catholic.net/op/articulos/36495/carlos-manuel-cecilio-rodriguez-santiago-beato.html"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -1580,10 +1684,11 @@
       ],
       "fuentes": [
        "https://www.focolare.org/en/29-october-liturgical-feast-of-blessed-chiara-badano/",
-       "https://faith.nd.edu/saint/blessed-chiara-badano/"
+       "https://www.clairval.com/en/blessed-chiara-luce-badano/",
+       "https://www.laici.va/content/laici/en/sezioni/donna/tema-del-mese/novembre--dicembre-2010---la-luce-di-chiara-badano-.html"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -1602,11 +1707,11 @@
       "ini": "I",
       "es": [
        "Santa Isabel de la Trinidad",
-       "Escribió: \"He encontrado mi cielo en la tierra, porque el cielo es Dios y Dios está en mi alma\"."
+       "Escribió: \"Me parece que he encontrado mi cielo en la tierra, porque el cielo es Dios y Dios está en mi alma\"."
       ],
       "en": [
        "St. Elizabeth of the Trinity",
-       "She wrote: \"I have found my heaven on earth, since heaven is God and God is in my soul.\""
+       "She wrote: \"It seems to me that I have found my heaven on earth, since heaven is God and God is in my soul.\""
       ],
       "fuentes": [
        "https://carmelite.com/saint-elizabeth-of-the-trinity/",
@@ -1643,7 +1748,7 @@
        "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20001001_giuseppina-bakhita_en.html"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     }
    ]
   },
@@ -1675,6 +1780,10 @@
       "en": [
        "St. John of the Cross",
        "Locked alone in a cell, he wrote his most beautiful poems about God."
+      ],
+      "fuentes": [
+       "https://www.newadvent.org/cathen/08480a.htm",
+       "https://www.vatican.va/content/benedict-xvi/en/audiences/2011/documents/hf_ben-xvi_aud_20110216.html"
       ]
      },
      "revision": "aprobado"
@@ -1701,6 +1810,10 @@
       "en": [
        "St. Damien of Molokai",
        "He went to live with the leprosy patients everyone had abandoned."
+      ],
+      "fuentes": [
+       "https://www.vatican.va/content/benedict-xvi/en/homilies/2009/documents/hf_ben-xvi_hom_20091011_canonizzazioni.html",
+       "https://www.franciscanmedia.org/saint-of-the-day/saint-damien-de-veuster/"
       ]
      },
      "revision": "aprobado"
@@ -1728,6 +1841,10 @@
       "en": [
        "St. Alberto Hurtado",
        "He founded Hogar de Cristo so that no one would be alone on the street."
+      ],
+      "fuentes": [
+       "https://www.memoriachilena.gob.cl/602/w3-article-765.html",
+       "https://www.aciprensa.com/recurso/3526/biografia-de-san-alberto-hurtado-cruchaga"
       ]
      },
      "revision": "aprobado"
@@ -1749,11 +1866,11 @@
       "ini": "K",
       "es": [
        "Santa Kateri Tekakwitha",
-       "A los cuatro años perdió a sus padres y a su hermano por la viruela, que le dejó cicatrices en el rostro."
+       "De niña perdió a sus padres y a su hermano por la viruela, que le dejó cicatrices en el rostro."
       ],
       "en": [
        "St. Kateri Tekakwitha",
-       "At four she lost her parents and her brother to smallpox, which left her face scarred."
+       "As a child she lost her parents and her brother to smallpox, which left her face scarred."
       ],
       "fuentes": [
        "https://www.vaticannews.va/en/saints/07/14/st--kateri-tekakwitha.html",
@@ -1779,11 +1896,11 @@
       "ini": "B",
       "es": [
        "San Benito José Labre",
-       "Quiso ser monje y no lo admitieron. Pasó sus últimos años como peregrino pobre en Roma."
+       "Intentó varias veces ser monje y no pudo quedarse en ningún monasterio. Pasó sus últimos años como peregrino pobre en Roma."
       ],
       "en": [
        "St. Benedict Joseph Labre",
-       "He wanted to be a monk and was not accepted. He spent his last years as a poor pilgrim in Rome."
+       "He tried several times to become a monk but could not stay in any monastery. He spent his last years as a poor pilgrim in Rome."
       ],
       "fuentes": [
        "https://www.newadvent.org/cathen/02442a.htm",
@@ -1820,7 +1937,7 @@
        "https://en.wikipedia.org/wiki/Charles_de_Foucauld"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -1850,7 +1967,7 @@
        "https://www.oursundayvisitor.com/st-germaine-cousin/"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     }
    ]
   },
@@ -1877,11 +1994,16 @@
       "nov": "ter",
       "es": [
        "Santa Teresita",
-       "\"Mi vocación es el amor.\" Su novena está en curso."
+       "\"Mi vocación es el amor.\" Su fiesta es el 1 de octubre."
       ],
       "en": [
        "St. Thérèse",
-       "\"My vocation is love.\" Her novena is in progress."
+       "\"My vocation is love.\" Her feast is October 1."
+      ],
+      "fuentes": [
+       "https://www.gutenberg.org/ebooks/16772",
+       "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1997/documents/hf_jp-ii_apl_19101997_divini-amoris.html",
+       "https://www.franciscanmedia.org/saint-of-the-day/saint-therese-of-lisieux/"
       ]
      },
      "revision": "aprobado"
@@ -1909,6 +2031,10 @@
       "en": [
        "St. Paul",
        "He wrote the most quoted hymn to love in history."
+      ],
+      "fuentes": [
+       "https://www.vatican.va/content/benedict-xvi/en/encyclicals/documents/hf_ben-xvi_enc_20051225_deus-caritas-est.html",
+       "https://www.newadvent.org/cathen/04364a.htm"
       ]
      },
      "revision": "aprobado"
@@ -1935,6 +2061,10 @@
       "en": [
        "St. Maximilian Kolbe",
        "At Auschwitz he offered his life in exchange for a father's."
+      ],
+      "fuentes": [
+       "https://www.franciscanmedia.org/saint-of-the-day/saint-maximilian-mary-kolbe/",
+       "https://www.vaticannews.va/en/church/news/2021-08/saint-maximilian-kolbe-martyr-august14-1941-80-years.html"
       ]
      },
      "revision": "aprobado"
@@ -1967,7 +2097,7 @@
        "https://www.vaticannews.va/en/saints/09/09/st--peter-claver--jesuit--apostle-of--slaves-.html"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -1997,7 +2127,7 @@
        "https://www.catholic.org/saints/saint.php?saint_id=6985"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -2027,7 +2157,7 @@
        "https://www.franciscantradition.org/blog/saint-elizabeth-of-hungary-patroness-of-secular-franciscans/"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -2057,7 +2187,7 @@
        "https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/porres-martin"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     }
    ]
   },
@@ -2088,6 +2218,10 @@
       "en": [
        "St. John Paul II",
        "He visited the man who shot him in prison, and forgave him."
+      ],
+      "fuentes": [
+       "https://www.vaticannews.va/en/pope/news/2021-05/may-13th-1981-remembering-that-fateful-day.html",
+       "https://angelusnews.com/news/vatican/john-paul-assassination-45/"
       ]
      },
      "revision": "aprobado"
@@ -2114,6 +2248,10 @@
       "en": [
        "St. Stephen",
        "The first martyr died forgiving those who stoned him."
+      ],
+      "fuentes": [
+       "https://www.franciscanmedia.org/saint-of-the-day/saint-stephen/",
+       "https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070110.html"
       ]
      },
      "revision": "aprobado"
@@ -2140,6 +2278,11 @@
       "en": [
        "St. Augustine",
        "He lived for years far from God and wrote: \"Late have I loved you.\""
+      ],
+      "fuentes": [
+       "https://www.newadvent.org/fathers/110110.htm",
+       "https://www.newadvent.org/cathen/02084a.htm",
+       "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080227.html"
       ]
      },
      "revision": "aprobado"
@@ -2172,7 +2315,7 @@
        "https://www.catholic.com/magazine/online-edition/learning-forgiveness-from-st-maria-goretti"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -2191,11 +2334,11 @@
       "ini": "I",
       "es": [
        "Beato Isidoro Bakanja",
-       "Catequista del Congo, fue azotado por negarse a quitarse el escapulario. Murió perdonando y rezando por quien lo maltrató."
+       "Laico congoleño, fue azotado por negarse a quitarse el escapulario. Antes de morir perdonó a quien lo maltrató y prometió rezar por él desde el cielo."
       ],
       "en": [
        "Bl. Isidore Bakanja",
-       "A catechist in Congo, he was flogged for refusing to take off his scapular. He died forgiving and praying for the man who beat him."
+       "A Congolese layman, he was flogged for refusing to take off his scapular. Before he died he forgave the man who beat him and promised to pray for him from heaven."
       ],
       "fuentes": [
        "https://dacb.org/stories/democratic-republic-of-congo/bakanja-isidore/",
@@ -2221,14 +2364,15 @@
       "ini": "F",
       "es": [
        "Santa Faustina Kowalska",
-       "Recibió la misión de anunciar la misericordia de Dios. En la imagen que difundió se lee: \"Jesús, en ti confío\"."
+       "Recibió la misión de anunciar la misericordia de Dios. Según su diario, Jesús le pidió hacer pintar una imagen con las palabras: \"Jesús, en ti confío\"."
       ],
       "en": [
        "St. Faustina Kowalska",
-       "She was entrusted with proclaiming God's mercy. The image she spread bears the words: \"Jesus, I trust in you.\""
+       "She was entrusted with proclaiming God's mercy. According to her diary, Jesus asked her to have an image painted with the words: \"Jesus, I trust in you.\""
       ],
       "fuentes": [
-       "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20000430_faustina_en.html"
+       "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20000430_faustina_en.html",
+       "https://www.vaticannews.va/en/saints/10/05/st--faustina-kowalska.html"
       ]
      },
      "revision": "borrador"
@@ -2261,7 +2405,7 @@
        "https://en.wikipedia.org/wiki/Paul_Miki"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     }
    ]
   },
@@ -2292,6 +2436,10 @@
       "en": [
        "St. Ignatius of Loyola",
        "He taught us to end each day giving thanks for what we lived."
+      ],
+      "fuentes": [
+       "https://www.ignatianspirituality.com/ignatian-prayer/the-examen/",
+       "https://www.jesuits.org/spirituality/the-ignatian-examen/"
       ]
      },
      "revision": "aprobado"
@@ -2318,6 +2466,10 @@
       "en": [
        "St. Francis of Assisi",
        "He gave thanks for the sun, for water and even for sister death."
+      ],
+      "fuentes": [
+       "https://www.vatican.va/content/francesco/en/encyclicals/documents/papa-francesco_20150524_enciclica-laudato-si.html",
+       "https://www.franciscanmedia.org/saint-of-the-day/saint-francis-of-assisi/"
       ]
      },
      "revision": "aprobado"
@@ -2344,6 +2496,10 @@
       "en": [
        "St. Ignatius of Loyola",
        "He taught people to ask for \"an inner knowledge of all the good received.\""
+      ],
+      "fuentes": [
+       "https://ccel.org/ccel/ignatius/exercises.xvi.html",
+       "https://ubiesdomine.com/conocimiento-interno-del-senor/"
       ]
      },
      "revision": "aprobado"
@@ -2376,7 +2532,7 @@
        "https://www.aod.org/blessed-solanus-casey"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -2406,7 +2562,7 @@
        "https://www.vaticannews.va/en/saints/09/13/st--john-chrysostom--bishop-and-doctor-of-the-church.html"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -2433,10 +2589,10 @@
       ],
       "fuentes": [
        "https://www.nashvillecatholic.org/news/posts/st-clare-of-assisi-blessed-be-you-my-god-for-having-created-me",
-       "https://ewtn.co.uk/article-saint-clare-of-assisi/"
+       "https://faith.nd.edu/saint/st-clare/"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     },
     {
      "ref": [
@@ -2466,7 +2622,7 @@
        "https://en.wikipedia.org/wiki/Peter_Julian_Eymard"
       ]
      },
-     "revision": "borrador"
+     "revision": "pendiente"
     }
    ]
   }

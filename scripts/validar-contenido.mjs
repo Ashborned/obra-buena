@@ -37,7 +37,7 @@ for (const e of emos) {
     if (!REV.includes(it.revision)) err(wi, 'revision inválida');
     const fc = it.c?.fuentes;
     if (fc !== undefined && !(Array.isArray(fc) && fc.length && fc.every(u => /^https?:\/\//.test(u)))) err(wi, 'c.fuentes debe ser una lista de URLs');
-    if (!fc && it.revision !== 'aprobado') err(wi, 'santo compañero sin fuentes (c.fuentes)');
+    if (!fc) err(wi, 'santo compañero sin fuentes (c.fuentes)');
     if (it.ref && refs.has(it.ref[0])) warn(wi, `versículo repetido en la misma emoción (${it.ref[0]})`);
     if (it.ref) refs.add(it.ref[0]);
   });
