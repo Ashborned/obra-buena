@@ -20,7 +20,8 @@ Todo texto visible va en pares `es` / `en`. Los arreglos `[es, en]` siempre llev
       "nov": "mon",            // opcional: id de novena
       "lrn": "pedro",          // opcional: id de lectura
       "es": ["Santa Mónica", "una línea verdadera"],
-      "en": ["St. Monica", "one true line"]
+      "en": ["St. Monica", "one true line"],
+      "fuentes": ["https://…", "https://…"]  // URLs que respaldan la línea del santo (mín. 1, ideal 2 independientes)
     },
     "revision": "borrador"
   }]

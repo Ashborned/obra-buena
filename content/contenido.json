@@ -88,12 +88,133 @@
       ]
      },
      "revision": "aprobado"
+    },
+    {
+     "ref": [
+      "Salmo 16:11",
+      "Psalm 16:11"
+     ],
+     "v": [
+      "Me mostrarás la senda de la vida: hartura de alegrías hay con tu rostro; deleites en tu diestra para siempre.",
+      "Thou wilt shew me the path of life: in thy presence is fulness of joy; at thy right hand there are pleasures for evermore."
+     ],
+     "p": [
+      "Señor, hoy siento alegría y quiero vivirla contigo. Que mi felicidad me lleve hacia lo alto y hacia quienes me necesitan.",
+      "Lord, I feel joy today and I want to live it with you. May my happiness lift me upward and toward those who need me."
+     ],
+     "c": {
+      "ini": "P",
+      "es": [
+       "San Pier Giorgio Frassati",
+       "Alpinista y amigo de los pobres de Turín, vivía su fe con alegría. En su última foto en la montaña escribió: \"Hacia lo alto\"."
+      ],
+      "en": [
+       "St. Pier Giorgio Frassati",
+       "A mountaineer and friend of the poor of Turin, he lived his faith with joy. On his last mountain photo he wrote: \"Upwards.\""
+      ],
+      "fuentes": [
+       "https://www.vatican.va/content/leo-xiv/en/homilies/2025/documents/20250907-omelia-frassati-acutis.html",
+       "https://www.usccb.org/blessed-pier-giorgio-frassati"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Salmo 100:2",
+      "Psalm 100:2"
+     ],
+     "v": [
+      "Servid á Jehová con alegría: venid ante su acatamiento con regocijo.",
+      "Serve the LORD with gladness: come before his presence with singing."
+     ],
+     "p": [
+      "Dios mío, gracias por esta alegría. Que no me encierre en mí, sino que sepa mirarte a ti y a los demás.",
+      "My God, thank you for this joy. Keep me from turning inward; let me look to you and to others."
+     ],
+     "c": {
+      "ini": "C",
+      "es": [
+       "San Carlo Acutis",
+       "Adolescente de nuestro tiempo que amaba la Eucaristía. Decía: \"La tristeza es dirigir la mirada hacia uno mismo, la felicidad es dirigir la mirada hacia Dios\"."
+      ],
+      "en": [
+       "St. Carlo Acutis",
+       "A teenager of our time who loved the Eucharist. He said: \"Sadness is looking at yourself; happiness is looking at God.\""
+      ],
+      "fuentes": [
+       "https://www.vatican.va/content/leo-xiv/es/homilies/2025/documents/20250907-omelia-frassati-acutis.html",
+       "https://www.vatican.va/content/leo-xiv/en/homilies/2025/documents/20250907-omelia-frassati-acutis.html",
+       "https://en.wikipedia.org/wiki/Carlo_Acutis"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Proverbios 17:22",
+      "Proverbs 17:22"
+     ],
+     "v": [
+      "El corazón alegre produce buena disposición: mas el espíritu triste seca los huesos.",
+      "A merry heart doeth good like a medicine: but a broken spirit drieth the bones."
+     ],
+     "p": [
+      "Señor, gracias por las risas de hoy. Dame un corazón alegre que alivie a otros, también en los días difíciles.",
+      "Lord, thank you for today's laughter. Give me a cheerful heart that lightens others, even on hard days."
+     ],
+     "c": {
+      "ini": "T",
+      "es": [
+       "Santo Tomás Moro",
+       "Aun preso en la Torre de Londres bromeaba con su familia; su buen humor lo acompañó hasta el final."
+      ],
+      "en": [
+       "St. Thomas More",
+       "Even as a prisoner in the Tower of London he joked with his family; his good humor stayed with him to the end."
+      ],
+      "fuentes": [
+       "https://www.newadvent.org/cathen/14689c.htm",
+       "https://en.wikipedia.org/wiki/Thomas_More"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Salmo 32:11",
+      "Psalm 32:11"
+     ],
+     "v": [
+      "Alegraos en Jehová, y gozaos, justos: y cantad todos vosotros los rectos de corazón.",
+      "Be glad in the LORD, and rejoice, ye righteous: and shout for joy, all ye that are upright in heart."
+     ],
+     "p": [
+      "Jesús, que mi alegría sea sencilla y limpia, y que haga bien a quienes están cerca de mí.",
+      "Jesus, may my joy be simple and clean, and may it do good to those near me."
+     ],
+     "c": {
+      "ini": "D",
+      "es": [
+       "Santo Domingo Savio",
+       "Alumno de Don Bosco, le dijo a un compañero recién llegado: \"Aquí hacemos consistir la santidad en estar siempre alegres\"."
+      ],
+      "en": [
+       "St. Dominic Savio",
+       "A student of Don Bosco, he told a newcomer: \"Here we make holiness consist in being always cheerful.\""
+      ],
+      "fuentes": [
+       "https://salesianmissions.org/about-us/who-we-are/about-st-john-bosco/our-history/history-of-the-salesians/st-dominic-savio-1954/",
+       "https://salesians.org/calendar/st-dominic-savio?date=2022-05-06"
+      ]
+     },
+     "revision": "borrador"
     }
    ]
   },
   {
    "id": "tired",
-   "es": "Cansada",
+   "es": "Cansancio",
    "en": "Tired",
    "items": [
     {
@@ -106,7 +227,7 @@
       "Come unto me, all ye that labour and are heavy laden, and I will give you rest."
      ],
      "p": [
-      "Jesús, estoy agotada. Pongo en tus manos todo lo que cargo y te pido descanso para el cuerpo y el alma.",
+      "Jesús, el cansancio me pesa. Pongo en tus manos todo lo que cargo y te pido descanso para el cuerpo y el alma.",
       "Jesus, I am worn out. I place in your hands all that I carry and ask for rest for body and soul."
      ],
      "c": {
@@ -173,6 +294,125 @@
       ]
      },
      "revision": "aprobado"
+    },
+    {
+     "ref": [
+      "Salmo 23:2-3",
+      "Psalm 23:2-3"
+     ],
+     "v": [
+      "En lugares de delicados pastos me hará yacer: junto á aguas de reposo me pastoreará. Confortará mi alma.",
+      "He maketh me to lie down in green pastures: he leadeth me beside the still waters. He restoreth my soul."
+     ],
+     "p": [
+      "Buen Pastor, llévame a aguas tranquilas. Hoy no puedo con todo; renueva mis fuerzas y enséñame a descansar en ti.",
+      "Good Shepherd, lead me beside still waters. I can't carry it all today; restore my strength and teach me to rest in you."
+     ],
+     "c": {
+      "ini": "F",
+      "es": [
+       "Santa Francisca Javier Cabrini",
+       "Le temía al agua y aun así cruzó el océano muchas veces para servir a los migrantes."
+      ],
+      "en": [
+       "St. Frances Xavier Cabrini",
+       "She was afraid of water, yet she crossed the ocean many times to serve migrants."
+      ],
+      "fuentes": [
+       "https://www.franciscanmedia.org/saint-of-the-day/saint-frances-xavier-cabrini/",
+       "https://cabrinishrinenyc.org/thoughts-on-heroic-faith-and-virtue/"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Isaías 40:29",
+      "Isaiah 40:29"
+     ],
+     "v": [
+      "El da esfuerzo al cansado, y multiplica las fuerzas al que no tiene ningunas.",
+      "He giveth power to the faint; and to them that have no might he increaseth strength."
+     ],
+     "p": [
+      "Señor, tú das fuerza a quien está cansado. Aquí estoy, con lo poco que me queda; multiplica tú lo que yo no alcanzo.",
+      "Lord, you give power to the faint. Here I am with the little I have left; multiply what I cannot reach."
+     ],
+     "c": {
+      "ini": "J",
+      "es": [
+       "San Juan María Vianney",
+       "El cura de Ars pasó sus últimos años confesando muchas horas al día, a veces más de dieciséis."
+      ],
+      "en": [
+       "St. John Vianney",
+       "In his last years the Curé of Ars heard confessions for many hours a day, sometimes more than sixteen."
+      ],
+      "fuentes": [
+       "https://www.newadvent.org/cathen/08326c.htm"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Marcos 6:31",
+      "Mark 6:31"
+     ],
+     "v": [
+      "Venid vosotros aparte al lugar desierto, y reposad un poco.",
+      "Come ye yourselves apart into a desert place, and rest a while."
+     ],
+     "p": [
+      "Jesús, tú invitaste a tus amigos a descansar. Ayúdame a parar sin culpa y a encontrar en ti un lugar de reposo.",
+      "Jesus, you invited your friends to rest. Help me stop without guilt and find in you a place of rest."
+     ],
+     "c": {
+      "ini": "B",
+      "es": [
+       "San Benito",
+       "En su Regla ordenó el día entre oración y trabajo, y cuidó que los monjes durmieran lo suficiente."
+      ],
+      "en": [
+       "St. Benedict",
+       "His Rule ordered the day between prayer and work, and made sure the monks got enough sleep."
+      ],
+      "fuentes": [
+       "https://www.newadvent.org/cathen/02436a.htm",
+       "https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080409.html"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Gálatas 6:9",
+      "Galatians 6:9"
+     ],
+     "v": [
+      "No nos cansemos, pues, de hacer bien; que á su tiempo segaremos, si no hubiéremos desmayado.",
+      "And let us not be weary in well doing: for in due season we shall reap, if we faint not."
+     ],
+     "p": [
+      "Señor, a veces me agota hacer el bien. Sostén mi ánimo y ayúdame a dejar los frutos en tus manos.",
+      "Lord, sometimes doing good wears me out. Hold up my spirit and help me leave the harvest in your hands."
+     ],
+     "c": {
+      "ini": "M",
+      "es": [
+       "Santa María MacKillop",
+       "Primera santa de Australia. Recorrió el país abriendo escuelas para los hijos de familias pobres del campo."
+      ],
+      "en": [
+       "St. Mary MacKillop",
+       "Australia's first saint. She travelled the country opening schools for the children of poor rural families."
+      ],
+      "fuentes": [
+       "https://www.sosj.org.au/founded-to-respond/mary-mackillop/",
+       "https://www.britannica.com/biography/Saint-Mary-MacKillop"
+      ]
+     },
+     "revision": "borrador"
     }
    ]
   },
@@ -258,6 +498,125 @@
       ]
      },
      "revision": "aprobado"
+    },
+    {
+     "ref": [
+      "Salmo 30:2",
+      "Psalm 30:2"
+     ],
+     "v": [
+      "Jehová Dios mío, á ti clamé, y me sanaste.",
+      "O LORD my God, I cried unto thee, and thou hast healed me."
+     ],
+     "p": [
+      "Señor, a ti clamo con el cuerpo cansado y el corazón inquieto. Acompaña a quienes me cuidan y dame paz mientras espero.",
+      "Lord, I cry out to you with a tired body and a restless heart. Be with those who care for me and give me peace while I wait."
+     ],
+     "c": {
+      "ini": "J",
+      "es": [
+       "San José Gregorio Hernández",
+       "Médico venezolano, recorría las calles llevando medicina y consuelo, sobre todo a los pobres."
+      ],
+      "en": [
+       "St. José Gregorio Hernández",
+       "A Venezuelan doctor, he walked the streets bringing medicine and comfort, above all to the poor."
+      ],
+      "fuentes": [
+       "https://www.vaticannews.va/en/vatican-city/news/2025-10/parolin-homily-venezuela-canonizations-thanksgiving.html",
+       "https://www.swissinfo.ch/spa/san-jos%C3%A9-gregorio-hern%C3%A1ndez,-el-%22m%C3%A9dico-de-los-pobres%22-de-venezuela-elevado-a-los-altares/90190596"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Isaías 53:5",
+      "Isaiah 53:5"
+     ],
+     "v": [
+      "Mas él herido fué por nuestras rebeliones, molido por nuestros pecados: el castigo de nuestra paz sobre él; y por su llaga fuimos nosotros curados.",
+      "But he was wounded for our transgressions, he was bruised for our iniquities: the chastisement of our peace was upon him; and with his stripes we are healed."
+     ],
+     "p": [
+      "Jesús herido, tú conoces el dolor desde dentro. Une mi sufrimiento al tuyo y no permitas que me pierda en él.",
+      "Wounded Jesus, you know pain from the inside. Unite my suffering to yours and do not let me get lost in it."
+     ],
+     "c": {
+      "ini": "P",
+      "es": [
+       "San Pío de Pietrelcina",
+       "Junto a su convento fundó un hospital, la Casa Alivio del Sufrimiento, abierto en 1956."
+      ],
+      "en": [
+       "St. Pio of Pietrelcina",
+       "Next to his friary he founded a hospital, the House for the Relief of Suffering, opened in 1956."
+      ],
+      "fuentes": [
+       "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20020616_padre-pio_en.html"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Salmo 41:3",
+      "Psalm 41:3"
+     ],
+     "v": [
+      "Jehová lo sustentará sobre el lecho del dolor: mullirás toda su cama en su enfermedad.",
+      "The LORD will strengthen him upon the bed of languishing: thou wilt make all his bed in his sickness."
+     ],
+     "p": [
+      "Señor, sostenme en esta cama o en esta espera. Dame paciencia, buenas manos que me cuiden y tu compañía en cada hora.",
+      "Lord, hold me up in this bed or in this waiting. Give me patience, good hands to care for me and your company every hour."
+     ],
+     "c": {
+      "ini": "A",
+      "es": [
+       "Santa Alfonsa",
+       "Primera santa de la India. Vivió enferma gran parte de su vida y unió su cruz a la de Cristo."
+      ],
+      "en": [
+       "St. Alphonsa",
+       "India's first woman saint. She was ill for much of her life and united her cross with Christ's."
+      ],
+      "fuentes": [
+       "https://www.vatican.va/content/benedict-xvi/en/homilies/2008/documents/hf_ben-xvi_hom_20081012_canonizzazioni.html",
+       "https://en.wikipedia.org/wiki/Alphonsa_of_the_Immaculate_Conception"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Éxodo 15:26",
+      "Exodus 15:26"
+     ],
+     "v": [
+      "Yo soy Jehová tu Sanador.",
+      "I am the LORD that healeth thee."
+     ],
+     "p": [
+      "Dios que sanas, me pongo en tus manos. Bendice a quienes me atienden y dame confianza para el camino de hoy.",
+      "God who heals, I place myself in your hands. Bless those who look after me and give me trust for today's road."
+     ],
+     "c": {
+      "ini": "A",
+      "es": [
+       "San André Bessette",
+       "Humilde portero en Montreal. Muchos enfermos le pedían oración y él los animaba a confiar en San José."
+      ],
+      "en": [
+       "St. André Bessette",
+       "A humble doorkeeper in Montreal. Many sick people asked for his prayers, and he encouraged them to trust in St. Joseph."
+      ],
+      "fuentes": [
+       "https://www.diocesemontreal.org/en/archdiocese/history/saint-brother-andre-alfred-bessette",
+       "https://saint-joseph.org/en/spirituality/"
+      ]
+     },
+     "revision": "borrador"
     }
    ]
   },
@@ -277,7 +636,7 @@
       "The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit."
      ],
      "p": [
-      "Dios mío, hoy todo pesa. No me dejes sola. Envíame a alguien que me escuche y dame una pequeña luz para el próximo paso.",
+      "Dios mío, hoy todo pesa. No me dejes en esta soledad. Envíame a alguien que me escuche y dame una pequeña luz para el próximo paso.",
       "My God, everything feels heavy today. Do not leave me alone. Send me someone who will listen and give me a small light for the next step."
      ],
      "c": {
@@ -345,6 +704,125 @@
       ]
      },
      "revision": "aprobado"
+    },
+    {
+     "ref": [
+      "Salmo 23:4",
+      "Psalm 23:4"
+     ],
+     "v": [
+      "Aunque ande en valle de sombra de muerte, no temeré mal alguno; porque tú estarás conmigo: tu vara y tu cayado me infundirán aliento.",
+      "Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me; thy rod and thy staff they comfort me."
+     ],
+     "p": [
+      "Señor, camino por un valle oscuro y no veo la salida. Quédate a mi lado y ayúdame a dejarme acompañar por quienes pueden ayudarme.",
+      "Lord, I am walking through a dark valley and cannot see the way out. Stay beside me and help me let those who can help walk with me."
+     ],
+     "c": {
+      "ini": "J",
+      "es": [
+       "San Juan de Dios",
+       "Lo trataron como loco y lo internaron. Después dedicó su vida a cuidar a los enfermos y pobres de Granada."
+      ],
+      "en": [
+       "St. John of God",
+       "People treated him as a madman and had him committed. Afterward he gave his life to caring for the sick and poor of Granada."
+      ],
+      "fuentes": [
+       "https://www.newadvent.org/cathen/08472c.htm",
+       "https://faith.nd.edu/saint/st-john-of-god/"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Salmo 40:1-2",
+      "Psalm 40:1-2"
+     ],
+     "v": [
+      "Resignadamente esperé á Jehová, é inclinóse á mí, y oyó mi clamor. E hízome sacar de un lago de miseria, del lodo cenagoso; y puso mis pies sobre peña, y enderezó mis pasos.",
+      "I waited patiently for the LORD; and he inclined unto me, and heard my cry. He brought me up also out of an horrible pit, out of the miry clay, and set my feet upon a rock, and established my goings."
+     ],
+     "p": [
+      "Dios mío, espero en ti aunque me cueste. Inclínate hacia mí, escucha lo que no sé decir y pon mis pies sobre roca firme.",
+      "My God, I wait for you even when it is hard. Bend down to me, hear what I cannot put into words, and set my feet on solid rock."
+     ],
+     "c": {
+      "ini": "L",
+      "es": [
+       "San Luis Martin",
+       "Padre de Santa Teresita. En su vejez sufrió una enfermedad cerebral y pasó más de tres años internado en un hospital psiquiátrico. Hoy es santo."
+      ],
+      "en": [
+       "St. Louis Martin",
+       "Father of St. Thérèse. In old age he suffered a brain illness and spent over three years in a psychiatric hospital. Today he is a saint."
+      ],
+      "fuentes": [
+       "https://archives.carmeldelisieux.fr/en/le-couple-martin/",
+       "https://carmelites.ie/saints/ss-louis-and-zelie-martin/"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Lamentaciones 3:22-23",
+      "Lamentations 3:22-23"
+     ],
+     "v": [
+      "Es por la misericordia de Jehová que no somos consumidos, porque nunca decayeron sus misericordias. Nuevas son cada mañana; grande es tu fidelidad.",
+      "It is of the LORD's mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness."
+     ],
+     "p": [
+      "Señor, hoy todo me cuesta. Que tu misericordia me encuentre nueva cada mañana, aunque yo no la sienta.",
+      "Lord, everything is hard today. May your mercy meet me new each morning, even when I cannot feel it."
+     ],
+     "c": {
+      "ini": "A",
+      "es": [
+       "San Alfonso María de Ligorio",
+       "Gran santo y doctor de la Iglesia, en su vejez pasó por una dura noche interior de angustia y desaliento."
+      ],
+      "en": [
+       "St. Alphonsus Liguori",
+       "A great saint and Doctor of the Church, in old age he went through a hard inner night of anguish and discouragement."
+      ],
+      "fuentes": [
+       "https://www.newadvent.org/cathen/01334a.htm"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "2 Corintios 4:8-9",
+      "2 Corinthians 4:8-9"
+     ],
+     "v": [
+      "Estando atribulados en todo, mas no angustiados; en apuros, mas no desesperamos; perseguidos, mas no desamparados; abatidos, mas no perecemos.",
+      "We are troubled on every side, yet not distressed; we are perplexed, but not in despair; persecuted, but not forsaken; cast down, but not destroyed."
+     ],
+     "p": [
+      "Señor, me siento en apuros y sin fuerzas para esperar. Tú no me abandonas: dame hoy un pequeño apoyo y alguien con quien hablar.",
+      "Lord, I feel hard-pressed and too worn out to hope. You do not abandon me: give me a little support today and someone to talk to."
+     ],
+     "c": {
+      "ini": "L",
+      "es": [
+       "Santa Luisa de Marillac",
+       "Pasó por una etapa de depresión y dudas tan fuertes que quiso dejarlo todo. Más tarde fundó con San Vicente de Paúl las Hijas de la Caridad."
+      ],
+      "en": [
+       "St. Louise de Marillac",
+       "She went through a time of depression and doubt so heavy that she wanted to leave everything. Later, with St. Vincent de Paul, she founded the Daughters of Charity."
+      ],
+      "fuentes": [
+       "https://filles-de-la-charite.org/en/family/saint-louise-de-marillac/",
+       "https://www.vaticanstate.va/en/state-and-government/general-informations/saint-of-the-day/3828-march-15-saint-louise-de-marillac.html"
+      ]
+     },
+     "revision": "borrador"
     }
    ]
   },
@@ -433,12 +911,131 @@
       ]
      },
      "revision": "aprobado"
+    },
+    {
+     "ref": [
+      "Salmo 56:8",
+      "Psalm 56:8"
+     ],
+     "v": [
+      "Mis huídas has tú contado: pon mis lágrimas en tu redoma: ¿no están ellas en tu libro?",
+      "Thou tellest my wanderings: put thou my tears into thy bottle: are they not in thy book?"
+     ],
+     "p": [
+      "Señor, tú guardas cada una de mis lágrimas. No tengo que esconderlas de ti; recíbelas y quédate conmigo.",
+      "Lord, you keep every one of my tears. I don't have to hide them from you; receive them and stay with me."
+     ],
+     "c": {
+      "ini": "I",
+      "es": [
+       "Santa Isabel Ana Seton",
+       "Su esposo murió lejos de casa y quedó viuda con cinco hijos; más tarde perdió a dos de sus hijas."
+      ],
+      "en": [
+       "St. Elizabeth Ann Seton",
+       "Her husband died far from home, leaving her a widow with five children; later she lost two of her daughters."
+      ],
+      "fuentes": [
+       "https://www.newadvent.org/cathen/13739a.htm"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Juan 16:20",
+      "John 16:20"
+     ],
+     "v": [
+      "Aunque vosotros estaréis tristes, vuestra tristeza se tornará en gozo.",
+      "Ye shall be sorrowful, but your sorrow shall be turned into joy."
+     ],
+     "p": [
+      "Jesús, tú prometiste que la tristeza se volvería gozo. Hoy no lo veo; sostén mi esperanza mientras lloro.",
+      "Jesus, you promised that sorrow would turn into joy. I can't see it today; hold on to my hope while I weep."
+     ],
+     "c": {
+      "ini": "C",
+      "es": [
+       "Santa Celia Martin",
+       "Madre de Santa Teresita. Cuatro de sus nueve hijos murieron pequeños: conoció el dolor de despedir a quien se ama."
+      ],
+      "en": [
+       "St. Zélie Martin",
+       "Mother of St. Thérèse. Four of her nine children died young: she knew the pain of saying goodbye to those she loved."
+      ],
+      "fuentes": [
+       "https://archives.carmeldelisieux.fr/en/le-couple-martin/",
+       "https://en.wikipedia.org/wiki/Louis_Martin_and_Marie-Az%C3%A9lie_Gu%C3%A9rin"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "2 Corintios 1:3-4",
+      "2 Corinthians 1:3-4"
+     ],
+     "v": [
+      "Bendito sea el Dios y Padre del Señor Jesucristo, el Padre de misericordias, y el Dios de toda consolación, el cual nos consuela en todas nuestras tribulaciones.",
+      "Blessed be God, even the Father of our Lord Jesus Christ, the Father of mercies, and the God of all comfort; who comforteth us in all our tribulation."
+     ],
+     "p": [
+      "Padre de toda consolación, abrázame en esta pena. Y cuando pueda, hazme consuelo para otros.",
+      "Father of all comfort, hold me in this sorrow. And when I am able, make me a comfort for others."
+     ],
+     "c": {
+      "ini": "J",
+      "es": [
+       "Santa Juana Francisca de Chantal",
+       "Su esposo murió en un accidente de caza y quedó viuda muy joven. Años después fundó con San Francisco de Sales la Orden de la Visitación."
+      ],
+      "en": [
+       "St. Jane Frances de Chantal",
+       "Her husband died in a hunting accident, leaving her widowed very young. Years later, with St. Francis de Sales, she founded the Order of the Visitation."
+      ],
+      "fuentes": [
+       "https://www.catholicculture.org/culture/liturgicalyear/calendar/day.cfm?date=2009-08-12",
+       "https://en.wikipedia.org/wiki/Jane_Frances_de_Chantal"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Isaías 66:13",
+      "Isaiah 66:13"
+     ],
+     "v": [
+      "Como aquel á quien consuela su madre, así os consolaré yo á vosotros.",
+      "As one whom his mother comforteth, so will I comfort you."
+     ],
+     "p": [
+      "María, Madre mía, hoy necesito consuelo. Cúbreme con tu manto y llévame a Jesús.",
+      "Mary, my Mother, I need comfort today. Cover me with your mantle and bring me to Jesus."
+     ],
+     "c": {
+      "ini": "J",
+      "es": [
+       "San Juan Diego",
+       "Según la tradición, angustiado por su tío enfermo, escuchó a la Virgen decirle: \"¿No estoy yo aquí, que soy tu madre?\""
+      ],
+      "en": [
+       "St. Juan Diego",
+       "According to tradition, when he was distressed over his sick uncle, Our Lady told him: \"Am I not here, I who am your mother?\""
+      ],
+      "fuentes": [
+       "https://www.sancta.org/noestoy_s.html",
+       "https://www.miamiarch.org/CatholicDiocese.php?op=Article_archdiocese-of-miami-wenski-homily-guadalupe-no-estoy-yo-aqui-que-soy-tu-madre"
+      ]
+     },
+     "revision": "borrador"
     }
    ]
   },
   {
    "id": "confused",
-   "es": "Confundida",
+   "es": "Confusión",
    "en": "Confused",
    "items": [
     {
@@ -518,6 +1115,124 @@
       ]
      },
      "revision": "aprobado"
+    },
+    {
+     "ref": [
+      "Salmo 32:8",
+      "Psalm 32:8"
+     ],
+     "v": [
+      "Te haré entender, y te enseñaré el camino en que debes andar: sobre ti fijaré mis ojos.",
+      "I will instruct thee and teach thee in the way which thou shalt go: I will guide thee with mine eye."
+     ],
+     "p": [
+      "Señor, mis pensamientos dan vueltas. Calma mi interior y recuérdame que tú no cambias.",
+      "Lord, my thoughts keep spinning. Quiet my heart and remind me that you do not change."
+     ],
+     "c": {
+      "ini": "T",
+      "es": [
+       "Santa Teresa de Jesús",
+       "Escribió: \"Nada te turbe, nada te espante; todo se pasa, Dios no se muda\"."
+      ],
+      "en": [
+       "St. Teresa of Ávila",
+       "She wrote: \"Let nothing disturb you, nothing frighten you; all things pass, God does not change.\""
+      ],
+      "fuentes": [
+       "https://www.ewtn.com/es/catolicismo/devociones/santa-teresa-de-avila-15256",
+       "https://teresavila.com/poema/9-nada-te-turbe/"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Juan 14:5-6",
+      "John 14:5-6"
+     ],
+     "v": [
+      "Dícele Tomás: Señor, no sabemos á dónde vas: ¿cómo, pues, podemos saber el camino? Jesús le dice: Yo soy el camino, y la verdad, y la vida.",
+      "Thomas saith unto him, Lord, we know not whither thou goest; and how can we know the way? Jesus saith unto him, I am the way, the truth, and the life."
+     ],
+     "p": [
+      "Jesús, como Tomás, no sé hacia dónde voy. Tú eres el camino: tómame de la mano aunque no entienda.",
+      "Jesus, like Thomas, I don't know where I'm going. You are the way: take my hand even when I don't understand."
+     ],
+     "c": {
+      "ini": "T",
+      "es": [
+       "Santo Tomás Apóstol",
+       "Le dijo a Jesús que no sabía el camino; después dudó, y al verlo resucitado exclamó: \"¡Señor mío, y Dios mío!\""
+      ],
+      "en": [
+       "St. Thomas the Apostle",
+       "He told Jesus he did not know the way; later he doubted, and when he saw him risen he cried out: \"My Lord and my God!\""
+      ],
+      "fuentes": [
+       "https://www.vatican.va/content/benedict-xvi/en/audiences/2006/documents/hf_ben-xvi_aud_20060927.html"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Isaías 30:21",
+      "Isaiah 30:21"
+     ],
+     "v": [
+      "Entonces tus oídos oirán á tus espaldas palabra que diga: Este es el camino, andad por él.",
+      "And thine ears shall hear a word behind thee, saying, This is the way, walk ye in it."
+     ],
+     "p": [
+      "Espíritu Santo, entre tantas voces, ayúdame a reconocer la tuya. Muéstrame el camino y dame valor para seguirlo.",
+      "Holy Spirit, among so many voices, help me recognize yours. Show me the way and give me the courage to follow it."
+     ],
+     "c": {
+      "ini": "J",
+      "es": [
+       "San John Henry Newman",
+       "Enfermo y lejos de casa, escribió \"Lead, Kindly Light\", una oración que pide luz para dar solo el siguiente paso."
+      ],
+      "en": [
+       "St. John Henry Newman",
+       "Sick and far from home, he wrote \"Lead, Kindly Light,\" a prayer asking for light for just one step at a time."
+      ],
+      "fuentes": [
+       "https://catholicphilly.com/2020/06/catholic-spirituality/lead-thou-me-on-lord-when-all-is-dark/",
+       "https://en.wikipedia.org/wiki/Lead,_Kindly_Light"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Isaías 26:3",
+      "Isaiah 26:3"
+     ],
+     "v": [
+      "Tú le guardarás en completa paz, cuyo pensamiento en ti persevera; porque en ti se ha confiado.",
+      "Thou wilt keep him in perfect peace, whose mind is stayed on thee: because he trusteth in thee."
+     ],
+     "p": [
+      "Dios mío, tengo muchas preguntas y pocas respuestas. Que mi mente descanse en ti y encuentre paz en tu verdad.",
+      "My God, I have many questions and few answers. Let my mind rest in you and find peace in your truth."
+     ],
+     "c": {
+      "ini": "T",
+      "es": [
+       "Santa Teresa Benedicta de la Cruz",
+       "Edith Stein, filósofa que había dejado de rezar, terminó de leer la vida de Santa Teresa y dijo: \"Esta es la verdad\"."
+      ],
+      "en": [
+       "St. Teresa Benedicta of the Cross",
+       "Edith Stein, a philosopher who had stopped praying, finished reading St. Teresa's autobiography and said: \"This is the truth.\""
+      ],
+      "fuentes": [
+       "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19981011_edith_stein_en.html"
+      ]
+     },
+     "revision": "borrador"
     }
    ]
   },
@@ -604,6 +1319,126 @@
       ]
      },
      "revision": "aprobado"
+    },
+    {
+     "ref": [
+      "Proverbios 16:32",
+      "Proverbs 16:32"
+     ],
+     "v": [
+      "Mejor es el que tarde se aira que el fuerte; y el que se enseñorea de su espíritu, que el que toma una ciudad.",
+      "He that is slow to anger is better than the mighty; and he that ruleth his spirit than he that taketh a city."
+     ],
+     "p": [
+      "Señor, siento el enojo subir. Dame dominio propio para no hacer daño, y ayúdame a entender qué me duele de verdad.",
+      "Lord, I feel the anger rising. Give me self-control so I do no harm, and help me understand what is really hurting me."
+     ],
+     "c": {
+      "ini": "M",
+      "es": [
+       "San Moisés el Etíope",
+       "Fue jefe de una banda violenta en Egipto. Se convirtió, se hizo monje y hoy se le recuerda como patrono de la no violencia."
+      ],
+      "en": [
+       "St. Moses the Ethiopian",
+       "He led a violent gang in Egypt. He converted, became a monk, and is remembered today as a patron of nonviolence."
+      ],
+      "fuentes": [
+       "https://aleteia.org/2020/06/05/how-moses-the-black-went-from-gang-leader-to-holy-abbot/",
+       "https://en.wikipedia.org/wiki/Moses_the_Black"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Salmo 37:8",
+      "Psalm 37:8"
+     ],
+     "v": [
+      "Déjate de la ira, y depón el enojo: no te excites en manera alguna á hacer lo malo.",
+      "Cease from anger, and forsake wrath: fret not thyself in any wise to do evil."
+     ],
+     "p": [
+      "Jesús, no quiero que el enojo me lleve a hacer algo que después lamente. Toma esta fuerza y conviértela en algo bueno.",
+      "Jesus, I don't want anger to push me into something I'll regret. Take this energy and turn it into something good."
+     ],
+     "c": {
+      "ini": "C",
+      "es": [
+       "San Camilo de Lelis",
+       "De joven fue soldado y jugador, y lo echaron de un hospital por pendenciero. Después dedicó el resto de su vida a cuidar enfermos."
+      ],
+      "en": [
+       "St. Camillus de Lellis",
+       "As a young man he was a soldier and a gambler, and was dismissed from a hospital for quarrelling. He then spent the rest of his life caring for the sick."
+      ],
+      "fuentes": [
+       "https://www.newadvent.org/cathen/03217b.htm",
+       "https://www.franciscanmedia.org/saint-of-the-day/saint-camillus-de-lellis/"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Romanos 12:21",
+      "Romans 12:21"
+     ],
+     "v": [
+      "No seas vencido de lo malo; mas vence con el bien el mal.",
+      "Be not overcome of evil, but overcome evil with good."
+     ],
+     "p": [
+      "Señor, me indigna la injusticia que veo. Que mi enojo no se vuelva odio, sino valor para hacer el bien.",
+      "Lord, the injustice I see makes me angry. May my anger not turn into hatred, but into courage to do good."
+     ],
+     "c": {
+      "ini": "O",
+      "es": [
+       "San Óscar Romero",
+       "En medio de la violencia en El Salvador, alzó la voz por los pobres y pidió en nombre de Dios: \"¡Cese la represión!\""
+      ],
+      "en": [
+       "St. Óscar Romero",
+       "Amid the violence in El Salvador, he spoke up for the poor and pleaded in God's name: \"Stop the repression!\""
+      ],
+      "fuentes": [
+       "https://www.vaticannews.va/es/santos/03/24/san-oscar-romero.html",
+       "https://www.vatican.va/content/francesco/es/homilies/2018/documents/papa-francesco_20181014_omelia-canonizzazione.html"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Efesios 4:31-32",
+      "Ephesians 4:31-32"
+     ],
+     "v": [
+      "Toda amargura, y enojo, é ira, y voces, y maledicencia sea quitada de vosotros, y toda malicia: antes sed los unos con los otros benignos, misericordiosos, perdonándoos los unos á los otros, como también Dios os perdonó en Cristo.",
+      "Let all bitterness, and wrath, and anger, and clamour, and evil speaking, be put away from you, with all malice: and be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ's sake hath forgiven you."
+     ],
+     "p": [
+      "Señor, quita de mí la amargura que se me ha quedado dentro. Dame un corazón capaz de bondad, aunque todavía duela.",
+      "Lord, take away the bitterness lodged inside me. Give me a heart capable of kindness, even while it still hurts."
+     ],
+     "c": {
+      "ini": "J",
+      "es": [
+       "San Juan Gualberto",
+       "Según la tradición, un Viernes Santo encontró al asesino de su hermano y, en vez de vengarse, lo perdonó."
+      ],
+      "en": [
+       "St. John Gualbert",
+       "According to tradition, on a Good Friday he met his brother's murderer and, instead of taking revenge, forgave him."
+      ],
+      "fuentes": [
+       "https://angelusnews.com/faith/saint-of-the-day/john-gualbert/",
+       "https://en.wikipedia.org/wiki/John_Gualbert"
+      ]
+     },
+     "revision": "borrador"
     }
    ]
   },
@@ -689,6 +1524,126 @@
       ]
      },
      "revision": "aprobado"
+    },
+    {
+     "ref": [
+      "Salmo 30:11",
+      "Psalm 30:11"
+     ],
+     "v": [
+      "Has tornado mi endecha en baile; desataste mi saco, y ceñísteme de alegría.",
+      "Thou hast turned for me my mourning into dancing: thou hast put off my sackcloth, and girded me with gladness."
+     ],
+     "p": [
+      "Señor resucitado, gracias porque cambias el llanto en baile. Que mi alegría anuncie que estás vivo.",
+      "Risen Lord, thank you for turning mourning into dancing. May my joy proclaim that you are alive."
+     ],
+     "c": {
+      "ini": "C",
+      "es": [
+       "Beato Carlos Manuel Rodríguez",
+       "Laico puertorriqueño enamorado de la Pascua. Repetía a menudo: \"Vivimos para esa noche\"."
+      ],
+      "en": [
+       "Bl. Carlos Manuel Rodríguez",
+       "A Puerto Rican layman in love with Easter. He often said: \"We live for that night.\""
+      ],
+      "fuentes": [
+       "https://www.vatican.va/content/john-paul-ii/es/homilies/2001/documents/hf_jp-ii_hom_20010429_beatification.html",
+       "https://es.catholic.net/op/articulos/36495/carlos-manuel-cecilio-rodriguez-santiago-beato.html"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Romanos 15:13",
+      "Romans 15:13"
+     ],
+     "v": [
+      "Y el Dios de esperanza os llene de todo gozo y paz creyendo, para que abundéis en esperanza por la virtud del Espíritu Santo.",
+      "Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost."
+     ],
+     "p": [
+      "Dios de la esperanza, lléname de tu gozo y tu paz, también cuando las cosas no son fáciles.",
+      "God of hope, fill me with your joy and peace, even when things are not easy."
+     ],
+     "c": {
+      "ini": "C",
+      "es": [
+       "Beata Chiara Badano",
+       "Enferma de cáncer desde los 17 años, se despidió de su madre diciendo: \"Sé feliz, porque yo lo soy\"."
+      ],
+      "en": [
+       "Bl. Chiara Badano",
+       "Ill with cancer from the age of 17, she said goodbye to her mother with: \"Be happy, because I am.\""
+      ],
+      "fuentes": [
+       "https://www.focolare.org/en/29-october-liturgical-feast-of-blessed-chiara-badano/",
+       "https://faith.nd.edu/saint/blessed-chiara-badano/"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Salmo 4:7",
+      "Psalm 4:7"
+     ],
+     "v": [
+      "Tú diste alegría en mi corazón.",
+      "Thou hast put gladness in my heart."
+     ],
+     "p": [
+      "Señor, gracias porque vives en mí. Que hoy descubra que mi alegría más honda eres tú.",
+      "Lord, thank you for living in me. Today let me discover that my deepest joy is you."
+     ],
+     "c": {
+      "ini": "I",
+      "es": [
+       "Santa Isabel de la Trinidad",
+       "Escribió: \"He encontrado mi cielo en la tierra, porque el cielo es Dios y Dios está en mi alma\"."
+      ],
+      "en": [
+       "St. Elizabeth of the Trinity",
+       "She wrote: \"I have found my heaven on earth, since heaven is God and God is in my soul.\""
+      ],
+      "fuentes": [
+       "https://carmelite.com/saint-elizabeth-of-the-trinity/",
+       "https://en.wikipedia.org/wiki/Elizabeth_of_the_Trinity"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Sofonías 3:17",
+      "Zephaniah 3:17"
+     ],
+     "v": [
+      "Jehová en medio de ti, poderoso, él salvará; gozaráse sobre ti con alegría, callará de amor, se regocijará sobre ti con cantar.",
+      "The LORD thy God in the midst of thee is mighty; he will save, he will rejoice over thee with joy; he will rest in his love, he will joy over thee with singing."
+     ],
+     "p": [
+      "Dios mío, qué alegría saber que tú también te alegras por mí. Gracias por amarme así.",
+      "My God, what joy to know that you rejoice over me too. Thank you for loving me like this."
+     ],
+     "c": {
+      "ini": "J",
+      "es": [
+       "Santa Josefina Bakhita",
+       "Esclavizada de niña, descubrió que Dios la amaba y la esperaba. Su sonrisa constante ganaba el corazón de todos."
+      ],
+      "en": [
+       "St. Josephine Bakhita",
+       "Enslaved as a child, she discovered that God loved her and was waiting for her. Her constant smile won everyone's heart."
+      ],
+      "fuentes": [
+       "https://www.vatican.va/content/benedict-xvi/en/encyclicals/documents/hf_ben-xvi_enc_20071130_spe-salvi.html",
+       "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20001001_giuseppina-bakhita_en.html"
+      ]
+     },
+     "revision": "borrador"
     }
    ]
   },
@@ -708,7 +1663,7 @@
       "The LORD, he it is that doth go before thee; he will be with thee, he will not fail thee, neither forsake thee: fear not."
      ],
      "p": [
-      "Señor, me siento sola. Hazme sentir tu compañía y ábreme la puerta a personas que me quieran bien.",
+      "Señor, siento mucha soledad. Hazme sentir tu compañía y ábreme la puerta a personas que me quieran bien.",
       "Lord, I feel alone. Let me feel your company and open the door to people who wish me well."
      ],
      "c": {
@@ -760,7 +1715,7 @@
       "God setteth the solitary in families."
      ],
      "p": [
-      "Señor, regálame una comunidad donde pueda ser yo misma, y hazme compañía para otros.",
+      "Señor, regálame una comunidad donde pueda ser quien soy, y hazme compañía para otros.",
       "Lord, give me a community where I can be myself, and make me company for others."
      ],
      "c": {
@@ -776,6 +1731,126 @@
       ]
      },
      "revision": "aprobado"
+    },
+    {
+     "ref": [
+      "Salmo 27:10",
+      "Psalm 27:10"
+     ],
+     "v": [
+      "Aunque mi padre y mi madre me dejaran, Jehová con todo me recogerá.",
+      "When my father and my mother forsake me, then the LORD will take me up."
+     ],
+     "p": [
+      "Señor, aunque sienta que otros me han dejado, tú me recibes. Hazme sentir que tengo un lugar en tu casa.",
+      "Lord, even when I feel others have left me, you take me in. Let me feel that I have a place in your home."
+     ],
+     "c": {
+      "ini": "K",
+      "es": [
+       "Santa Kateri Tekakwitha",
+       "A los cuatro años perdió a sus padres y a su hermano por la viruela, que le dejó cicatrices en el rostro."
+      ],
+      "en": [
+       "St. Kateri Tekakwitha",
+       "At four she lost her parents and her brother to smallpox, which left her face scarred."
+      ],
+      "fuentes": [
+       "https://www.vaticannews.va/en/saints/07/14/st--kateri-tekakwitha.html",
+       "https://www.cccb.ca/indigenous-peoples/prayer-and-spirituality/saint-kateri-tekakwitha/"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Isaías 49:15",
+      "Isaiah 49:15"
+     ],
+     "v": [
+      "¿Olvidaráse la mujer de lo que parió, para dejar de compadecerse del hijo de su vientre? Aunque se olviden ellas, yo no me olvidaré de ti.",
+      "Can a woman forget her sucking child, that she should not have compassion on the son of her womb? yea, they may forget, yet will I not forget thee."
+     ],
+     "p": [
+      "Dios mío, tú no te olvidas de mí. Cuando nadie pregunta por mí, recuérdame que estoy en tu corazón.",
+      "My God, you do not forget me. When no one asks about me, remind me that I am in your heart."
+     ],
+     "c": {
+      "ini": "B",
+      "es": [
+       "San Benito José Labre",
+       "Quiso ser monje y no lo admitieron. Pasó sus últimos años como peregrino pobre en Roma."
+      ],
+      "en": [
+       "St. Benedict Joseph Labre",
+       "He wanted to be a monk and was not accepted. He spent his last years as a poor pilgrim in Rome."
+      ],
+      "fuentes": [
+       "https://www.newadvent.org/cathen/02442a.htm",
+       "https://www.ncregister.com/features/simonson-st-benedict-joseph-labre"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Juan 14:18",
+      "John 14:18"
+     ],
+     "v": [
+      "No os dejaré huérfanos: vendré á vosotros.",
+      "I will not leave you comfortless: I will come to you."
+     ],
+     "p": [
+      "Jesús, prometiste no dejarnos huérfanos. Ven a mi soledad y ayúdame también a dejarme cuidar.",
+      "Jesus, you promised not to leave us orphans. Come into my loneliness and help me let others care for me too."
+     ],
+     "c": {
+      "ini": "C",
+      "es": [
+       "San Carlos de Foucauld",
+       "Vivió como ermitaño en el Sahara, entre los tuaregs. Cuando enfermó, fueron ellos quienes lo cuidaron."
+      ],
+      "en": [
+       "St. Charles de Foucauld",
+       "He lived as a hermit in the Sahara among the Tuareg. When he fell ill, they were the ones who cared for him."
+      ],
+      "fuentes": [
+       "https://littlesistersofjesus.net/charles-de-foucaulden/",
+       "https://en.wikipedia.org/wiki/Charles_de_Foucauld"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Salmo 25:16",
+      "Psalm 25:16"
+     ],
+     "v": [
+      "Mírame, y ten misericordia de mí; porque estoy solo y afligido.",
+      "Turn thee unto me, and have mercy upon me; for I am desolate and afflicted."
+     ],
+     "p": [
+      "Señor, mírame en esta soledad. Ten misericordia de mí y pon en mi camino a alguien que me trate con cariño.",
+      "Lord, look at me in this loneliness. Have mercy on me and put someone in my path who will treat me with kindness."
+     ],
+     "c": {
+      "ini": "G",
+      "es": [
+       "Santa Germana Cousin",
+       "Apartada por su madrastra, pasaba los días cuidando ovejas y dormía en el establo, y aun así iba cada día a misa."
+      ],
+      "en": [
+       "St. Germaine Cousin",
+       "Kept away by her stepmother, she spent her days tending sheep and slept in the stable, yet she went to Mass every day."
+      ],
+      "fuentes": [
+       "https://www.newadvent.org/cathen/06474a.htm",
+       "https://www.oursundayvisitor.com/st-germaine-cousin/"
+      ]
+     },
+     "revision": "borrador"
     }
    ]
   },
@@ -863,6 +1938,126 @@
       ]
      },
      "revision": "aprobado"
+    },
+    {
+     "ref": [
+      "1 Juan 4:16",
+      "1 John 4:16"
+     ],
+     "v": [
+      "Dios es amor; y el que vive en amor, vive en Dios, y Dios en él.",
+      "God is love; and he that dwelleth in love dwelleth in God, and God in him."
+     ],
+     "p": [
+      "Dios de amor, que viva en ti amando de verdad, sobre todo a quienes otros desprecian.",
+      "God of love, let me live in you by truly loving, above all those whom others look down on."
+     ],
+     "c": {
+      "ini": "P",
+      "es": [
+       "San Pedro Claver",
+       "Firmó sus votos como \"esclavo de los africanos para siempre\" y los cuidó en el puerto de Cartagena de Indias."
+      ],
+      "en": [
+       "St. Peter Claver",
+       "He signed his vows as \"the slave of the Africans forever\" and cared for them at the port of Cartagena."
+      ],
+      "fuentes": [
+       "https://www.newadvent.org/cathen/11763a.htm",
+       "https://www.vaticannews.va/en/saints/09/09/st--peter-claver--jesuit--apostle-of--slaves-.html"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Romanos 8:38-39",
+      "Romans 8:38-39"
+     ],
+     "v": [
+      "Por lo cual estoy cierto que ni la muerte, ni la vida, ni ángeles, ni principados, ni potestades, ni lo presente, ni lo por venir, ni lo alto, ni lo bajo, ni ninguna criatura nos podrá apartar del amor de Dios, que es en Cristo Jesús Señor nuestro.",
+      "For I am persuaded, that neither death, nor life, nor angels, nor principalities, nor powers, nor things present, nor things to come, nor height, nor depth, nor any other creature, shall be able to separate us from the love of God, which is in Christ Jesus our Lord."
+     ],
+     "p": [
+      "Señor, nada me puede separar de tu amor. Enséñame a amar a los míos con esa misma fidelidad.",
+      "Lord, nothing can separate me from your love. Teach me to love my own people with that same faithfulness."
+     ],
+     "c": {
+      "ini": "G",
+      "es": [
+       "Santa Gianna Beretta Molla",
+       "Médica, esposa y madre, pidió que salvaran la vida de su hija antes que la suya."
+      ],
+      "en": [
+       "St. Gianna Beretta Molla",
+       "A doctor, wife and mother, she asked that her daughter's life be saved before her own."
+      ],
+      "fuentes": [
+       "https://stgiannacenter.com/st-gianna/",
+       "https://www.catholic.org/saints/saint.php?saint_id=6985"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Cantares 8:7",
+      "Song of Solomon 8:7"
+     ],
+     "v": [
+      "Las muchas aguas no podrán apagar el amor, ni lo ahogarán los ríos.",
+      "Many waters cannot quench love, neither can the floods drown it."
+     ],
+     "p": [
+      "Señor, que mi amor no se apague con el cansancio ni con las dificultades. Hazlo generoso y concreto.",
+      "Lord, may my love not be put out by tiredness or difficulties. Make it generous and concrete."
+     ],
+     "c": {
+      "ini": "I",
+      "es": [
+       "Santa Isabel de Hungría",
+       "Princesa que repartió sus bienes entre los pobres y construyó hospitales, donde cuidaba a los enfermos con sus propias manos."
+      ],
+      "en": [
+       "St. Elizabeth of Hungary",
+       "A princess who gave her goods to the poor and built hospitals, where she cared for the sick with her own hands."
+      ],
+      "fuentes": [
+       "https://www.newadvent.org/cathen/05389a.htm",
+       "https://www.franciscantradition.org/blog/saint-elizabeth-of-hungary-patroness-of-secular-franciscans/"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Juan 13:34",
+      "John 13:34"
+     ],
+     "v": [
+      "Un mandamiento nuevo os doy: Que os améis unos á otros: como os he amado, que también os améis los unos á los otros.",
+      "A new commandment I give unto you, That ye love one another; as I have loved you, that ye also love one another."
+     ],
+     "p": [
+      "Jesús, enséñame a amar como tú: sin mirar de dónde viene cada persona y empezando por los servicios pequeños.",
+      "Jesus, teach me to love as you do: without asking where anyone comes from, starting with small acts of service."
+     ],
+     "c": {
+      "ini": "M",
+      "es": [
+       "San Martín de Porres",
+       "Hijo de un español y de una mujer que había sido esclava, sirvió en Lima a pobres y enfermos. Decía: \"Yo los curo, Dios los sana\"."
+      ],
+      "en": [
+       "St. Martin de Porres",
+       "Son of a Spaniard and a formerly enslaved woman, he served the poor and the sick in Lima. He said: \"I cure them, God heals them.\""
+      ],
+      "fuentes": [
+       "https://www.ewtnnews.com/world/us/7-fascinating-facts-about-st-martin-de-porres-the-first-black-saint-of-the-americas",
+       "https://www.encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/porres-martin"
+      ]
+     },
+     "revision": "borrador"
     }
    ]
   },
@@ -948,6 +2143,125 @@
       ]
      },
      "revision": "aprobado"
+    },
+    {
+     "ref": [
+      "Mateo 18:21-22",
+      "Matthew 18:21-22"
+     ],
+     "v": [
+      "Entonces Pedro, llegándose á él, dijo: Señor, ¿cuántas veces perdonaré á mi hermano que pecare contra mí? ¿hasta siete? Jesús le dice: No te digo hasta siete, mas aun hasta setenta veces siete.",
+      "Then came Peter to him, and said, Lord, how oft shall my brother sin against me, and I forgive him? till seven times? Jesus saith unto him, I say not unto thee, Until seven times: but, Until seventy times seven."
+     ],
+     "p": [
+      "Jesús, perdonar me cuesta mucho. No te pido olvidar lo que pasó; te pido, a tu tiempo, un corazón libre del odio.",
+      "Jesus, forgiving is very hard for me. I don't ask to forget what happened; I ask, in your time, for a heart free of hatred."
+     ],
+     "c": {
+      "ini": "M",
+      "es": [
+       "Santa María Goretti",
+       "Herida de muerte a los once años, perdonó a su agresor y dijo que lo quería con ella en el cielo."
+      ],
+      "en": [
+       "St. Maria Goretti",
+       "Fatally wounded at eleven, she forgave her attacker and said she wanted him with her in heaven."
+      ],
+      "fuentes": [
+       "https://www.vaticannews.va/en/saints/07/06/st--maria-goretti--virgin-and-martyr.html",
+       "https://www.catholic.com/magazine/online-edition/learning-forgiveness-from-st-maria-goretti"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Mateo 6:12",
+      "Matthew 6:12"
+     ],
+     "v": [
+      "Y perdónanos nuestras deudas, como también nosotros perdonamos á nuestros deudores.",
+      "And forgive us our debts, as we forgive our debtors."
+     ],
+     "p": [
+      "Padre, perdóname como yo quiero aprender a perdonar. Pongo en tus manos a quien me hizo daño.",
+      "Father, forgive me as I want to learn to forgive. I place in your hands the one who hurt me."
+     ],
+     "c": {
+      "ini": "I",
+      "es": [
+       "Beato Isidoro Bakanja",
+       "Catequista del Congo, fue azotado por negarse a quitarse el escapulario. Murió perdonando y rezando por quien lo maltrató."
+      ],
+      "en": [
+       "Bl. Isidore Bakanja",
+       "A catechist in Congo, he was flogged for refusing to take off his scapular. He died forgiving and praying for the man who beat him."
+      ],
+      "fuentes": [
+       "https://dacb.org/stories/democratic-republic-of-congo/bakanja-isidore/",
+       "https://aleteia.org/2018/04/08/meet-bl-isidore-bakanja-a-merciful-catechist-who-forgave-his-racist-attackers/"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Salmo 130:3-4",
+      "Psalm 130:3-4"
+     ],
+     "v": [
+      "JAH, si mirares á los pecados, ¿quién, oh Señor, podrá mantenerse? Empero hay perdón cerca de ti, para que seas temido.",
+      "If thou, LORD, shouldest mark iniquities, O Lord, who shall stand? But there is forgiveness with thee, that thou mayest be feared."
+     ],
+     "p": [
+      "Señor, no me mires a través de mis errores, sino con tu misericordia. Jesús, en ti confío.",
+      "Lord, do not see me through my mistakes but through your mercy. Jesus, I trust in you."
+     ],
+     "c": {
+      "ini": "F",
+      "es": [
+       "Santa Faustina Kowalska",
+       "Recibió la misión de anunciar la misericordia de Dios. En la imagen que difundió se lee: \"Jesús, en ti confío\"."
+      ],
+      "en": [
+       "St. Faustina Kowalska",
+       "She was entrusted with proclaiming God's mercy. The image she spread bears the words: \"Jesus, I trust in you.\""
+      ],
+      "fuentes": [
+       "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_20000430_faustina_en.html"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Lucas 15:20",
+      "Luke 15:20"
+     ],
+     "v": [
+      "Y levantándose, vino á su padre. Y como aun estuviese lejos, viólo su padre, y fué movido á misericordia, y corrió, y echóse sobre su cuello, y besóle.",
+      "And he arose, and came to his father. But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him."
+     ],
+     "p": [
+      "Padre, vuelvo a ti con lo que soy. Gracias por salir a mi encuentro antes de que termine de pedir perdón.",
+      "Father, I come back to you just as I am. Thank you for running to meet me before I even finish asking for forgiveness."
+     ],
+     "c": {
+      "ini": "P",
+      "es": [
+       "San Pablo Miki",
+       "Crucificado en Nagasaki en 1597, predicó desde la cruz y perdonó a quienes lo ejecutaban."
+      ],
+      "en": [
+       "St. Paul Miki",
+       "Crucified in Nagasaki in 1597, he preached from the cross and forgave those who were executing him."
+      ],
+      "fuentes": [
+       "https://sacredspace.com/commentary/f0206s/",
+       "https://en.wikipedia.org/wiki/Paul_Miki"
+      ]
+     },
+     "revision": "borrador"
     }
    ]
   },
@@ -1033,6 +2347,126 @@
       ]
      },
      "revision": "aprobado"
+    },
+    {
+     "ref": [
+      "Salmo 9:1",
+      "Psalm 9:1"
+     ],
+     "v": [
+      "Te alabaré, oh Jehová, con todo mi corazón; contaré todas tus maravillas.",
+      "I will praise thee, O LORD, with my whole heart; I will shew forth all thy marvellous works."
+     ],
+     "p": [
+      "Señor, quiero darte gracias con todo el corazón, también por lo que todavía espero de ti.",
+      "Lord, I want to thank you with my whole heart, even for what I am still waiting for."
+     ],
+     "c": {
+      "ini": "S",
+      "es": [
+       "Beato Solanus Casey",
+       "Portero de un convento en Detroit, escuchaba a todos y los animaba a dar gracias a Dios por adelantado."
+      ],
+      "en": [
+       "Bl. Solanus Casey",
+       "Doorkeeper of a friary in Detroit, he listened to everyone and encouraged them to \"thank God ahead of time.\""
+      ],
+      "fuentes": [
+       "https://www.solanuscasey.org/about-blessed-solanus-casey/",
+       "https://www.aod.org/blessed-solanus-casey"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Salmo 92:1",
+      "Psalm 92:1"
+     ],
+     "v": [
+      "Bueno es alabar á Jehová, y cantar salmos á tu nombre, oh Altísimo.",
+      "It is a good thing to give thanks unto the LORD, and to sing praises unto thy name, O most High."
+     ],
+     "p": [
+      "Dios mío, gloria a ti por todo: por lo fácil y por lo difícil, por lo que entiendo y por lo que no.",
+      "My God, glory to you for everything: for what is easy and what is hard, for what I understand and what I don't."
+     ],
+     "c": {
+      "ini": "J",
+      "es": [
+       "San Juan Crisóstomo",
+       "Murió en el destierro, agotado por las marchas forzadas. Sus últimas palabras fueron: \"Gloria a Dios por todo\"."
+      ],
+      "en": [
+       "St. John Chrysostom",
+       "He died in exile, worn out by forced marches. His last words were: \"Glory to God for all things.\""
+      ],
+      "fuentes": [
+       "https://www.newadvent.org/cathen/08452b.htm",
+       "https://www.vaticannews.va/en/saints/09/13/st--john-chrysostom--bishop-and-doctor-of-the-church.html"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Colosenses 3:17",
+      "Colossians 3:17"
+     ],
+     "v": [
+      "Y todo lo que hacéis, sea de palabra, ó de hecho, hacedlo todo en el nombre del Señor Jesús, dando gracias á Dios Padre por él.",
+      "And whatsoever ye do in word or deed, do all in the name of the Lord Jesus, giving thanks to God and the Father by him."
+     ],
+     "p": [
+      "Señor, que hoy todo lo que haga y diga sea una manera de darte gracias.",
+      "Lord, may everything I do and say today be a way of thanking you."
+     ],
+     "c": {
+      "ini": "C",
+      "es": [
+       "Santa Clara de Asís",
+       "Entre sus últimas palabras se recuerdan estas: \"Bendito seas, Dios mío, porque me creaste\"."
+      ],
+      "en": [
+       "St. Clare of Assisi",
+       "Among her last recorded words: \"Blessed be You, my God, for having created me.\""
+      ],
+      "fuentes": [
+       "https://www.nashvillecatholic.org/news/posts/st-clare-of-assisi-blessed-be-you-my-god-for-having-created-me",
+       "https://ewtn.co.uk/article-saint-clare-of-assisi/"
+      ]
+     },
+     "revision": "borrador"
+    },
+    {
+     "ref": [
+      "Efesios 5:20",
+      "Ephesians 5:20"
+     ],
+     "v": [
+      "Dando gracias siempre de todo al Dios y Padre en el nombre de nuestro Señor Jesucristo.",
+      "Giving thanks always for all things unto God and the Father in the name of our Lord Jesus Christ."
+     ],
+     "p": [
+      "Jesús, gracias por quedarte con nosotros en la Eucaristía. Enséñame a vivir dando gracias, cada día y en todo.",
+      "Jesus, thank you for staying with us in the Eucharist. Teach me to live giving thanks, every day and in everything."
+     ],
+     "c": {
+      "ini": "P",
+      "es": [
+       "San Pedro Julián Eymard",
+       "Apóstol de la Eucaristía, fundó comunidades dedicadas a adorar a Jesús en el Santísimo Sacramento."
+      ],
+      "en": [
+       "St. Peter Julian Eymard",
+       "An apostle of the Eucharist, he founded communities devoted to adoring Jesus in the Blessed Sacrament."
+      ],
+      "fuentes": [
+       "https://www.vaticannews.va/en/saints/08/02/st--peter-julian-eymard--priest-founder-of-the--sacramentini.html",
+       "https://en.wikipedia.org/wiki/Peter_Julian_Eymard"
+      ]
+     },
+     "revision": "borrador"
     }
    ]
   }
