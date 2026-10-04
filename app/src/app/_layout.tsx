@@ -68,6 +68,8 @@ function Navegacion() {
             name="santo/[clave]"
             options={{ animation: reducirMovimiento ? 'fade' : 'default' }}
           />
+          {/* Detalle de una emoción: pantalla de oración fuera de las pestañas; entra con fundido (calma). */}
+          <Stack.Screen name="emocion/[id]" options={{ animation: 'fade' }} />
         </Stack.Protected>
         <Stack.Protected guard={!completa}>
           <Stack.Screen name="bienvenida" options={{ animation: 'fade' }} />

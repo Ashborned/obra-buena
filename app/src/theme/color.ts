@@ -84,6 +84,61 @@ function oklabARgb({ L, a, b }: Oklab): Rgb {
   };
 }
 
+// --- OKLCH -> sRGB -----------------------------------------------------------
+
+/** sRGB lineal (0–1) de un punto OKLab, sin recortar. */
+function oklabALineal({ L, a, b }: Oklab): [number, number, number] {
+  const l = Math.pow(L + 0.3963377774 * a + 0.2158037573 * b, 3);
+  const m = Math.pow(L - 0.1055613458 * a - 0.0638541728 * b, 3);
+  const s = Math.pow(L - 0.0894841775 * a - 1.291485548 * b, 3);
+  return [
+    4.0767416621 * l - 3.3077115913 * m + 0.2309699292 * s,
+    -1.2684380046 * l + 2.6097574011 * m - 0.3413193965 * s,
+    -0.0041960863 * l - 0.7034186147 * m + 1.707614701 * s,
+  ];
+}
+
+const TOLERANCIA_GAMA = 1e-4;
+
+function oklchAOklab(L: number, C: number, h: number): Oklab {
+  const rad = (h * Math.PI) / 180;
+  return { L, a: C * Math.cos(rad), b: C * Math.sin(rad) };
+}
+
+/** El color OKLCH cabe en sRGB (con una tolerancia mínima de redondeo). */
+export function oklchEnGama(L: number, C: number, h: number): boolean {
+  return oklabALineal(oklchAOklab(L, C, h)).every(
+    (v) => v >= -TOLERANCIA_GAMA && v <= 1 + TOLERANCIA_GAMA,
+  );
+}
+
+/**
+ * `oklch(L C h)` de CSS → `#rrggbb`. React Native no entiende OKLCH; los tonos de Emociones
+ * (docs/sistema-diseno.md) se definen así y se convierten aquí.
+ *
+ * - `L` 0–1, `C` ≥ 0, `h` en grados.
+ * - Si el color no cabe en sRGB, se baja la croma (manteniendo L y h) hasta que cabe, como el mapeo
+ *   de gama de CSS Color 4; así el matiz no se corre al recortar canales.
+ */
+export function oklchAHex(L: number, C: number, h: number): Hex {
+  const luz = Math.max(0, Math.min(1, L));
+  let croma = Math.max(0, C);
+  if (!oklchEnGama(luz, croma, h)) {
+    let bajo = 0;
+    let alto = croma;
+    for (let i = 0; i < 24; i++) {
+      const medio = (bajo + alto) / 2;
+      if (oklchEnGama(luz, medio, h)) bajo = medio;
+      else alto = medio;
+    }
+    croma = bajo;
+  }
+  const [r, g, b] = oklabALineal(oklchAOklab(luz, croma, h)).map((v) =>
+    deLineal(Math.max(0, Math.min(1, v))),
+  );
+  return rgbAHex({ r, g, b });
+}
+
 /**
  * Equivalente a `color-mix(in oklab, a peso, b)`, con `peso` entre 0 y 1 (proporción de `a`).
  * Ejemplo: `mezclarOklab('#ffd3e4', '#ffffff', 0.6)` = `color-mix(in oklab, #ffd3e4 60%, #fff)`.

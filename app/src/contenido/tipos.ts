@@ -38,6 +38,8 @@ export type Companero = {
   /** [nombre, línea]. */
   es: Par;
   en: Par;
+  /** URLs que respaldan la línea del santo. Obligatorio en entradas nuevas. */
+  fuentes?: string[];
 };
 
 export type EntradaEmocion = {

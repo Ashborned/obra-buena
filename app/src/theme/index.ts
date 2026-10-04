@@ -1,4 +1,5 @@
 export * from './color';
+export * from './emociones';
 export * from './paletas';
 export * from './reloj';
 export * from './resolver';

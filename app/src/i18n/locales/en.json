@@ -114,5 +114,51 @@
     "sinHistoria": "We don’t have this story loaded yet.",
     "noEncontrado": "We couldn’t find this saint.",
     "noEncontradoDetalle": "Their story may not be in the app yet."
+  },
+  "emociones": {
+    "titulo": "How are you feeling today?",
+    "guia": "Pick one. You will get a Bible verse, a prayer and a saint who went through the same.",
+    "con": "with {{santo}}",
+    "mosaicoAccesible": "{{emocion}}. With {{santo}}",
+    "mosaicoPista": "Opens a verse, a prayer and a companion saint",
+    "pasos": {
+      "palabra": "Word",
+      "oracion": "Prayer",
+      "compania": "Company"
+    },
+    "pasosAccesible": "Word, prayer and company",
+    "paraHoy": "For today · {{n}} of {{total}}",
+    "paraHoyAccesible": "For today, {{n}} of {{total}}",
+    "otraOracion": "Another prayer",
+    "otraOracionPista": "Shows another verse, prayer and saint for this feeling",
+    "otraAnuncio": "For today, {{n}} of {{total}}. {{referencia}}. Walking with you: {{santo}}.",
+    "versiculoAccesible": "{{texto}} {{referencia}}",
+    "oracion": "Prayer",
+    "teAcompana": "Walking with you",
+    "rezarNovena": "Pray the novena",
+    "rezarNovenaPista": "Opens Novenas",
+    "conocerHistoria": "Read the story",
+    "conocerHistoriaPista": "Opens Learn",
+    "sinEntrada": "A verse, a prayer and a saint for this feeling will be here soon.",
+    "noEncontrada": "We could not find this feeling.",
+    "noEncontradaDetalle": "Go back to the list and pick another one."
+  },
+  "ayuda": {
+    "titulo": "You do not have to carry this alone.",
+    "texto": "If you feel very low or think about hurting yourself, talk to someone today. Asking for help is also an act of faith.",
+    "enPais": "Help in {{pais}}",
+    "llamar": "Call",
+    "llamarAccesible": "Call {{linea}}, {{numero}}",
+    "llamarPista": "Opens the dialer with the number filled in. You decide whether to call.",
+    "marcarAMano": "Dial it in your phone app.",
+    "sinMarcador": "We could not open the dialer. Dial the number on your phone.",
+    "emergencias": "Emergencies",
+    "emergenciasAccesible": "Call emergency services, {{numero}}",
+    "sinDatosPais": "We do not have verified helplines for {{pais}} yet.",
+    "sinDatos": "We do not have verified helplines for your country yet.",
+    "abrirRespaldo": "Open {{sitio}}",
+    "abrirRespaldoPista": "Opens the website in your browser",
+    "otroPais": "Are you in another country?",
+    "otroPaisPista": "Choose your country to see its helplines"
   }
 }

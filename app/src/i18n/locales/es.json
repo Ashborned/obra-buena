@@ -114,5 +114,51 @@
     "sinHistoria": "Todavía no tenemos cargada su historia.",
     "noEncontrado": "No encontramos este santo.",
     "noEncontradoDetalle": "Puede que su historia aún no esté en la app."
+  },
+  "emociones": {
+    "titulo": "¿Cómo te sientes hoy?",
+    "guia": "Elige una. Te acompaño con la Palabra, una oración y un santo que pasó por lo mismo.",
+    "con": "con {{santo}}",
+    "mosaicoAccesible": "{{emocion}}. Con {{santo}}",
+    "mosaicoPista": "Abre un versículo, una oración y un santo compañero",
+    "pasos": {
+      "palabra": "Palabra",
+      "oracion": "Oración",
+      "compania": "Compañía"
+    },
+    "pasosAccesible": "Palabra, oración y compañía",
+    "paraHoy": "Para hoy · {{n}} de {{total}}",
+    "paraHoyAccesible": "Para hoy, {{n}} de {{total}}",
+    "otraOracion": "Otra oración",
+    "otraOracionPista": "Muestra otro versículo, otra oración y otro santo para esta emoción",
+    "otraAnuncio": "Para hoy, {{n}} de {{total}}. {{referencia}}. Te acompaña {{santo}}.",
+    "versiculoAccesible": "{{texto}} {{referencia}}",
+    "oracion": "Oración",
+    "teAcompana": "Te acompaña",
+    "rezarNovena": "Rezar su novena",
+    "rezarNovenaPista": "Abre Novenas",
+    "conocerHistoria": "Conocer su historia",
+    "conocerHistoriaPista": "Abre Aprender",
+    "sinEntrada": "Pronto habrá aquí un versículo, una oración y un santo para esta emoción.",
+    "noEncontrada": "No encontramos esta emoción.",
+    "noEncontradaDetalle": "Vuelve a la lista y elige otra."
+  },
+  "ayuda": {
+    "titulo": "No tienes que cargar esto a solas.",
+    "texto": "Si te sientes muy mal o piensas en hacerte daño, habla hoy con alguien. Pedir ayuda también es un acto de fe.",
+    "enPais": "Ayuda en {{pais}}",
+    "llamar": "Llamar",
+    "llamarAccesible": "Llamar a {{linea}}, {{numero}}",
+    "llamarPista": "Abre el marcador con el número escrito. Tú decides si llamar.",
+    "marcarAMano": "Márcalo en la app de teléfono.",
+    "sinMarcador": "No pudimos abrir el marcador. Marca el número en tu teléfono.",
+    "emergencias": "Emergencias",
+    "emergenciasAccesible": "Llamar a emergencias, {{numero}}",
+    "sinDatosPais": "Aún no tenemos líneas verificadas para {{pais}}.",
+    "sinDatos": "Aún no tenemos líneas verificadas para tu país.",
+    "abrirRespaldo": "Abrir {{sitio}}",
+    "abrirRespaldoPista": "Abre el sitio en el navegador",
+    "otroPais": "¿Estás en otro país?",
+    "otroPaisPista": "Elige tu país para ver sus líneas de ayuda"
   }
 }

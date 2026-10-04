@@ -7,6 +7,7 @@
 import type { HoraOracion } from '@/lib/hora-oracion';
 
 import { aplanar, asegurarContraste, conAlfa, mezclarOklab, type Hex } from './color';
+import { tonosEmocion, type IdTonoEmocion, type TonoEmocion } from './emociones';
 import { paletas, type Paleta, type PaletaId } from './paletas';
 
 /** Colores fijos de cada hora (no dependen de la paleta). */
@@ -83,6 +84,8 @@ export type TemaResuelto = {
     botonLuz: Hex;
     botonLuzDegradado: string;
   };
+  /** Tono de cada emoción (mosaicos y cabecera del detalle), ya en hex. */
+  emociones: Record<IdTonoEmocion, TonoEmocion>;
   /** Estilo de la barra de estado del sistema sobre el fondo. */
   barraEstado: 'dark' | 'light';
   /** Para componentes nativos que preguntan claro/oscuro. */
@@ -188,6 +191,7 @@ export function resolverTema(paletaId: PaletaId, hora: HoraOracion): TemaResuelt
       // Maqueta: linear-gradient(180deg, color-mix(g2 70%, #fff), g).
       botonLuzDegradado: `linear-gradient(180deg, ${mezclarOklab(p.glowSoft, k.blanco, 0.7)}, ${p.glow})`,
     },
+    emociones: tonosEmocion(hora, p.ink),
     barraEstado: noche ? 'light' : 'dark',
     esOscuro: noche,
   };

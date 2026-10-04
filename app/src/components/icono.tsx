@@ -25,6 +25,10 @@ const nombres = {
   candado: { ios: 'lock', android: 'lock', web: 'lock' },
   flecha: { ios: 'arrow.right', android: 'arrow_forward', web: 'arrow_forward' },
   volver: { ios: 'chevron.left', android: 'chevron_left', web: 'chevron_left' },
+  /** "Otra oración". */
+  rotar: { ios: 'arrow.clockwise', android: 'refresh', web: 'refresh' },
+  /** Abrir un sitio fuera de la app (Find A Helpline). */
+  externo: { ios: 'arrow.up.right', android: 'open_in_new', web: 'open_in_new' },
 } as const satisfies Record<string, SymbolViewProps['name']>;
 
 export type NombreIcono = keyof typeof nombres;

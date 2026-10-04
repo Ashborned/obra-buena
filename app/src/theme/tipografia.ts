@@ -70,6 +70,13 @@ export const tipografia = {
     lineHeight: interlineado(38, FACTOR_INTERLINEADO.display),
     letterSpacing: em(-0.01, 38),
   },
+  /** Nombre de la emoción en la cabecera del detalle (`.emohead h2`, 48). */
+  displayEmocion: {
+    fontFamily: familias.displaySemi,
+    fontSize: 48,
+    lineHeight: interlineado(48, FACTOR_INTERLINEADO.display),
+    letterSpacing: em(-0.01, 48),
+  },
   /** Nombre del santo en el vitral (`.herotext h1`, 36). */
   display: {
     fontFamily: familias.displaySemi,

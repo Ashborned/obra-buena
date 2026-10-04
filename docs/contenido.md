@@ -4,6 +4,7 @@
 
 - Sencilla, cálida y concreta. Frases cortas. Como una amiga que sabe, no como un manual.
 - Español neutro, entendible en cualquier país (sin modismos locales). Inglés natural, no traducido palabra por palabra.
+- Neutro también en género: no suponer el género de quien reza ("No me dejes solo/sola" → "No me dejes en esta soledad"; nombres de emoción como sustantivo: Cansancio, Confusión). La app es global y escalable a otros idiomas.
 - La app es global: si algo vale solo para un país (una fiesta trasladada, un santo propio, una línea de ayuda), se marca con `pais`.
 - Las oraciones se escriben en primera persona y caben en 2–3 líneas.
 - En Emociones la persona suele estar mal: nunca culpar, nunca minimizar, nunca prometer curas.
