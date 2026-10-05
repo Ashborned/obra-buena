@@ -76,15 +76,27 @@ export function fechasMoviles(anio: number) {
   };
 }
 
+/**
+ * Corpus Christi: jueves después de la Trinidad (Pascua + 60), o el domingo siguiente
+ * (Pascua + 63) en los países que lo trasladan (`contenido.traslados`).
+ */
+export function corpusChristi(anio: number, enDomingo = false): Date {
+  return sumarDias(pascua(anio), enDomingo ? 63 : 60);
+}
+
 type Celebracion = { lit: ColorLiturgico; rango?: RangoCelebracion };
 
+/** Diferencias del calendario según el país (ver `traslados` en el contenido). */
+export type OpcionesCalendario = { corpusEnDomingo?: boolean };
+
 /** Celebración móvil del Calendario Romano General que cae en esta fecha, si la hay. */
-export function celebracionMovil(fecha: Date): Celebracion | null {
+export function celebracionMovil(fecha: Date, opciones: OpcionesCalendario = {}): Celebracion | null {
   const t = inicioDelDia(fecha);
   const anio = t.getFullYear();
   const m = fechasMoviles(anio);
   const cristoRey = sumarDias(primerDomingoAdviento(anio), -7);
-  for (const d of [m.trinidad, m.corpus, m.sagradoCorazon, cristoRey]) {
+  const corpus = corpusChristi(anio, !!opciones.corpusEnDomingo);
+  for (const d of [m.trinidad, corpus, m.sagradoCorazon, cristoRey]) {
     if (mismoDia(t, d)) return { lit: 'white', rango: 'solemnidad' };
   }
   for (const d of [m.mariaMadreIglesia, m.inmaculadoCorazon]) {
@@ -160,10 +172,14 @@ function diaPrivilegiado(t: Date): boolean {
  *   (ahí la memoria es solo conmemoración);
  * - memoria libre o sin rango: manda el tiempo (la memoria es opcional).
  */
-export function colorDelDia(fecha: Date, santo?: Celebracion | null): ColorDelDia {
+export function colorDelDia(
+  fecha: Date,
+  santo?: Celebracion | null,
+  opciones: OpcionesCalendario = {},
+): ColorDelDia {
   const t = inicioDelDia(fecha);
   const tiempo = colorDelTiempo(t);
-  const celebracion = masAlta(celebracionMovil(t), santo);
+  const celebracion = masAlta(celebracionMovil(t, opciones), santo);
   if (!celebracion?.rango || celebracion.rango === 'memoria_libre') return tiempo;
   if (diaPrivilegiado(t)) return tiempo;
   if (celebracion.rango === 'solemnidad') return celebracion.lit;

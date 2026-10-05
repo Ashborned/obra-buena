@@ -4199,11 +4199,7 @@
    "es": "Corpus Christi",
    "en": "Corpus Christi",
    "ini": "C",
-   "fixed": [
-    2027,
-    5,
-    27
-   ],
+   "movil": "corpus_christi",
    "revision": "aprobado"
   },
   {
@@ -4232,6 +4228,16 @@
    "m": 9,
    "d": 21,
    "revision": "aprobado"
+  }
+ ],
+ "traslados": [
+  {
+   "fiesta": "corpus_christi",
+   "a": "domingo",
+   "paises": [
+    "CL"
+   ],
+   "nota": "Donde la conferencia episcopal traslada Corpus Christi del jueves al domingo siguiente."
   }
  ],
  "revision_santos_del_dia": "aprobado",

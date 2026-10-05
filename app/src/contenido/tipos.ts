@@ -126,8 +126,28 @@ export type Proximamente = {
 };
 
 type NovenaBase = { id: string; es: string; en: string; ini: string; revision: Revision };
-/** Fiesta anual (mes y día) o fiesta móvil ya calculada para un año (`fixed: [año, mes, día]`). */
-export type Novena = NovenaBase & ({ m: number; d: number } | { fixed: number[] });
+export type FiestaMovilId = 'corpus_christi';
+
+export type OracionDia = { es: string; en: string; revision?: Revision };
+
+/**
+ * Fiesta anual (mes y día), fiesta móvil calculada cada año (`movil`) o fecha única (`fixed`).
+ * `dias`: 9 oraciones, una por día de la novena (opcional).
+ */
+export type Novena = NovenaBase & { dias?: OracionDia[] } & (
+    | { m: number; d: number }
+    | { movil: FiestaMovilId }
+    | { fixed: number[] }
+  );
+
+/** Fiesta que algunos países celebran en otro día. */
+export type Traslado = {
+  fiesta: FiestaMovilId;
+  a: 'domingo';
+  paises: CodigoPais[];
+  nota?: string;
+  fuente?: string;
+};
 
 export type RangoCelebracion = 'solemnidad' | 'fiesta' | 'memoria' | 'memoria_libre';
 
@@ -212,6 +232,7 @@ export type Contenido = {
   /** Ausente en producción (está en borrador a propósito). */
   evangelio_ejemplo?: EvangelioEjemplo;
   novenas: Novena[];
+  traslados?: Traslado[];
   /** Revisión de `santos_del_dia` e `historias_santos` en bloque. */
   revision_santos_del_dia: Revision;
   ayuda: Ayuda;

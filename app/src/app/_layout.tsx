@@ -2,9 +2,11 @@ import { useFonts } from 'expo-font';
 import {
   DarkTheme,
   DefaultTheme,
+  router,
   Stack,
   ThemeProvider as NavegacionThemeProvider,
 } from 'expo-router';
+import type { NotificationResponse } from 'expo-notifications';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useMemo } from 'react';
@@ -12,12 +14,61 @@ import { useReducedMotion } from 'react-native-reanimated';
 
 // Inicia i18next antes del primer render (textos de interfaz e idioma guardado).
 import '@/i18n';
+import { moduloNotificaciones } from '@/lib/avisos';
 import { BienvenidaProvider, useBienvenida } from '@/lib/bienvenida';
 import { PaisProvider } from '@/lib/pais';
+import { rutaNovena } from '@/lib/rutas-novenas';
 import { ThemeProvider, useTema } from '@/theme';
 import { archivosDeFuentes } from '@/theme/fuentes';
 
 SplashScreen.preventAutoHideAsync();
+
+// Recordatorios de novena con la app abierta: se muestran como aviso, sin sonido ni globo en el ícono.
+// (En Expo Go para Android no hay módulo de notificaciones: ver lib/avisos.ts.)
+try {
+  moduloNotificaciones()?.setNotificationHandler({
+    handleNotification: async () => ({
+      shouldShowBanner: true,
+      shouldShowList: true,
+      shouldPlaySound: false,
+      shouldSetBadge: false,
+    }),
+  });
+} catch {
+  // Sin módulo de notificaciones (p. ej. en pruebas): la app sigue sin avisos.
+}
+
+/** Id de novena que trae un recordatorio en `data.novena`, o null. */
+function novenaDelAviso(respuesta: NotificationResponse | null): string | null {
+  const id = respuesta?.notification.request.content.data?.novena;
+  return typeof id === 'string' && id ? id : null;
+}
+
+/**
+ * Tocar un recordatorio abre el detalle de su novena (también si la app estaba cerrada).
+ * Solo con la bienvenida completa: antes, la ruta está protegida.
+ */
+function useAbrirNovenaDesdeAviso(activo: boolean) {
+  useEffect(() => {
+    const Notifications = moduloNotificaciones();
+    if (!activo || !Notifications) return;
+    let sub: { remove: () => void } | undefined;
+    try {
+      const inicial = novenaDelAviso(Notifications.getLastNotificationResponse());
+      if (inicial) {
+        router.push(rutaNovena(inicial));
+        Notifications.clearLastNotificationResponse();
+      }
+      sub = Notifications.addNotificationResponseReceivedListener((r) => {
+        const id = novenaDelAviso(r);
+        if (id) router.push(rutaNovena(id));
+      });
+    } catch {
+      // Sin módulo de notificaciones: nada que escuchar.
+    }
+    return () => sub?.remove();
+  }, [activo]);
+}
 
 /**
  * Navegación con los colores del tema (evita destellos blancos entre pantallas).
@@ -31,6 +82,7 @@ function Navegacion() {
   const tema = useTema();
   const reducirMovimiento = useReducedMotion();
   const { completa } = useBienvenida();
+  useAbrirNovenaDesdeAviso(completa);
 
   const temaNavegacion = useMemo(() => {
     const base = tema.esOscuro ? DarkTheme : DefaultTheme;
@@ -70,6 +122,8 @@ function Navegacion() {
           />
           {/* Detalle de una emoción: pantalla de oración fuera de las pestañas; entra con fundido (calma). */}
           <Stack.Screen name="emocion/[id]" options={{ animation: 'fade' }} />
+          {/* Detalle de una novena: pantalla de oración fuera de las pestañas; entra con fundido (calma). */}
+          <Stack.Screen name="novena/[id]" options={{ animation: 'fade' }} />
         </Stack.Protected>
         <Stack.Protected guard={!completa}>
           <Stack.Screen name="bienvenida" options={{ animation: 'fade' }} />

@@ -253,3 +253,13 @@ describe('colorDelDia / colorLiturgicoDelDia', () => {
 // Asegura que el tipo del fixture sigue el del contenido.
 const _tipo: Pick<SantoDelDia, 'lit' | 'rango'> = cel('white', 'memoria');
 void _tipo;
+
+describe('Corpus Christi en el color del día según el país', () => {
+  test('jueves en general; domingo donde se traslada', () => {
+    // 2026: Pascua 5 abr → jueves 4 jun, domingo 7 jun.
+    expect(colorDelDia(new Date(2026, 5, 4), null)).toBe('white');
+    expect(colorDelDia(new Date(2026, 5, 7), null)).toBe('green');
+    expect(colorDelDia(new Date(2026, 5, 4), null, { corpusEnDomingo: true })).toBe('green');
+    expect(colorDelDia(new Date(2026, 5, 7), null, { corpusEnDomingo: true })).toBe('white');
+  });
+});

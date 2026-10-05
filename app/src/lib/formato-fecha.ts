@@ -35,3 +35,20 @@ export function fechaCorta(fecha: Date, idioma: string): string {
 export function fechaLarga(fecha: Date, idioma: string): string {
   return formatear(fecha, idioma, { day: 'numeric', month: 'long' });
 }
+
+/** Hora y minutos con la convención del idioma: "8:00" / "8:00 AM". Para recordatorios. */
+export function horaCorta(h: number, m: number, idioma: string): string {
+  const fecha = new Date(2000, 0, 1, h, m);
+  const f = formateador(idioma, { hour: 'numeric', minute: '2-digit' });
+  return f ? f.format(fecha) : fecha.toLocaleTimeString(idioma, { hour: 'numeric', minute: '2-digit' });
+}
+
+/** El idioma usa reloj de 24 horas (para el selector de hora nativo). */
+export function usa24Horas(idioma: string): boolean {
+  const f = formateador(idioma, { hour: 'numeric' });
+  try {
+    return f ? f.resolvedOptions().hour12 !== true : true;
+  } catch {
+    return true;
+  }
+}

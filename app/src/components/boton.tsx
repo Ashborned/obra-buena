@@ -8,7 +8,7 @@
  * Objetivo táctil ≥ 44 pt; el texto puede ocupar varias líneas con letra grande.
  * Sin animación al presionar más allá de bajar la opacidad (calma).
  */
-import { Pressable, StyleSheet } from 'react-native';
+import { Pressable, StyleSheet, type AccessibilityState } from 'react-native';
 
 import { Texto } from '@/components/texto';
 import { conAlfa, espaciado, medidas, radios, useTema } from '@/theme';
@@ -22,6 +22,7 @@ export function Boton({
   variante = 'fantasma',
   etiquetaAccesible,
   pista,
+  estadoAccesible,
 }: {
   texto: string;
   onPress: () => void;
@@ -30,6 +31,8 @@ export function Boton({
   etiquetaAccesible?: string;
   /** Qué pasa al tocar (accessibilityHint). */
   pista?: string;
+  /** Estado para el lector (p. ej. `{ checked: true }` en "Rezado ✓"). */
+  estadoAccesible?: AccessibilityState;
 }) {
   const { colores, superficies, paleta } = useTema();
   const luz = variante === 'luz';
@@ -39,6 +42,7 @@ export function Boton({
       accessibilityRole="button"
       accessibilityLabel={etiquetaAccesible ?? texto}
       accessibilityHint={pista}
+      accessibilityState={estadoAccesible}
       onPress={onPress}
       style={({ pressed }) => [
         styles.boton,

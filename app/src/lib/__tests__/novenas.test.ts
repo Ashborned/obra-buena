@@ -37,7 +37,7 @@ const ymd = (x: Date) =>
   `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, '0')}-${String(x.getDate()).padStart(2, '0')}`;
 
 /** Ejecuta `info()` de la maqueta como si hoy fuera `hoy`. */
-function enMaqueta(fiesta: Fiesta, hoy: Date) {
+function enMaqueta(fiesta: Exclude<Fiesta, { calcular: unknown }>, hoy: Date) {
   const n = 'fecha' in fiesta ? { fixed: [fiesta.fecha.anio, fiesta.fecha.mes, fiesta.fecha.dia] } : { m: fiesta.mes, d: fiesta.dia };
   jest.setSystemTime(hoy);
   return info(n);

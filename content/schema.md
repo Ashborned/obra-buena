@@ -73,7 +73,16 @@ Cada `item` es un `id` de `lecturas` o de `proximamente`.
 
 `{ "id": "ter", "es": "...", "en": "...", "ini": "T", "m": 10, "d": 1, "revision": "borrador" }`: fiesta fija (mes y día). La novena son los 9 días anteriores.
 Una fiesta del 29 de febrero se celebra el 28 en años no bisiestos.
-`{ ..., "fixed": [2027, 5, 27] }`: fiesta móvil para un año concreto (pendiente: cálculo automático a partir de la Pascua).
+`{ ..., "movil": "corpus_christi" }`: fiesta móvil calculada cada año desde la Pascua (hoy: `corpus_christi`).
+`{ ..., "fixed": [2027, 5, 27] }`: fecha única para un año concreto (solo si no hay cálculo).
+`"dias"` (opcional): 9 oraciones, una por día: `[{ "es": "...", "en": "...", "revision": "borrador" }, …]`.
+Sin `dias`, la app muestra un marcador en desarrollo y "Oración del día próximamente" en producción.
+
+## `traslados[]`
+
+Fiestas que algunos países celebran en otro día:
+`{ "fiesta": "corpus_christi", "a": "domingo", "paises": ["CL"], "nota": "...", "fuente": "https://…" }`.
+Corpus Christi es jueves (Pascua + 60) salvo en los `paises` listados, donde es domingo (Pascua + 63).
 
 ## `santos_del_dia{}` e `historias_santos{}`
 

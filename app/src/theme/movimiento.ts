@@ -16,6 +16,14 @@ export const movimiento = {
   estrellas: [3200, 4300, 5600] as const,
   /** Nivel 2: titileo de llamas (duraciones distintas para no sincronizarse, como la maqueta). */
   llamas: [1900, 2300, 1600] as const,
+  /** Nivel 1: la llama nace con rebote y destello al encender una vela. */
+  encenderVela: 700,
+  /** Nivel 1: chispas que suben al encender una vela (un poco más largas que la llama). */
+  chispasVela: 900,
+  /** Nivel 1: novena completa (9/9): las llamas laten juntas y sube una columna de luz. */
+  novenaCompleta: 1500,
+  /** Apagar una vela: fundido simple, sin celebración. */
+  apagarVela: 300,
   /** Nivel 3: fundido + subida de 10 px. */
   entradaCalma: 350,
   subidaCalma: 10,

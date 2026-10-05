@@ -11,7 +11,9 @@
 export type FiestaAnual = { mes: number; dia: number };
 /** Fiesta de fecha única (p. ej. una fiesta móvil ya calculada para un año). */
 export type FiestaFija = { fecha: { anio: number; mes: number; dia: number } };
-export type Fiesta = FiestaAnual | FiestaFija;
+/** Fiesta móvil: su fecha se calcula cada año (p. ej. Corpus Christi desde la Pascua). */
+export type FiestaMovil = { calcular: (anio: number) => Date };
+export type Fiesta = FiestaAnual | FiestaFija | FiestaMovil;
 
 export type EstadoNovena = {
   /** Día de la fiesta (la de hoy si hoy es la fiesta; si no, la próxima). */
@@ -83,8 +85,10 @@ export function proximaFiesta(fiesta: Fiesta, hoy: Date = new Date()): Date {
   if ('fecha' in fiesta) {
     return new Date(fiesta.fecha.anio, fiesta.fecha.mes - 1, fiesta.fecha.dia);
   }
-  const esteAnio = fiestaEnAnio(fiesta, t.getFullYear());
-  return esteAnio < t ? fiestaEnAnio(fiesta, t.getFullYear() + 1) : esteAnio;
+  const enAnio = (anio: number) =>
+    'calcular' in fiesta ? inicioDelDia(fiesta.calcular(anio)) : fiestaEnAnio(fiesta, anio);
+  const esteAnio = enAnio(t.getFullYear());
+  return esteAnio < t ? enAnio(t.getFullYear() + 1) : esteAnio;
 }
 
 export function estadoNovena(fiesta: Fiesta, hoy: Date = new Date()): EstadoNovena {

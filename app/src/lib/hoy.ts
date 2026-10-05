@@ -8,7 +8,8 @@ import type { Contenido, HistoriaSanto, Novena, SantoDelDia } from '@/contenido/
 
 import { horaSegunReloj, type HoraOracion } from './hora-oracion';
 import { colorDelDia, type ColorDelDia } from './liturgia';
-import { estadoNovena, inicioDelDia, type EstadoNovena, type Fiesta } from './novenas';
+import { estadoNovena, inicioDelDia, type EstadoNovena } from './novenas';
+import { fiestaDeNovena, trasladaAlDomingo, type ContextoCalendario } from './novenas-contenido';
 
 /** Clave `MM-DD` de una fecha local (la de `santos_del_dia` e `historias_santos`). */
 export function claveDia(fecha: Date): string {
@@ -25,12 +26,7 @@ export type SantoHoy = {
   novena: Novena | null;
 };
 
-/** Fiesta de una novena en el formato de `novenas.ts`. */
-export function fiestaDeNovena(n: Novena): Fiesta {
-  return 'fixed' in n
-    ? { fecha: { anio: n.fixed[0], mes: n.fixed[1], dia: n.fixed[2] } }
-    : { mes: n.m, dia: n.d };
-}
+export { fiestaDeNovena } from './novenas-contenido';
 
 /** Novena cuya fiesta anual cae en la clave `MM-DD` dada. */
 export function novenaDelDiaDeFiesta(novenas: Novena[], clave: string): Novena | null {
@@ -55,8 +51,9 @@ export function santoDelDia(c: Contenido, fecha: Date): SantoHoy | null {
 }
 
 /** Color litúrgico del día: el del santo si su rango lo permite; si no, el del tiempo litúrgico. */
-export function colorLiturgicoDelDia(c: Contenido, fecha: Date): ColorDelDia {
-  return colorDelDia(fecha, c.santos_del_dia[claveDia(fecha)] ?? null);
+export function colorLiturgicoDelDia(c: Contenido, fecha: Date, pais?: string | null): ColorDelDia {
+  const corpusEnDomingo = trasladaAlDomingo('corpus_christi', { pais, traslados: c.traslados });
+  return colorDelDia(fecha, c.santos_del_dia[claveDia(fecha)] ?? null, { corpusEnDomingo });
 }
 
 export type NovenaHoy = { novena: Novena; estado: EstadoNovena };
@@ -65,9 +62,13 @@ export type NovenaHoy = { novena: Novena; estado: EstadoNovena };
  * Novena del día: la que es hoy su fiesta ("Hoy es su fiesta") o la que está en curso.
  * Si hay varias, primero la fiesta de hoy y después la más cercana a terminar.
  */
-export function novenaDelDia(novenas: Novena[], fecha: Date): NovenaHoy | null {
+export function novenaDelDia(
+  novenas: Novena[],
+  fecha: Date,
+  ctx: ContextoCalendario = {},
+): NovenaHoy | null {
   const activas = novenas
-    .map((novena) => ({ novena, estado: estadoNovena(fiestaDeNovena(novena), fecha) }))
+    .map((novena) => ({ novena, estado: estadoNovena(fiestaDeNovena(novena, ctx), fecha) }))
     .filter(({ estado }) => estado.esFiesta || estado.dia !== null);
   if (!activas.length) return null;
   activas.sort((a, b) => {

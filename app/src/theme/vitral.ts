@@ -72,6 +72,11 @@ export const coloresVela = {
   llamaNaranja: '#FF8A00',
   llamaBorde: 'rgba(255, 90, 0, 0.6)',
   resplandor: 'rgba(255, 190, 70, 0.55)',
+  /** Destello cálido al encender y chispas que suben. */
+  destello: 'rgba(255, 200, 90, 0.85)',
+  chispa: '#FFE7A3',
+  /** Centro de la columna de luz de la novena completa (los bordes toman el glowSoft de la paleta). */
+  columnaLuz: 'rgba(255, 244, 214, 0.8)',
 } as const;
 
 /** Cielo de Completas. */

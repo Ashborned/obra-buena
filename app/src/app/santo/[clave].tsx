@@ -1,7 +1,7 @@
 /**
  * Historia del santo (prototype/obra-buena.html, vista `saint`): vitral arriba, nombre, datos breves,
  * historia con letra capital en el primer párrafo, una cita y una oración. Si hay novena para su
- * fiesta, "Rezar su novena" (por ahora abre la pestaña Novenas; el detalle es otro hito).
+ * fiesta, "Rezar su novena" abre su detalle (`rutaNovena`).
  *
  * Contrato con Hoy: se abre con `router.push(rutaHistoriaSanto(clave))` (`/santo/MM-DD`).
  *
@@ -26,6 +26,7 @@ import { Vitral } from '@/components/vitral';
 import { contenido } from '@/contenido';
 import { useIdioma, useTranslation } from '@/i18n';
 import { novenaDelDiaDeFiesta } from '@/lib/hoy';
+import { rutaNovena } from '@/lib/rutas-novenas';
 import {
   espaciado,
   FACTOR_INTERLINEADO,
@@ -192,7 +193,7 @@ export default function PantallaSanto() {
                 variante="luz"
                 texto={t('santo.rezarNovena')}
                 pista={t('santo.rezarNovenaPista')}
-                onPress={() => router.navigate('/novenas')}
+                onPress={() => router.push(rutaNovena(novena.id))}
               />
             </View>
           ) : null}

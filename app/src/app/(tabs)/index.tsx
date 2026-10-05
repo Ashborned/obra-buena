@@ -35,7 +35,9 @@ import {
   rutaHistoriaSanto,
   santoDelDia,
 } from '@/lib/hoy';
+import { usePais } from '@/lib/pais';
 import { guardarUltimaAperturaVitral, leerUltimaAperturaVitral } from '@/lib/preferencias';
+import { rutaNovena } from '@/lib/rutas-novenas';
 import { useAhora } from '@/lib/use-ahora';
 import { semillaDeFecha } from '@/lib/vitral';
 import { espaciado, hexLiturgico, medidasVitral, useTema } from '@/theme';
@@ -57,8 +59,9 @@ export default function PantallaHoy() {
 
   const dia = semillaDeFecha(hoy);
   const santoHoy = santoDelDia(contenido, hoy);
-  const color = colorLiturgicoDelDia(contenido, hoy);
-  const novenaHoy = novenaDelDia(contenido.novenas, hoy);
+  const { pais } = usePais();
+  const color = colorLiturgicoDelDia(contenido, hoy, pais);
+  const novenaHoy = novenaDelDia(contenido.novenas, hoy, { pais, traslados: contenido.traslados });
   const evangelio = contenido.evangelio_ejemplo;
   const indicePar = idioma === 'es' ? 0 : 1;
 
@@ -152,7 +155,7 @@ export default function PantallaHoy() {
               <TarjetaNovenaHoy
                 novenaHoy={novenaHoy}
                 activo={enfocada}
-                onPress={() => router.navigate('/novenas')}
+                onPress={() => router.push(rutaNovena(novenaHoy.novena.id))}
               />
             </Animated.View>
           ) : null}

@@ -104,7 +104,16 @@ for (const n of d.novenas || []) {
   const w = `novena ${n.id}`;
   if (!str(n.es) || !str(n.en)) err(w, 'falta nombre es/en');
   // Fecha real (29 feb se acepta: en años no bisiestos se celebra el 28, ver docs/decisiones.md).
-  if (!n.fixed && !(n.m >= 1 && n.m <= 12 && n.d >= 1 && n.d <= new Date(2000, n.m, 0).getDate())) err(w, 'falta fecha (m, d) válida o fixed');
+  const MOVILES = ['corpus_christi'];
+  if (n.movil !== undefined && !MOVILES.includes(n.movil)) err(w, `movil debe ser ${MOVILES.join(' | ')}`);
+  if (!n.fixed && !n.movil && !(n.m >= 1 && n.m <= 12 && n.d >= 1 && n.d <= new Date(2000, n.m, 0).getDate())) err(w, 'falta fecha (m, d) válida, movil o fixed');
+  if (n.dias !== undefined) {
+    if (!Array.isArray(n.dias) || n.dias.length !== 9) err(w, 'dias debe tener 9 oraciones');
+    else n.dias.forEach((x, i) => {
+      if (!x || !str(x.es) || !str(x.en)) err(w, `día ${i + 1}: falta oración es/en`);
+      if (x && x.revision !== undefined && !REV.includes(x.revision)) err(w, `día ${i + 1}: revision inválida`);
+    });
+  }
   if (!REV.includes(n.revision)) err(w, 'revision inválida');
   if (n.fixed) warn(w, 'fiesta móvil con fecha fija: falta cálculo automático');
 }
@@ -130,6 +139,15 @@ if (ev) {
   if (!pair(ev.ref) || !pair(ev.t)) err('evangelio_ejemplo', 'ref y t deben ser [es, en]');
   if (ev.revision === 'aprobado') err('evangelio_ejemplo', 'es un ejemplo: no puede estar aprobado');
   if (!REV.includes(ev.revision)) err('evangelio_ejemplo', 'revision inválida');
+}
+
+// Traslados por país
+for (const t of d.traslados || []) {
+  const w = `traslado ${t.fiesta}`;
+  if (t.fiesta !== 'corpus_christi') err(w, 'fiesta desconocida');
+  if (t.a !== 'domingo') err(w, 'a debe ser "domingo"');
+  if (!Array.isArray(t.paises) || !t.paises.every(c => /^[A-Z]{2}$/.test(c))) err(w, 'paises debe ser una lista de códigos ISO');
+  if (!t.fuente) warn(w, 'sin fuente');
 }
 
 // Ayuda (líneas de crisis)

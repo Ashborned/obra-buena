@@ -32,6 +32,7 @@ import { useIdioma, useTranslation, type ClaveTexto } from '@/i18n';
 import { entradaDelDia, posicionAyuda } from '@/lib/emociones';
 import { useOtraOracion } from '@/lib/otra-oracion';
 import { rutaLectura } from '@/lib/rutas-emociones';
+import { rutaNovena } from '@/lib/rutas-novenas';
 import { useAhora } from '@/lib/use-ahora';
 import {
   esIdTonoEmocion,
@@ -296,8 +297,7 @@ function TarjetaCompanero({ companero }: { companero: Companero }) {
             <Enlace
               texto={t('emociones.rezarNovena')}
               pista={t('emociones.rezarNovenaPista')}
-              // El detalle de la novena es otro hito: por ahora abre la pestaña Novenas.
-              onPress={() => router.navigate('/novenas')}
+              onPress={() => router.push(rutaNovena(companero.nov as string))}
             />
           ) : null}
           {lectura ? (

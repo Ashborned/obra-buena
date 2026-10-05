@@ -6,7 +6,7 @@
  * la tarjeta) y, si la persona completó los nueve días, las nueve velas encendidas. Sin puntos ni
  * confeti: la oración no se premia.
  *
- * Por ahora abre la pestaña Novenas; el detalle de la novena es otro hito.
+ * Toca → detalle de esa novena (`rutaNovena`).
  */
 import { useFocusEffect } from 'expo-router';
 import { useCallback, useState } from 'react';
