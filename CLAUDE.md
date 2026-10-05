@@ -41,7 +41,7 @@ es la fuente de verdad visual y de comportamiento hasta que la app la supere.
 8. **Global, sin suponer un país.** Todo lo que depende del país (líneas de ayuda, fiestas trasladadas,
    santos propios, traducción del leccionario) va en `content/` con su campo `pais`/`paises`.
    Lo regional se muestra primero donde corresponde, pero no se esconde a los demás.
-7. **Contenido con fuente y revisión humana.** Nada llega a producción sin `revision: "aprobado"`.
+7. **Contenido con fuente, sin paso de aprobación.** El contenido se muestra directo y se puede agregar o cambiar en cualquier momento; se revisa en una revisión final. Prioridad actual: la funcionalidad de la app. Excepción: un número de línea de ayuda solo aparece si está verificado (`revision: "aprobado"`).
 
 ## Tecnología
 
@@ -88,8 +88,7 @@ Delega en estos subagentes (`.claude/agents/`):
 | `imagenes` | Buscar pinturas de dominio público y registrar su licencia |
 | `qa` | Pruebas, accesibilidad, modo sin internet |
 
-Flujo de contenido: `contenido` escribe → `node scripts/validar-contenido.mjs` → `verificador` revisa →
-queda `revision: "pendiente"` → una persona aprueba → `"aprobado"`.
+Flujo de contenido: `contenido` escribe → `node scripts/validar-contenido.mjs` → entra a la app. El `verificador` se usa cuando Felipe lo pida o en la revisión final.
 
 ## Comandos
 

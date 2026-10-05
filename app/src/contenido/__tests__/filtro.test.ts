@@ -158,68 +158,24 @@ describe('filtrarPorRevision: producción', () => {
     expect(entradaCongelada).toEqual(fixture());
   });
 
-  test('las 12 emociones se mantienen, aunque queden con items: []', () => {
-    expect(r.emociones.map((e) => e.id)).toEqual(IDS);
-    expect(r.emociones.filter((e) => e.items.length === 0)).toHaveLength(11);
-    expect(r.emociones[3]).toMatchObject({ id: 'depression', care: 1, items: [] });
-  });
-
-  test('solo entradas aprobadas; borrador, pendiente y rechazado se quitan', () => {
-    const todas = r.emociones.flatMap((e) => e.items);
-    expect(todas.map((i) => i.c.es[0])).toEqual(['a1', 'a2']);
-    expect(todas.every((i) => i.revision === 'aprobado')).toBe(true);
-  });
-
-  test('lecturas aprobadas se quedan; las demás se quitan', () => {
-    expect(r.lecturas.map((l) => l.id)).toEqual(['lecA']);
-  });
-
-  test('rasgos: solo los usados por lecturas aprobadas', () => {
-    expect(Object.keys(r.rasgos).sort()).toEqual(['t1', 't2']);
-  });
-
-  test('colecciones: solo ítems visibles; las vacías desaparecen', () => {
-    expect(r.colecciones).toEqual([{ id: 'mixta', es: '', en: '', items: ['lecA'] }]);
-  });
-
-  test('novenas y proximamente sin aprobar se quitan', () => {
-    expect(r.novenas).toEqual([]);
-    expect(r.proximamente).toEqual([]);
-  });
-
-  test('novena aprobada se mantiene y el enlace c.nov a ella también', () => {
+  test('sin paso de aprobación: emociones, lecturas, novenas, santos y colecciones pasan tal cual', () => {
     const f = fixture();
+    expect(r.emociones).toEqual(f.emociones);
+    expect(r.lecturas).toEqual(f.lecturas);
+    expect(r.novenas).toEqual(f.novenas);
+    expect(r.proximamente).toEqual(f.proximamente);
+    expect(r.colecciones).toEqual(f.colecciones);
+    expect(r.rasgos).toEqual(f.rasgos);
+    expect(r.santos_del_dia).toEqual(f.santos_del_dia);
+    expect(r.historias_santos).toEqual(f.historias_santos);
+  });
+
+  test('el evangelio de ejemplo no se publica', () => {
     const x = filtrarPorRevision(
-      fixture({ novenas: f.novenas.map((n) => ({ ...n, revision: 'aprobado' as Revision })) }),
+      fixture({ evangelio_ejemplo: { ref: ['a', 'b'], t: ['a', 'b'], revision: 'borrador' } }),
       'produccion',
     );
-    expect(x.novenas.map((n) => n.id)).toEqual(['nov1']);
-    expect(x.emociones[0].items[0].c.nov).toBe('nov1');
-  });
-
-  test('santos_del_dia e historias_santos vacíos si revision_santos_del_dia no es aprobado', () => {
-    expect(r.santos_del_dia).toEqual({});
-    expect(r.historias_santos).toEqual({});
-    for (const rev of ['pendiente', 'rechazado'] as Revision[]) {
-      const x = filtrarPorRevision(fixture({ revision_santos_del_dia: rev }), 'produccion');
-      expect(x.santos_del_dia).toEqual({});
-      expect(x.historias_santos).toEqual({});
-    }
-  });
-
-  test('santos_del_dia e historias_santos se mantienen con revision_santos_del_dia: aprobado', () => {
-    const f = fixture({ revision_santos_del_dia: 'aprobado' });
-    const x = filtrarPorRevision(f, 'produccion');
-    expect(x.santos_del_dia).toEqual(f.santos_del_dia);
-    expect(x.historias_santos).toEqual(f.historias_santos);
-  });
-
-  test('enlaces nov/lrn a algo no visible se quitan; lrn a lectura aprobada se mantiene', () => {
-    const [a1, a2] = r.emociones[0].items;
-    expect(a1.c.lrn).toBe('lecA');
-    expect(a1.c).not.toHaveProperty('nov'); // nov1 está en borrador
-    expect(a2.c).not.toHaveProperty('lrn'); // lecB está en borrador
-    expect(a1.c).toMatchObject({ ini: 'X', es: ['a1', 'línea'], en: ['a1', 'line'] });
+    expect(x.evangelio_ejemplo).toBeUndefined();
   });
 
   test('ayuda: solo países aprobados; respaldo intacto', () => {
@@ -255,7 +211,6 @@ describe('filtrarPorRevision: producción', () => {
 describe('filtrarPorRevision con el JSON real', () => {
   const real = datos as unknown as Contenido;
   const copia = JSON.parse(JSON.stringify(datos));
-  const prod = filtrarPorRevision(real, 'produccion');
 
   test('desarrollo devuelve el JSON completo', () => {
     expect(filtrarPorRevision(real, 'desarrollo')).toEqual(copia);
@@ -265,43 +220,14 @@ describe('filtrarPorRevision con el JSON real', () => {
     expect(real).toEqual(copia);
   });
 
-  test('producción: todo lo que queda está aprobado y es coherente (válida cuando se apruebe contenido)', () => {
-    expect(prod.emociones).toHaveLength(12);
-    const entradas = prod.emociones.flatMap((e) => e.items);
-    expect(entradas.every((i) => i.revision === 'aprobado')).toBe(true);
-    expect(prod.lecturas.every((l) => l.revision === 'aprobado')).toBe(true);
+  test('producción: todo el contenido pasa salvo números de ayuda sin verificar y el evangelio de ejemplo', () => {
+    const prod = filtrarPorRevision(real, 'produccion');
+    expect(prod.emociones).toEqual(real.emociones);
+    expect(prod.lecturas).toEqual(real.lecturas);
+    expect(prod.novenas).toEqual(real.novenas);
+    expect(prod.santos_del_dia).toEqual(real.santos_del_dia);
     expect(prod.ayuda.paises.every((p) => p.revision === 'aprobado')).toBe(true);
-    expect(prod.novenas.every((n) => n.revision === 'aprobado')).toBe(true);
-    expect(prod.proximamente.every((x) => x.revision === 'aprobado')).toBe(true);
-
-    const idsLect = new Set([...prod.lecturas.map((l) => l.id), ...prod.proximamente.map((x) => x.id)]);
-    const idsNov = new Set(prod.novenas.map((n) => n.id));
-    for (const i of entradas) {
-      if (i.c.nov) expect(idsNov.has(i.c.nov)).toBe(true);
-      if (i.c.lrn) expect(idsLect.has(i.c.lrn)).toBe(true);
-    }
-    for (const col of prod.colecciones) {
-      expect(col.items.length).toBeGreaterThan(0);
-      for (const id of col.items) expect(idsLect.has(id)).toBe(true);
-    }
-    const usados = new Set(prod.lecturas.flatMap((l) => l.traits));
-    for (const k of Object.keys(prod.rasgos)) expect(usados.has(k)).toBe(true);
-
-    if (real.revision_santos_del_dia !== 'aprobado') {
-      expect(prod.santos_del_dia).toEqual({});
-      expect(prod.historias_santos).toEqual({});
-    }
     expect(prod.ayuda.respaldo).toEqual(real.ayuda.respaldo);
-  });
-
-  test('estado actual (2026-10-03, contenido aprobado por el cura de la comuna salvo las líneas de ayuda)', () => {
-    // Si falla porque cambió el contenido, actualízala: la prueba anterior es la que importa.
-    expect(prod.emociones.flatMap((e) => e.items)).toHaveLength(36);
-    expect(prod.lecturas).toHaveLength(4);
-    expect(prod.novenas).toHaveLength(6);
-    expect(Object.keys(prod.santos_del_dia).length).toBeGreaterThan(0);
-    // Líneas de ayuda: pendientes de verificar con fuente oficial (decisiones, pendiente 12).
-    expect(prod.ayuda.paises).toHaveLength(0);
-    expect(prod.ayuda.respaldo.url).toMatch(/^https:\/\/(www\.)?findahelpline\.com/);
+    expect(prod.evangelio_ejemplo).toBeUndefined();
   });
 });

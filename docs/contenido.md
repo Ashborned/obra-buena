@@ -47,5 +47,7 @@
 
 ## Estados de revisión
 
-`borrador` → `pendiente` (pasó validación y verificador) → `aprobado` (lo aprobó una persona) · `rechazado`.
-Solo `aprobado` se muestra en la app publicada.
+`borrador` → `pendiente` → `aprobado` · `rechazado`. Es solo un registro para la revisión final: la app muestra todo el contenido sin filtrar por estado.
+Excepción: las líneas de ayuda se muestran solo con `aprobado` (verificadas con fuente oficial).
+
+Tono: lo que conecta con la gente manda. No volver técnica o fría una frase solo por precisión pedante; los ajustes finos van en la revisión final.

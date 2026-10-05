@@ -1,6 +1,7 @@
 /**
  * Contenido local de la app (sin internet): `content/contenido.json` empaquetado en el bundle.
- * En desarrollo se muestra todo; en producción solo lo aprobado (ver `filtro.ts`).
+ * Se muestra todo, sin paso de aprobación; en producción solo se quitan los números de ayuda
+ * sin verificar y el evangelio de ejemplo (ver `filtro.ts`).
  */
 import datos from '../../../content/contenido.json';
 
