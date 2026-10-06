@@ -9,10 +9,12 @@
  *   nombre, subtítulo e insignia ("Nuevo · 6 min", "Medalla obtenida" o "Próximamente").
  *
  * Principio 1: el juego vive aquí y es de conocimiento. Sin rachas ni contadores de días.
- * Calma: los bloques entran con fundido y subida de 10 px.
+ * Calma: los bloques entran con fundido y subida de 10 px. Al volver del quiz con una medalla nueva,
+ * la vitrina se desplaza hasta su casilla y la medalla llega volando (components/transiciones.tsx);
+ * mientras vuela, la casilla la espera vacía y al llegar se asienta con un pequeño rebote.
  */
 import { router } from 'expo-router';
-import { useMemo, type ReactNode } from 'react';
+import { useEffect, useMemo, useRef, type ReactNode } from 'react';
 import { Pressable, ScrollView, StyleSheet, View, useWindowDimensions } from 'react-native';
 import Animated from 'react-native-reanimated';
 
@@ -22,6 +24,7 @@ import { Medalla, PROPORCION_MEDALLA } from '@/components/medalla';
 import { Pantalla } from '@/components/pantalla';
 import { Tarjeta } from '@/components/tarjeta';
 import { Texto } from '@/components/texto';
+import { useAsentar, useDestinoMedalla, useMedallaEnVuelo } from '@/components/transiciones';
 import { contenido, type Coleccion } from '@/contenido';
 import { useIdioma, useTranslation } from '@/i18n';
 import { useReducirMovimiento } from '@/lib/animaciones';
@@ -124,6 +127,20 @@ function Vitrina({
   });
   const altoMedalla = medidasMedalla.vitrina * PROPORCION_MEDALLA;
 
+  // Medalla en vuelo desde el quiz: la vitrina se desplaza hasta su casilla.
+  const enVuelo = useMedallaEnVuelo();
+  const repisa = useRef<ScrollView>(null);
+  const posiciones = useRef(new Map<string, number>());
+  const medirCasilla = (id: string) => (x: number) => {
+    posiciones.current.set(id, x);
+    if (id === enVuelo) repisa.current?.scrollTo({ x: Math.max(0, x - espaciado.lg), animated: true });
+  };
+  useEffect(() => {
+    if (!enVuelo) return;
+    const x = posiciones.current.get(enVuelo);
+    if (x !== undefined) repisa.current?.scrollTo({ x: Math.max(0, x - espaciado.lg), animated: true });
+  }, [enVuelo]);
+
   return (
     <Tarjeta style={styles.vitrina}>
       <View
@@ -147,6 +164,7 @@ function Vitrina({
         />
         {progreso.cargado ? (
           <ScrollView
+            ref={repisa}
             horizontal
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={styles.medallas}>
@@ -168,6 +186,8 @@ function Vitrina({
               return (
                 <CasillaMedalla
                   key={lectura.id}
+                  destinoId={lectura.id}
+                  alMedir={medirCasilla(lectura.id)}
                   nombre={nombre}
                   ganada={!!ganadaEn}
                   etiqueta={t(
@@ -204,6 +224,8 @@ function Vitrina({
 }
 
 function CasillaMedalla({
+  destinoId,
+  alMedir,
   nombre,
   detalle,
   ganada = true,
@@ -212,6 +234,10 @@ function CasillaMedalla({
   onPress,
   children,
 }: {
+  /** Id de la lectura: la casilla puede recibir su medalla volando desde el quiz. */
+  destinoId?: string;
+  /** Posición x de la casilla en la repisa (para desplazarse hasta ella). */
+  alMedir?: (x: number) => void;
   nombre: string;
   detalle?: string;
   ganada?: boolean;
@@ -221,15 +247,20 @@ function CasillaMedalla({
   children: ReactNode;
 }) {
   const { colores } = useTema();
+  const { ref, esperando } = useDestinoMedalla(destinoId ?? '');
+  const estiloMedalla = useAsentar(esperando);
   return (
     <Pressable
       accessibilityRole="button"
       accessibilityLabel={etiqueta}
       accessibilityHint={pista}
       onPress={onPress}
+      onLayout={alMedir ? (e) => alMedir(e.nativeEvent.layout.x) : undefined}
       style={({ pressed }) => [styles.casilla, pressed && styles.presionada]}>
       {/* Sin boxShadow alrededor: en Android dibuja un óvalo oscuro detrás de la medalla. */}
-      <View>{children}</View>
+      <Animated.View ref={ref} collapsable={false} style={estiloMedalla}>
+        {children}
+      </Animated.View>
       {detalle ? (
         // Una línea: con el espaciado de la etiqueta, "COLLECTION" se partía a mitad de palabra.
         <Texto

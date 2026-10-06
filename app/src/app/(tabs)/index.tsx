@@ -6,11 +6,12 @@
  * - Sin santo cargado ese día: respaldo sin nombre ni inicial (nunca el santo de otro día), con el
  *   color del tiempo litúrgico y el vitral sembrado con la fecha.
  * - Movimiento: la apertura del vitral (nivel 1) corre una vez por día; el haz, el halo, las llamas,
- *   las estrellas y el brillo del botón (nivel 2) solo mientras Hoy está a la vista.
+ *   las estrellas, el brillo del botón y la inclinación (nivel 2) solo mientras Hoy está a la vista.
+ *   "Conocer su historia": el bloque del santo se expande hacia la historia (`expandirTarjeta`).
  */
 import { router, useIsFocused } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ScrollView, StyleSheet, View, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
 import Animated from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -25,6 +26,7 @@ import { Icono } from '@/components/icono';
 import { TarjetaEvangelio } from '@/components/tarjeta-evangelio';
 import { TarjetaNovenaHoy } from '@/components/tarjeta-novena-hoy';
 import { Texto } from '@/components/texto';
+import { medirEnVentana, useTransiciones } from '@/components/transiciones';
 import { Vitral } from '@/components/vitral';
 import { contenido } from '@/contenido';
 import { useIdioma, useTranslation } from '@/i18n';
@@ -57,6 +59,8 @@ export default function PantallaHoy() {
   const reducir = useReducirMovimiento();
   const insets = useSafeAreaInsets();
   const espacioBarra = useEspacioBarra();
+  const { expandirTarjeta } = useTransiciones();
+  const refSanto = useRef<View>(null);
 
   const dia = semillaDeFecha(hoy);
   const santoHoy = santoDelDia(contenido, hoy);
@@ -109,7 +113,7 @@ export default function PantallaHoy() {
           </View>
         </View>
 
-        <Animated.View entering={entradaCalma(reducir)} style={styles.textoHero}>
+        <Animated.View ref={refSanto} entering={entradaCalma(reducir)} style={styles.textoHero}>
           <View style={styles.chips}>
             <Chip
               texto={t('hoy.horaFecha', { hora: nombreHora, fecha: fechaCorta(hoy, idioma) })}
@@ -138,7 +142,11 @@ export default function PantallaHoy() {
                     texto={t('hoy.conocerHistoria')}
                     pista={t('hoy.conocerHistoriaPista', { nombre })}
                     // Las rutas tipadas no aceptan `/santo/${string}` genérico; la ruta existe (santo/[clave].tsx).
-                    onPress={() => router.push(rutaHistoriaSanto(santoHoy.clave))}
+                    onPress={() => {
+                      router.push(rutaHistoriaSanto(santoHoy.clave));
+                      // La capa se mide en paralelo: la navegación no espera a la animación.
+                      if (!reducir) medirEnVentana(refSanto, expandirTarjeta);
+                    }}
                   />
                 </View>
               ) : null}

@@ -13,6 +13,7 @@ import { useEffect, useMemo } from 'react';
 
 // Inicia i18next antes del primer render (textos de interfaz e idioma guardado).
 import '@/i18n';
+import { TransicionesProvider } from '@/components/transiciones';
 import { AnimacionesProvider, useReducirMovimiento } from '@/lib/animaciones';
 import { moduloNotificaciones } from '@/lib/avisos';
 import { BienvenidaProvider, useBienvenida } from '@/lib/bienvenida';
@@ -104,48 +105,50 @@ function Navegacion() {
   return (
     <NavegacionThemeProvider value={temaNavegacion}>
       <StatusBar style={tema.barraEstado} />
-      <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Protected guard={completa}>
-          {/* Al salir de la bienvenida, Hoy entra con un fundido (calma). */}
-          <Stack.Screen name="(tabs)" options={{ animation: 'fade' }} />
-          <Stack.Screen
-            name="configuracion"
-            options={{
-              presentation: 'modal',
-              // Con "Reducir movimiento", el modal entra con un fundido en vez de deslizarse.
-              animation: reducirMovimiento ? 'fade' : 'default',
-            }}
-          />
-          {/* Historia del santo: fuera de las pestañas, a pantalla completa (contrato en lib/hoy.ts). */}
-          <Stack.Screen
-            name="santo/[clave]"
-            options={{ animation: reducirMovimiento ? 'fade' : 'default' }}
-          />
-          {/* Detalle de una emoción: pantalla de oración fuera de las pestañas; entra con fundido (calma). */}
-          <Stack.Screen name="emocion/[id]" options={{ animation: 'fade' }} />
-          {/* Detalle de una novena: pantalla de oración fuera de las pestañas; entra con fundido (calma). */}
-          <Stack.Screen name="novena/[id]" options={{ animation: 'fade' }} />
-          {/* Aprender: lector, quiz y medalla grande, fuera de las pestañas (el lector es calma y no
-              lleva la barra a la vista). Entran como la historia del santo; con "Reducir movimiento",
-              con fundido. */}
-          <Stack.Screen
-            name="lectura/[id]"
-            options={{ animation: reducirMovimiento ? 'fade' : 'default' }}
-          />
-          <Stack.Screen
-            name="quiz/[id]"
-            options={{ animation: reducirMovimiento ? 'fade' : 'default' }}
-          />
-          {/* Medalla grande: con fundido (el espectáculo lo pone la medalla, no la transición). */}
-          <Stack.Screen name="medalla/[id]" options={{ animation: 'fade' }} />
-        </Stack.Protected>
-        <Stack.Protected guard={!completa}>
-          <Stack.Screen name="bienvenida" options={{ animation: 'fade' }} />
-        </Stack.Protected>
-        {/* Selectores: desde la bienvenida y desde Configuración. Solo fundidos (calma). */}
-        <Stack.Screen name="idioma" options={{ presentation: 'modal', animation: 'fade' }} />
-        <Stack.Screen name="pais" options={{ presentation: 'modal', animation: 'fade' }} />
-      </Stack>
+      {/* Capa de transiciones compartidas (tarjeta → historia, medalla → vitrina), encima de todo. */}
+      <TransicionesProvider>
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Protected guard={completa}>
+            {/* Al salir de la bienvenida, Hoy entra con un fundido (calma). */}
+            <Stack.Screen name="(tabs)" options={{ animation: 'fade' }} />
+            <Stack.Screen
+              name="configuracion"
+              options={{
+                presentation: 'modal',
+                // Con "Reducir movimiento", el modal entra con un fundido en vez de deslizarse.
+                animation: reducirMovimiento ? 'fade' : 'default',
+              }}
+            />
+            {/* Historia del santo: fuera de las pestañas, a pantalla completa (contrato en lib/hoy.ts).
+                Entra con fundido: con movimiento completo, la tarjeta del santo se expande encima
+                (components/transiciones.tsx) y el vitral queda en su lugar. */}
+            <Stack.Screen name="santo/[clave]" options={{ animation: 'fade' }} />
+            {/* Detalle de una emoción: pantalla de oración fuera de las pestañas; entra con fundido (calma). */}
+            <Stack.Screen name="emocion/[id]" options={{ animation: 'fade' }} />
+            {/* Detalle de una novena: pantalla de oración fuera de las pestañas; entra con fundido (calma). */}
+            <Stack.Screen name="novena/[id]" options={{ animation: 'fade' }} />
+            {/* Aprender: lector, quiz y medalla grande, fuera de las pestañas (el lector es calma y no
+                lleva la barra a la vista). Entran deslizándose (la transición del sistema); con
+                "Reducir movimiento", con fundido. */}
+            <Stack.Screen
+              name="lectura/[id]"
+              options={{ animation: reducirMovimiento ? 'fade' : 'default' }}
+            />
+            <Stack.Screen
+              name="quiz/[id]"
+              options={{ animation: reducirMovimiento ? 'fade' : 'default' }}
+            />
+            {/* Medalla grande: con fundido (el espectáculo lo pone la medalla, no la transición). */}
+            <Stack.Screen name="medalla/[id]" options={{ animation: 'fade' }} />
+          </Stack.Protected>
+          <Stack.Protected guard={!completa}>
+            <Stack.Screen name="bienvenida" options={{ animation: 'fade' }} />
+          </Stack.Protected>
+          {/* Selectores: desde la bienvenida y desde Configuración. Solo fundidos (calma). */}
+          <Stack.Screen name="idioma" options={{ presentation: 'modal', animation: 'fade' }} />
+          <Stack.Screen name="pais" options={{ presentation: 'modal', animation: 'fade' }} />
+        </Stack>
+      </TransicionesProvider>
     </NavegacionThemeProvider>
   );
 }

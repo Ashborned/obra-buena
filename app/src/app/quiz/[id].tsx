@@ -13,6 +13,8 @@
  * - Resultado: se registra una sola vez (`registrarResultadoQuiz`). Si aprueba, la medalla se acuña
  *   (nivel 1) y, si se completó una colección, aparece después su medalla. Si no, la silueta y un
  *   mensaje amable con "Volver a intentarlo" y "Repasar la lectura".
+ * - "Ver tu vitrina": la medalla se levanta de la página y vuela a su casilla en la vitrina
+ *   (`lanzarMedalla`, components/transiciones.tsx). Con movimiento reducido, solo se vuelve.
  */
 import { router, useIsFocused, useLocalSearchParams } from 'expo-router';
 import { useEffect, useRef, useState } from 'react';
@@ -21,6 +23,7 @@ import Animated from 'react-native-reanimated';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { ColeccionCompleta, MedallaAcunada } from '@/components/acunacion';
+import { medirEnVentana, useTransiciones } from '@/components/transiciones';
 import { Boton } from '@/components/boton';
 import { Encabezado } from '@/components/encabezado';
 import { Fondo } from '@/components/fondo';
@@ -329,6 +332,25 @@ function Resultado({
   const nombre = lectura[idioma].name;
   const [resultado, setResultado] = useState<ResultadoQuiz | null>(null);
   const registrado = useRef(false);
+  const { lanzarMedalla } = useTransiciones();
+  const refMedalla = useRef<View>(null);
+  // La medalla salió volando hacia la vitrina: aquí ya no se dibuja (no hay dos a la vez).
+  const [enVuelo, setEnVuelo] = useState(false);
+
+  const verVitrina = () => {
+    router.dismissTo('/aprender');
+    if (reducir) return;
+    medirEnVentana(refMedalla, (origen) => {
+      setEnVuelo(true);
+      lanzarMedalla({
+        id: lectura.id,
+        origen,
+        medalla: (
+          <Medalla variante="lectura" lectura={lectura} rasgos={lectura.traits} tamano={medidasMedalla.resultado} />
+        ),
+      });
+    });
+  };
 
   // Se registra una sola vez por intento (este componente se monta de nuevo en cada intento).
   useEffect(() => {
@@ -378,13 +400,15 @@ function Resultado({
   return (
     <View style={styles.resultado}>
       <MedallaAcunada tamano={medidasMedalla.resultado} reducir={reducir} activo={enfocada}>
-        <Medalla
-          variante="lectura"
-          lectura={lectura}
-          rasgos={lectura.traits}
-          tamano={medidasMedalla.resultado}
-          etiqueta={t('aprender.medallaGanadaAccesible', { nombre })}
-        />
+        <View ref={refMedalla} collapsable={false} style={enVuelo && styles.oculta}>
+          <Medalla
+            variante="lectura"
+            lectura={lectura}
+            rasgos={lectura.traits}
+            tamano={medidasMedalla.resultado}
+            etiqueta={t('aprender.medallaGanadaAccesible', { nombre })}
+          />
+        </View>
       </MedallaAcunada>
       <Animated.View entering={entradaCalma(reducir, 4)} style={styles.resultadoTextos}>
         <Texto rol="etiqueta" tono="acento" style={styles.centrado}>
@@ -415,7 +439,7 @@ function Resultado({
           variante="luz"
           texto={t('aprender.verVitrina')}
           pista={t('aprender.verVitrinaPista')}
-          onPress={() => router.dismissTo('/aprender')}
+          onPress={verVitrina}
         />
       </Animated.View>
     </View>
@@ -508,4 +532,5 @@ const styles = StyleSheet.create({
   centrado: { textAlign: 'center' },
   lead: { maxWidth: 320 },
   coleccion: { alignItems: 'center', gap: espaciado.xs, marginTop: espaciado.lg },
+  oculta: { opacity: 0 },
 });
