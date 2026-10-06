@@ -135,3 +135,73 @@ describe('inclinación del vitral', () => {
     expect(JSON.stringify(app.expo.ios?.infoPlist ?? {})).not.toMatch(/Motion/);
   });
 });
+
+/*
+ * Hito 8 · QA (parte C): lo que la revisión del sistema no cubría.
+ */
+describe('nivel 2: los bucles infinitos viven solo en el ambiente y se detienen', () => {
+  /** Los únicos componentes con withRepeat (todos de nivel 2, todos fuera de las pantallas de oración). */
+  const AMBIENTE: Record<string, RegExp> = {
+    'components/vitral.tsx': /if \(!vida \|\| reducir\)/,
+    'components/fondo.tsx': /if \(!titilar \|\| reducir\)/,
+    'components/boton-llamada.tsx': /if \(!activo \|\| reducir\)/,
+    'components/velas-mini.tsx': /if \(!titilar \|\| reducir/,
+  };
+
+  test('withRepeat solo en los cuatro componentes de ambiente', () => {
+    expect(donde(/withRepeat\(/)).toEqual(Object.keys(AMBIENTE).sort());
+  });
+
+  test.each(Object.entries(AMBIENTE))('%s: se apaga sin foco o con movimiento reducido y cancela al desmontar', (a, guardia) => {
+    const t = texto(a);
+    expect(t).toMatch(guardia);
+    expect(t).toMatch(/return \(\) =>[^;]*cancelAnimation/);
+  });
+
+  test('Hoy y Novenas encienden el ambiente solo con la pestaña en foco', () => {
+    const hoy = texto('app/(tabs)/index.tsx');
+    expect(hoy).toMatch(/const enfocada = useIsFocused\(\)/);
+    expect(hoy).toMatch(/<Fondo titilar=\{enfocada\}>/);
+    expect(hoy).toMatch(/vida=\{enfocada\}/);
+    expect(hoy.match(/activo=\{enfocada\}/g)).toHaveLength(2); // tarjeta de novena y botón
+    const novenas = texto('app/(tabs)/novenas.tsx');
+    expect(novenas).toMatch(/const enfocada = useIsFocused\(\)/);
+    expect(novenas).toMatch(/titilar=\{enfocada\}/);
+  });
+
+  test('nada de temporizadores de JS por cuadro (setInterval / requestAnimationFrame)', () => {
+    expect(donde(/\bsetInterval\(|\brequestAnimationFrame\(/)).toEqual([]);
+  });
+
+  test('useFrameCallback solo en la capa de la medalla que vuela (vive lo que dura el vuelo)', () => {
+    expect(donde(/useFrameCallback\(/)).toEqual(['components/transiciones.tsx']);
+  });
+});
+
+describe('cambio de pestaña', () => {
+  test('fundido cruzado de 200 ms con el token, también con movimiento reducido', () => {
+    expect(texto('theme/movimiento.ts')).toMatch(/\bcambioPestana: 200,/);
+    const t = texto('app/(tabs)/_layout.tsx');
+    expect(t).toMatch(/animation: 'fade'/);
+    expect(t).toMatch(/duration: movimiento\.cambioPestana/);
+  });
+
+  test('volver a una pestaña no redibuja todo si los datos no cambiaron', () => {
+    expect(texto('lib/aprender-progreso.ts')).toMatch(/mismoProgreso\(e\.p, p\) \? e :/);
+    expect(texto('app/(tabs)/novenas.tsx')).toMatch(/\? previas : nuevas/);
+  });
+});
+
+describe('inclinación: sin permisos', () => {
+  test('ningún pedido de permisos de movimiento ni expo-sensors en el código', () => {
+    expect(donde(/expo-sensors|DeviceMotion|Accelerometer|Gyroscope/)).toEqual([]);
+    expect(donde(/requestPermissionsAsync/).filter((a) => !/avisos|recordatorios|notific/i.test(a))).toEqual([]);
+  });
+
+  test('el sensor solo se pide dentro de SensorInclinacion, que solo se monta con `inclinar`', () => {
+    const t = texto('components/vitral.tsx');
+    expect(t.match(/useAnimatedSensor\(/g)).toHaveLength(1);
+    expect(t).toMatch(/function SensorInclinacion[\s\S]*?useAnimatedSensor\(/);
+    expect(donde(/useAnimatedSensor\(/)).toEqual(['components/vitral.tsx']);
+  });
+});
