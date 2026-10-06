@@ -105,6 +105,7 @@ Nada que contradiga este archivo se implementa sin actualizarlo primero.
 | 2026-10-06 | **Generación de la marca:** fuente SVG en `assets/marca/` (fondo, símbolo, símbolo de una tinta) y `npm run marca` (`scripts/generar-marca.mjs`) exporta todos los PNG y verifica medidas, alfa, peso y zona segura. `package.json` en la raíz, `private`, solo con `devDependencies` (`@resvg/resvg-js`, `pngjs`, `opentype.js`) | Reproducible y sin herramientas de marca dentro de la app. El nombre del gráfico destacado se convierte a trazos desde Cormorant Garamond (OFL), sin fuentes del sistema |
 | 2026-10-06 | **Sin `.icon` de Icon Composer** por ahora: se quitó `ios.icon` y `app/assets/expo.icon` (traía el símbolo de Expo); iOS usa `icon.png` (1024, sin alfa), que Expo sigue aceptando | El `.icon` se arma en Icon Composer (macOS) y lo compila `actool` de Xcode 26; escrito a mano no se puede validar sin Mac y un error rompe el build o deja el ícono en blanco. Cuando haya Mac, se arma con `fondo.svg` como relleno y `simbolo.svg` como capa |
 | 2026-10-06 | **Pantalla de carga:** el símbolo solo (`splash-icon.png`, `imageWidth` 140, dentro del círculo de 192 dp de Android 12+). Fondo claro `primaryDeep` `#34264F` (sigue al ícono que se tocó; la cera crema se perdería sobre un cielo claro) y oscuro `#07081A` (fondo de Completas: de noche no se enciende un morado brillante). Sale con fundido de `movimiento.salidaCarga` (400 ms); con movimiento reducido, corte directo. El fondo nativo de la ventana se iguala al cielo con `expo-system-ui` antes de ocultarla, y `backgroundColor` de `app.json` = `#34264F` | Sin destello blanco ni salto de color. La preferencia "Reducidas" se lee síncrona de kv-store y la del sistema llega síncrona desde Reanimated (`useReducedMotion`): no hay que esperar a `AccessibilityInfo` |
+| 2026-10-06 | **Nombre en la tienda:** "Soul Shelter: Catholic Prayer" (en) / "Soul Shelter: Oración católica" (es), reemplaza a "Soul Shelter - Bible". En el teléfono la app sigue llamándose "Soul Shelter". Capturas de Play: PNG 24 bits sin alfa, 9:16 a 1080 × 1920 (el emulador de 1080 × 2400 no cumple la regla de lado mayor ≤ 2× el menor; se toman con `wm size 1080x1920`). Requisitos y textos en `docs/tienda/` | Decisión de Felipe. La política de metadatos de Play prohíbe palabras clave engañosas: la app no es una Biblia |
 
 ## Pendiente (bloquea publicación)
 
@@ -125,6 +126,11 @@ Nada que contradiga este archivo se implementa sin actualizarlo primero.
 | 16 | Desenfoque detrás de la barra de pestañas en Android | Arquitecto | Hoy el fondo es 84 % opaco sin desenfoque; el texto de abajo se transparenta levemente. Requiere expo-blur o Skia |
 
 ## Pendiente (no bloquea)
+
+- Hito 11: capturas de Play pendientes. Hace falta fijar la fecha del emulador en el 1 de octubre de 2026 (adb root no está disponible en la imagen con Google Play y el comando de ajustes fue bloqueado); Felipe la pone a mano o permite el comando.
+- Hito 11: con el teléfono en modo oscuro y hora Laudes/Vísperas, la pantalla de carga (#07081A) funde a un cielo casi blanco: posible destello percibido. Decidir en el APK (opción: splash oscuro que tome el color de la hora, o un fundido más largo solo en ese caso).
+- Hito 11: la punta de la llama del ícono adaptativo queda a ~0,5 px del borde de la zona segura 66/108. No agrandar el símbolo; si se toca, achicarlo un poco.
+- Hito 11: `.icon` de Icon Composer para iOS 26 cuando haya un Mac (hoy iOS usa `icon.png`).
 
 - Hito 8: la medalla que vuela a la vitrina sale de la pantalla si Aprender quedó desplazada hacia abajo (la vitrina no está a la vista). Opciones: llevar Aprender al principio antes del vuelo o desvanecer si el destino no es visible. Agente interfaz-movimiento.
 - Hito 8: picos de 0,5–0,9 s al entrar o salir de Aprender en el emulador (hipótesis: se redibujan los muchos lienzos Skia de las medallas). Confirmar en el APK `preview`; si se repite, reducir lienzos o rasterizar las medallas.
