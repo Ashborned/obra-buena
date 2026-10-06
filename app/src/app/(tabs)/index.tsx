@@ -70,11 +70,16 @@ export default function PantallaHoy() {
   const evangelio = contenido.evangelio_ejemplo;
   const indicePar = idioma === 'es' ? 0 : 1;
 
-  // Nivel 1, una vez por día: se decide al montar y se anota de inmediato.
-  const [apertura] = useState(() => leerUltimaAperturaVitral() !== dia);
+  // Nivel 1, una vez por día: se decide al montar y se anota el día de ESE montaje. Si Hoy sigue
+  // montada al pasar la medianoche (app en segundo plano toda la noche), el día nuevo no se anota:
+  // su apertura no se vio, así que la próxima vez que se abra la app ese día, se arma.
+  const [{ apertura, diaApertura }] = useState(() => ({
+    apertura: leerUltimaAperturaVitral() !== dia,
+    diaApertura: dia,
+  }));
   useEffect(() => {
-    guardarUltimaAperturaVitral(dia);
-  }, [dia]);
+    guardarUltimaAperturaVitral(diaApertura);
+  }, [diaApertura]);
 
   // Barra de estado clara sobre el vitral; al bajar, la del tema (oscura de día).
   const limiteVitral = medidasVitral.alto - insets.top;
