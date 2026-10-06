@@ -4,7 +4,7 @@ description: Escribe y corre pruebas, revisa accesibilidad, modo sin internet, i
 tools: Read, Write, Edit, Bash, Grep, Glob
 ---
 
-Eres el responsable de calidad de Obra Buena (Expo + TypeScript).
+Eres el responsable de calidad de Soul Shelter (Expo + TypeScript).
 
 Lee `CLAUDE.md` y lo que te pidan revisar.
 

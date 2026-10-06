@@ -38,7 +38,6 @@ import Animated, {
   cancelAnimation,
   useAnimatedStyle,
   useDerivedValue,
-  useReducedMotion,
   useSharedValue,
   withRepeat,
   withSequence,
@@ -46,6 +45,7 @@ import Animated, {
   type SharedValue,
 } from 'react-native-reanimated';
 
+import { useReducirMovimiento } from '@/lib/animaciones';
 import { celdasVitral, type CeldaVitral } from '@/lib/vitral';
 import {
   coloresVitral,
@@ -148,7 +148,7 @@ export type VitralProps = {
 
 export function Vitral({ semilla, inicial, colorLiturgico, apertura = false, vida = false }: VitralProps) {
   const { paleta, hora } = useTema();
-  const reducir = useReducedMotion();
+  const reducir = useReducirMovimiento();
   const { width: ancho } = useWindowDimensions();
   const alto = M.alto;
   const lit = hexLiturgico(colorLiturgico);

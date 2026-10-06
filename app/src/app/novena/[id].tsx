@@ -19,7 +19,7 @@ import { DateTimePicker } from '@expo/ui/community/datetime-picker';
 import { router, useIsFocused, useLocalSearchParams } from 'expo-router';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AccessibilityInfo, Linking, Platform, Pressable, ScrollView, StyleSheet, View } from 'react-native';
-import Animated, { FadeIn, ReduceMotion, useReducedMotion } from 'react-native-reanimated';
+import Animated, { FadeIn, ReduceMotion } from 'react-native-reanimated';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { Boton } from '@/components/boton';
@@ -31,10 +31,12 @@ import { Texto } from '@/components/texto';
 import { VelasNovena } from '@/components/velas-novena';
 import { contenido, MODO_CONTENIDO, type Novena } from '@/contenido';
 import { useIdioma, useTranslation } from '@/i18n';
+import { useReducirMovimiento } from '@/lib/animaciones';
 import { fechaCorta, fechaLarga, horaCorta, usa24Horas } from '@/lib/formato-fecha';
 import { anioDeFiesta, estadoDeNovena, oracionDelDia } from '@/lib/novenas-contenido';
 import { sumarDias } from '@/lib/novenas';
 import { usePais } from '@/lib/pais';
+import { leerHoraRecordatorio } from '@/lib/preferencias';
 import { moduloRecordatorios } from '@/lib/avisos';
 import { apagarVela, encenderVela, velasEncendidas } from '@/lib/progreso';
 import type { Hora } from '@/lib/recordatorios';
@@ -66,7 +68,7 @@ function volver() {
 function Detalle({ novena }: { novena: Novena }) {
   const { t } = useTranslation();
   const idioma = useIdioma();
-  const reducir = useReducedMotion();
+  const reducir = useReducirMovimiento();
   const enfocada = useIsFocused();
   const insets = useSafeAreaInsets();
   const { paleta, superficies, colores } = useTema();
@@ -138,7 +140,8 @@ function Detalle({ novena }: { novena: Novena }) {
   // Recordatorios ----------------------------------------------------------------------------
   // Sin módulo (Expo Go en Android, ver lib/avisos.ts) la sección no aparece.
   const rec = moduloRecordatorios();
-  const horaDefecto = rec?.HORA_POR_DEFECTO;
+  // Hora inicial del aviso: la elegida en Configuración (08:00 si nunca se eligió).
+  const [horaDefecto] = useState<Hora | undefined>(() => (rec ? leerHoraRecordatorio() : undefined));
   const [hora, setHora] = useState<Hora | null>(() => rec?.recordatorioActivo(novena.id, anio) ?? null);
   const [problema, setProblema] = useState<AvisoProblema>(null);
   const [eligiendoHora, setEligiendoHora] = useState(false);
@@ -459,7 +462,7 @@ function Detalle({ novena }: { novena: Novena }) {
 
 function NoEncontrada() {
   const { t } = useTranslation();
-  const reducir = useReducedMotion();
+  const reducir = useReducirMovimiento();
   return (
     <Fondo>
       <SafeAreaView style={styles.llenar} edges={['top', 'left', 'right', 'bottom']}>

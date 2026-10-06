@@ -12,7 +12,7 @@ import { router, useIsFocused } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet, View, type NativeScrollEvent, type NativeSyntheticEvent } from 'react-native';
-import Animated, { useReducedMotion } from 'react-native-reanimated';
+import Animated from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { useEspacioBarra } from '@/components/barra-pestanas';
@@ -28,6 +28,7 @@ import { Texto } from '@/components/texto';
 import { Vitral } from '@/components/vitral';
 import { contenido } from '@/contenido';
 import { useIdioma, useTranslation } from '@/i18n';
+import { useReducirMovimiento } from '@/lib/animaciones';
 import { fechaCorta, fechaLarga } from '@/lib/formato-fecha';
 import {
   colorLiturgicoDelDia,
@@ -53,7 +54,7 @@ export default function PantallaHoy() {
   // Hora del reloj (no la del tema): el chip nombra el oficio real aunque el cielo esté fijado.
   const { hoy, hora } = useAhora();
   const enfocada = useIsFocused();
-  const reducir = useReducedMotion();
+  const reducir = useReducirMovimiento();
   const insets = useSafeAreaInsets();
   const espacioBarra = useEspacioBarra();
 

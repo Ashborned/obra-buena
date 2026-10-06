@@ -31,6 +31,22 @@ export const movimiento = {
   escalonCalma: 50,
   /** Con "Reducir movimiento": solo fundidos. */
   fundido: 400,
+  /** Nivel 1: el aviso de rasgo entra desde el costado con rebote. */
+  avisoRasgoEntrada: 450,
+  /** Nivel 1: el aviso de rasgo se cierra solo (desde que aparece). */
+  avisoRasgoVisible: 4000,
+  /** Nivel 1: el ícono del rasgo gira y brilla al entrar. */
+  giroIconoRasgo: 700,
+  /** Nivel 1: la medalla se acuña (giro 3D desde lejos). */
+  acunarMedalla: 1100,
+  /** Nivel 1: partículas doradas al acuñar. */
+  particulasMedalla: 1400,
+  /** Nivel 1: los rayos giran detrás de la medalla y se detienen (no es infinito). */
+  rayosMedalla: 6000,
+  /** Nivel 1: colección completa (las medallas se ordenan en arco y aparece la de la colección). */
+  coleccionCompleta: 2000,
+  /** Medalla en la vitrina: regreso al soltarla (sin rebote con "Reducir movimiento"). */
+  regresoMedalla: 250,
 } as const;
 
 /**

@@ -3,7 +3,7 @@
     "nombre": "English"
   },
   "app": {
-    "nombre": "Obra Buena"
+    "nombre": "Soul Shelter"
   },
   "pestanas": {
     "hoy": "Today",
@@ -34,7 +34,100 @@
     "idioma": "Language",
     "pais": "Country",
     "paisActual": "Country: {{pais}}",
-    "cambiarPais": "Change country"
+    "cambiarPais": "Change country",
+    "secciones": {
+      "apariencia": "Appearance",
+      "idiomaPais": "Language and country",
+      "recordatorios": "Reminders",
+      "privacidad": "Privacy",
+      "apoyo": "Support the app",
+      "acercaDe": "About"
+    },
+    "horaOracion": "Hour of prayer",
+    "horas": {
+      "auto": "Automatic",
+      "day": "Lauds",
+      "dusk": "Vespers",
+      "night": "Compline"
+    },
+    "horasDetalle": {
+      "auto": "The light changes on its own with your phone’s clock",
+      "day": "Always the morning light",
+      "dusk": "Always the evening light",
+      "night": "Always the night, with stars"
+    },
+    "animaciones": "Animations",
+    "animacionesExplicacion": "Animations celebrate what you learn and gently accompany your prayer. If they distract you or make you dizzy, choose Reduced.",
+    "animacionesOpciones": {
+      "sistema": "Follow the system",
+      "reducidas": "Reduced"
+    },
+    "animacionesDetalle": {
+      "sistema": "Follows your phone’s Reduce Motion setting",
+      "reducidas": "Only soft fades, no motion"
+    },
+    "idiomaPaisExplicacion": "They come from your phone; you can change them anytime. Your country sets the helplines you see and the feasts your country celebrates on a different day.",
+    "recordatorios": {
+      "horaPorDefecto": "Reminder time",
+      "horaExplicacion": "Reminders you turn on for each novena start at this time. You can also change it there.",
+      "horaAccesible": "Reminder time: {{hora}}",
+      "horaPista": "Choose when novena reminders arrive",
+      "activos": "Active reminders",
+      "ninguno": "You have no active reminders. You can turn them on in each novena.",
+      "detalle": "Every day at {{hora}}, from {{inicio}} to {{fin}}",
+      "interruptor": "Reminders for {{nombre}}",
+      "noDisponibles": "Reminders need the app installed on your phone. They aren’t available in this test version."
+    },
+    "privacidad": {
+      "sinCuenta": "You don’t need an account or to sign in.",
+      "sinAnuncios": "There are no ads and no analytics.",
+      "sinUbicacion": "We don’t use your location: your country comes from your phone’s region.",
+      "enTuTelefono": "What you pray, feel or learn is kept only on this phone. Nothing leaves it.",
+      "borrar": "Delete my data",
+      "borrarPista": "Asks you to confirm before deleting"
+    },
+    "borrado": {
+      "titulo": "Delete all your data?",
+      "intro": "This will be deleted from this phone:",
+      "velas": "The candles you lit in your novenas",
+      "aprender": "Your traits and medals in Learn",
+      "recordatorios": "Your scheduled reminders",
+      "preferencias": "Your preferences: palette, language, country and text size",
+      "advertencia": "This can’t be undone. The app will start again from the welcome screen.",
+      "confirmar": "Delete everything",
+      "cancelar": "Cancel",
+      "borrando": "Deleting…",
+      "error": "We couldn’t finish deleting your data. Please try again."
+    },
+    "apoyo": {
+      "gratis": "{{app}} is free and ad-free, and it will stay that way.",
+      "costos": "Publishing it has costs: Google Play charges USD 25 once and Apple charges USD 99 a year.",
+      "nadaSeDesbloquea": "If you’d like, you can contribute to cover them. Contributing doesn’t unlock anything: the app is the same for everyone.",
+      "aportes": {
+        "apoyo_pequeno": "Small contribution",
+        "apoyo_mediano": "Medium contribution",
+        "apoyo_grande": "Large contribution"
+      },
+      "botonAporte": "{{nombre}} · {{precio}}",
+      "montoPorDefinir": "Amount to be set",
+      "simulada": "Simulated purchase (no charge)",
+      "pronto": "Soon you’ll be able to contribute from the store.",
+      "gracias": "Thank you for supporting the app.",
+      "error": "The contribution couldn’t be completed. Please try again later.",
+      "noDisponible": "Contributions aren’t available right now.",
+      "patrocinio": "With the support of {{nombre}}",
+      "patrocinioPista": "Opens their website in the browser"
+    },
+    "acercaDe": {
+      "version": "Version {{version}}",
+      "biblia": "Bible texts",
+      "bibliaDetalle": "Reina-Valera 1909 in Spanish and the King James Version in English, both in the public domain.",
+      "imagenes": "Images",
+      "credito": "{{obra}}, {{autor}} ({{anio}}). {{licencia}}.",
+      "privacidad": "Privacy policy",
+      "contacto": "Contact",
+      "proximamente": "Coming soon"
+    }
   },
   "novenas": {
     "diaDe": "Day {{n}} of 9",
@@ -217,5 +310,72 @@
     "abrirRespaldoPista": "Opens the website in your browser",
     "otroPais": "Are you in another country?",
     "otroPaisPista": "Choose your country to see its helplines"
+  },
+  "aprender": {
+    "guia": "Read their story, discover their traits and earn their medal.",
+    "vitrina": "Your showcase",
+    "vitrinaContador_one": "{{n}} of {{count}} medal",
+    "vitrinaContador_other": "{{n}} of {{count}} medals",
+    "soloEnTuTelefono": "Saved only on your phone.",
+    "medallaGanadaAccesible": "{{nombre}} medal",
+    "medallaPendienteAccesible": "{{nombre}}: medal not earned yet",
+    "medallaGanadaPista": "Opens the medal",
+    "medallaPendientePista": "Opens the reading",
+    "coleccion": "Collection",
+    "medallaColeccionAccesible": "{{nombre}} collection medal",
+    "avanceColeccion": "{{n}}/{{total}}",
+    "avanceColeccionAccesible_one": "{{nombre}}: {{n}} of {{count}} medal",
+    "avanceColeccionAccesible_other": "{{nombre}}: {{n}} of {{count}} medals",
+    "nuevo": "New · {{min}} min",
+    "nuevoAccesible": "New, {{min}} minute read",
+    "medallaObtenida": "Medal earned",
+    "proximamente": "Coming soon",
+    "tarjetaPista": "Opens the reading",
+    "sinLecturas": "Readings about saints are coming soon.",
+    "minLectura": "Learn · {{min}} min read",
+    "minLecturaAccesible": "Learn, {{min}} minute read",
+    "tamanoLetra": "Text size",
+    "letraMenor": "Smaller text",
+    "letraMayor": "Larger text",
+    "letraA": "A",
+    "anuncioTamano": "Text size: {{n}}",
+    "rasgosMedalla": "Medal traits",
+    "rasgoSinDescubrir": "Trait not discovered yet",
+    "rasgoAccesible": "Trait: {{nombre}}",
+    "seccionConRasgo": "{{titulo}}. A trait is discovered here",
+    "responderQuiz": "Take the quiz · {{count}} questions",
+    "responderQuizPista": "Opens the quiz for this reading",
+    "necesitas": "You need {{pass}} of {{total}} for the medal.",
+    "rasgoDescubierto": "Trait discovered {{n}}/{{total}}",
+    "anuncioRasgo": "Trait discovered, {{n}} of {{total}}: {{nombre}}. {{linea}}",
+    "cerrarAviso": "Closes the notice",
+    "noEncontrada": "We couldn't find this reading.",
+    "noEncontradaDetalle": "Go back to Learn and choose another one.",
+    "preguntaDe": "Question {{n}} of {{total}}",
+    "letrasOpciones": "ABCDEFGH",
+    "opcionAccesible": "{{letra}}. {{texto}}",
+    "opcionCorrecta": "{{opcion}}. Correct",
+    "opcionIncorrecta": "{{opcion}}. Your answer, not quite",
+    "correcto": "Correct!",
+    "noEraEsa": "Not quite.",
+    "siguiente": "Next",
+    "verResultado": "See result",
+    "ganaste": "You earned the medal",
+    "acertaste": "You got {{n}} of {{total}} right",
+    "casi": "Almost. Review the reading and come back whenever you like.",
+    "verVitrina": "See it in my showcase",
+    "verVitrinaPista": "Goes back to Learn",
+    "reintentar": "Try again",
+    "reintentarPista": "Starts the quiz again",
+    "repasar": "Review the reading",
+    "coleccionCompleta": "You completed the collection",
+    "anuncioMedalla": "You earned the {{nombre}} medal. You got {{n}} of {{total}} right.",
+    "anuncioColeccion": "You completed the {{nombre}} collection and earned its medal.",
+    "ganadaEl": "Earned on {{fecha}}",
+    "sinGanar": "You haven't earned this medal yet. Read the story and take the quiz.",
+    "leerHistoria": "Read the story",
+    "lecturasColeccion": "Readings in this collection",
+    "medallaNoEncontrada": "We couldn't find this medal.",
+    "medallaNoEncontradaDetalle": "Go back to Learn and choose another one."
   }
 }

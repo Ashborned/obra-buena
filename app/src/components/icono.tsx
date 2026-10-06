@@ -29,6 +29,12 @@ const nombres = {
   rotar: { ios: 'arrow.clockwise', android: 'refresh', web: 'refresh' },
   /** Abrir un sitio fuera de la app (Find A Helpline). */
   externo: { ios: 'arrow.up.right', android: 'open_in_new', web: 'open_in_new' },
+  /** Quiz: respuesta correcta e incorrecta (forma además de color, para daltonismo). */
+  correcto: { ios: 'checkmark', android: 'check', web: 'check' },
+  incorrecto: { ios: 'xmark', android: 'close', web: 'close' },
+  /** Tamaño de letra del lector (A− / A+). */
+  menos: { ios: 'minus', android: 'remove', web: 'remove' },
+  mas: { ios: 'plus', android: 'add', web: 'add' },
 } as const satisfies Record<string, SymbolViewProps['name']>;
 
 export type NombreIcono = keyof typeof nombres;

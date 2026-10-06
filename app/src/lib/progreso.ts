@@ -5,6 +5,7 @@
  * - velas:    qué días de cada novena se marcaron como rezados. No da puntos (principio 1).
  * - rasgos:   rasgos descubiertos al leer en Aprender.
  * - medallas: medallas ganadas en el quiz de Aprender.
+ * - medallas_coleccion: colecciones de Aprender con todas sus lecturas publicadas con medalla.
  *
  * Las preferencias (paleta, hora, idioma, país) viven en `expo-sqlite/kv-store` (ver `preferencias.ts`).
  * Las migraciones se versionan con `PRAGMA user_version`: para cambiar el esquema se agrega
@@ -31,6 +32,10 @@ export const MIGRACIONES: readonly string[] = [
    CREATE TABLE IF NOT EXISTS medallas (
      lectura TEXT PRIMARY KEY NOT NULL,
      puntaje INTEGER NOT NULL,
+     ganada_en TEXT NOT NULL
+   );`,
+  `CREATE TABLE IF NOT EXISTS medallas_coleccion (
+     coleccion TEXT PRIMARY KEY NOT NULL,
      ganada_en TEXT NOT NULL
    );`,
 ];
@@ -107,14 +112,27 @@ export async function rasgosDescubiertos(lectura: string): Promise<string[]> {
   return filas.map((f) => f.rasgo);
 }
 
-export async function descubrirRasgo(lectura: string, rasgo: string): Promise<void> {
+/** Rasgos descubiertos de todas las lecturas (para la vitrina). */
+export async function todosLosRasgos(): Promise<Record<string, string[]>> {
   const db = await baseProgreso();
-  await db.runAsync(
+  const filas = await db.getAllAsync<{ lectura: string; rasgo: string }>(
+    'SELECT lectura, rasgo FROM rasgos ORDER BY descubierto_en',
+  );
+  const r: Record<string, string[]> = {};
+  for (const f of filas) (r[f.lectura] ??= []).push(f.rasgo);
+  return r;
+}
+
+/** Guarda el rasgo una sola vez. Devuelve `true` si es nuevo (solo entonces se muestra el aviso). */
+export async function descubrirRasgo(lectura: string, rasgo: string): Promise<boolean> {
+  const db = await baseProgreso();
+  const r = await db.runAsync(
     'INSERT OR IGNORE INTO rasgos (lectura, rasgo, descubierto_en) VALUES (?, ?, ?)',
     lectura,
     rasgo,
     ahora(),
   );
+  return r.changes > 0;
 }
 
 // Medallas --------------------------------------------------------------------------------------
@@ -139,4 +157,44 @@ export async function ganarMedalla(lectura: string, puntaje: number): Promise<vo
     puntaje,
     ahora(),
   );
+}
+
+// Medallas de colección -------------------------------------------------------------------------
+
+export async function medallasColeccion(): Promise<{ coleccion: string; ganadaEn: string }[]> {
+  const db = await baseProgreso();
+  const filas = await db.getAllAsync<{ coleccion: string; ganada_en: string }>(
+    'SELECT coleccion, ganada_en FROM medallas_coleccion ORDER BY ganada_en',
+  );
+  return filas.map((f) => ({ coleccion: f.coleccion, ganadaEn: f.ganada_en }));
+}
+
+/** Guarda la medalla de la colección una sola vez (conserva la fecha original). */
+export async function ganarMedallaColeccion(coleccion: string): Promise<void> {
+  const db = await baseProgreso();
+  await db.runAsync(
+    'INSERT OR IGNORE INTO medallas_coleccion (coleccion, ganada_en) VALUES (?, ?)',
+    coleccion,
+    ahora(),
+  );
+}
+
+// Borrar todo ------------------------------------------------------------------------------------
+
+/**
+ * Vacía todas las tablas de progreso ("Borrar mis datos"). Conserva el esquema y su versión, así
+ * que la base queda como recién creada. Recorre `sqlite_master` para no olvidar tablas futuras.
+ */
+export async function borrarProgreso(): Promise<void> {
+  const db = await baseProgreso();
+  const tablas = await db.getAllAsync<{ name: string }>(
+    "SELECT name FROM sqlite_master WHERE type = 'table' AND name NOT LIKE 'sqlite_%'",
+  );
+  await db.withTransactionAsync(async () => {
+    for (const { name } of tablas) {
+      // Nombres que vienen del propio esquema; igual se validan (identificador SQL simple).
+      if (!/^[A-Za-z_][A-Za-z0-9_]*$/.test(name)) throw new Error(`Tabla con nombre inesperado: ${name}`);
+      await db.execAsync(`DELETE FROM ${name}`);
+    }
+  });
 }

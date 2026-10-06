@@ -22,13 +22,13 @@ import Animated, {
   FadeOut,
   cancelAnimation,
   useDerivedValue,
-  useReducedMotion,
   useSharedValue,
   withRepeat,
   withTiming,
   type SharedValue,
 } from 'react-native-reanimated';
 
+import { useReducirMovimiento } from '@/lib/animaciones';
 import { generadorAleatorio, hashTexto } from '@/lib/vitral';
 import { coloresCielo, degradadosCielo, duraciones, useTema } from '@/theme';
 import { movimiento } from '@/theme/movimiento';
@@ -74,7 +74,7 @@ function GrupoEstrellas({
 
 function Estrellas({ titilar }: { titilar: boolean }) {
   const { width, height } = useWindowDimensions();
-  const reducir = useReducedMotion();
+  const reducir = useReducirMovimiento();
   const b0 = useSharedValue(1);
   const b1 = useSharedValue(0.6);
   const b2 = useSharedValue(0.3);

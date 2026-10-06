@@ -10,7 +10,6 @@ import Animated, {
   cancelAnimation,
   interpolate,
   useAnimatedStyle,
-  useReducedMotion,
   useSharedValue,
   withRepeat,
   withTiming,
@@ -18,6 +17,7 @@ import Animated, {
 
 import { Icono } from '@/components/icono';
 import { Texto } from '@/components/texto';
+import { useReducirMovimiento } from '@/lib/animaciones';
 import {
   coloresLlamada,
   conAlfa,
@@ -47,7 +47,7 @@ export function BotonLlamada({
   activo: boolean;
 }) {
   const { paleta } = useTema();
-  const reducir = useReducedMotion();
+  const reducir = useReducirMovimiento();
   const [ancho, setAncho] = useState(0);
   const ciclo = useSharedValue(0);
 

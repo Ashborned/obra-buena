@@ -126,3 +126,16 @@ Nunca se aprueba: en producción la tarjeta no aparece.
   }]
 }
 ```
+
+## `patrocinio` (opcional)
+
+Patrocinio de una parroquia, colegio o fundación (`docs/apoyo.md`). Si existe, Configuración muestra
+una línea "Con el apoyo de…"; si no, no se muestra nada. Sin logos. El patrocinador no influye en el contenido.
+
+```json
+"patrocinio": { "nombre": { "es": "Parroquia …", "en": "… Parish" }, "url": "https://…" }
+```
+
+- `nombre` (obligatorio): `{ es, en }`.
+- `url` (opcional): `https://`. Abre el navegador del teléfono solo si la persona la toca.
+

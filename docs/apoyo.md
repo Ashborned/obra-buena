@@ -24,5 +24,5 @@ La app es **gratis y sin anuncios**. Se financia con aportes voluntarios y, si a
 ## Pendiente
 
 - Montos de los aportes.
-- Librería de compras: `expo-iap`, `react-native-iap` o RevenueCat (la decide el arquitecto).
+- ~~Librería de compras~~ → **`expo-iap`** (2026-10-05, ver `docs/decisiones.md`). Capa de servicio en `app/src/lib/apoyo.ts`.
 - Cuenta de pagos y datos tributarios en Google Play Console y App Store Connect.

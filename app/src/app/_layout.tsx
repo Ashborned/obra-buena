@@ -10,13 +10,14 @@ import type { NotificationResponse } from 'expo-notifications';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useMemo } from 'react';
-import { useReducedMotion } from 'react-native-reanimated';
 
 // Inicia i18next antes del primer render (textos de interfaz e idioma guardado).
 import '@/i18n';
+import { AnimacionesProvider, useReducirMovimiento } from '@/lib/animaciones';
 import { moduloNotificaciones } from '@/lib/avisos';
 import { BienvenidaProvider, useBienvenida } from '@/lib/bienvenida';
 import { PaisProvider } from '@/lib/pais';
+import { ReinicioProvider } from '@/lib/reinicio';
 import { rutaNovena } from '@/lib/rutas-novenas';
 import { ThemeProvider, useTema } from '@/theme';
 import { archivosDeFuentes } from '@/theme/fuentes';
@@ -80,7 +81,7 @@ function useAbrirNovenaDesdeAviso(activo: boolean) {
  */
 function Navegacion() {
   const tema = useTema();
-  const reducirMovimiento = useReducedMotion();
+  const reducirMovimiento = useReducirMovimiento();
   const { completa } = useBienvenida();
   useAbrirNovenaDesdeAviso(completa);
 
@@ -124,6 +125,19 @@ function Navegacion() {
           <Stack.Screen name="emocion/[id]" options={{ animation: 'fade' }} />
           {/* Detalle de una novena: pantalla de oración fuera de las pestañas; entra con fundido (calma). */}
           <Stack.Screen name="novena/[id]" options={{ animation: 'fade' }} />
+          {/* Aprender: lector, quiz y medalla grande, fuera de las pestañas (el lector es calma y no
+              lleva la barra a la vista). Entran como la historia del santo; con "Reducir movimiento",
+              con fundido. */}
+          <Stack.Screen
+            name="lectura/[id]"
+            options={{ animation: reducirMovimiento ? 'fade' : 'default' }}
+          />
+          <Stack.Screen
+            name="quiz/[id]"
+            options={{ animation: reducirMovimiento ? 'fade' : 'default' }}
+          />
+          {/* Medalla grande: con fundido (el espectáculo lo pone la medalla, no la transición). */}
+          <Stack.Screen name="medalla/[id]" options={{ animation: 'fade' }} />
         </Stack.Protected>
         <Stack.Protected guard={!completa}>
           <Stack.Screen name="bienvenida" options={{ animation: 'fade' }} />
@@ -146,13 +160,18 @@ export default function RootLayout() {
   // Si una fuente falla, se sigue con la del sistema antes que dejar la app en blanco.
   if (!fuentesListas && !errorFuentes) return null;
 
+  // `ReinicioProvider` vuelve a montar todo tras "Borrar mis datos" (ver lib/reinicio.tsx).
   return (
-    <ThemeProvider>
-      <PaisProvider>
-        <BienvenidaProvider>
-          <Navegacion />
-        </BienvenidaProvider>
-      </PaisProvider>
-    </ThemeProvider>
+    <ReinicioProvider>
+      <ThemeProvider>
+        <AnimacionesProvider>
+          <PaisProvider>
+            <BienvenidaProvider>
+              <Navegacion />
+            </BienvenidaProvider>
+          </PaisProvider>
+        </AnimacionesProvider>
+      </ThemeProvider>
+    </ReinicioProvider>
   );
 }

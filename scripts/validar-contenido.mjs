@@ -151,6 +151,17 @@ for (const t of d.traslados || []) {
 }
 
 // Ayuda (líneas de crisis)
+// Patrocinio (opcional): una línea "Con el apoyo de…" en Configuración (docs/apoyo.md).
+if (d.patrocinio !== undefined) {
+  const pa = d.patrocinio;
+  if (!pa || !str(pa.nombre?.es) || !str(pa.nombre?.en)) err('patrocinio', 'falta nombre { es, en }');
+  if (pa && pa.url !== undefined) {
+    let u = null;
+    try { u = new URL(pa.url); } catch {}
+    if (!u || u.protocol !== 'https:' || !u.hostname || /\s/.test(pa.url)) err('patrocinio', 'url debe ser una dirección https:// válida');
+  }
+}
+
 const ay = d.ayuda;
 if (!ay || !ay.respaldo || !str(ay.respaldo.url)) err('ayuda', 'falta el respaldo (Find A Helpline)');
 const hoy = new Date();
@@ -173,7 +184,7 @@ for (const c of ay?.paises || []) {
 // Resumen
 const count = (arr, f) => arr.filter(f).length;
 const allItems = emos.flatMap(e => e.items || []), lect = d.lecturas || [];
-console.log('Obra Buena · validación de contenido\n');
+console.log('Soul Shelter · validación de contenido\n');
 console.log(`Emociones: ${allItems.length} entradas (${count(allItems, i => i.revision === 'aprobado')} aprobadas)`);
 console.log(`Lecturas:  ${lect.length} (${count(lect, l => l.revision === 'aprobado')} aprobadas), ${lect.reduce((a, l) => a + (l.es?.quiz?.length || 0), 0)} preguntas`);
 console.log(`Novenas:   ${(d.novenas || []).length} · Próximamente: ${soon.length}`);

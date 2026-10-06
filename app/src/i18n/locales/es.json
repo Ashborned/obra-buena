@@ -3,7 +3,7 @@
     "nombre": "Español"
   },
   "app": {
-    "nombre": "Obra Buena"
+    "nombre": "Soul Shelter"
   },
   "pestanas": {
     "hoy": "Hoy",
@@ -34,7 +34,100 @@
     "idioma": "Idioma",
     "pais": "País",
     "paisActual": "País: {{pais}}",
-    "cambiarPais": "Cambiar país"
+    "cambiarPais": "Cambiar país",
+    "secciones": {
+      "apariencia": "Apariencia",
+      "idiomaPais": "Idioma y país",
+      "recordatorios": "Recordatorios",
+      "privacidad": "Privacidad",
+      "apoyo": "Apoyar la app",
+      "acercaDe": "Acerca de"
+    },
+    "horaOracion": "Hora de oración",
+    "horas": {
+      "auto": "Automática",
+      "day": "Laudes",
+      "dusk": "Vísperas",
+      "night": "Completas"
+    },
+    "horasDetalle": {
+      "auto": "La luz cambia sola con el reloj del teléfono",
+      "day": "Siempre la luz de la mañana",
+      "dusk": "Siempre la luz de la tarde",
+      "night": "Siempre la noche, con estrellas"
+    },
+    "animaciones": "Animaciones",
+    "animacionesExplicacion": "Las animaciones celebran lo que aprendes y acompañan con calma la oración. Si te distraen o te marean, elige Reducidas.",
+    "animacionesOpciones": {
+      "sistema": "Según el sistema",
+      "reducidas": "Reducidas"
+    },
+    "animacionesDetalle": {
+      "sistema": "Sigue la opción Reducir movimiento de tu teléfono",
+      "reducidas": "Solo fundidos suaves, sin movimiento"
+    },
+    "idiomaPaisExplicacion": "Se toman de tu teléfono; puedes cambiarlos cuando quieras. El país define las líneas de ayuda que ves y las fiestas que en tu país se celebran otro día.",
+    "recordatorios": {
+      "horaPorDefecto": "Hora de los avisos",
+      "horaExplicacion": "Con esta hora empiezan los avisos que actives en cada novena. Allí también puedes cambiarla.",
+      "horaAccesible": "Hora de los avisos: {{hora}}",
+      "horaPista": "Elige a qué hora llegan los avisos de las novenas",
+      "activos": "Avisos activos",
+      "ninguno": "No tienes recordatorios activos. Puedes activarlos en cada novena.",
+      "detalle": "Cada día a las {{hora}}, del {{inicio}} al {{fin}}",
+      "interruptor": "Avisos de {{nombre}}",
+      "noDisponibles": "Los recordatorios necesitan la app instalada en el teléfono. En esta versión de prueba no están disponibles."
+    },
+    "privacidad": {
+      "sinCuenta": "No necesitas cuenta ni iniciar sesión.",
+      "sinAnuncios": "No hay anuncios ni analítica.",
+      "sinUbicacion": "No usamos tu ubicación: el país sale de la región de tu teléfono.",
+      "enTuTelefono": "Lo que rezas, sientes o aprendes se guarda solo en este teléfono. Nada sale de él.",
+      "borrar": "Borrar mis datos",
+      "borrarPista": "Te pide confirmación antes de borrar"
+    },
+    "borrado": {
+      "titulo": "¿Borrar todos tus datos?",
+      "intro": "Se borrará de este teléfono:",
+      "velas": "Las velas encendidas de tus novenas",
+      "aprender": "Los rasgos y las medallas de Aprender",
+      "recordatorios": "Los recordatorios programados",
+      "preferencias": "Tus preferencias: paleta, idioma, país y tamaño de letra",
+      "advertencia": "No se puede deshacer. La app volverá a empezar desde la bienvenida.",
+      "confirmar": "Borrar todo",
+      "cancelar": "Cancelar",
+      "borrando": "Borrando…",
+      "error": "No pudimos terminar de borrar tus datos. Inténtalo de nuevo."
+    },
+    "apoyo": {
+      "gratis": "{{app}} es gratis y sin anuncios, y así seguirá.",
+      "costos": "Publicarla tiene costos: Google Play cobra USD 25 una sola vez y Apple, USD 99 cada año.",
+      "nadaSeDesbloquea": "Si quieres, puedes aportar para cubrirlos. Aportar no desbloquea nada: la app es igual para todos.",
+      "aportes": {
+        "apoyo_pequeno": "Aporte pequeño",
+        "apoyo_mediano": "Aporte mediano",
+        "apoyo_grande": "Aporte grande"
+      },
+      "botonAporte": "{{nombre}} · {{precio}}",
+      "montoPorDefinir": "Monto por definir",
+      "simulada": "Compra simulada (no se cobra)",
+      "pronto": "Pronto podrás aportar desde la tienda.",
+      "gracias": "Gracias por apoyar la app.",
+      "error": "No se pudo completar el aporte. Inténtalo más tarde.",
+      "noDisponible": "Los aportes no están disponibles en este momento.",
+      "patrocinio": "Con el apoyo de {{nombre}}",
+      "patrocinioPista": "Abre su sitio en el navegador"
+    },
+    "acercaDe": {
+      "version": "Versión {{version}}",
+      "biblia": "Textos bíblicos",
+      "bibliaDetalle": "Reina-Valera 1909 en español y King James Version en inglés, ambas de dominio público.",
+      "imagenes": "Imágenes",
+      "credito": "{{obra}}, {{autor}} ({{anio}}). {{licencia}}.",
+      "privacidad": "Política de privacidad",
+      "contacto": "Contacto",
+      "proximamente": "Próximamente"
+    }
   },
   "novenas": {
     "diaDe": "Día {{n}} de 9",
@@ -217,5 +310,72 @@
     "abrirRespaldoPista": "Abre el sitio en el navegador",
     "otroPais": "¿Estás en otro país?",
     "otroPaisPista": "Elige tu país para ver sus líneas de ayuda"
+  },
+  "aprender": {
+    "guia": "Lee su historia, descubre sus rasgos y gana su medalla.",
+    "vitrina": "Tu vitrina",
+    "vitrinaContador_one": "{{n}} de {{count}} medalla",
+    "vitrinaContador_other": "{{n}} de {{count}} medallas",
+    "soloEnTuTelefono": "Se guarda solo en tu teléfono.",
+    "medallaGanadaAccesible": "Medalla de {{nombre}}",
+    "medallaPendienteAccesible": "{{nombre}}: medalla sin ganar",
+    "medallaGanadaPista": "Abre la medalla",
+    "medallaPendientePista": "Abre la lectura",
+    "coleccion": "Colección",
+    "medallaColeccionAccesible": "Medalla de la colección {{nombre}}",
+    "avanceColeccion": "{{n}}/{{total}}",
+    "avanceColeccionAccesible_one": "{{nombre}}: {{n}} de {{count}} medalla",
+    "avanceColeccionAccesible_other": "{{nombre}}: {{n}} de {{count}} medallas",
+    "nuevo": "Nuevo · {{min}} min",
+    "nuevoAccesible": "Nuevo, {{min}} minutos de lectura",
+    "medallaObtenida": "Medalla obtenida",
+    "proximamente": "Próximamente",
+    "tarjetaPista": "Abre la lectura",
+    "sinLecturas": "Pronto habrá aquí lecturas sobre santos.",
+    "minLectura": "Aprender · {{min}} min de lectura",
+    "minLecturaAccesible": "Aprender, {{min}} minutos de lectura",
+    "tamanoLetra": "Tamaño de letra",
+    "letraMenor": "Letra más pequeña",
+    "letraMayor": "Letra más grande",
+    "letraA": "A",
+    "anuncioTamano": "Tamaño de letra: {{n}}",
+    "rasgosMedalla": "Rasgos de la medalla",
+    "rasgoSinDescubrir": "Rasgo sin descubrir",
+    "rasgoAccesible": "Rasgo: {{nombre}}",
+    "seccionConRasgo": "{{titulo}}. Aquí se descubre un rasgo",
+    "responderQuiz": "Responder el quiz · {{count}} preguntas",
+    "responderQuizPista": "Abre el quiz de esta lectura",
+    "necesitas": "Necesitas {{pass}} de {{total}} para la medalla.",
+    "rasgoDescubierto": "Rasgo descubierto {{n}}/{{total}}",
+    "anuncioRasgo": "Rasgo descubierto, {{n}} de {{total}}: {{nombre}}. {{linea}}",
+    "cerrarAviso": "Cierra el aviso",
+    "noEncontrada": "No encontramos esta lectura.",
+    "noEncontradaDetalle": "Vuelve a Aprender y elige otra.",
+    "preguntaDe": "Pregunta {{n}} de {{total}}",
+    "letrasOpciones": "ABCDEFGH",
+    "opcionAccesible": "{{letra}}. {{texto}}",
+    "opcionCorrecta": "{{opcion}}. Correcta",
+    "opcionIncorrecta": "{{opcion}}. Tu respuesta, no era esa",
+    "correcto": "¡Correcto!",
+    "noEraEsa": "No era esa.",
+    "siguiente": "Siguiente",
+    "verResultado": "Ver resultado",
+    "ganaste": "Ganaste la medalla",
+    "acertaste": "Acertaste {{n}} de {{total}}",
+    "casi": "Casi. Repasa la lectura y vuelve cuando quieras.",
+    "verVitrina": "Ver en mi vitrina",
+    "verVitrinaPista": "Vuelve a Aprender",
+    "reintentar": "Volver a intentarlo",
+    "reintentarPista": "Empieza el quiz otra vez",
+    "repasar": "Repasar la lectura",
+    "coleccionCompleta": "Completaste la colección",
+    "anuncioMedalla": "Ganaste la medalla de {{nombre}}. Acertaste {{n}} de {{total}}.",
+    "anuncioColeccion": "Completaste la colección {{nombre}}. Ganaste su medalla.",
+    "ganadaEl": "Ganada el {{fecha}}",
+    "sinGanar": "Todavía no ganas esta medalla. Lee la historia y responde el quiz.",
+    "leerHistoria": "Leer la historia",
+    "lecturasColeccion": "Lecturas de la colección",
+    "medallaNoEncontrada": "No encontramos esta medalla.",
+    "medallaNoEncontradaDetalle": "Vuelve a Aprender y elige otra."
   }
 }

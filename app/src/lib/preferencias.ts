@@ -1,5 +1,6 @@
 /**
- * Preferencias guardadas en el teléfono (paleta, hora de oración, idioma, país, bienvenida) con `expo-sqlite/kv-store`
+ * Preferencias guardadas en el teléfono (paleta, hora de oración, animaciones, idioma, país, bienvenida,
+ * letra del lector, hora de los recordatorios) con `expo-sqlite/kv-store`
  * (docs/decisiones.md, 2026-10-03: almacenamiento local con expo-sqlite).
  *
  * - La lectura es síncrona para que el tema arranque ya con la paleta guardada (sin parpadeo).
@@ -12,6 +13,7 @@ import Storage from 'expo-sqlite/kv-store';
 
 import { PALETA_POR_DEFECTO, PALETAS_IDS, type PaletaId } from '@/theme/paletas';
 
+import { acotarLetraLector, LETRA_LECTOR } from './aprender';
 import type { PreferenciaHora } from './hora-oracion';
 
 const CLAVES = {
@@ -21,6 +23,9 @@ const CLAVES = {
   pais: 'preferencias.pais',
   bienvenida: 'preferencias.bienvenida',
   aperturaVitral: 'preferencias.aperturaVitral',
+  letraLector: 'preferencias.letraLector',
+  animaciones: 'preferencias.animaciones',
+  horaRecordatorio: 'preferencias.horaRecordatorio',
 } as const;
 
 const PREFERENCIAS_HORA: readonly PreferenciaHora[] = ['auto', 'day', 'dusk', 'night'];
@@ -121,4 +126,56 @@ export function leerUltimaAperturaVitral(): string | null {
 
 export function guardarUltimaAperturaVitral(dia: string): void {
   guardar(CLAVES.aperturaVitral, dia);
+}
+
+/** Tamaño de letra del lector de Aprender (15–23, ver `LETRA_LECTOR` en `aprender.ts`). */
+export function leerLetraLector(): number {
+  try {
+    const valor = Storage.getItemSync(CLAVES.letraLector);
+    return valor !== null && /^\d{2}$/.test(valor) ? acotarLetraLector(Number(valor)) : LETRA_LECTOR.porDefecto;
+  } catch {
+    return LETRA_LECTOR.porDefecto;
+  }
+}
+
+export function guardarLetraLector(tamano: number): void {
+  guardar(CLAVES.letraLector, String(acotarLetraLector(tamano)));
+}
+
+/**
+ * Animaciones: `sistema` sigue "Reducir movimiento" del teléfono; `reducidas` las reduce siempre
+ * (solo fundidos), aunque el teléfono no lo pida. Ver `animaciones.tsx`.
+ */
+export type PreferenciaAnimaciones = 'sistema' | 'reducidas';
+const PREFERENCIAS_ANIMACIONES: readonly PreferenciaAnimaciones[] = ['sistema', 'reducidas'];
+
+export function leerPreferenciaAnimaciones(): PreferenciaAnimaciones {
+  return leer(CLAVES.animaciones, PREFERENCIAS_ANIMACIONES, 'sistema');
+}
+
+export function guardarPreferenciaAnimaciones(pref: PreferenciaAnimaciones): void {
+  guardar(CLAVES.animaciones, pref);
+}
+
+/** Hora de los recordatorios si la persona no eligió otra (única fuente del 08:00). */
+export const HORA_RECORDATORIO_POR_DEFECTO: Readonly<{ h: number; m: number }> = { h: 8, m: 0 };
+
+/** Hora por defecto de los recordatorios de novena (`{ h, m }`); sin elegir, 08:00. */
+export function leerHoraRecordatorio(): { h: number; m: number } {
+  const porDefecto = { ...HORA_RECORDATORIO_POR_DEFECTO };
+  try {
+    const valor = Storage.getItemSync(CLAVES.horaRecordatorio);
+    const m = valor !== null ? /^(\d{2}):(\d{2})$/.exec(valor) : null;
+    if (!m) return porDefecto;
+    const h = Number(m[1]);
+    const min = Number(m[2]);
+    return h < 24 && min < 60 ? { h, m: min } : porDefecto;
+  } catch {
+    return porDefecto;
+  }
+}
+
+export function guardarHoraRecordatorio(hora: { h: number; m: number }): void {
+  const dos = (n: number) => String(n).padStart(2, '0');
+  guardar(CLAVES.horaRecordatorio, `${dos(hora.h)}:${dos(hora.m)}`);
 }

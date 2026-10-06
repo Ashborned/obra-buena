@@ -12,7 +12,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import Animated, { useReducedMotion } from 'react-native-reanimated';
+import Animated from 'react-native-reanimated';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { Boton } from '@/components/boton';
@@ -25,6 +25,7 @@ import { Texto } from '@/components/texto';
 import { Vitral } from '@/components/vitral';
 import { contenido } from '@/contenido';
 import { useIdioma, useTranslation } from '@/i18n';
+import { useReducirMovimiento } from '@/lib/animaciones';
 import { novenaDelDiaDeFiesta } from '@/lib/hoy';
 import { rutaNovena } from '@/lib/rutas-novenas';
 import {
@@ -63,7 +64,7 @@ export default function PantallaSanto() {
   const { clave } = useLocalSearchParams<{ clave: string }>();
   const { t } = useTranslation();
   const idioma = useIdioma();
-  const reducir = useReducedMotion();
+  const reducir = useReducirMovimiento();
   const insets = useSafeAreaInsets();
   const { paleta, superficies } = useTema();
   // Barra de estado clara sobre el vitral; al bajar, la del tema.

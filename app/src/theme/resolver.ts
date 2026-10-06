@@ -9,6 +9,7 @@ import type { HoraOracion } from '@/lib/hora-oracion';
 import { aplanar, asegurarContraste, conAlfa, mezclarOklab, type Hex } from './color';
 import { tonosEmocion, type IdTonoEmocion, type TonoEmocion } from './emociones';
 import { paletas, type Paleta, type PaletaId } from './paletas';
+import { semanticos } from './tokens';
 
 /** Colores fijos de cada hora (no dependen de la paleta). */
 export const constantesHora = {
@@ -64,6 +65,11 @@ export type TemaResuelto = {
     linea: string;
     /** Texto sobre botón dorado. */
     sobreLuz: Hex;
+    /** Acciones que borran (texto y borde de "Borrar mis datos"): el rojo semántico, con AA sobre cielo y vidrio. */
+    peligro: Hex;
+    /** Fondo del botón que confirma un borrado (rojo semántico) y su texto. */
+    peligroFondo: Hex;
+    sobrePeligro: Hex;
   };
   superficies: {
     /** Tarjeta de vidrio. */
@@ -83,6 +89,10 @@ export type TemaResuelto = {
     /** Botón dorado (`.btn.gold`): fondo sólido de respaldo y degradado vertical encima. */
     botonLuz: Hex;
     botonLuzDegradado: string;
+    /** Velo detrás de una hoja modal propia (confirmaciones). */
+    velo: string;
+    /** Fondo opaco de una hoja modal (el vidrio translúcido sobre el velo se vería gris). */
+    hoja: Hex;
   };
   /** Tono de cada emoción (mosaicos y cabecera del detalle), ya en hex. */
   emociones: Record<IdTonoEmocion, TonoEmocion>;
@@ -157,6 +167,11 @@ export function resolverTema(paletaId: PaletaId, hora: HoraOracion): TemaResuelt
   const acentoTexto = noche
     ? acento
     : asegurarContraste(acento, fondosCielo, CONTRASTE_AA, p.ink);
+  // Rojo de borrado: de día se oscurece hacia la tinta y de noche se aclara hacia el texto, solo lo
+  // necesario para AA sobre el cielo y sobre el vidrio (y sobre la hoja modal, que es el fondo).
+  const vidrio = noche ? conAlfa(k.vidrioNoche, 0.55) : conAlfa(k.blanco, hora === 'dusk' ? 0.55 : 0.62);
+  const fondosPeligro = [...fondosCielo, ...fondosCielo.map((f) => aplanar(vidrio, f))];
+  const peligro = asegurarContraste(semanticos.incorrecto, fondosPeligro, CONTRASTE_AA, noche ? k.textoNoche : p.ink);
   const pestanaActiva = noche
     ? acento
     : asegurarContraste(acento, [aplanar(pestanaActivaFondo, barraPlana)], CONTRASTE_AA, p.ink);
@@ -174,11 +189,12 @@ export function resolverTema(paletaId: PaletaId, hora: HoraOracion): TemaResuelt
       oro: noche ? p.glow : mezclarOklab(p.glow, k.oroViejo, 0.55),
       linea: noche ? conAlfa(k.blanco, 0.12) : conAlfa(p.ink, 0.12),
       sobreLuz: p.onGlow,
+      peligro,
+      peligroFondo: semanticos.incorrecto,
+      sobrePeligro: k.blanco,
     },
     superficies: {
-      vidrio: noche
-        ? conAlfa(k.vidrioNoche, 0.55)
-        : conAlfa(k.blanco, hora === 'dusk' ? 0.55 : 0.62),
+      vidrio,
       vidrioBorde: noche ? conAlfa(k.blanco, 0.13) : conAlfa(k.blanco, 0.95),
       sombra: noche ? conAlfa(k.sombraNoche, 0.35) : conAlfa(p.primary, 0.16),
       barraFondo,
@@ -190,6 +206,8 @@ export function resolverTema(paletaId: PaletaId, hora: HoraOracion): TemaResuelt
       botonLuz: p.glow,
       // Maqueta: linear-gradient(180deg, color-mix(g2 70%, #fff), g).
       botonLuzDegradado: `linear-gradient(180deg, ${mezclarOklab(p.glowSoft, k.blanco, 0.7)}, ${p.glow})`,
+      velo: conAlfa(k.nocheProfunda, noche ? 0.7 : 0.45),
+      hoja: cielo.fondo,
     },
     emociones: tonosEmocion(hora, p.ink),
     barraEstado: noche ? 'light' : 'dark',

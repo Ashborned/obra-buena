@@ -11,7 +11,7 @@
 import { router, useFocusEffect, useIsFocused } from 'expo-router';
 import { useCallback, useMemo, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
-import Animated, { useReducedMotion } from 'react-native-reanimated';
+import Animated from 'react-native-reanimated';
 
 import { ArcoInicial } from '@/components/arco-inicial';
 import { Pantalla } from '@/components/pantalla';
@@ -20,6 +20,7 @@ import { Texto } from '@/components/texto';
 import { VelasMini } from '@/components/velas-mini';
 import { contenido } from '@/contenido';
 import { useIdioma, useTranslation, type ClaveTexto } from '@/i18n';
+import { useReducirMovimiento } from '@/lib/animaciones';
 import { fechaCorta, fechaLarga } from '@/lib/formato-fecha';
 import {
   agruparNovenas,
@@ -54,7 +55,7 @@ const claveVelas = (id: string, anio: number) => `${id}:${anio}`;
 
 export default function PantallaNovenas() {
   const { t } = useTranslation();
-  const reducir = useReducedMotion();
+  const reducir = useReducirMovimiento();
   const enfocada = useIsFocused();
   const { hoy } = useAhora();
   const { pais } = usePais();

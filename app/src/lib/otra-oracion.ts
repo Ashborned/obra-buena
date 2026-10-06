@@ -24,7 +24,7 @@ export function otraOracion(emocionId: string, fecha: Date = new Date()): void {
   avisar();
 }
 
-/** Solo para pruebas. */
+/** Vuelve todo a 0 ("Borrar mis datos" y pruebas). */
 export function reiniciarOtraOracion(): void {
   desplazamientos.clear();
   avisar();

@@ -9,13 +9,14 @@
  */
 import { router } from 'expo-router';
 import { StyleSheet, View, useWindowDimensions } from 'react-native';
-import Animated, { useReducedMotion } from 'react-native-reanimated';
+import Animated from 'react-native-reanimated';
 
 import { MosaicoEmocion } from '@/components/mosaico-emocion';
 import { Pantalla } from '@/components/pantalla';
 import { Texto } from '@/components/texto';
 import { contenido, type Emocion } from '@/contenido';
 import { useIdioma, useTranslation } from '@/i18n';
+import { useReducirMovimiento } from '@/lib/animaciones';
 import { entradaDelDia } from '@/lib/emociones';
 import { useOtraOracion } from '@/lib/otra-oracion';
 import { rutaEmocion } from '@/lib/rutas-emociones';
@@ -30,7 +31,7 @@ const SEPARACION = espaciado.sm + 2;
 
 export default function PantallaEmociones() {
   const { t } = useTranslation();
-  const reducir = useReducedMotion();
+  const reducir = useReducirMovimiento();
   const { fontScale } = useWindowDimensions();
   const { hoy } = useAhora();
   const columnas = fontScale >= ESCALA_UNA_COLUMNA ? 1 : 2;

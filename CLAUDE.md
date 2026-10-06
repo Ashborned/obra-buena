@@ -1,8 +1,8 @@
-# Obra Buena — guía del proyecto
+# Soul Shelter — guía del proyecto
 
 App católica de oración para iPhone y Android, **con enfoque global**, nacida del boceto de una amiga de Felipe.
 Se lanza primero en español e inglés; nada en el código puede suponer un país.
-Nombre provisorio: **Obra Buena** (ver `docs/decisiones.md`).
+Nombre: **Soul Shelter** (en las tiendas, "Soul Shelter - Bible"; ver `docs/decisiones.md`).
 
 Lee este archivo completo antes de tocar cualquier cosa. Si algo de lo que te piden contradice
 este documento o `docs/decisiones.md`, detente y pregunta.

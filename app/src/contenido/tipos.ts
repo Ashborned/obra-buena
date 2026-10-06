@@ -216,6 +216,9 @@ export type Ayuda = {
   paises: AyudaPais[];
 };
 
+/** Patrocinio opcional: "Con el apoyo de…" en Configuración (docs/apoyo.md). */
+export type Patrocinio = { nombre: Bilingue; url?: string };
+
 export type Contenido = {
   version: number;
   generado: string;
@@ -236,4 +239,6 @@ export type Contenido = {
   /** Revisión de `santos_del_dia` e `historias_santos` en bloque. */
   revision_santos_del_dia: Revision;
   ayuda: Ayuda;
+  /** Ausente si no hay patrocinio. */
+  patrocinio?: Patrocinio;
 };

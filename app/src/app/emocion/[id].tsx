@@ -15,7 +15,7 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 import { AccessibilityInfo, Pressable, ScrollView, StyleSheet, View } from 'react-native';
-import Animated, { FadeIn, FadeOut, ReduceMotion, useReducedMotion } from 'react-native-reanimated';
+import Animated, { FadeIn, FadeOut, ReduceMotion } from 'react-native-reanimated';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { ArcoInicial } from '@/components/arco-inicial';
@@ -29,6 +29,7 @@ import { Tarjeta } from '@/components/tarjeta';
 import { Texto } from '@/components/texto';
 import { contenido, type Companero, type Emocion, type EntradaEmocion } from '@/contenido';
 import { useIdioma, useTranslation, type ClaveTexto } from '@/i18n';
+import { useReducirMovimiento } from '@/lib/animaciones';
 import { entradaDelDia, posicionAyuda } from '@/lib/emociones';
 import { useOtraOracion } from '@/lib/otra-oracion';
 import { rutaLectura } from '@/lib/rutas-emociones';
@@ -81,7 +82,7 @@ function volver() {
 function Detalle({ emocion, tonoId }: { emocion: Emocion; tonoId: IdTonoEmocion }) {
   const { t } = useTranslation();
   const idioma = useIdioma();
-  const reducir = useReducedMotion();
+  const reducir = useReducirMovimiento();
   const insets = useSafeAreaInsets();
   const { hoy } = useAhora();
   const [desplazamiento, avanzar] = useOtraOracion(emocion.id, hoy);
@@ -315,7 +316,7 @@ function TarjetaCompanero({ companero }: { companero: Companero }) {
 
 function NoEncontrada() {
   const { t } = useTranslation();
-  const reducir = useReducedMotion();
+  const reducir = useReducirMovimiento();
   return (
     <Fondo>
       <SafeAreaView style={styles.llenar} edges={['top', 'left', 'right', 'bottom']}>

@@ -21,13 +21,13 @@ import {
   Easing,
   cancelAnimation,
   useDerivedValue,
-  useReducedMotion,
   useSharedValue,
   withRepeat,
   withTiming,
   type SharedValue,
 } from 'react-native-reanimated';
 
+import { useReducirMovimiento } from '@/lib/animaciones';
 import { coloresVela, useTema } from '@/theme';
 import { movimiento } from '@/theme/movimiento';
 
@@ -91,7 +91,7 @@ export function VelasMini({
   titilar: boolean;
 }) {
   const { colores } = useTema();
-  const reducir = useReducedMotion();
+  const reducir = useReducirMovimiento();
   const r0 = useSharedValue(0);
   const r1 = useSharedValue(0.4);
   const r2 = useSharedValue(0.8);

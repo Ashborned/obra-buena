@@ -59,6 +59,8 @@ Día: L 0.955/0.88, C 0.04/0.085. Noche: L 0.34/0.25, C 0.07/0.06.
 
 correcto `#2F9E5F` · incorrecto `#C23B4F`. No se usan como acento.
 
+Borrar (Configuración → "Borrar mis datos"): `peligro` es `incorrecto` llevado a AA sobre cielo, vidrio y hoja (de día hacia `ink`, de noche hacia el texto claro); el botón que confirma usa `peligroFondo` = `incorrecto` con texto blanco (`sobrePeligro`). Hojas modales propias: velo `#0A0B1C` al 45 % (70 % de noche) y fondo opaco `hoja` = fondo del cielo.
+
 ## Tipografía
 
 | Rol | Fuente | Uso |

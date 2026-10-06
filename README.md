@@ -1,4 +1,4 @@
-# Obra Buena
+# Soul Shelter
 
 App católica de oración (iPhone y Android). Expo + TypeScript.
 

@@ -7,3 +7,4 @@ export * from './tipografia';
 export * from './tokens';
 export * from './vitral';
 export { ThemeProvider, useTema, type ContextoTema } from './ThemeProvider';
+export * from './medalla';

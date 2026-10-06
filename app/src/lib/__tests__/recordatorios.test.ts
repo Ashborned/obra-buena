@@ -12,14 +12,20 @@ import {
   HORA_POR_DEFECTO,
   planRecordatorios,
   recordatorioActivo,
+  recordatoriosActivos,
 } from '../recordatorios';
 
 // --- Mocks -----------------------------------------------------------------------------------
 
 const mockKV: Record<string, string> = {};
+let mockFallaClaves = false;
 jest.mock('expo-sqlite/kv-store', () => {
   const Storage = {
     getItemSync: (k: string) => (k in mockKV ? mockKV[k] : null),
+    getAllKeysSync: () => {
+      if (mockFallaClaves) throw new Error('kv no disponible');
+      return Object.keys(mockKV);
+    },
     setItemAsync: jest.fn(async (k: string, v: string) => {
       mockKV[k] = v;
     }),
@@ -67,6 +73,7 @@ beforeEach(() => {
   for (const k of Object.keys(mockKV)) delete mockKV[k];
   mockProgramados.clear();
   mockSiguienteId = 0;
+  mockFallaClaves = false;
   jest.clearAllMocks();
   N.getPermissionsAsync.mockResolvedValue(permiso(true));
   N.requestPermissionsAsync.mockResolvedValue(permiso(true));
@@ -257,5 +264,113 @@ describe('activarRecordatorios / desactivarRecordatorios / recordatorioActivo', 
     const r = await activarRecordatorios(opciones({ estado: estadoNovena(ter, tarde), ahora: tarde }));
     expect(r).toEqual({ ok: true, programados: 0 });
     expect(recordatorioActivo('ter', 2026)).toBeNull();
+  });
+});
+
+// --- Configuración: lista de recordatorios activos (hito 7) --------------------------------------
+
+describe('recordatoriosActivos (Configuración)', () => {
+  const ahora = d(2026, 9, 1, 12);
+  const opciones = (extra: Partial<Parameters<typeof activarRecordatorios>[0]> = {}) => ({
+    novena: 'ter',
+    anio: 2026,
+    estado: estadoNovena(ter, ahora),
+    hora: HORA_POR_DEFECTO,
+    textos,
+    ahora,
+    ...extra,
+  });
+
+  test('sin nada guardado → lista vacía', () => {
+    expect(recordatoriosActivos()).toEqual([]);
+  });
+
+  test('activar programa N avisos y aparece en la lista con su hora', async () => {
+    const r = await activarRecordatorios(opciones({ hora: { h: 21, m: 30 } }));
+    expect(r).toEqual({ ok: true, programados: 9 });
+    expect(mockProgramados.size).toBe(9);
+    expect(recordatoriosActivos()).toEqual([{ novena: 'ter', anio: 2026, hora: { h: 21, m: 30 } }]);
+  });
+
+  test('a mitad de novena: N = días que faltan, y aparece igual', async () => {
+    const ahora2 = d(2026, 9, 24, 9);
+    const r = await activarRecordatorios(opciones({ estado: estadoNovena(ter, ahora2), ahora: ahora2 }));
+    expect(r).toEqual({ ok: true, programados: 6 });
+    expect(mockProgramados.size).toBe(6);
+    expect(recordatoriosActivos()).toHaveLength(1);
+  });
+
+  test('desactivar cancela esos ids y desaparece de la lista; los demás siguen', async () => {
+    await activarRecordatorios(opciones());
+    await activarRecordatorios(opciones({ novena: 'bru', estado: estadoNovena({ mes: 10, dia: 6 }, ahora) }));
+    expect(recordatoriosActivos().map((a) => a.novena)).toEqual(['bru', 'ter']);
+    const idsTer = JSON.parse(mockKV['recordatorios.ter.2026']).ids as string[];
+    jest.clearAllMocks();
+    await desactivarRecordatorios('ter', 2026);
+    expect(N.cancelScheduledNotificationAsync.mock.calls.map((c) => c[0]).sort()).toEqual([...idsTer].sort());
+    for (const id of idsTer) expect(mockProgramados.has(id)).toBe(false);
+    expect(recordatoriosActivos()).toEqual([{ novena: 'bru', anio: 2026, hora: { h: 8, m: 0 } }]);
+    await desactivarRecordatorios('bru', 2026);
+    expect(recordatoriosActivos()).toEqual([]);
+    expect(mockProgramados.size).toBe(0);
+  });
+
+  test('sin días por delante (programados: 0) no aparece en la lista', async () => {
+    const tarde = d(2026, 9, 30, 9);
+    await activarRecordatorios(opciones({ estado: estadoNovena(ter, tarde), ahora: tarde }));
+    expect(recordatoriosActivos()).toEqual([]);
+  });
+
+  test('sin permiso no aparece en la lista', async () => {
+    N.getPermissionsAsync.mockResolvedValue(permiso(false, false));
+    await activarRecordatorios(opciones());
+    expect(recordatoriosActivos()).toEqual([]);
+  });
+
+  test('ordenados por año y luego por novena', async () => {
+    const hora = { h: 8, m: 0 };
+    const guardado = JSON.stringify({ hora, ids: ['x'] });
+    mockKV['recordatorios.ter.2027'] = guardado;
+    mockKV['recordatorios.bru.2027'] = guardado;
+    mockKV['recordatorios.ter.2026'] = guardado;
+    mockKV['recordatorios.cc.2026'] = guardado;
+    expect(recordatoriosActivos().map((a) => `${a.anio}.${a.novena}`)).toEqual([
+      '2026.cc',
+      '2026.ter',
+      '2027.bru',
+      '2027.ter',
+    ]);
+  });
+
+  test('claves ajenas en kv-store se ignoran', () => {
+    const ok = JSON.stringify({ hora: { h: 7, m: 15 }, ids: ['a'] });
+    Object.assign(mockKV, {
+      'preferencias.paleta': 'vitral',
+      'preferencias.horaRecordatorio': '20:00',
+      'preferencias.idioma': 'es',
+      recordatorios: ok,
+      'recordatorios.ter': ok,
+      'recordatorios.ter.26': ok,
+      'recordatorios.ter.2026.x': ok,
+      'recordatorios..2026': ok,
+      'otro.recordatorios.ter.2026': ok,
+      'Recordatorios.ter.2026': ok,
+      'recordatorios.ter.2026': ok,
+    });
+    expect(recordatoriosActivos()).toEqual([{ novena: 'ter', anio: 2026, hora: { h: 7, m: 15 } }]);
+  });
+
+  test('un valor corrupto o sin hora se omite sin romper la lista', () => {
+    mockKV['recordatorios.ter.2026'] = '{no es json';
+    mockKV['recordatorios.bru.2026'] = JSON.stringify({ ids: ['a'] });
+    mockKV['recordatorios.cc.2026'] = JSON.stringify({ hora: { h: 9, m: 0 }, ids: ['b'] });
+    expect(recordatoriosActivos()).toEqual([{ novena: 'cc', anio: 2026, hora: { h: 9, m: 0 } }]);
+  });
+
+  test('si el almacenamiento falla al listar → [] sin lanzar', () => {
+    mockKV['recordatorios.ter.2026'] = JSON.stringify({ hora: { h: 8, m: 0 }, ids: [] });
+    mockFallaClaves = true;
+    expect(() => recordatoriosActivos()).not.toThrow();
+    expect(recordatoriosActivos()).toEqual([]);
   });
 });

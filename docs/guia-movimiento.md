@@ -12,7 +12,7 @@ Herramientas: Reanimated para transiciones y gestos, Skia para lo dibujado. Obje
 | Encender una vela | La llama nace (escala 0 → 1 con rebote), destello cálido alrededor, partículas de chispa que suben | 0.7 s |
 | Novena completa (9/9) | Las 9 llamas laten juntas, sube una columna de luz | 1.5 s |
 | Día de la fiesta ("Hoy es su fiesta") | Trato de celebración en la novena; si la completó, las 9 velas aparecen encendidas. Sin puntos ni confeti | al abrir la novena ese día |
-| Descubrir un rasgo | El aviso entra desde el costado con rebote, el ícono gira y brilla, vibración suave | 0.45 s entrada, 3.8 s visible |
+| Descubrir un rasgo | El aviso entra desde el costado con rebote, el ícono gira y brilla, vibración suave | 0.45 s entrada, 4 s visible |
 | Ganar una medalla | La medalla se acuña: gira en 3D desde lejos, rayos dorados giran detrás, partículas doradas, vibración | 1.1 s |
 | Medalla en la vitrina | Se puede girar con el dedo (gesto), refleja la luz según el ángulo | interactivo |
 | Completar una colección | Las medallas de la colección se ordenan en arco y aparece la medalla de la colección | 2 s |

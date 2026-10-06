@@ -94,6 +94,14 @@ export async function cambiarIdioma(idioma: Idioma): Promise<void> {
   await i18n.changeLanguage(idioma);
 }
 
+/**
+ * Vuelve al idioma del teléfono sin guardarlo ("Borrar mis datos"): la persona lo confirmará de
+ * nuevo en la bienvenida.
+ */
+export async function restablecerIdioma(): Promise<void> {
+  await i18n.changeLanguage(idiomaDelSistema());
+}
+
 function suscribirIdioma(avisar: () => void): () => void {
   i18n.on('languageChanged', avisar);
   return () => i18n.off('languageChanged', avisar);
