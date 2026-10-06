@@ -18,7 +18,6 @@ import {
 import { useEffect } from 'react';
 import { View } from 'react-native';
 import {
-  Easing,
   cancelAnimation,
   useDerivedValue,
   useSharedValue,
@@ -29,7 +28,7 @@ import {
 
 import { useReducirMovimiento } from '@/lib/animaciones';
 import { coloresVela, useTema } from '@/theme';
-import { movimiento } from '@/theme/movimiento';
+import { curvas, movimiento, tiempo } from '@/theme/movimiento';
 
 const ANCHO = 9;
 const ALTO = 20;
@@ -105,7 +104,7 @@ export function VelasMini({
     }
     ritmos.forEach((r, i) => {
       r.value = withRepeat(
-        withTiming(r.value > 0.5 ? 0 : 1, { duration: movimiento.llamas[i], easing: Easing.inOut(Easing.sin) }),
+        withTiming(r.value > 0.5 ? 0 : 1, tiempo(movimiento.llamas[i], curvas.vaiven)),
         -1,
         true,
       );

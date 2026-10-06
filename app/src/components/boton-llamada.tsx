@@ -6,7 +6,6 @@
 import { useEffect, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import Animated, {
-  Easing,
   cancelAnimation,
   interpolate,
   useAnimatedStyle,
@@ -28,7 +27,7 @@ import {
   radios,
   useTema,
 } from '@/theme';
-import { movimiento } from '@/theme/movimiento';
+import { curvas, movimiento, tiempo } from '@/theme/movimiento';
 
 const TAMANO_TEXTO = 17;
 const FLECHA = 34;
@@ -58,11 +57,7 @@ export function BotonLlamada({
       return;
     }
     ciclo.value = 0;
-    ciclo.value = withRepeat(
-      withTiming(1, { duration: movimiento.brilloLlamada, easing: Easing.linear }),
-      -1,
-      false,
-    );
+    ciclo.value = withRepeat(withTiming(1, tiempo(movimiento.brilloLlamada, curvas.lineal)), -1, false);
     return () => cancelAnimation(ciclo);
   }, [activo, reducir, ciclo]);
 

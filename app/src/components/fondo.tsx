@@ -17,9 +17,6 @@ import { Canvas, Circle, Group } from '@shopify/react-native-skia';
 import { useEffect, useMemo, type ReactNode } from 'react';
 import { StyleSheet, View, useWindowDimensions } from 'react-native';
 import Animated, {
-  Easing,
-  FadeIn,
-  FadeOut,
   cancelAnimation,
   useDerivedValue,
   useSharedValue,
@@ -31,7 +28,7 @@ import Animated, {
 import { useReducirMovimiento } from '@/lib/animaciones';
 import { generadorAleatorio, hashTexto } from '@/lib/vitral';
 import { coloresCielo, degradadosCielo, useTema } from '@/theme';
-import { movimiento } from '@/theme/movimiento';
+import { curvas, fundido, movimiento, tiempo } from '@/theme/movimiento';
 
 /** Estrellas por grupo (tres grupos, como capas que titilan a destiempo). */
 const ESTRELLAS_POR_GRUPO = 12;
@@ -87,10 +84,7 @@ function Estrellas({ titilar }: { titilar: boolean }) {
     }
     brillos.forEach((b, i) => {
       b.value = withRepeat(
-        withTiming(b.value > 0.5 ? 0 : 1, {
-          duration: movimiento.estrellas[i],
-          easing: Easing.inOut(Easing.sin),
-        }),
+        withTiming(b.value > 0.5 ? 0 : 1, tiempo(movimiento.estrellas[i], curvas.vaiven)),
         -1,
         true,
       );
@@ -115,8 +109,8 @@ export function Fondo({ children, titilar = false }: { children: ReactNode; titi
     <View style={[styles.relleno, { backgroundColor: cielo.fondo }]}>
       <Animated.View
         key={`${paletaId}-${hora}`}
-        entering={FadeIn.duration(movimiento.cambioCielo)}
-        exiting={FadeOut.duration(movimiento.cambioCielo)}
+        entering={fundido.entrada(movimiento.cambioCielo)}
+        exiting={fundido.salida(movimiento.cambioCielo)}
         pointerEvents="none"
         style={[
           StyleSheet.absoluteFill,

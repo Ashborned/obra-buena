@@ -9,12 +9,12 @@
  * La muestra el layout raíz mientras `leerBienvenidaCompleta()` sea false. Al confirmar se guardan
  * idioma, país y la bienvenida, y el layout pasa a las pestañas (Hoy).
  *
- * Movimiento: solo un fundido de entrada (nivel 3, calma). Con "Reducir movimiento", aparece sin animar.
+ * Movimiento: solo un fundido de entrada (nivel 3, calma); es el mismo con "Reducir movimiento".
  */
 import { router } from 'expo-router';
 import { useMemo } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import Animated, { FadeIn } from 'react-native-reanimated';
+import Animated from 'react-native-reanimated';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { Boton } from '@/components/boton';
@@ -26,7 +26,7 @@ import { useBienvenida } from '@/lib/bienvenida';
 import { useNombrePais, usePais } from '@/lib/pais';
 import { paisDelSistema } from '@/lib/region';
 import { espaciado, radios, useTema } from '@/theme';
-import { movimiento } from '@/theme/movimiento';
+import { fundido } from '@/theme/movimiento';
 
 export default function PantallaBienvenida() {
   const { t } = useTranslation();
@@ -52,7 +52,7 @@ export default function PantallaBienvenida() {
     <Fondo>
       <SafeAreaView edges={['top', 'left', 'right', 'bottom']} style={styles.relleno}>
         <ScrollView contentContainerStyle={styles.contenido}>
-          <Animated.View entering={FadeIn.duration(movimiento.fundido)} style={styles.bloque}>
+          <Animated.View entering={fundido.entrada()} style={styles.bloque}>
             <View style={styles.saludo}>
               <Texto rol="etiqueta" tono="acento">
                 {t('app.nombre')}
@@ -96,7 +96,7 @@ export default function PantallaBienvenida() {
             </View>
           </Animated.View>
 
-          <Animated.View entering={FadeIn.duration(movimiento.fundido)} style={styles.acciones}>
+          <Animated.View entering={fundido.entrada()} style={styles.acciones}>
             {pais ? (
               <Boton
                 variante="luz"

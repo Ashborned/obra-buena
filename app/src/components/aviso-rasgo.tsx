@@ -9,10 +9,6 @@
 import { useEffect } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import Animated, {
-  Easing,
-  FadeIn,
-  FadeOut,
-  ReduceMotion,
   SlideInRight,
   SlideOutRight,
   useAnimatedStyle,
@@ -36,7 +32,7 @@ import {
   radios,
   useTema,
 } from '@/theme';
-import { movimiento } from '@/theme/movimiento';
+import { curvas, fundido, movimiento, resortes, tiempo } from '@/theme/movimiento';
 
 const ANCHO = 268;
 const ICONO_FONDO = 48;
@@ -73,21 +69,24 @@ export function AvisoRasgo({
   const brillo = useSharedValue(0);
   useEffect(() => {
     if (reducir) return;
-    giro.value = withTiming(0, { duration: movimiento.giroIconoRasgo, easing: Easing.out(Easing.back(1.4)) });
+    giro.value = withTiming(0, tiempo(movimiento.giroIconoRasgo, curvas.giro));
     brillo.value = withSequence(
-      withTiming(1, { duration: movimiento.giroIconoRasgo / 2 }),
-      withTiming(0.35, { duration: movimiento.giroIconoRasgo }),
+      withTiming(1, tiempo(movimiento.giroIconoRasgo / 2, curvas.salida)),
+      withTiming(0.35, tiempo(movimiento.giroIconoRasgo, curvas.suave)),
     );
   }, [reducir, giro, brillo]);
   const estiloIcono = useAnimatedStyle(() => ({ transform: [{ rotate: `${giro.value}deg` }] }));
   const estiloHalo = useAnimatedStyle(() => ({ opacity: brillo.value, transform: [{ scale: 1 + brillo.value * 0.25 }] }));
 
   const entrada = reducir
-    ? FadeIn.duration(movimiento.fundido).reduceMotion(ReduceMotion.Never)
-    : SlideInRight.springify().damping(14).stiffness(140).mass(0.8);
+    ? fundido.entrada()
+    : SlideInRight.springify()
+        .damping(resortes.aviso.damping)
+        .stiffness(resortes.aviso.stiffness)
+        .mass(resortes.aviso.mass);
   const salida = reducir
-    ? FadeOut.duration(movimiento.fundido).reduceMotion(ReduceMotion.Never)
-    : SlideOutRight.duration(movimiento.avisoRasgoEntrada);
+    ? fundido.salida()
+    : SlideOutRight.duration(movimiento.avisoRasgoEntrada).easing(curvas.suave);
 
   return (
     <Animated.View entering={entrada} exiting={salida} style={styles.contenedor} pointerEvents="box-none">

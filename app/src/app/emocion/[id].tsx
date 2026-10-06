@@ -15,7 +15,7 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 import { AccessibilityInfo, Pressable, ScrollView, StyleSheet, View } from 'react-native';
-import Animated, { FadeIn, FadeOut, ReduceMotion } from 'react-native-reanimated';
+import Animated from 'react-native-reanimated';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { ArcoInicial } from '@/components/arco-inicial';
@@ -46,7 +46,7 @@ import {
   useTema,
   type IdTonoEmocion,
 } from '@/theme';
-import { entradaCalma } from '@/theme/movimiento';
+import { entradaCalma, fundido, movimiento } from '@/theme/movimiento';
 
 const PASOS: ClaveTexto[] = [
   'emociones.pasos.palabra',
@@ -63,9 +63,6 @@ const TAMANO_LINEA = 13.5;
 const RAYA = 26;
 /** "Para hoy · 2 de 3" (`.rot`: 700 11, 0.08em). */
 const TAMANO_ROT = 11;
-/** Fundido cruzado al cambiar de entrada. */
-const FUNDIDO_ENTRADA = 320;
-const FUNDIDO_SALIDA = 200;
 
 export default function PantallaEmocion() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -109,9 +106,8 @@ function Detalle({ emocion, tonoId }: { emocion: Emocion; tonoId: IdTonoEmocion 
     }
   };
 
-  const entradaBloque = cambio
-    ? FadeIn.duration(FUNDIDO_ENTRADA).reduceMotion(ReduceMotion.Never)
-    : entradaCalma(reducir, 2);
+  // "Otra oración": fundido cruzado (sin moverse), igual con movimiento reducido.
+  const entradaBloque = cambio ? fundido.entrada(movimiento.cruceEntrada) : entradaCalma(reducir, 2);
 
   return (
     <Fondo>
@@ -156,7 +152,7 @@ function Detalle({ emocion, tonoId }: { emocion: Emocion; tonoId: IdTonoEmocion 
               <Animated.View
                 key={delDia.indice}
                 entering={entradaBloque}
-                exiting={FadeOut.duration(FUNDIDO_SALIDA).reduceMotion(ReduceMotion.Never)}
+                exiting={fundido.salida(movimiento.cruceSalida)}
                 style={styles.bloque}>
                 <Entrada entrada={delDia.entrada} />
               </Animated.View>
