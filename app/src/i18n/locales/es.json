@@ -66,6 +66,9 @@
       "sistema": "Sigue la opción Reducir movimiento de tu teléfono",
       "reducidas": "Solo fundidos suaves, sin movimiento"
     },
+    "inclinacion": "Mover la luz al inclinar el teléfono",
+    "inclinacionDetalle": "La luz del vitral se corre un poco cuando inclinas el teléfono. No pide permisos.",
+    "inclinacionReducidas": "No está disponible con las animaciones reducidas.",
     "idiomaPaisExplicacion": "Se toman de tu teléfono; puedes cambiarlos cuando quieras. El país define las líneas de ayuda que ves y las fiestas que en tu país se celebran otro día.",
     "recordatorios": {
       "horaPorDefecto": "Hora de los avisos",

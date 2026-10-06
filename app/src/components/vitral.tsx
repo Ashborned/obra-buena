@@ -13,7 +13,11 @@
  *   y el halo se enciende (1.2 s). Quien decide si toca (una vez por día) es la pantalla.
  * - Nivel 2, `vida`: haz de luz 11 s ida y vuelta y halo 40 s por vuelta. La pantalla lo apaga al
  *   perder el foco.
- * - Con "Reducir movimiento": la apertura es un fundido y no hay haz ni giro (quedan quietos).
+ * - Nivel 2, inclinación (opcional, Configuración → Apariencia): con `vida` y el interruptor
+ *   encendido, el haz se corre unos pocos puntos y el halo unos grados según la gravedad
+ *   (`useAnimatedSensor(SensorType.GRAVITY)` de Reanimated: hilo de UI, sin permisos). El sensor
+ *   solo existe mientras el vitral está a la vista; al apagarse, la luz vuelve suave al centro.
+ * - Con "Reducir movimiento": la apertura es un fundido y no hay haz, giro ni inclinación.
  *
  * Es decorativo: queda oculto al lector de pantalla (el nombre del santo está debajo, en texto).
  */
@@ -32,10 +36,12 @@ import {
   vec,
 } from '@shopify/react-native-skia';
 import { useEffect, useMemo } from 'react';
-import { StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { Platform, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import Animated, {
-  Easing,
+  SensorType,
   cancelAnimation,
+  useAnimatedReaction,
+  useAnimatedSensor,
   useAnimatedStyle,
   useDerivedValue,
   useSharedValue,
@@ -45,7 +51,7 @@ import Animated, {
   type SharedValue,
 } from 'react-native-reanimated';
 
-import { useReducirMovimiento } from '@/lib/animaciones';
+import { useInclinacionVitral, useReducirMovimiento } from '@/lib/animaciones';
 import { celdasVitral, type CeldaVitral } from '@/lib/vitral';
 import {
   coloresVitral,
@@ -58,7 +64,7 @@ import {
   useTema,
   type IdColorLiturgico,
 } from '@/theme';
-import { movimiento } from '@/theme/movimiento';
+import { curvas, movimiento, tiempo } from '@/theme/movimiento';
 
 const M = medidasVitral;
 const C = coloresVitral;
@@ -71,6 +77,19 @@ const APERTURA_LUZ_DESDE = 0.25;
 const APERTURA_HALO_DESDE = 0.5;
 const HALO_OPACIDAD = 0.85;
 const DOS_PI = Math.PI * 2;
+
+/** Inclinación: cuánto se corre el haz (pt) y gira el halo (rad) con el teléfono del todo inclinado. */
+const INCLINACION_HAZ_X = 16;
+const INCLINACION_HAZ_Y = 10;
+const INCLINACION_HALO = 0.1;
+/** Gravedad (m/s², la unidad del sensor en las dos plataformas). */
+const GRAVEDAD = 9.81;
+/** iOS informa la gravedad hacia el suelo y Android al revés: se lleva todo al eje de Android. */
+const SIGNO_GRAVEDAD = Platform.OS === 'ios' ? -1 : 1;
+/** Suavizado exponencial por cuadro (60 fps) con las constantes de tiempo de `movimiento`. */
+const CUADRO = 1000 / 60;
+const ALFA_INCLINACION = 1 - Math.exp(-CUADRO / (movimiento.inclinacion / 3));
+const ALFA_CENTRO = 1 - Math.exp(-CUADRO / movimiento.inclinacionCentro);
 
 const acotar = (v: number) => {
   'worklet';
@@ -98,6 +117,40 @@ function trazoArco(x: number, y: number, ancho: number, alto: number, radioInfer
     `Q${x} ${b} ${x} ${b - radioInferior}`,
     'Z',
   ].join(' ');
+}
+
+const acotarSimetrico = (v: number) => {
+  'worklet';
+  return Math.min(1, Math.max(-1, v));
+};
+
+/**
+ * Lee la gravedad y deja en `x` / `y` la inclinación suavizada (−1 a 1). Solo se monta mientras la
+ * luz debe seguir al teléfono: al desmontarse, Reanimated suelta el sensor. Todo corre en el hilo de
+ * UI (nada de setState por cuadro).
+ *
+ * - `x`: de lado (izquierda / derecha), con el centro en el teléfono derecho.
+ * - `y`: adelante / atrás, relativo a cómo se sostiene el teléfono; ese centro se acomoda muy lento,
+ *   así la luz vuelve al medio si la persona se queda quieta en otra postura.
+ */
+function SensorInclinacion({ x, y }: { x: SharedValue<number>; y: SharedValue<number> }) {
+  const { sensor } = useAnimatedSensor(SensorType.GRAVITY, { interval: 'auto' });
+  const centroY = useSharedValue<number | null>(null);
+  useAnimatedReaction(
+    () => sensor.value,
+    (g) => {
+      // Antes del primer dato el sensor entrega ceros: no hay inclinación que seguir.
+      if (g.x === 0 && g.y === 0 && g.z === 0) return;
+      const gx = acotarSimetrico((SIGNO_GRAVEDAD * g.x) / GRAVEDAD);
+      const gy = acotarSimetrico((SIGNO_GRAVEDAD * g.y) / GRAVEDAD);
+      const previo = centroY.get();
+      const centro = previo === null ? gy : previo + (gy - previo) * ALFA_CENTRO;
+      centroY.set(centro);
+      x.set(x.get() + (gx - x.get()) * ALFA_INCLINACION);
+      y.set(y.get() + (acotarSimetrico(gy - centro) - y.get()) * ALFA_INCLINACION);
+    },
+  );
+  return null;
 }
 
 function Celda({ celda, progreso }: { celda: CeldaVitral; progreso: SharedValue<number> }) {
@@ -149,6 +202,7 @@ export type VitralProps = {
 export function Vitral({ semilla, inicial, colorLiturgico, apertura = false, vida = false }: VitralProps) {
   const { paleta, hora } = useTema();
   const reducir = useReducirMovimiento();
+  const inclinar = useInclinacionVitral() && vida;
   const { width: ancho } = useWindowDimensions();
   const alto = M.alto;
   const lit = hexLiturgico(colorLiturgico);
@@ -165,13 +219,15 @@ export function Vitral({ semilla, inicial, colorLiturgico, apertura = false, vid
   const fundido = useSharedValue(apertura && reducir ? 0 : 1);
   const haz = useSharedValue(reducir ? 0.5 : 0);
   const angulo = useSharedValue(0);
+  const inclinacionX = useSharedValue(0);
+  const inclinacionY = useSharedValue(0);
 
   useEffect(() => {
     if (!apertura) return;
     if (reducir) {
-      fundido.value = withTiming(1, { duration: movimiento.fundido });
+      fundido.value = withTiming(1, tiempo(movimiento.fundido));
     } else {
-      progreso.value = withTiming(1, { duration: movimiento.aperturaVitral, easing: Easing.linear });
+      progreso.value = withTiming(1, tiempo(movimiento.aperturaVitral, curvas.lineal));
     }
     // Solo al montar: la apertura no se repite si cambian las preferencias.
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -187,39 +243,45 @@ export function Vitral({ semilla, inicial, colorLiturgico, apertura = false, vid
       }
       return;
     }
-    const facil = Easing.inOut(Easing.sin);
     // Desde donde quedó: termina el tramo hacia 1 y sigue ida y vuelta completo.
     haz.value = withSequence(
-      withTiming(1, { duration: movimiento.haz * (1 - haz.value), easing: facil }),
-      withRepeat(withTiming(0, { duration: movimiento.haz, easing: facil }), -1, true),
+      withTiming(1, tiempo(movimiento.haz * (1 - haz.value), curvas.vaiven)),
+      withRepeat(withTiming(0, tiempo(movimiento.haz, curvas.vaiven)), -1, true),
     );
     const desde = angulo.value % DOS_PI;
     angulo.value = desde;
-    angulo.value = withRepeat(
-      withTiming(desde + DOS_PI, { duration: movimiento.halo, easing: Easing.linear }),
-      -1,
-      false,
-    );
+    angulo.value = withRepeat(withTiming(desde + DOS_PI, tiempo(movimiento.halo, curvas.lineal)), -1, false);
     return () => {
       cancelAnimation(haz);
       cancelAnimation(angulo);
     };
   }, [vida, reducir, haz, angulo]);
 
+  // Sin inclinación (apagada, fuera de foco o movimiento reducido): la luz vuelve suave al centro.
+  useEffect(() => {
+    if (inclinar) return;
+    inclinacionX.value = withTiming(0, tiempo(movimiento.inclinacion, curvas.suave));
+    inclinacionY.value = withTiming(0, tiempo(movimiento.inclinacion, curvas.suave));
+  }, [inclinar, inclinacionX, inclinacionY]);
+
   // Haz (`.ray`): mide 1.9 × el vitral y va de (−20 %, −12 %) a (20 %, 14 %) de su tamaño.
   const centro = vec(ancho / 2, alto / 2);
   const transformHaz = useDerivedValue(() => {
     const entrada = acotar((progreso.value - APERTURA_LUZ_DESDE) / (1 - APERTURA_LUZ_DESDE));
     const falta = 1 - entrada * entrada * (3 - 2 * entrada);
-    const x = (-0.2 + 0.4 * haz.value) * 1.9 * ancho - falta * 0.7 * ancho;
-    const y = (-0.12 + 0.26 * haz.value) * 1.9 * alto - falta * 0.6 * alto;
+    const x =
+      (-0.2 + 0.4 * haz.value) * 1.9 * ancho - falta * 0.7 * ancho - inclinacionX.value * INCLINACION_HAZ_X;
+    const y =
+      (-0.12 + 0.26 * haz.value) * 1.9 * alto - falta * 0.6 * alto + inclinacionY.value * INCLINACION_HAZ_Y;
     return [{ translateX: x }, { translateY: y }];
   });
   const opacidadHaz = useDerivedValue(() =>
     acotar((progreso.value - APERTURA_LUZ_DESDE) / (1 - APERTURA_LUZ_DESDE)),
   );
   const haloCentro = vec(ancho / 2, M.haloArriba + M.haloDiametro / 2);
-  const transformHalo = useDerivedValue(() => [{ rotate: angulo.value }]);
+  const transformHalo = useDerivedValue(() => [
+    { rotate: angulo.value - inclinacionX.value * INCLINACION_HALO },
+  ]);
   const opacidadHalo = useDerivedValue(
     () => HALO_OPACIDAD * acotar((progreso.value - APERTURA_HALO_DESDE) / (1 - APERTURA_HALO_DESDE)),
   );
@@ -265,6 +327,7 @@ export function Vitral({ semilla, inicial, colorLiturgico, apertura = false, vid
       accessibilityElementsHidden
       importantForAccessibility="no-hide-descendants"
       style={[styles.marco, { height: alto, backgroundColor: paleta.primaryDeep }, estiloFundido]}>
+      {inclinar ? <SensorInclinacion x={inclinacionX} y={inclinacionY} /> : null}
       {/* 1. Celdas, velo de la hora y viñeta */}
       <Canvas style={StyleSheet.absoluteFill}>
         {celdas.map((celda, i) => (

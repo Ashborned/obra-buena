@@ -168,6 +168,26 @@ describe('Configuración', () => {
     expect(mockGuardado['preferencias.animaciones']).toBe('reducidas');
   });
 
+  test('inclinación: interruptor que se guarda; con animaciones reducidas queda deshabilitado y lo explica', async () => {
+    await abrir();
+    const interruptor = () => screen.getByRole('switch', { name: c.inclinacion });
+    expect(interruptor().props.accessibilityState).toMatchObject({ checked: false, disabled: false });
+    expect(interruptor().props.accessibilityHint).toBe(c.inclinacionDetalle);
+    await fireEvent.press(interruptor());
+    expect(interruptor().props.accessibilityState).toMatchObject({ checked: true });
+    expect(mockGuardado['preferencias.inclinacion']).toBe('1');
+
+    await fireEvent.press(screen.getByRole('radio', { name: new RegExp(`^${c.animacionesOpciones.reducidas}\\.`) }));
+    // Sin efecto con movimiento reducido: se ve apagado y deshabilitado, pero lo elegido se conserva.
+    expect(interruptor().props.accessibilityState).toMatchObject({ checked: false, disabled: true });
+    expect(interruptor().props.accessibilityHint).toBe(c.inclinacionReducidas);
+    expect(screen.getByText(c.inclinacionReducidas)).toBeTruthy();
+    expect(mockGuardado['preferencias.inclinacion']).toBe('1');
+
+    await fireEvent.press(screen.getByRole('radio', { name: new RegExp(`^${c.animacionesOpciones.sistema}\\.`) }));
+    expect(interruptor().props.accessibilityState).toMatchObject({ checked: true, disabled: false });
+  });
+
   test('sin recordatorios: lo dice y explica dónde activarlos', async () => {
     await abrir();
     expect(screen.getByText(c.recordatorios.ninguno)).toBeTruthy();

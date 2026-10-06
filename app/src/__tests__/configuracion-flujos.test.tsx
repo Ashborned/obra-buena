@@ -662,11 +662,17 @@ describe('4 · recordatorios en Configuración', () => {
     expect(screen.getByRole('button', { name: es.novenas.abrirAjustes })).toBeTruthy();
   });
 
+  /** Interruptores de avisos de novena: todos menos el de la inclinación (Apariencia). */
+  const interruptoresDeAvisos = () =>
+    screen.queryAllByRole('switch').filter((s) => s.props.accessibilityLabel !== c.inclinacion);
+
   test('sin recordatorios: el texto de ninguno, sin interruptores', async () => {
     delete mockKV['recordatorios.ter.2026'];
     await abrir('/configuracion');
     expect(screen.getByText(c.recordatorios.ninguno)).toBeTruthy();
-    expect(screen.queryAllByRole('switch')).toHaveLength(0);
+    // El único interruptor es el de la inclinación (Apariencia); ninguno de avisos.
+    expect(interruptoresDeAvisos()).toHaveLength(0);
+    expect(screen.getByRole('switch', { name: c.inclinacion })).toBeTruthy();
   });
 
   test('sin módulo de recordatorios (Expo Go en Android): "necesitan la app instalada" y nada más', async () => {
@@ -675,7 +681,7 @@ describe('4 · recordatorios en Configuración', () => {
     expect(screen.getByText(c.recordatorios.noDisponibles)).toBeTruthy();
     expect(screen.queryByText(c.recordatorios.ninguno)).toBeNull();
     expect(screen.queryByRole('header', { name: c.recordatorios.horaPorDefecto })).toBeNull();
-    expect(screen.queryAllByRole('switch')).toHaveLength(0);
+    expect(interruptoresDeAvisos()).toHaveLength(0);
   });
 });
 

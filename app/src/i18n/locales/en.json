@@ -66,6 +66,9 @@
       "sistema": "Follows your phone’s Reduce Motion setting",
       "reducidas": "Only soft fades, no motion"
     },
+    "inclinacion": "Move the light when you tilt your phone",
+    "inclinacionDetalle": "The light in the stained glass shifts a little as you tilt your phone. No permissions needed.",
+    "inclinacionReducidas": "Not available while animations are reduced.",
     "idiomaPaisExplicacion": "They come from your phone; you can change them anytime. Your country sets the helplines you see and the feasts your country celebrates on a different day.",
     "recordatorios": {
       "horaPorDefecto": "Reminder time",
