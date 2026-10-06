@@ -14,7 +14,6 @@
  *   (nivel 1) y, si se completó una colección, aparece después su medalla. Si no, la silueta y un
  *   mensaje amable con "Volver a intentarlo" y "Repasar la lectura".
  */
-import * as Haptics from 'expo-haptics';
 import { router, useIsFocused, useLocalSearchParams } from 'expo-router';
 import { useEffect, useRef, useState } from 'react';
 import { AccessibilityInfo, Pressable, ScrollView, StyleSheet, View } from 'react-native';
@@ -46,6 +45,7 @@ import {
 } from '@/lib/aprender';
 import { registrarResultadoQuiz, type ResultadoQuiz } from '@/lib/aprender-progreso';
 import { rutaLectura } from '@/lib/rutas-aprender';
+import { useVibracion } from '@/lib/vibracion';
 import {
   coloresMedalla,
   conAlfa,
@@ -324,6 +324,7 @@ function Resultado({
   const { t } = useTranslation();
   const idioma = useIdioma();
   const enfocada = useIsFocused();
+  const vibrar = useVibracion();
   const gano = aprueba(lectura, aciertos);
   const nombre = lectura[idioma].name;
   const [resultado, setResultado] = useState<ResultadoQuiz | null>(null);
@@ -340,13 +341,9 @@ function Resultado({
       });
     if (gano) {
       AccessibilityInfo.announceForAccessibility(t('aprender.anuncioMedalla', { nombre, n: aciertos, total }));
-      try {
-        Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {});
-      } catch {
-        // Sin vibración disponible.
-      }
+      vibrar('medalla');
     }
-  }, [lectura, aciertos, gano, nombre, total, t]);
+  }, [lectura, aciertos, gano, nombre, total, t, vibrar]);
 
   const colecciones = coleccionesDe(resultado);
   // Al llegar el resultado guardado, se anuncia cada colección completada.

@@ -30,7 +30,7 @@ import Animated, {
 
 import { useReducirMovimiento } from '@/lib/animaciones';
 import { generadorAleatorio, hashTexto } from '@/lib/vitral';
-import { coloresCielo, degradadosCielo, duraciones, useTema } from '@/theme';
+import { coloresCielo, degradadosCielo, useTema } from '@/theme';
 import { movimiento } from '@/theme/movimiento';
 
 /** Estrellas por grupo (tres grupos, como capas que titilan a destiempo). */
@@ -115,8 +115,8 @@ export function Fondo({ children, titilar = false }: { children: ReactNode; titi
     <View style={[styles.relleno, { backgroundColor: cielo.fondo }]}>
       <Animated.View
         key={`${paletaId}-${hora}`}
-        entering={FadeIn.duration(duraciones.cambioCielo)}
-        exiting={FadeOut.duration(duraciones.cambioCielo)}
+        entering={FadeIn.duration(movimiento.cambioCielo)}
+        exiting={FadeOut.duration(movimiento.cambioCielo)}
         pointerEvents="none"
         style={[
           StyleSheet.absoluteFill,

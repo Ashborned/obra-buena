@@ -3,7 +3,8 @@ import { Tabs } from 'expo-router/js-tabs';
 import { BarraPestanas } from '@/components/barra-pestanas';
 import { Icono, type NombreIcono } from '@/components/icono';
 import { useTranslation, type ClaveTexto } from '@/i18n';
-import { duraciones, useTema } from '@/theme';
+import { useTema } from '@/theme';
+import { movimiento } from '@/theme/movimiento';
 
 const pestanas: { ruta: string; icono: NombreIcono; titulo: ClaveTexto }[] = [
   { ruta: 'index', icono: 'hoy', titulo: 'pestanas.hoy' },
@@ -24,7 +25,7 @@ export default function LayoutPestanas() {
         // Cambio de pestaña: fundido cruzado de 200 ms (guía de movimiento, nivel 3).
         // Es un fundido, así que se mantiene igual con "Reducir movimiento".
         animation: 'fade',
-        transitionSpec: { animation: 'timing', config: { duration: duraciones.cambioPestana } },
+        transitionSpec: { animation: 'timing', config: { duration: movimiento.cambioPestana } },
         sceneStyle: { backgroundColor: cielo.fondo },
       }}>
       {pestanas.map(({ ruta, icono, titulo }) => (

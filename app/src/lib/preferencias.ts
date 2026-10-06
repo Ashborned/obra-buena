@@ -25,6 +25,7 @@ const CLAVES = {
   aperturaVitral: 'preferencias.aperturaVitral',
   letraLector: 'preferencias.letraLector',
   animaciones: 'preferencias.animaciones',
+  inclinacion: 'preferencias.inclinacion',
   horaRecordatorio: 'preferencias.horaRecordatorio',
 } as const;
 
@@ -155,6 +156,22 @@ export function leerPreferenciaAnimaciones(): PreferenciaAnimaciones {
 
 export function guardarPreferenciaAnimaciones(pref: PreferenciaAnimaciones): void {
   guardar(CLAVES.animaciones, pref);
+}
+
+/**
+ * Inclinar el teléfono mueve levemente la luz del vitral (guía de movimiento, nivel 2). Opcional y
+ * apagado por defecto; con movimiento reducido no corre aunque esté encendido. Ver `animaciones.tsx`.
+ */
+export function leerInclinacion(): boolean {
+  try {
+    return Storage.getItemSync(CLAVES.inclinacion) === '1';
+  } catch {
+    return false;
+  }
+}
+
+export function guardarInclinacion(activa: boolean): void {
+  guardar(CLAVES.inclinacion, activa ? '1' : '0');
 }
 
 /** Hora de los recordatorios si la persona no eligió otra (única fuente del 08:00). */

@@ -15,7 +15,6 @@
  * El resto es calma (nivel 3): sin partículas, sin rebotes y nada infinito mientras se lee. Se abre
  * con `rutaLectura(id)` desde la pestaña Aprender, la vitrina y "Conocer su historia" en Emociones.
  */
-import * as Haptics from 'expo-haptics';
 import { router, useFocusEffect, useIsFocused, useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AccessibilityInfo, Pressable, StyleSheet, View, type LayoutChangeEvent } from 'react-native';
@@ -44,6 +43,7 @@ import { cambiarLetraLector, LETRA_LECTOR, lecturaPorId, seccionesConRasgo } fro
 import { guardarLetraLector, leerLetraLector } from '@/lib/preferencias';
 import { descubrirRasgo, rasgosDescubiertos } from '@/lib/progreso';
 import { rutaQuiz } from '@/lib/rutas-aprender';
+import { useVibracion } from '@/lib/vibracion';
 import {
   conAlfa,
   espaciado,
@@ -106,6 +106,7 @@ function Lector({ lectura }: { lectura: Lectura }) {
   const { t } = useTranslation();
   const idioma = useIdioma();
   const reducir = useReducirMovimiento();
+  const vibrar = useVibracion();
   const enfocada = useIsFocused();
   const insets = useSafeAreaInsets();
   const { cielo, colores, paleta, superficies } = useTema();
@@ -158,13 +159,9 @@ function Lector({ lectura }: { lectura: Lectura }) {
       setAviso({ rasgo, n, clave: Date.now() });
       const [nombre, linea] = contenido.rasgos[rasgo]?.[idioma] ?? [rasgo, ''];
       AccessibilityInfo.announceForAccessibility(t('aprender.anuncioRasgo', { n, total, nombre, linea }));
-      try {
-        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {});
-      } catch {
-        // Sin vibración disponible: el aviso se ve igual.
-      }
+      vibrar('rasgo');
     },
-    [lectura, idioma, t],
+    [lectura, idioma, t, vibrar],
   );
 
   /** Revisa desde JS (al medir o al terminar de cargar): lo que ya está a la vista sin desplazar. */

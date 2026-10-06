@@ -25,7 +25,8 @@ import { cambiarIdioma, idiomaDelSistema, useIdioma, useTranslation } from '@/i1
 import { useBienvenida } from '@/lib/bienvenida';
 import { useNombrePais, usePais } from '@/lib/pais';
 import { paisDelSistema } from '@/lib/region';
-import { duraciones, espaciado, radios, useTema } from '@/theme';
+import { espaciado, radios, useTema } from '@/theme';
+import { movimiento } from '@/theme/movimiento';
 
 export default function PantallaBienvenida() {
   const { t } = useTranslation();
@@ -51,7 +52,7 @@ export default function PantallaBienvenida() {
     <Fondo>
       <SafeAreaView edges={['top', 'left', 'right', 'bottom']} style={styles.relleno}>
         <ScrollView contentContainerStyle={styles.contenido}>
-          <Animated.View entering={FadeIn.duration(duraciones.fundidoCalma)} style={styles.bloque}>
+          <Animated.View entering={FadeIn.duration(movimiento.fundido)} style={styles.bloque}>
             <View style={styles.saludo}>
               <Texto rol="etiqueta" tono="acento">
                 {t('app.nombre')}
@@ -95,7 +96,7 @@ export default function PantallaBienvenida() {
             </View>
           </Animated.View>
 
-          <Animated.View entering={FadeIn.duration(duraciones.fundidoCalma)} style={styles.acciones}>
+          <Animated.View entering={FadeIn.duration(movimiento.fundido)} style={styles.acciones}>
             {pais ? (
               <Boton
                 variante="luz"
