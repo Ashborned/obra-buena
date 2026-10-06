@@ -100,6 +100,7 @@ Nada que contradiga este archivo se implementa sin actualizarlo primero.
 | 2026-10-06 | Inclinación, detalles: interruptor en Configuración → Apariencia, deshabilitado (sin atenuar, para no romper AA) y con explicación cuando hay movimiento reducido. El sensor (`SensorType.GRAVITY`) se monta solo con el interruptor encendido **y** el vitral de Hoy a la vista; al apagarse, la luz vuelve al centro en 0.9 s. Corre el haz hasta 16 × 10 pt y el halo hasta ~6°. Adelante/atrás es relativo a la postura (el centro se acomoda en ~4 s). iOS entrega la gravedad con el signo contrario a Android: se normaliza. Sin cambios en `app.json` ni permisos | Hito 8, punto 9 |
 | 2026-10-06 | Medalla de la vitrina: el reflejo sigue los dos ejes (se corre de lado y arriba/abajo y se intensifica con el ángulo) y al llegar al giro máximo de lado vibra `tope` una vez (vuelve a vibrar solo tras alejarse 8°). Colección completa: resplandor dorado que se abre y se apaga tras la medalla de la colección y `vibrar('coleccion')` al llegar | Hito 8, puntos 5 y 6 |
 | 2026-10-06 | `eas.json` con perfiles `development`, `preview` (APK interno, canal `preview`) y `production`. El rendimiento (60 fps) se mide en el APK `preview` en un teléfono físico, no en Expo Go ni en modo desarrollo | Las mediciones en desarrollo engañan |
+| 2026-10-06 | **Identificadores:** `android.package` e `ios.bundleIdentifier` = `app.soulshelter` (permanentes una vez publicados), `scheme` = `soulshelter`, `slug` = `soul-shelter`. Proyecto de EAS nuevo `@ashborned/soul-shelter` (ID `6fb5639c-3c9a-4598-b06f-6aef821ce081`) creado con `eas init`; el anterior `@ashborned/app` no tenía builds ni actualizaciones y queda sin uso (se puede borrar en expo.dev). Resuelve el pendiente 15 | Decisión de Felipe. EAS exige que el slug coincida con el del proyecto vinculado; sin builds, crear uno nuevo no pierde nada |
 
 ## Pendiente (bloquea publicación)
 
@@ -116,7 +117,7 @@ Nada que contradiga este archivo se implementa sin actualizarlo primero.
 | 12 | Líneas de ayuda: verificar con fuente oficial y ampliar países (Colombia, Perú, Ecuador, Canadá, Australia…) | Agentes contenido + verificador; aprobación humana | 7 países en borrador; AR y Salud Responde con fuente secundaria |
 | 13 | Calendario litúrgico por país (fiestas trasladadas, santos propios) | Arquitecto + agente contenido | **Parcial (2026-10-04):** Corpus Christi ya se traslada al domingo según `traslados` (CL), **sin fuente**. Siguiente paso: investigar cada país soportado con información pública y anotar la fuente (2026-10-06). Faltan Epifanía, Ascensión, solemnidades impedidas y santos propios (p. ej. Teresa de los Andes en Chile) |
 | 14 | Leccionario por país/idioma: cada conferencia episcopal tiene su traducción y derechos | Felipe y su amiga | La carta actual es para Chile; mientras tanto RV1909 / KJV |
-| 15 | Cambiar `slug`/`scheme` de `app.json` (hoy `app`) a Soul Shelter | Arquitecto | Hacerlo junto con la configuración del proyecto EAS, que está ligado al slug |
+| 15 | ~~Cambiar `slug`/`scheme` de `app.json`~~ → resuelto el 2026-10-06 (identificadores de Soul Shelter) | — | — |
 | 16 | Desenfoque detrás de la barra de pestañas en Android | Arquitecto | Hoy el fondo es 84 % opaco sin desenfoque; el texto de abajo se transparenta levemente. Requiere expo-blur o Skia |
 
 ## Pendiente (no bloquea)

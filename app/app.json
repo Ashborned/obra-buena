@@ -1,16 +1,18 @@
 {
   "expo": {
     "name": "Soul Shelter",
-    "slug": "app",
+    "slug": "soul-shelter",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "app",
+    "scheme": "soulshelter",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/expo.icon",
+      "bundleIdentifier": "app.soulshelter"
     },
     "android": {
+      "package": "app.soulshelter",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -43,7 +45,7 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "76760f75-8342-4ce3-8d12-8af9676405a2"
+        "projectId": "6fb5639c-3c9a-4598-b06f-6aef821ce081"
       }
     },
     "owner": "ashborned"
