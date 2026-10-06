@@ -63,6 +63,12 @@ export type ProgresoAprender = {
 
 const VACIO: ProgresoAprender = { medallas: new Map(), rasgos: {}, colecciones: new Map() };
 
+/** Mismo progreso (medallas, rasgos y colecciones con sus fechas). */
+export function mismoProgreso(a: ProgresoAprender, b: ProgresoAprender): boolean {
+  const firma = (p: ProgresoAprender) => JSON.stringify([[...p.medallas], p.rasgos, [...p.colecciones]]);
+  return firma(a) === firma(b);
+}
+
 export async function leerProgresoAprender(): Promise<ProgresoAprender> {
   const [m, r, c] = await Promise.all([medallas(), todosLosRasgos(), medallasColeccion()]);
   return {
@@ -84,7 +90,9 @@ export function useProgresoAprender(): ProgresoAprender & { cargado: boolean; re
     useCallback(() => {
       let vivo = true;
       leerProgresoAprender()
-        .then((p) => vivo && setEstado({ p, cargado: true }))
+        // Sin cambios (lo normal al cambiar de pestaña): se conserva el estado y Aprender no se
+        // vuelve a dibujar entera (todas sus medallas Skia) durante el fundido de 200 ms.
+        .then((p) => vivo && setEstado((e) => (e.cargado && mismoProgreso(e.p, p) ? e : { p, cargado: true })))
         .catch(() => vivo && setEstado((e) => ({ ...e, cargado: true })));
       return () => {
         vivo = false;

@@ -77,7 +77,10 @@ export default function PantallaNovenas() {
         }),
       )
         .then((pares) => {
-          if (vigente) setVelas(Object.fromEntries(pares));
+          if (!vigente) return;
+          const nuevas: Record<string, number[]> = Object.fromEntries(pares);
+          // Sin cambios (lo normal al cambiar de pestaña): no se vuelve a dibujar la lista.
+          setVelas((previas) => (JSON.stringify(previas) === JSON.stringify(nuevas) ? previas : nuevas));
         })
         .catch(() => {
           // Sin base de datos: las velas se ven apagadas y la lista sigue sirviendo.
