@@ -9,11 +9,12 @@
  * Movimiento (docs/guia-movimiento.md):
  * - Nivel 1, encender: la llama nace con rebote (escala 0 → 1), destello cálido alrededor y chispas
  *   que suben (0.7 s). Novena completa (`celebrar` cambia): las nueve llamas laten juntas y sube una
- *   columna de luz (1.5 s).
- * - Nivel 2, titileo muy leve con tres duraciones distintas (no se sincronizan); solo con `titilar`.
+ *   columna de luz (1.5 s). Las dos cosas terminan: nada queda en bucle.
+ * - Es una pantalla de oración: las llamas encendidas quedan **quietas** (sin titileo infinito; el
+ *   titileo de ambiente vive en las velas pequeñas de Hoy y de la lista de novenas).
  * - Apagar: fundido simple.
- * - "Reducir movimiento": solo fundidos (sin rebote, chispas, titileo ni latido; la columna de luz
- *   pasa a un brillo que aparece y se va).
+ * - "Reducir movimiento": solo fundidos (sin rebote, chispas ni latido; la columna de luz pasa a un
+ *   brillo que aparece y se va). La vibración la decide la pantalla (`useVibracion`).
  *
  * Accesibilidad: grupo de radio; cada vela dice "Día 3, encendida, hoy". Objetivo táctil ≥ 44 pt: en
  * un teléfono las nueve no caben en una fila con ese ancho, así que se reparten en filas parejas
@@ -31,24 +32,23 @@ import {
   RoundedRect,
   vec,
 } from '@shopify/react-native-skia';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Pressable, StyleSheet, View, useWindowDimensions, type LayoutChangeEvent } from 'react-native';
 import {
-  Easing,
   cancelAnimation,
   useDerivedValue,
   useSharedValue,
   withDelay,
-  withRepeat,
   withSequence,
   withTiming,
   type SharedValue,
 } from 'react-native-reanimated';
+import { scheduleOnRN } from 'react-native-worklets';
 
 import { Texto } from '@/components/texto';
 import { useTranslation } from '@/i18n';
 import { coloresVela, conAlfa, espaciado, FACTOR_INTERLINEADO, familias, interlineado, medidas, useTema } from '@/theme';
-import { movimiento } from '@/theme/movimiento';
+import { curvas, movimiento, tiempo } from '@/theme/movimiento';
 
 const V = coloresVela;
 const DIAS = [1, 2, 3, 4, 5, 6, 7, 8, 9] as const;
@@ -82,13 +82,6 @@ const CHISPAS = [
   { dx: -10, retraso: 0.12, sube: 30 },
 ] as const;
 
-/** Como la maqueta: cada 3.ª vela 1.6 s, cada 2.ª 2.3 s, las demás 1.9 s. */
-function grupoDeLlama(dia: number): 0 | 1 | 2 {
-  if (dia % 3 === 0) return 2;
-  if (dia % 2 === 0) return 1;
-  return 0;
-}
-
 /** Filas parejas: cuántas velas por fila caben con un objetivo táctil ≥ 44 pt. */
 function repartir(ancho: number, celdaMinima: number): { porFila: number; celda: number } {
   const caben = Math.max(1, Math.floor((ancho + SEPARACION) / (celdaMinima + SEPARACION)));
@@ -110,8 +103,11 @@ export type VelasNovenaProps = {
   recienEncendida: number | null;
   /** Cambia (se incrementa) cada vez que hay que celebrar la novena completa. 0 = nunca. */
   celebrar: number;
-  /** Titileo de ambiente (solo con la pantalla a la vista). */
-  titilar: boolean;
+  /**
+   * Al empezar el estallido de la novena completa **por una vela recién encendida** (no al abrir el
+   * día de la fiesta): para vibrar junto con el latido.
+   */
+  alCompletar?: () => void;
   reducir: boolean;
 };
 
@@ -122,7 +118,7 @@ export function VelasNovena({
   onElegir,
   recienEncendida,
   celebrar,
-  titilar,
+  alCompletar,
   reducir,
 }: VelasNovenaProps) {
   const { t } = useTranslation();
@@ -130,53 +126,39 @@ export function VelasNovena({
   const [ancho, setAncho] = useState(0);
   const [alto, setAlto] = useState(0);
 
-  // Titileo: tres ritmos compartidos (como las velas pequeñas).
-  const r0 = useSharedValue(0);
-  const r1 = useSharedValue(0.4);
-  const r2 = useSharedValue(0.8);
-  const ritmos = useMemo(() => [r0, r1, r2], [r0, r1, r2]);
-  const hayLlamas = encendidas.length > 0;
-
-  useEffect(() => {
-    if (!titilar || reducir || !hayLlamas) {
-      ritmos.forEach((r) => cancelAnimation(r));
-      return;
-    }
-    ritmos.forEach((r, i) => {
-      r.value = withRepeat(
-        withTiming(r.value > 0.5 ? 0 : 1, { duration: movimiento.llamas[i], easing: Easing.inOut(Easing.sin) }),
-        -1,
-        true,
-      );
-    });
-    return () => ritmos.forEach((r) => cancelAnimation(r));
-  }, [titilar, reducir, hayLlamas, ritmos]);
-
   // Novena completa: latido de las nueve llamas y columna de luz.
   const latido = useSharedValue(0);
   const columna = useSharedValue(0);
+  const disparo = useSharedValue(0);
   const ultimaCelebracion = useRef(0);
   useEffect(() => {
     if (!celebrar || celebrar === ultimaCelebracion.current) return;
     ultimaCelebracion.current = celebrar;
     const total = movimiento.novenaCompleta;
     // Espera a que la última llama termine de nacer.
-    const espera = recienEncendida ? movimiento.encenderVela * 0.6 : 0;
+    const espera = recienEncendida ? movimiento.novenaCompletaRetraso : 0;
     columna.value = 0;
-    columna.value = withDelay(espera, withTiming(1, { duration: total, easing: Easing.inOut(Easing.quad) }));
-    if (!reducir) {
-      const pulso = total / 4;
-      latido.value = withDelay(
+    columna.value = withDelay(espera, withTiming(1, tiempo(total, curvas.pulso)));
+    if (recienEncendida && alCompletar) {
+      // Un "tick" de duración 0 tras la espera: avisa justo cuando empieza el estallido.
+      disparo.value = 0;
+      disparo.value = withDelay(
         espera,
-        withSequence(
-          withTiming(1, { duration: pulso, easing: Easing.out(Easing.quad) }),
-          withTiming(0, { duration: pulso, easing: Easing.in(Easing.quad) }),
-          withTiming(1, { duration: pulso, easing: Easing.out(Easing.quad) }),
-          withTiming(0, { duration: pulso, easing: Easing.in(Easing.quad) }),
-        ),
+        withTiming(1, { duration: 0 }, (fin) => {
+          if (fin) scheduleOnRN(alCompletar);
+        }),
       );
     }
-  }, [celebrar, reducir, recienEncendida, latido, columna]);
+    if (!reducir) {
+      // Las nueve laten juntas: sube y baja, `latidosNovena` veces, y termina en reposo.
+      const tramo = total / (2 * movimiento.latidosNovena);
+      const latidos = Array.from({ length: movimiento.latidosNovena }, () => [
+        withTiming(1, tiempo(tramo, curvas.suave)),
+        withTiming(0, tiempo(tramo, curvas.cae)),
+      ]).flat();
+      latido.value = withDelay(espera, withSequence(...latidos));
+    }
+  }, [celebrar, reducir, recienEncendida, alCompletar, latido, columna, disparo]);
 
   const alMedir = (e: LayoutChangeEvent) => {
     setAncho(e.nativeEvent.layout.width);
@@ -210,7 +192,6 @@ export function VelasNovena({
                 hoy={diaActual === dia}
                 elegida={elegido === dia}
                 nacer={recienEncendida === dia}
-                ritmo={ritmos[grupoDeLlama(dia)]}
                 latido={latido}
                 reducir={reducir}
                 onPress={() => onElegir(dia)}
@@ -229,7 +210,6 @@ function Vela({
   hoy,
   elegida,
   nacer,
-  ritmo,
   latido,
   reducir,
   onPress,
@@ -240,7 +220,6 @@ function Vela({
   hoy: boolean;
   elegida: boolean;
   nacer: boolean;
-  ritmo: SharedValue<number>;
   latido: SharedValue<number>;
   reducir: boolean;
   onPress: () => void;
@@ -270,26 +249,23 @@ function Vela({
     if (encendida) {
       if (nacer && !reducir) {
         escala.value = 0;
-        escala.value = withTiming(1, {
-          duration: movimiento.encenderVela,
-          // cubic-bezier(.2, 1.6, .4, 1) de la maqueta: se pasa de largo y vuelve (rebote).
-          easing: Easing.bezier(0.2, 1.6, 0.4, 1),
-        });
-        opacidad.value = withTiming(1, { duration: movimiento.encenderVela / 3 });
+        // `rebote` es el cubic-bezier(.2, 1.6, .4, 1) de la maqueta: se pasa de largo y vuelve.
+        escala.value = withTiming(1, tiempo(movimiento.encenderVela, curvas.rebote));
+        opacidad.value = withTiming(1, tiempo(movimiento.encenderVela / 3, curvas.salida));
         destello.value = 0;
-        destello.value = withTiming(1, { duration: movimiento.encenderVela, easing: Easing.out(Easing.cubic) });
+        destello.value = withTiming(1, tiempo(movimiento.encenderVela, curvas.salida));
         chispas.value = 0;
-        chispas.value = withTiming(1, { duration: movimiento.chispasVela, easing: Easing.out(Easing.quad) });
+        chispas.value = withTiming(1, tiempo(movimiento.chispasVela, curvas.suave));
       } else {
         escala.value = 1;
-        opacidad.value = withTiming(1, { duration: movimiento.fundido });
+        opacidad.value = withTiming(1, tiempo(movimiento.fundido));
       }
     } else {
       cancelAnimation(destello);
       cancelAnimation(chispas);
       destello.value = 0;
       chispas.value = 0;
-      opacidad.value = withTiming(0, { duration: movimiento.apagarVela });
+      opacidad.value = withTiming(0, tiempo(movimiento.apagarVela));
     }
   }, [encendida, nacer, reducir, escala, opacidad, destello, chispas]);
 
@@ -298,14 +274,10 @@ function Vela({
   const media = LLAMA_ANCHO / 2;
   const forma = `M${cx} ${LLAMA_TOPE} C${cx + media * 1.15} ${LLAMA_TOPE + LLAMA_ALTO * 0.45} ${cx + media} ${LLAMA_BASE} ${cx} ${LLAMA_BASE} C${cx - media} ${LLAMA_BASE} ${cx - media * 1.15} ${LLAMA_TOPE + LLAMA_ALTO * 0.45} ${cx} ${LLAMA_TOPE} Z`;
 
+  // Quieta en reposo (pantalla de oración); solo se mueve al nacer y en el latido de la novena completa.
   const transformLlama = useDerivedValue(() => {
-    const r = ritmo.value;
     const s = escala.value * (1 + LATIDO * latido.value);
-    return [
-      { rotate: ((-2 + 3.5 * r) * Math.PI) / 180 },
-      { scaleX: s * (1.03 - 0.07 * r) },
-      { scaleY: s * (0.95 + 0.09 * r) },
-    ];
+    return [{ scaleX: s }, { scaleY: s }];
   });
   // El destello no pasa del borde de la celda (el lienzo recorta y se vería un rectángulo).
   const radioDestello = useDerivedValue(() => 6 + Math.max(0, ancho / 2 - 6 - 14) * destello.value);
@@ -435,6 +407,9 @@ function ColumnaDeLuz({
   const opacidad = useDerivedValue(() =>
     progreso.value > 0 && progreso.value < 1 ? Math.sin(progreso.value * Math.PI) * 0.9 : 0,
   );
+  // La punta de la columna: un resplandor que sube con ella (con movimiento reducido, no hay punta).
+  const radioPunta = anchoColumna * 0.42;
+  const centroPunta = useDerivedValue(() => vec(ancho / 2, y.value));
   return (
     <Canvas style={StyleSheet.absoluteFill} pointerEvents="none">
       <Group opacity={opacidad}>
@@ -447,6 +422,16 @@ function ColumnaDeLuz({
           />
           <BlurMask blur={14} style="normal" />
         </Rect>
+        {reducir ? null : (
+          <Circle c={centroPunta} r={radioPunta}>
+            <RadialGradient
+              c={centroPunta}
+              r={radioPunta}
+              colors={[V.columnaLuz, conAlfa(paleta.glowSoft, 0.5), conAlfa(paleta.glowSoft, 0)]}
+              positions={[0, 0.4, 1]}
+            />
+          </Circle>
+        )}
       </Group>
     </Canvas>
   );

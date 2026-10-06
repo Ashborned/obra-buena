@@ -10,16 +10,18 @@
  * Solo se marcan días que ya llegaron (o el de hoy): marcar un día futuro sería anotar una oración
  * que todavía no se rezó. La maqueta lo permitía; aquí ese día muestra cuándo se podrá marcar.
  *
- * Movimiento: encender una vela y completar los nueve días son nivel 1 (en `VelasNovena`); el resto
- * es calma. La oración no se anima mientras se lee: al cambiar de día entra con un fundido.
+ * Movimiento: encender una vela y completar los nueve días son nivel 1 (en `VelasNovena`, con
+ * `vibrar('vela')` y `vibrar('novenaCompleta')` cuando lo hace la persona); son estallidos únicos que
+ * terminan. El resto es calma: nada se repite (las llamas quedan quietas) y la oración no se anima
+ * mientras se lee: al cambiar de día entra con un fundido.
  * Día de la fiesta: tarjeta de celebración y, si se completó la novena, las nueve velas encendidas
- * con el latido y la columna de luz una vez al abrir.
+ * con el latido y la columna de luz una vez al abrir (sin vibrar: nadie tocó nada).
  */
 import { DateTimePicker } from '@expo/ui/community/datetime-picker';
-import { router, useIsFocused, useLocalSearchParams } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AccessibilityInfo, Linking, Platform, Pressable, ScrollView, StyleSheet, View } from 'react-native';
-import Animated, { FadeIn, ReduceMotion } from 'react-native-reanimated';
+import Animated from 'react-native-reanimated';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { Boton } from '@/components/boton';
@@ -41,8 +43,9 @@ import { moduloRecordatorios } from '@/lib/avisos';
 import { apagarVela, encenderVela, velasEncendidas } from '@/lib/progreso';
 import type { Hora } from '@/lib/recordatorios';
 import { useAhora } from '@/lib/use-ahora';
+import { useVibracion } from '@/lib/vibracion';
 import { conAlfa, espaciado, interlineado, medidas, radios, useTema } from '@/theme';
-import { entradaCalma, movimiento } from '@/theme/movimiento';
+import { entradaCalma, fundido } from '@/theme/movimiento';
 
 /** Oración (`.prayertext`: 16.5 / 1.6). */
 const TAMANO_ORACION = 16.5;
@@ -69,7 +72,7 @@ function Detalle({ novena }: { novena: Novena }) {
   const { t } = useTranslation();
   const idioma = useIdioma();
   const reducir = useReducirMovimiento();
-  const enfocada = useIsFocused();
+  const vibrar = useVibracion();
   const insets = useSafeAreaInsets();
   const { paleta, superficies, colores } = useTema();
   const { hoy } = useAhora();
@@ -123,7 +126,12 @@ function Detalle({ novena }: { novena: Novena }) {
     const nuevas = estaba ? encendidas.filter((d) => d !== dia) : [...encendidas, dia].sort((a, b) => a - b);
     setEncendidas(nuevas);
     setRecien(estaba ? null : dia);
-    if (!estaba && nuevas.length >= 9) setCelebrar((c) => c + 1);
+    if (!estaba) {
+      // La llama nace: un toque blando. Si con ella se completan los nueve días, la segunda
+      // vibración llega con el latido y la columna de luz (`alCompletar`, después de que la llama nace).
+      vibrar('vela');
+      if (nuevas.length >= 9) setCelebrar((c) => c + 1);
+    }
     AccessibilityInfo.announceForAccessibility(
       t(estaba ? 'novenas.anuncioApagada' : 'novenas.anuncioEncendida', { n: dia }),
     );
@@ -304,7 +312,7 @@ function Detalle({ novena }: { novena: Novena }) {
                 onElegir={setElegido}
                 recienEncendida={recien}
                 celebrar={celebrar}
-                titilar={enfocada}
+                alCompletar={() => vibrar('novenaCompleta')}
                 reducir={reducir}
               />
             ) : (
@@ -319,9 +327,7 @@ function Detalle({ novena }: { novena: Novena }) {
               {t('novenas.diaDe', { n: elegido })}
             </Texto>
             {/* Al cambiar de día, la oración nueva entra con un fundido (sin moverse). */}
-            <Animated.View
-              key={elegido}
-              entering={FadeIn.duration(movimiento.fundido).reduceMotion(ReduceMotion.Never)}>
+            <Animated.View key={elegido} entering={fundido.entrada()}>
               <Texto style={[styles.oracion, oracion.tipo !== 'oracion' && { color: colores.textoSuave }]}>
                 {textoOracion}
               </Texto>
