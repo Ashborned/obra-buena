@@ -104,5 +104,13 @@ Nada que contradiga este archivo se implementa sin actualizarlo primero.
 | 10 | Política de privacidad (obligatoria para las tiendas y la Ley 21.719) | Felipe | Corta: la app no recoge datos personales |
 | 11 | Montos de "Apoyar la app" | Felipe | Librería decidida: `expo-iap` (2026-10-05). Ver `docs/apoyo.md` |
 | 12 | Líneas de ayuda: verificar con fuente oficial y ampliar países (Colombia, Perú, Ecuador, Canadá, Australia…) | Agentes contenido + verificador; aprobación humana | 7 países en borrador; AR y Salud Responde con fuente secundaria |
-| 13 | Calendario litúrgico por país (fiestas trasladadas, santos propios) | Arquitecto | **Parcial (2026-10-04):** Corpus Christi ya se traslada al domingo según `traslados` (CL). Faltan Epifanía, Ascensión, solemnidades impedidas y santos propios (p. ej. Teresa de los Andes en Chile) |
+| 13 | Calendario litúrgico por país (fiestas trasladadas, santos propios) | Arquitecto + agente contenido | **Parcial (2026-10-04):** Corpus Christi ya se traslada al domingo según `traslados` (CL), **sin fuente**. Siguiente paso: investigar cada país soportado con información pública y anotar la fuente (2026-10-06). Faltan Epifanía, Ascensión, solemnidades impedidas y santos propios (p. ej. Teresa de los Andes en Chile) |
 | 14 | Leccionario por país/idioma: cada conferencia episcopal tiene su traducción y derechos | Felipe y su amiga | La carta actual es para Chile; mientras tanto RV1909 / KJV |
+| 15 | Cambiar `slug`/`scheme` de `app.json` (hoy `app`) a Soul Shelter | Arquitecto | Hacerlo junto con la configuración del proyecto EAS, que está ligado al slug |
+| 16 | Desenfoque detrás de la barra de pestañas en Android | Arquitecto | Hoy el fondo es 84 % opaco sin desenfoque; el texto de abajo se transparenta levemente. Requiere expo-blur o Skia |
+
+## Pendiente (no bloquea)
+
+- Renombrar el repositorio de GitHub (`obra-buena`) a Soul Shelter.
+- `aprender.tsx`, `medalla.tsx` y `acunacion.tsx` quedaron formateados con Prettier (ancho 110); el proyecto no tiene configuración de Prettier. Decidir si se adopta una (`.prettierrc`) para todo el código.
+- Las capturas de los hitos 6 y 7 (2 paletas × día/noche) se tomaron con `adb` en el emulador; la herramienta de capturas de Expo no encuentra el emulador porque `adb` no está en el PATH (`%LOCALAPPDATA%\Android\Sdk\platform-tools`).
