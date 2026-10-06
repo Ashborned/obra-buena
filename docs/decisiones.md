@@ -121,6 +121,11 @@ Nada que contradiga este archivo se implementa sin actualizarlo primero.
 
 ## Pendiente (no bloquea)
 
+- Hito 8: la medalla que vuela a la vitrina sale de la pantalla si Aprender quedó desplazada hacia abajo (la vitrina no está a la vista). Opciones: llevar Aprender al principio antes del vuelo o desvanecer si el destino no es visible. Agente interfaz-movimiento.
+- Hito 8: picos de 0,5–0,9 s al entrar o salir de Aprender en el emulador (hipótesis: se redibujan los muchos lienzos Skia de las medallas). Confirmar en el APK `preview`; si se repite, reducir lienzos o rasterizar las medallas.
+- Hito 8: el `Switch` de Android usa el pulgar azul del sistema (falta `thumbColor` del tema), en inclinación y en recordatorios.
+- Hito 8, solo en teléfono físico: signo de la inclinación en iPhone y Android, sensación de la vibración, vuelo de la medalla con edge-to-edge, que TalkBack/VoiceOver no anuncie dos veces el interruptor.
+
 - Renombrar el repositorio de GitHub (`obra-buena`) a Soul Shelter.
 - `aprender.tsx`, `medalla.tsx` y `acunacion.tsx` quedaron formateados con Prettier (ancho 110); el proyecto no tiene configuración de Prettier. Decidir si se adopta una (`.prettierrc`) para todo el código.
 - Las capturas de los hitos 6 y 7 (2 paletas × día/noche) se tomaron con `adb` en el emulador; la herramienta de capturas de Expo no encuentra el emulador porque `adb` no está en el PATH (`%LOCALAPPDATA%\Android\Sdk\platform-tools`).
