@@ -83,3 +83,10 @@ Etiquetas: Figtree 700, 10.5 px, mayúsculas, espaciado 0.14em.
 Vitral (hero), Ventana en arco, Halo, Cinta litúrgica, Chip, Tarjeta de vidrio, Botón dorado, Botón fantasma,
 Vela (mini y grande), Mosaico de emoción, Tarjeta de compañero, Tarjeta de ayuda, Fila de novena,
 Lector, Aviso de rasgo, Opción de quiz, Medalla, Vitrina, Carrusel de colección, Barra de pestañas.
+
+## Marca
+
+- Ícono **Llama**: vela de novena encendida. Llama de dos capas (`glow` y centro `#FFFBE0`), cera y mecha de `coloresVela`, sobre cielo `primaryDeep` → `primary` con halo de `glow`. Fondo fijo en Rosa mística.
+- Fuente SVG y colores en `assets/marca/` (ver su README); los PNG salen de `npm run marca`.
+- Pantalla de carga: el símbolo solo; fondo `#34264F` (`primaryDeep`) en modo claro y `#07081A` (fondo de Completas) en oscuro. Sale con un fundido de 400 ms (`movimiento.salidaCarga`); con movimiento reducido, sin fundido.
+- Gráfico destacado de Play: fondo, vela y el nombre en Cormorant Garamond 600 color `glowSoft`. Sin eslóganes.

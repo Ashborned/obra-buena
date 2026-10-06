@@ -7,14 +7,14 @@
     "icon": "./assets/images/icon.png",
     "scheme": "soulshelter",
     "userInterfaceStyle": "automatic",
+    "backgroundColor": "#34264F",
     "ios": {
-      "icon": "./assets/expo.icon",
       "bundleIdentifier": "app.soulshelter"
     },
     "android": {
       "package": "app.soulshelter",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#34264F",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
@@ -30,9 +30,14 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
+          "backgroundColor": "#34264F",
           "image": "./assets/images/splash-icon.png",
-          "imageWidth": 76
+          "imageWidth": 140,
+          "resizeMode": "contain",
+          "dark": {
+            "backgroundColor": "#07081A",
+            "image": "./assets/images/splash-icon.png"
+          }
         }
       ],
       "expo-localization",

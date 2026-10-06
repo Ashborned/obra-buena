@@ -93,6 +93,8 @@ export const movimiento = {
   cambioPestana: 200,
   /** Pantalla que se abre sobre otra (tarjeta → historia, resultado → vitrina). */
   cambioPantalla: 320,
+  /** La pantalla de carga se desvanece sobre la primera pantalla (sin fundido con movimiento reducido). */
+  salidaCarga: 400,
   /** Fundido cruzado dentro de una pantalla de oración ("Otra oración"): entra lo nuevo… */
   cruceEntrada: 320,
   /** …y se va lo anterior, un poco antes. */

@@ -42,6 +42,7 @@ Reglas de implementación: todo en el hilo de UI (shared values y worklets, nada
 - "Otra oración" en una emoción y el cambio de día en una novena: fundido cruzado, sin moverse.
 - Tarjeta del santo → su historia: el bloque del santo se expande como una hoja de vidrio y la historia entra con fundido (0.32 s + 0.32 s). Con movimiento reducido, solo el fundido.
 - En el lector, el aviso de un rasgo sí rebota (es una recompensa de Aprender), pero el texto que se lee nunca se anima.
+- Pantalla de carga: se desvanece en 400 ms (`movimiento.salidaCarga`) sobre la primera pantalla. Con movimiento reducido, corte directo (sin fundido).
 - Pantallas de oración (Emociones y su detalle, detalle de novena, lector, evangelio, historia del santo): solo fundido + subida de 10 px; sin infinitos, sin partículas, sin rebotes. Las velas grandes de la novena quedan quietas una vez encendidas.
 
 ## Prohibido

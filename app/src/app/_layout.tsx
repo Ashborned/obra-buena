@@ -9,13 +9,16 @@ import {
 import type { NotificationResponse } from 'expo-notifications';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
+import * as SystemUI from 'expo-system-ui';
 import { useEffect, useMemo } from 'react';
+import { useReducedMotion } from 'react-native-reanimated';
 
 // Inicia i18next antes del primer render (textos de interfaz e idioma guardado).
 import '@/i18n';
 import { TransicionesProvider } from '@/components/transiciones';
 import { AnimacionesProvider, useReducirMovimiento } from '@/lib/animaciones';
 import { moduloNotificaciones } from '@/lib/avisos';
+import { ocultarPantallaCarga } from '@/lib/carga';
 import { BienvenidaProvider, useBienvenida } from '@/lib/bienvenida';
 import { PaisProvider } from '@/lib/pais';
 import { ReinicioProvider } from '@/lib/reinicio';
@@ -86,6 +89,13 @@ function Navegacion() {
   const { completa } = useBienvenida();
   useAbrirNovenaDesdeAviso(completa);
 
+  // Fondo nativo de la ventana = fondo del cielo (paleta guardada y hora): si la pantalla de carga
+  // se desvanece antes de que se dibuje el primer cuadro, o entre pantallas, se ve el mismo color y
+  // no un destello. Este efecto corre antes que el de RootLayout que la oculta (hijos primero).
+  useEffect(() => {
+    SystemUI.setBackgroundColorAsync(tema.cielo.fondo).catch(() => {});
+  }, [tema.cielo.fondo]);
+
   const temaNavegacion = useMemo(() => {
     const base = tema.esOscuro ? DarkTheme : DefaultTheme;
     return {
@@ -155,10 +165,14 @@ function Navegacion() {
 
 export default function RootLayout() {
   const [fuentesListas, errorFuentes] = useFonts(archivosDeFuentes);
+  // Síncrono: el valor del sistema al arrancar (ver lib/carga.ts).
+  const sistemaReduce = useReducedMotion();
 
+  // Se oculta recién con las fuentes listas y el árbol montado. El tema (paleta y hora) ya se leyó
+  // síncrono de kv-store en el primer render de ThemeProvider: no hay parpadeo de la paleta.
   useEffect(() => {
-    if (fuentesListas || errorFuentes) SplashScreen.hide();
-  }, [fuentesListas, errorFuentes]);
+    if (fuentesListas || errorFuentes) ocultarPantallaCarga(sistemaReduce);
+  }, [fuentesListas, errorFuentes, sistemaReduce]);
 
   // Si una fuente falla, se sigue con la del sistema antes que dejar la app en blanco.
   if (!fuentesListas && !errorFuentes) return null;
