@@ -70,6 +70,17 @@ describe('app.json · íconos y pantalla de carga', () => {
     expect(expo.backgroundColor).toBe(rosaMistica.primaryDeep);
   });
 
+  it('identificadores de Soul Shelter (decisiones 2026-10-06), sin restos de "app" ni de Obra Buena', () => {
+    expect(expo.name).toBe('Soul Shelter');
+    expect(expo.slug).toBe('soul-shelter');
+    expect(expo.scheme).toBe('soulshelter');
+    expect(expo.android.package).toBe('app.soulshelter');
+    expect(expo.ios.bundleIdentifier).toBe('app.soulshelter');
+    expect(textoConfig).not.toMatch(/obra[ -]?buena/i);
+    const paquete = JSON.parse(readFileSync(join(raizApp, 'package.json'), 'utf8'));
+    expect(paquete.name).toBe('soul-shelter');
+  });
+
   it('no quedan colores de la plantilla de Expo', () => {
     expect(textoConfig).not.toMatch(/#E6F4FE/i);
     expect(textoConfig).not.toMatch(/#208AEF/i);

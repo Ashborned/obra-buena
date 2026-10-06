@@ -27,7 +27,7 @@ const REAL = JSON.parse(fs.readFileSync(path.join(RAIZ, 'content', 'contenido.js
 
 let tmp: string;
 beforeAll(() => {
-  tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'obra-buena-validador-'));
+  tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'soul-shelter-validador-'));
   fs.mkdirSync(path.join(tmp, 'scripts'), { recursive: true });
   fs.mkdirSync(path.join(tmp, 'content'), { recursive: true });
   fs.writeFileSync(path.join(tmp, 'scripts', 'validar-contenido.mjs'), SCRIPT);
