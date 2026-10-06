@@ -5,16 +5,17 @@
  *   escala con un leve sobrepaso), detrás giran rayos en el glow de la paleta y saltan partículas
  *   doradas (Skia). Los rayos giran un tramo y se detienen (nada infinito); todo se corta al perder el
  *   foco.
- * - `ColeccionCompleta`: las medallas de la colección se ordenan en arco y aparece la medalla de la
- *   colección (≈2 s).
+ * - `ColeccionCompleta`: las medallas de la colección salen del centro y se ordenan en arco; luego
+ *   la medalla de la colección se acuña en medio con un resplandor dorado que se abre y se apaga
+ *   (≈2 s) y `vibrar('coleccion')` cuando llega.
  *
- * Con "Reducir movimiento": solo fundidos (sin giro, sin rayos girando y sin partículas).
+ * Con "Reducir movimiento": solo fundidos (sin giro, sin rayos girando, sin partículas ni
+ * resplandor) y sin vibración.
  */
 import { Canvas, Circle, Group, Path, RadialGradient, Skia, vec } from '@shopify/react-native-skia';
-import { useEffect, useMemo, type ReactNode } from 'react';
+import { useCallback, useEffect, useMemo, type ReactNode } from 'react';
 import { StyleSheet, View } from 'react-native';
 import Animated, {
-  Easing,
   cancelAnimation,
   interpolate,
   useAnimatedStyle,
@@ -24,14 +25,14 @@ import Animated, {
   withTiming,
   type SharedValue,
 } from 'react-native-reanimated';
+import { scheduleOnRN } from 'react-native-worklets';
 
 import { Medalla, PROPORCION_MEDALLA } from '@/components/medalla';
 import type { Lectura } from '@/contenido/tipos';
+import { useVibracion } from '@/lib/vibracion';
 import { coloresMedalla, conAlfa, rayosMedalla, useTema } from '@/theme';
-import { movimiento } from '@/theme/movimiento';
+import { curvas, movimiento, tiempo } from '@/theme/movimiento';
 
-/** Curva de la acuñación (maqueta: cubic-bezier(.2, 1.3, .3, 1), con sobrepaso). */
-const CURVA_ACUNAR = Easing.bezier(0.2, 1.3, 0.3, 1);
 /** Vueltas de la medalla al acuñar (maqueta: rotateY 540°). */
 const GIRO_INICIAL = 540;
 /** Escala inicial ("desde lejos"). */
@@ -40,10 +41,6 @@ const ESCALA_INICIAL = 0.2;
 const PERSPECTIVA = 800;
 /** Tramo que giran los rayos antes de detenerse (radianes). */
 const GIRO_RAYOS = Math.PI / 2;
-/** Los rayos aparecen un poco después que la medalla (maqueta: 0.4 s). */
-const RETRASO_RAYOS = 400;
-/** Las partículas saltan cuando la medalla llega. */
-const RETRASO_PARTICULAS = 350;
 const PARTICULAS = 26;
 /** El lienzo de los rayos es este factor del ancho de la medalla (maqueta: 250 / 190). */
 const FACTOR_LIENZO = 1.32;
@@ -72,30 +69,18 @@ export function MedallaAcunada({
 
   useEffect(() => {
     if (reducir) {
-      acunar.set(withTiming(1, { duration: movimiento.fundido }));
-      rayos.set(withTiming(1, { duration: movimiento.fundido }));
+      acunar.set(withTiming(1, tiempo(movimiento.fundido)));
+      rayos.set(withTiming(1, tiempo(movimiento.fundido)));
       return;
     }
-    acunar.set(
-      withTiming(1, {
-        duration: movimiento.acunarMedalla,
-        easing: CURVA_ACUNAR,
-      }),
-    );
-    rayos.set(withDelay(RETRASO_RAYOS, withTiming(1, { duration: movimiento.acunarMedalla })));
-    giro.set(
-      withTiming(GIRO_RAYOS, {
-        duration: movimiento.rayosMedalla,
-        easing: Easing.out(Easing.cubic),
-      }),
-    );
+    // `acunar` es el cubic-bezier(.2, 1.3, .3, 1) de la maqueta: llega con un leve sobrepaso.
+    acunar.set(withTiming(1, tiempo(movimiento.acunarMedalla, curvas.acunar)));
+    rayos.set(withDelay(movimiento.rayosMedallaRetraso, withTiming(1, tiempo(movimiento.acunarMedalla))));
+    giro.set(withTiming(GIRO_RAYOS, tiempo(movimiento.rayosMedalla, curvas.salida)));
     chispas.set(
       withDelay(
-        RETRASO_PARTICULAS,
-        withTiming(1, {
-          duration: movimiento.particulasMedalla,
-          easing: Easing.out(Easing.quad),
-        }),
+        movimiento.particulasMedallaRetraso,
+        withTiming(1, tiempo(movimiento.particulasMedalla, curvas.suave)),
       ),
     );
   }, [reducir, acunar, rayos, giro, chispas]);
@@ -241,6 +226,10 @@ const ARCO_DESDE = (200 * Math.PI) / 180;
 const ARCO_HASTA = (340 * Math.PI) / 180;
 const RADIO_ARCO = 104;
 const CENTRO_Y = 150;
+/** La medalla de la colección queda un poco bajo el centro del arco. */
+const BAJA_COLECCION = 24;
+/** Resplandor detrás de la medalla de la colección (radio máximo, pt). */
+const RADIO_RESPLANDOR = 118;
 
 export function ColeccionCompleta({
   nombre,
@@ -261,20 +250,18 @@ export function ColeccionCompleta({
     };
   });
   const paso = movimiento.coleccionCompleta / 2 / Math.max(1, n);
+  const mitad = movimiento.coleccionCompleta / 2;
 
   return (
     <View
       style={{ width: ANCHO_ESCENA, height: ALTO_ESCENA }}
       importantForAccessibility="no-hide-descendants"
       accessibilityElementsHidden>
+      {reducir ? null : <ResplandorColeccion retraso={mitad} />}
       {lecturas.map((l, i) => (
         <MedallaEnArco key={l.id} lectura={l} destino={posiciones[i]} retraso={i * paso} reducir={reducir} />
       ))}
-      <MedallaColeccionEntrando
-        nombre={nombre}
-        reducir={reducir}
-        retraso={movimiento.coleccionCompleta / 2}
-      />
+      <MedallaColeccionEntrando nombre={nombre} reducir={reducir} retraso={mitad} />
     </View>
   );
 }
@@ -295,10 +282,10 @@ function MedallaEnArco({
     p.set(
       withDelay(
         reducir ? 0 : retraso,
-        withTiming(1, {
-          duration: reducir ? movimiento.fundido : movimiento.coleccionCompleta / 2,
-          easing: Easing.out(Easing.cubic),
-        }),
+        withTiming(
+          1,
+          reducir ? tiempo(movimiento.fundido) : tiempo(movimiento.coleccionCompleta / 2, curvas.salida),
+        ),
       ),
     );
   }, [p, retraso, reducir]);
@@ -339,22 +326,23 @@ function MedallaColeccionEntrando({
   retraso: number;
 }) {
   const p = useSharedValue(0);
+  const vibrar = useVibracion();
+  // Vibra cuando la medalla de la colección llega (con movimiento reducido `vibrar` no hace nada).
+  const llego = useCallback(() => vibrar('coleccion'), [vibrar]);
   useEffect(() => {
     p.set(
       withDelay(
         retraso,
         withTiming(
           1,
-          reducir
-            ? { duration: movimiento.fundido }
-            : {
-                duration: movimiento.coleccionCompleta / 2,
-                easing: CURVA_ACUNAR,
-              },
+          reducir ? tiempo(movimiento.fundido) : tiempo(movimiento.coleccionCompleta / 2, curvas.acunar),
+          (fin) => {
+            if (fin) scheduleOnRN(llego);
+          },
         ),
       ),
     );
-  }, [p, retraso, reducir]);
+  }, [p, retraso, reducir, llego]);
   const estilo = useAnimatedStyle(() => {
     if (reducir) return { opacity: p.value };
     return {
@@ -372,12 +360,40 @@ function MedallaColeccionEntrando({
         styles.enArco,
         {
           left: ANCHO_ESCENA / 2 - TAMANO_COLECCION / 2,
-          top: CENTRO_Y - (TAMANO_COLECCION * PROPORCION_MEDALLA) / 2 + 24,
+          top: CENTRO_Y - (TAMANO_COLECCION * PROPORCION_MEDALLA) / 2 + BAJA_COLECCION,
         },
         estilo,
       ]}>
       <Medalla variante="coleccion" nombre={nombre} tamano={TAMANO_COLECCION} />
     </Animated.View>
+  );
+}
+
+/**
+ * Luz dorada que se abre detrás de la medalla de la colección cuando llega y se apaga (no queda
+ * encendida). El tema se lee aquí, fuera del <Canvas>; adentro, los colores van por props.
+ */
+function ResplandorColeccion({ retraso }: { retraso: number }) {
+  const { paleta } = useTema();
+  const p = useSharedValue(0);
+  useEffect(() => {
+    p.set(withDelay(retraso, withTiming(1, tiempo(movimiento.resplandorColeccion, curvas.salida))));
+  }, [p, retraso]);
+  const c = vec(ANCHO_ESCENA / 2, CENTRO_Y + BAJA_COLECCION);
+  const radio = useDerivedValue(() => RADIO_RESPLANDOR * (0.35 + 0.65 * p.value));
+  // Sube rápido y se apaga despacio (el máximo llega antes de la mitad).
+  const opacidad = useDerivedValue(() =>
+    p.value <= 0 || p.value >= 1 ? 0 : Math.sin(Math.PI * Math.sqrt(p.value)),
+  );
+  const colores = [conAlfa(paleta.glowSoft, 0.95), conAlfa(paleta.glow, 0.45), conAlfa(paleta.glow, 0)];
+  return (
+    <Canvas style={StyleSheet.absoluteFill} pointerEvents="none">
+      <Group opacity={opacidad}>
+        <Circle c={c} r={radio}>
+          <RadialGradient c={c} r={radio} colors={colores} positions={[0, 0.45, 1]} />
+        </Circle>
+      </Group>
+    </Canvas>
   );
 }
 

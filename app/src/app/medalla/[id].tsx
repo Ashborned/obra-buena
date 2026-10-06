@@ -3,9 +3,10 @@
  * con el dedo y refleja la luz según el ángulo). Se abre con `rutaMedalla(id)` (lectura) o
  * `rutaMedallaColeccion(id)` (colección completa).
  *
- * - Gesto: arrastrar gira la medalla (rotateY / rotateX con perspectiva) y mueve el reflejo; al
- *   soltar vuelve con un resorte. Con "Reducir movimiento" se puede girar igual (lo controla el dedo),
- *   pero vuelve sin rebote.
+ * - Gesto: arrastrar gira la medalla (rotateY / rotateX con perspectiva) y el reflejo sigue el ángulo
+ *   en los dos ejes; al llegar al giro máximo de lado vibra apenas (`vibrar('tope')`); al soltar
+ *   vuelve con un resorte. Con "Reducir movimiento" se puede girar igual (lo controla el dedo), pero
+ *   vuelve sin rebote y sin vibrar.
  * - Debajo: nombre, fecha en que se ganó (formato del idioma) y los tres rasgos con su nombre; en la
  *   de colección, las lecturas que la forman.
  * - Si la medalla aún no se gana: la silueta y un enlace a la lectura.
@@ -15,7 +16,6 @@ import type { ReactNode } from 'react';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { Gesture, GestureDetector, GestureHandlerRootView } from 'react-native-gesture-handler';
 import Animated, {
-  Easing,
   useAnimatedStyle,
   useDerivedValue,
   useSharedValue,
@@ -23,6 +23,7 @@ import Animated, {
   withTiming,
   type DerivedValue,
 } from 'react-native-reanimated';
+import { scheduleOnRN } from 'react-native-worklets';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { Boton } from '@/components/boton';
@@ -40,6 +41,7 @@ import { lecturaPorId, lecturasDeColeccion, rasgosEnOrden } from '@/lib/aprender
 import { useProgresoAprender } from '@/lib/aprender-progreso';
 import { fechaConAnio } from '@/lib/formato-fecha';
 import { rutaLectura } from '@/lib/rutas-aprender';
+import { useVibracion } from '@/lib/vibracion';
 import {
   conAlfa,
   espaciado,
@@ -51,13 +53,15 @@ import {
   radios,
   useTema,
 } from '@/theme';
-import { entradaCalma, movimiento } from '@/theme/movimiento';
+import { curvas, entradaCalma, movimiento, resortes, tiempo } from '@/theme/movimiento';
 
 /** Giro máximo con el dedo (grados). */
 const GIRO_Y = 55;
 const GIRO_X = 35;
 /** Grados por punto arrastrado. */
 const SENSIBILIDAD = 0.45;
+/** Para volver a vibrar en el tope, la medalla tiene que alejarse antes estos grados. */
+const HOLGURA_TOPE = 8;
 const PERSPECTIVA = 700;
 /** Ícono de rasgo en la lista. */
 const ICONO = 30;
@@ -122,25 +126,40 @@ function Marco({ medalla, children }: { medalla: ReactNode; children: ReactNode 
   );
 }
 
+type Reflejo = { brillo: DerivedValue<number>; brilloVertical: DerivedValue<number> };
+
 /** La medalla grande que se gira con el dedo. */
-function MedallaGiratoria({ children }: { children: (brillo: DerivedValue<number>) => ReactNode }) {
+function MedallaGiratoria({ children }: { children: (reflejo: Reflejo) => ReactNode }) {
   const reducir = useReducirMovimiento();
+  const vibrar = useVibracion();
   const giroY = useSharedValue(0);
   const giroX = useSharedValue(0);
+  const enTope = useSharedValue(false);
   const brillo = useDerivedValue(() => giroY.value / GIRO_Y);
+  // Inclinar hacia atrás (arrastrar hacia arriba) sube el reflejo.
+  const brilloVertical = useDerivedValue(() => -giroX.value / GIRO_X);
+  const tope = () => vibrar('tope');
 
   const gesto = Gesture.Pan()
     .onChange((e) => {
       giroY.value = Math.max(-GIRO_Y, Math.min(GIRO_Y, giroY.value + e.changeX * SENSIBILIDAD));
       giroX.value = Math.max(-GIRO_X, Math.min(GIRO_X, giroX.value - e.changeY * SENSIBILIDAD));
+      const distancia = Math.abs(giroY.value);
+      if (!enTope.value && distancia >= GIRO_Y) {
+        enTope.value = true;
+        scheduleOnRN(tope);
+      } else if (enTope.value && distancia < GIRO_Y - HOLGURA_TOPE) {
+        enTope.value = false;
+      }
     })
     .onFinalize(() => {
+      enTope.value = false;
       if (reducir) {
-        giroY.value = withTiming(0, { duration: movimiento.regresoMedalla, easing: Easing.out(Easing.quad) });
-        giroX.value = withTiming(0, { duration: movimiento.regresoMedalla, easing: Easing.out(Easing.quad) });
+        giroY.value = withTiming(0, tiempo(movimiento.regresoMedalla, curvas.suave));
+        giroX.value = withTiming(0, tiempo(movimiento.regresoMedalla, curvas.suave));
       } else {
-        giroY.value = withSpring(0, { damping: 9, stiffness: 120 });
-        giroX.value = withSpring(0, { damping: 9, stiffness: 120 });
+        giroY.value = withSpring(0, resortes.rebote);
+        giroX.value = withSpring(0, resortes.rebote);
       }
     });
 
@@ -150,7 +169,7 @@ function MedallaGiratoria({ children }: { children: (brillo: DerivedValue<number
 
   return (
     <GestureDetector gesture={gesto}>
-      <Animated.View style={estilo}>{children(brillo)}</Animated.View>
+      <Animated.View style={estilo}>{children({ brillo, brilloVertical })}</Animated.View>
     </GestureDetector>
   );
 }
@@ -197,13 +216,14 @@ function DetalleLectura({
     <Marco
       medalla={
         <MedallaGiratoria>
-          {(brillo) => (
+          {({ brillo, brilloVertical }) => (
             <Medalla
               variante="lectura"
               lectura={lectura}
               rasgos={rasgos}
               tamano={medidasMedalla.detalle}
               brillo={brillo}
+              brilloVertical={brilloVertical}
               etiqueta={t('aprender.medallaGanadaAccesible', { nombre })}
             />
           )}
@@ -275,12 +295,13 @@ function DetalleColeccion({
       medalla={
         ganadaEn ? (
           <MedallaGiratoria>
-            {(brillo) => (
+            {({ brillo, brilloVertical }) => (
               <Medalla
                 variante="coleccion"
                 nombre={nombre}
                 tamano={medidasMedalla.detalle}
                 brillo={brillo}
+                brilloVertical={brilloVertical}
                 etiqueta={t('aprender.medallaColeccionAccesible', { nombre })}
               />
             )}

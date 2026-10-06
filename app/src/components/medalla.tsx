@@ -9,8 +9,10 @@
  * - `coleccion`: medalla de una colección completa. Se distingue de la de una lectura: cinta en los
  *   dos colores de la paleta, perlas alrededor y una estrella grabada al centro.
  *
- * Se dibuja en el lienzo de la maqueta (120 × 150) y se escala al ancho pedido. `brillo` (−1 a 1,
- * opcional) desplaza un reflejo según el ángulo con que se gira la medalla.
+ * Se dibuja en el lienzo de la maqueta (120 × 150) y se escala al ancho pedido. `brillo` y
+ * `brilloVertical` (−1 a 1, opcionales) mueven un reflejo según el ángulo con que se gira la medalla:
+ * la franja de luz cruza el disco de lado a lado, se corre arriba o abajo y se intensifica cuanto
+ * más se inclina (como el oro bajo una lámpara).
  *
  * Accesibilidad: con `etiqueta` es una imagen con ese nombre; sin ella, el lector la salta.
  */
@@ -70,8 +72,10 @@ type Comun = {
   tamano: number;
   /** Nombre para el lector de pantalla; sin él la medalla es decorativa. */
   etiqueta?: string;
-  /** Ángulo normalizado (−1 a 1) para mover el reflejo. */
+  /** Ángulo horizontal normalizado (−1 a 1) para mover el reflejo. */
   brillo?: SharedValue<number>;
+  /** Ángulo vertical normalizado (−1 a 1): el reflejo sube o baja. */
+  brilloVertical?: SharedValue<number>;
 };
 
 export type PropsMedalla = Comun &
@@ -327,23 +331,43 @@ function Disco(
       <Group origin={vec(44, 70)} transform={[{ rotate: (-30 * Math.PI) / 180 }]}>
         <Oval x={28} y={63} width={32} height={14} color={C.reflejo} />
       </Group>
-      {props.brillo && t.disco ? <Brillo brillo={props.brillo} disco={t.disco} /> : null}
+      {props.brillo && t.disco ? (
+        <Brillo brillo={props.brillo} vertical={props.brilloVertical} disco={t.disco} />
+      ) : null}
     </Group>
   );
 }
 
+/** Recorrido del reflejo con la medalla del todo girada (unidades del lienzo de 120 × 150). */
+const REFLEJO_X = 46;
+const REFLEJO_Y = 22;
+/** Intensidad del reflejo con la medalla de frente y del todo girada. */
+const REFLEJO_MIN = 0.55;
+
 /** Franja de luz que cruza el disco según el ángulo de la medalla. */
 function Brillo({
   brillo,
+  vertical,
   disco,
 }: {
   brillo: SharedValue<number>;
+  vertical?: SharedValue<number>;
   disco: NonNullable<ReturnType<typeof Skia.Path.MakeFromSVGString>>;
 }) {
-  const inicio = useDerivedValue(() => vec(M.cx - 34 + brillo.value * 46, M.cy - M.radioExterior));
-  const fin = useDerivedValue(() => vec(M.cx + 6 + brillo.value * 46, M.cy + M.radioExterior));
+  const dy = useDerivedValue(() => (vertical ? vertical.value : 0) * REFLEJO_Y);
+  const inicio = useDerivedValue(() =>
+    vec(M.cx - 34 + brillo.value * REFLEJO_X, M.cy - M.radioExterior + dy.value),
+  );
+  const fin = useDerivedValue(() =>
+    vec(M.cx + 6 + brillo.value * REFLEJO_X, M.cy + M.radioExterior + dy.value),
+  );
+  const intensidad = useDerivedValue(() => {
+    const v = vertical ? vertical.value : 0;
+    const angulo = Math.min(1, Math.sqrt(brillo.value * brillo.value + v * v));
+    return REFLEJO_MIN + (1 - REFLEJO_MIN) * angulo;
+  });
   return (
-    <Group clip={disco}>
+    <Group clip={disco} opacity={intensidad}>
       <Rect
         x={M.cx - M.radioExterior}
         y={M.cy - M.radioExterior}
