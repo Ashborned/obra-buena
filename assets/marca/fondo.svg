@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- Fondo de la marca (Rosa mística, fijo): cielo de primaryDeep a primary y halo de glow detrás de la llama. -->
+  <defs>
+    <linearGradient id="fondo-cielo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#34264F"/>
+      <stop offset="1" stop-color="#7B55C9"/>
+    </linearGradient>
+    <radialGradient id="fondo-halo" cx="512" cy="420" r="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F28CB6" stop-opacity="0.45"/>
+      <stop offset="0.5" stop-color="#F28CB6" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#F28CB6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#fondo-cielo)"/>
+  <circle cx="512" cy="420" r="420" fill="url(#fondo-halo)"/>
+</svg>

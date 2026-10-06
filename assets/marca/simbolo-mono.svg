@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- Símbolo de una tinta (íconos temáticos de Android): llama con el centro recortado y la cera. -->
+  <g fill="#000000">
+    <path fill-rule="evenodd" d="M512 200 C684.5 375.5 662 590 512 590 C362 590 339.5 375.5 512 200 Z M512 410 C578.7 478.4 570 562 512 562 C454 562 445.3 478.4 512 410 Z"/>
+    <rect x="427" y="622" width="170" height="178" rx="20"/>
+  </g>
+</svg>
